@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MapFrameCore</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoiZ3lraiIsImEiOiJjbDA5YjBjYzIwYmc4M2pwOXd4dHh3Mzc5In0.54AifzzOuqzO5M3f75zt1A</string>
+</resources>

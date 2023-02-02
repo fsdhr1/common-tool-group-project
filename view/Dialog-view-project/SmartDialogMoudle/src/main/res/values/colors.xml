@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0099FF</color>
+    <color name="circle_color">#FC4E4E</color>
+    <color name="addddddddddddd">#FC4E4E</color>
+    <color name="warning_stroke_color">#FC4E4E</color>
+    <color name="input_stroke_color">#0f77fb</color>
+    <color name="ring_color">#1f6dff</color>
+    <color name="transparent">#0000</color>
+    <color name="fc_4d4d4d">#4d4d4d</color>
+    <color name="commom_background">#ececec</color>
+    <color name="text_color_c7c7c7">#c7c7c7</color>
+    <color name="text_color_444444">#444444</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_c4e9ff">#c4e9ff</color>
+    <color name="c_5cacff">#5cacff</color>
+    <color name="c_0061dd">#0061dd</color>
+</resources>

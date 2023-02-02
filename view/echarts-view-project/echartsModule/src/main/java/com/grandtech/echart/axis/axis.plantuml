@@ -1,0 +1,375 @@
+@startuml
+
+title __AXIS's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      abstract class com.grandtech.echart.axis.Axis {
+          - boundaryGap : Object
+          - gridIndex : Integer
+          - interval : Object
+          - inverse : Boolean
+          - max : Object
+          - min : Object
+          - minInterval : Number
+          - name : String
+          - nameGap : Integer
+          - position : Object
+          - scale : Boolean
+          - show : Boolean
+          - z : Integer
+          - zlevel : Integer
+          + axisLabel()
+          + axisLabel()
+          + axisLine()
+          + axisLine()
+          + axisTick()
+          + axisTick()
+          + boundaryGap()
+          + boundaryGap()
+          + boundaryGap()
+          + boundaryGap()
+          + data()
+          + getAxisLabel()
+          + getAxisLine()
+          + getAxisTick()
+          + getBoundaryGap()
+          + getGridIndex()
+          + getInterval()
+          + getInverse()
+          + getMax()
+          + getMin()
+          + getMinInterval()
+          + getName()
+          + getNameGap()
+          + getPosition()
+          + getScale()
+          + getShow()
+          + getSplitArea()
+          + getSplitLine()
+          + getType()
+          + getZ()
+          + getZlevel()
+          + gridIndex()
+          + gridIndex()
+          + interval()
+          + interval()
+          + interval()
+          + inverse()
+          + inverse()
+          + max()
+          + max()
+          + max()
+          + min()
+          + min()
+          + min()
+          + minInterval()
+          + minInterval()
+          + name()
+          + name()
+          + nameGap()
+          + nameGap()
+          + position()
+          + position()
+          + position()
+          + position()
+          + scale()
+          + scale()
+          + setAxisLabel()
+          + setAxisLine()
+          + setAxisTick()
+          + setBoundaryGap()
+          + setGridIndex()
+          + setInterval()
+          + setInverse()
+          + setMax()
+          + setMin()
+          + setMinInterval()
+          + setName()
+          + setNameGap()
+          + setPosition()
+          + setScale()
+          + setShow()
+          + setSplitArea()
+          + setSplitLine()
+          + setType()
+          + setZ()
+          + setZlevel()
+          + show()
+          + show()
+          + splitArea()
+          + splitArea()
+          + splitLine()
+          + splitLine()
+          + type()
+          + type()
+          + z()
+          + z()
+          + zlevel()
+          + zlevel()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.AxisLabel {
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.AxisLine {
+          - onZero : Boolean
+          {static} - serialVersionUID : long
+          - show : Boolean
+          + getLineStyle()
+          + getOnZero()
+          + getShow()
+          + lineStyle()
+          + lineStyle()
+          + onZero()
+          + onZero()
+          + setLineStyle()
+          + setOnZero()
+          + setShow()
+          + show()
+          + show()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.AxisTick {
+          - alignWithLabel : Boolean
+          - inside : Boolean
+          - interval : Object
+          - length : Integer
+          - onGap : Boolean
+          {static} - serialVersionUID : long
+          - show : Boolean
+          - splitNumber : Integer
+          + alignWithLabel()
+          + alignWithLabel()
+          + getAlignWithLabel()
+          + getInside()
+          + getInterval()
+          + getLength()
+          + getLineStyle()
+          + getOnGap()
+          + getShow()
+          + getSplitNumber()
+          + inside()
+          + inside()
+          + interval()
+          + interval()
+          + length()
+          + length()
+          + lineStyle()
+          + lineStyle()
+          + onGap()
+          + onGap()
+          + setAlignWithLabel()
+          + setInside()
+          + setInterval()
+          + setLength()
+          + setLineStyle()
+          + setOnGap()
+          + setShow()
+          + setSplitNumber()
+          + show()
+          + show()
+          + splitNumber()
+          + splitNumber()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.CategoryAxis {
+          + CategoryAxis()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.LogAxis {
+          - logLabelBase : Integer
+          - logPositive : Boolean
+          + LogAxis()
+          + getLogLabelBase()
+          + getLogPositive()
+          + logLabelBase()
+          + logLabelBase()
+          + logPositive()
+          + logPositive()
+          + setLogLabelBase()
+          + setLogPositive()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.ParallelAxis {
+          - dim : Integer
+          - parallelIndex : Integer
+          - splitNumber : Integer
+          + ParallelAxis()
+          + areaSelectStyle()
+          + areaSelectStyle()
+          + dim()
+          + dim()
+          + getAreaSelectStyle()
+          + getDim()
+          + getNameLocation()
+          + getNameTextStyle()
+          + getParallelIndex()
+          + getSplitNumber()
+          + nameLocation()
+          + nameLocation()
+          + nameTextStyle()
+          + nameTextStyle()
+          + parallelIndex()
+          + parallelIndex()
+          + setAreaSelectStyle()
+          + setDim()
+          + setNameLocation()
+          + setNameTextStyle()
+          + setParallelIndex()
+          + setSplitNumber()
+          + splitNumber()
+          + splitNumber()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.SplitArea {
+          {static} - serialVersionUID : long
+          - show : Boolean
+          + areaStyle()
+          + areaStyle()
+          + getAreaStyle()
+          + getShow()
+          + setAreaStyle()
+          + setShow()
+          + show()
+          + show()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.SplitLine {
+          - onGap : Boolean
+          {static} - serialVersionUID : long
+          - show : Boolean
+          + getLineStyle()
+          + getOnGap()
+          + getShow()
+          + lineStyle()
+          + lineStyle()
+          + onGap()
+          + onGap()
+          + setLineStyle()
+          + setOnGap()
+          + setShow()
+          + show()
+          + show()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.TimeAxis {
+          + TimeAxis()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace axis {
+      class com.grandtech.echart.axis.ValueAxis {
+          - power : Integer
+          - precision : Integer
+          - splitNumber : Integer
+          + ValueAxis()
+          + getNameLocation()
+          + getNameTextStyle()
+          + getPower()
+          + getPrecision()
+          + getSplitNumber()
+          + nameLocation()
+          + nameTextStyle()
+          + nameTextStyle()
+          + power()
+          + power()
+          + precision()
+          + precision()
+          + setNameLocation()
+          + setNameTextStyle()
+          + setPower()
+          + setPrecision()
+          + setSplitNumber()
+          + splitNumber()
+          + splitNumber()
+      }
+    }
+  }
+  
+
+  com.grandtech.echart.axis.Axis .up.|> com.grandtech.echart.Component
+  com.grandtech.echart.axis.Axis -up-|> com.grandtech.echart.AbstractData
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.axis.AxisLabel : axisLabel
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.axis.AxisLine : axisLine
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.axis.AxisTick : axisTick
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.axis.SplitArea : splitArea
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.axis.SplitLine : splitLine
+  com.grandtech.echart.axis.Axis o-- com.grandtech.echart.code.AxisType : type
+  com.grandtech.echart.axis.AxisLabel -up-|> com.grandtech.echart.AbstractLabel
+  com.grandtech.echart.axis.AxisLine .up.|> java.io.Serializable
+  com.grandtech.echart.axis.AxisLine o-- com.grandtech.echart.style.LineStyle : lineStyle
+  com.grandtech.echart.axis.AxisTick .up.|> java.io.Serializable
+  com.grandtech.echart.axis.AxisTick o-- com.grandtech.echart.style.LineStyle : lineStyle
+  com.grandtech.echart.axis.CategoryAxis -up-|> com.grandtech.echart.axis.Axis
+  com.grandtech.echart.axis.LogAxis -up-|> com.grandtech.echart.axis.Axis
+  com.grandtech.echart.axis.ParallelAxis -up-|> com.grandtech.echart.axis.Axis
+  com.grandtech.echart.axis.ParallelAxis o-- com.grandtech.echart.style.AreaSelectStyle : areaSelectStyle
+  com.grandtech.echart.axis.ParallelAxis o-- com.grandtech.echart.code.NameLocation : nameLocation
+  com.grandtech.echart.axis.ParallelAxis o-- com.grandtech.echart.style.NameTextStyle : nameTextStyle
+  com.grandtech.echart.axis.SplitArea .up.|> java.io.Serializable
+  com.grandtech.echart.axis.SplitArea o-- com.grandtech.echart.style.AreaStyle : areaStyle
+  com.grandtech.echart.axis.SplitLine .up.|> java.io.Serializable
+  com.grandtech.echart.axis.SplitLine o-- com.grandtech.echart.style.LineStyle : lineStyle
+  com.grandtech.echart.axis.TimeAxis -up-|> com.grandtech.echart.axis.ValueAxis
+  com.grandtech.echart.axis.ValueAxis -up-|> com.grandtech.echart.axis.Axis
+  com.grandtech.echart.axis.ValueAxis o-- com.grandtech.echart.code.NameLocation : nameLocation
+  com.grandtech.echart.axis.ValueAxis o-- com.grandtech.echart.style.LineStyle : nameTextStyle
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

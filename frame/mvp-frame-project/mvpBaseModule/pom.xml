@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.grandtech.common</groupId>
+    <artifactId>common_tool_mvp</artifactId>
+    <version>0.0.0.2</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.hupubao</groupId>
+                <artifactId>dockit-maven-plugin</artifactId>
+                <version>2.1.4.RELEASE</version>
+                <configuration>
+                    <templateCharset>UTF-8</templateCharset>
+                    <singleOutDir>false</singleOutDir>
+                    <outDir>${project.build.directory}/dockit</outDir>
+                    <!-- 自动打开生成的文档目录，默认false -->
+                    <autoOpenOutDir>true</autoOpenOutDir>
+                    <!-- 这里可以选择自定义模版 -->
+                    <!--<template>${basedir}/src/main/resources/dockit/TEMPLATE.MD</template>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>dockit</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

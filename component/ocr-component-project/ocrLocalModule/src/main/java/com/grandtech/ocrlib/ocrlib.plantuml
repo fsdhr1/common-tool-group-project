@@ -1,0 +1,191 @@
+@startuml
+
+title __OCRLIB's Class Diagram__\n
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.OCRPredictorNative {
+        {static} - isSOLoaded : AtomicBoolean
+        - nativePointer : long
+        + OCRPredictorNative()
+        + destory()
+        {static} + loadLibrary()
+        + runImage()
+        # forward()
+        # init()
+        # release()
+        - parse()
+        - postprocess()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.OCRPredictorNative.Config {
+        + clsModelFilename : String
+        + cpuPower : String
+        + cpuThreadNum : int
+        + detModelFilename : String
+        + recModelFilename : String
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.OcrResultModel {
+        - confidence : float
+        - label : String
+        - points : List<Point>
+        - wordIndex : List<Integer>
+        + OcrResultModel()
+        + addPoints()
+        + addWordIndex()
+        + getConfidence()
+        + getLabel()
+        + getPoints()
+        + getWordIndex()
+        + setConfidence()
+        + setLabel()
+        + toString()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.OcrTool {
+        {static} - OPEN_GALLERY_REQUEST_CODE : int
+        {static} - REQUEST_LOAD_MODEL : int
+        {static} - REQUEST_RUN_MODEL : int
+        {static} - RESPONSE_LOAD_MODEL_FAILED : int
+        {static} - RESPONSE_LOAD_MODEL_SUCCESSED : int
+        {static} - RESPONSE_RUN_MODEL_FAILED : int
+        {static} - RESPONSE_RUN_MODEL_SUCCESSED : int
+        {static} - TAKE_PHOTO_REQUEST_CODE : int
+        {static} - labelPath : String
+        - mContext : Context
+        {static} - modelPath : String
+        - receiver : Handler
+        - sender : Handler
+        - worker : HandlerThread
+        + OcrTool()
+        + init()
+        + release()
+        + startOcr()
+        - loadModel()
+        - onLoadModel()
+        - onLoadModelFailed()
+        - onLoadModelSuccessed()
+        - onRunModel()
+        - onRunModelFailed()
+        - onRunModelSuccessed()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    interface com.grandtech.ocrlib.OcrTool.OcrListener {
+        {abstract} + onLoadModelFailed()
+        {abstract} + onLoadModelSuccess()
+        {abstract} + onRunModelFailed()
+        {abstract} + onRunModelSuccess()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.Predictor {
+        {static} - TAG : String
+        - cpuPowerMode : String
+        - cpuThreadNum : int
+        - inferIterNum : int
+        - inferenceTime : float
+        - inputColorFormat : String
+        - inputImage : Bitmap
+        - inputMean : float[]
+        - inputShape : long[]
+        - inputStd : float[]
+        - isLoaded : boolean
+        - mOcrResultModels : ArrayList<OcrResultModel>
+        - modelName : String
+        - modelPath : String
+        - outputImage : Bitmap
+        - outputResult : String
+        - postprocessTime : float
+        - preprocessTime : float
+        - scoreThreshold : float
+        - warmupIterNum : int
+        - wordLabels : Vector<String>
+        + Predictor()
+        + cpuPowerMode()
+        + cpuThreadNum()
+        + getOcrResultModels()
+        + inferenceTime()
+        + init()
+        + init()
+        + inputImage()
+        + isLoaded()
+        + modelName()
+        + modelPath()
+        + outputImage()
+        + outputResult()
+        + postprocessTime()
+        + preprocessTime()
+        + releaseModel()
+        + runModel()
+        + setInputImage()
+        # loadLabel()
+        # loadModel()
+        - drawResults()
+        - postprocess()
+        - proProcessDataMultiThread()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.Predictor.HandleDataThread {
+        - channelIdx : int[]
+        - channelStride : int[]
+        - indexEnd : int
+        - indexStart : int
+        - inputData : float[]
+        - scaleImage : Bitmap
+        - threadNum : int
+        - width : int
+        + HandleDataThread()
+        + run()
+    }
+  }
+  
+
+  namespace com.grandtech.ocrlib {
+    class com.grandtech.ocrlib.Utils {
+        {static} - TAG : String
+        {static} + copyDirectoryFromAssets()
+        {static} + copyFileFromAssets()
+        {static} + getSDCardDirectory()
+        {static} + isSupportedNPU()
+        {static} + parseFloatsFromString()
+        {static} + parseLongsFromString()
+        {static} + resizeWithStep()
+        {static} + rotateBitmap()
+    }
+  }
+  
+
+  com.grandtech.ocrlib.OCRPredictorNative o-- com.grandtech.ocrlib.OCRPredictorNative.Config : config
+  com.grandtech.ocrlib.OCRPredictorNative +-down- com.grandtech.ocrlib.OCRPredictorNative.Config
+  com.grandtech.ocrlib.OcrTool o-- com.grandtech.ocrlib.OcrTool.OcrListener : mOcrListener
+  com.grandtech.ocrlib.OcrTool o-- com.grandtech.ocrlib.Predictor : predictor
+  com.grandtech.ocrlib.OcrTool +-down- com.grandtech.ocrlib.OcrTool.OcrListener
+  com.grandtech.ocrlib.Predictor o-- com.grandtech.ocrlib.OCRPredictorNative : paddlePredictor
+  com.grandtech.ocrlib.Predictor +-down- com.grandtech.ocrlib.Predictor.HandleDataThread
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

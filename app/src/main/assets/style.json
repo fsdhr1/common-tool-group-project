@@ -1,0 +1,976 @@
+{
+  "updatedAt": "2021-09-28T07:03:29.900Z",
+  "createdAt": "2018-09-11T06:17:24.424Z",
+  "owner": "gykj",
+  "zoom": 15.1458125999611,
+  "sources": {
+    "satellite": {
+      "type": "raster",
+      "tiles": [
+        "http://a.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiZnMxOTk1MDMwMSIsImEiOiJja2xhZ210czgzamVuMnNxb2dkcTN6ZXRyIn0.OjKkjFdRWrZBP432CSAGHw"
+      ],
+      "tileSize": 256
+    },
+    "dt_xy": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_xy",
+      "type": "vector"
+    },
+    "dt_dsy": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_dsy",
+      "type": "vector"
+    },
+    "dt_sy": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_sy",
+      "type": "vector"
+    },
+    "dt_sy_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_sy_pt",
+      "type": "vector"
+    },
+    "dt_dsy_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_dsy_pt",
+      "type": "vector"
+    },
+    "dt_xy_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_xy_pt",
+      "type": "vector"
+    },
+    "dt_sh_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_sh_pt",
+      "type": "vector"
+    },
+    "dt_gj": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_gj",
+      "type": "vector"
+    },
+    "dt_gj_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_gj_pt",
+      "type": "vector"
+    },
+    "dt_xzy_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_xzy_pt",
+      "type": "vector"
+    },
+    "dt_cy_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_cy_pt",
+      "type": "vector"
+    },
+    "dt_cbdk_pt": {
+      "url": "http://120.133.60.156:9036/api/v1/tilesets/gykj/dt_cbdk_pt",
+      "type": "vector"
+    },
+    "dt_cbdk": {
+      "url": "http://120.133.60.156:9036/api/v1/tilesets/gykj/dt_cbdk",
+      "type": "vector"
+    },
+    "dt_zzdk": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_zzdk",
+      "type": "vector"
+    },
+    "dt_zzdk_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_zzdk_pt",
+      "type": "vector"
+    },
+    "dt_xzy": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_xzy",
+      "type": "vector"
+    },
+    "dt_cy": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_cy",
+      "type": "vector"
+    },
+    "dt_dpdk": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_dpdk",
+      "type": "vector"
+    },
+    "dt_dk": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_dk",
+      "type": "vector"
+    },
+    "dt_dk_pt": {
+      "url": "http://gykj123.cn:9035/api/v1/tilesets/gykj/dt_dk_pt",
+      "type": "vector"
+    }
+  },
+  "name": "APP验标地图",
+  "metadata": {
+    "mapbox:groups": {
+      "undefined": {
+        "name": "",
+        "collapsed": false
+      },
+      "b9f7ce9068f6a": {
+        "name": "行政区划",
+        "collapsed": true
+      },
+      "25a2e947c5452": {
+        "name": "参考农户",
+        "collapsed": false
+      },
+      "3ad046ebc0f3b": {
+        "name": "种植地块",
+        "collapsed": true
+      },
+      "04687df45bbae": {
+        "name": "种植结构",
+        "collapsed": false
+      },
+      "b25c9e7939e49": {
+        "name": "承保信息",
+        "collapsed": true
+      },
+      "3b544127596e3": {
+        "name": "验标信息",
+        "collapsed": true
+      },
+      "92ca48f13df25": {
+        "name": "参考影像",
+        "collapsed": true
+      },
+      "d84acea404223": {
+        "name": "查勘信息",
+        "collapsed": false
+      }
+    },
+    "replaceField": "fz",
+    "autolabel": [
+      "农户位置"
+    ]
+  },
+  "sprite": "http://gykj123.cn:9035/api/v1/sprites/gykj/r1vbPWb_7/sprite",
+  "glyphs": "http://gykj123.cn:9035/api/v1/fonts/gykj/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "背景",
+      "type": "background",
+      "paint": {
+        "background-color": "rgb(4,7,14)"
+      },
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "92ca48f13df25"
+      }
+    },
+    {
+      "id": "卫星影像",
+      "type": "raster",
+      "source": "satellite",
+      "layout": {
+        "visibility": "visible"
+      },
+      "metadata": {
+        "mapbox:group": "92ca48f13df25"
+      },
+      "paint": {
+        "raster-opacity": 0.7
+      }
+    },
+    {
+      "id": "承保地块",
+      "source": "dt_cbdk",
+      "type": "fill",
+      "minzoom": 13,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#443da8",
+        "fill-opacity": 0.35,
+        "fill-outline-color": "#ddebe9"
+      },
+      "source-layer": "dt_cbdk",
+      "filter": [
+        "all",
+        [
+          ">=",
+          "status",
+          0
+        ],
+        [
+          "==",
+          "datasource",
+          1
+        ]
+      ],
+      "metadata": {
+        "mapbox:group": "b25c9e7939e49"
+      },
+      "visibility": "none"
+    },
+    {
+      "id": "承保标注",
+      "source": "dt_cbdk_pt",
+      "type": "symbol",
+      "minzoom": 14,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{bz}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 14,
+        "text-line-height": 0.6,
+        "visibility": "none"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#1526e8",
+        "text-halo-width": 0.5,
+        "text-halo-blur": 0.5
+      },
+      "source-layer": "dt_cbdk_pt",
+      "metadata": {
+        "mapbox:group": "b25c9e7939e49"
+      },
+      "filter": [
+        "all",
+        [
+          ">=",
+          "status",
+          0
+        ],
+        [
+          "==",
+          "datasource",
+          1
+        ]
+      ],
+      "visibility": "none"
+    },
+    {
+      "id": "验标地块",
+      "source": "dt_cbdk",
+      "type": "fill",
+      "minzoom": 13,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "07"
+          ],
+          "#008040",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "54"
+          ],
+          "#ebd9ce",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "55"
+          ],
+          "#bfab9d",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "03"
+          ],
+          "#17f013",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "49"
+          ],
+          "#ebe7b5",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "08"
+          ],
+          "#FFB94F",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "50"
+          ],
+          "#858366",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "51"
+          ],
+          "#878782",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "06"
+          ],
+          "#00CC00",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "56"
+          ],
+          "#f5e105",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "16"
+          ],
+          "#FFCC33",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "48"
+          ],
+          "#e3e2d3",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "52"
+          ],
+          "#e6daa1",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "53"
+          ],
+          "#ebe6ce",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "64"
+          ],
+          "#FFCC33",
+          [
+            "==",
+            [
+              "get",
+              "zwdm"
+            ],
+            "65"
+          ],
+          "#FFCC33",
+          "#eb23e4"
+        ],
+        "fill-opacity": 0.45,
+        "fill-outline-color": "#fffaff"
+      },
+      "source-layer": "dt_cbdk",
+      "filter": [
+        "all",
+        [
+          ">=",
+          "status",
+          0
+        ],
+        [
+          "in",
+          "datasource",
+          0,
+          2
+        ]
+      ],
+      "visibility": "none",
+      "metadata": {
+        "mapbox:group": "3b544127596e3"
+      }
+    },
+    {
+      "id": "验标标注",
+      "source": "dt_cbdk_pt",
+      "type": "symbol",
+      "minzoom": 14,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{bz}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 14,
+        "text-line-height": 0.6,
+        "visibility": "visible",
+        "text-anchor": "top",
+        "text-offset": [
+          -1,
+          1.5
+        ]
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#9005fa",
+        "text-halo-width": 0.5,
+        "text-halo-blur": 0.5
+      },
+      "source-layer": "dt_cbdk_pt",
+      "filter": [
+        "all",
+        [
+          ">=",
+          "status",
+          0
+        ],
+        [
+          "in",
+          "datasource",
+          0,
+          2
+        ],
+        [
+          "==",
+          "sffc",
+          0
+        ]
+      ],
+      "visibility": "none",
+      "metadata": {
+        "mapbox:group": "3b544127596e3"
+      }
+    },
+    {
+      "id": "基础地块",
+      "source": "dt_dk",
+      "type": "line",
+      "minzoom": 13,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "dlmc"
+            ],
+            "林地"
+          ],
+          "#95e37b",
+          [
+            "==",
+            [
+              "get",
+              "dlmc"
+            ],
+            "草地"
+          ],
+          "#DCE9AE",
+          "#95e37b"
+        ],
+        "line-opacity": 1,
+        "line-width": 1
+      },
+      "source-layer": "dt_dk",
+      "metadata": {
+        "mapbox:group": "3ad046ebc0f3b"
+      }
+    },
+    {
+      "id": "地块标注",
+      "source": "dt_dk_pt",
+      "type": "symbol",
+      "minzoom": 14,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{bz}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 14,
+        "visibility": "visible",
+        "text-line-height": 0.6,
+        "text-anchor": "bottom",
+        "text-offset": [
+          -1,
+          -1
+        ]
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#991c2e",
+        "text-halo-width": 1
+      },
+      "source-layer": "dt_dk_pt",
+      "metadata": {
+        "mapbox:group": "3ad046ebc0f3b"
+      }
+    },
+    {
+      "id": "种植地块",
+      "source": "dt_zzdk",
+      "type": "line",
+      "minzoom": 13,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#fc0000",
+        "line-opacity": 1,
+        "line-width": 1.5
+      },
+      "source-layer": "dt_zzdk",
+      "visibility": "visible",
+      "metadata": {
+        "mapbox:group": "3ad046ebc0f3b"
+      }
+    },
+    {
+      "id": "种植标注",
+      "source": "dt_zzdk_pt",
+      "type": "symbol",
+      "minzoom": 14,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{bz}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 14,
+        "text-line-height": 0.6,
+        "text-anchor": "bottom",
+        "text-offset": [
+          -1,
+          -1
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#991c2e",
+        "text-halo-width": 1
+      },
+      "source-layer": "dt_zzdk_pt",
+      "metadata": {
+        "mapbox:group": "3ad046ebc0f3b"
+      },
+      "visibility": "visible"
+    },
+    {
+      "id": "大棚地块",
+      "source": "dt_dpdk",
+      "type": "line",
+      "minzoom": 11,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#eb15ab",
+        "line-opacity": 1,
+        "line-width": 1.5
+      },
+      "source-layer": "dt_dpdk",
+      "metadata": {
+        "mapbox:group": "3ad046ebc0f3b"
+      },
+      "visibility": "visible"
+    },
+    {
+      "id": "村域",
+      "source": "dt_cy",
+      "type": "line",
+      "minzoom": 11,
+      "maxzoom": 18,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#08cc53",
+        "line-opacity": 1,
+        "line-width": 1.5
+      },
+      "source-layer": "dt_cy",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "all"
+      ]
+    },
+    {
+      "id": "村点",
+      "source": "dt_cy_pt",
+      "type": "symbol",
+      "minzoom": 11,
+      "maxzoom": 18,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 15,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#260021",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "dt_cy_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "all"
+      ]
+    },
+    {
+      "id": "乡镇域",
+      "source": "dt_xzy",
+      "type": "line",
+      "minzoom": 10,
+      "maxzoom": 13,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#fc44f6",
+        "line-opacity": 1,
+        "line-width": 1.2
+      },
+      "source-layer": "dt_xzy",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "all"
+      ]
+    },
+    {
+      "id": "乡镇点",
+      "source": "dt_xzy_pt",
+      "type": "symbol",
+      "minzoom": 9,
+      "maxzoom": 13,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 16,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#0f0f91",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "dt_xzy_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "all"
+      ]
+    },
+    {
+      "id": "县域",
+      "source": "dt_xy",
+      "type": "line",
+      "minzoom": 8,
+      "maxzoom": 10,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#64cdfa",
+        "line-opacity": 1,
+        "line-width": 1.5
+      },
+      "source-layer": "dt_xy",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "县点",
+      "source": "dt_xy_pt",
+      "type": "symbol",
+      "minzoom": 7,
+      "maxzoom": 10,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 16,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ba5507"
+      },
+      "source-layer": "dt_xy_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "地市域",
+      "source": "dt_dsy",
+      "type": "line",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#c98f22",
+        "line-opacity": 1,
+        "line-width": 1.7
+      },
+      "source-layer": "dt_dsy",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "地市点",
+      "source": "dt_dsy_pt",
+      "type": "symbol",
+      "minzoom": 6,
+      "maxzoom": 8,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 17,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "text-halo-color": "#8f2da1",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 1
+      },
+      "source-layer": "dt_dsy_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "省域",
+      "source": "dt_sy",
+      "type": "line",
+      "minzoom": 3,
+      "maxzoom": 7,
+      "layout": {
+        "line-cap": "butt",
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-miter-limit": 2
+      },
+      "paint": {
+        "line-color": "#f5e205",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-blur": 0,
+        "line-offset": 0,
+        "line-gap-width": 0
+      },
+      "source-layer": "dt_sy",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "all"
+      ]
+    },
+    {
+      "id": "省点",
+      "source": "dt_sy_pt",
+      "type": "symbol",
+      "minzoom": 3,
+      "maxzoom": 5,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 18,
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "icon-size": 1,
+        "text-max-width": 10,
+        "text-letter-spacing": 0,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#030003",
+        "text-halo-width": 1.5,
+        "text-halo-blur": 0,
+        "text-halo-color": "#ffffff",
+        "icon-opacity": 1,
+        "icon-halo-width": 0
+      },
+      "source-layer": "dt_sy_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "省会",
+      "source": "dt_sh_pt",
+      "type": "symbol",
+      "minzoom": 5,
+      "maxzoom": 7,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "SimSun Bold"
+        ],
+        "text-size": 17,
+        "icon-size": 0.5,
+        "icon-offset": [
+          2,
+          5
+        ],
+        "text-anchor": "center",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#fcfcfc",
+        "text-halo-width": 0.5,
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#f50f39",
+        "icon-color": "#fcfcfc",
+        "icon-opacity": 1,
+        "icon-halo-color": "#fc0afc"
+      },
+      "source-layer": "dt_sh_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "国界",
+      "source": "dt_gj",
+      "type": "line",
+      "minzoom": 0,
+      "maxzoom": 4,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#ffffff",
+        "line-opacity": 1,
+        "line-width": 1.5
+      },
+      "source-layer": "dt_gj",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      }
+    },
+    {
+      "id": "中国",
+      "source": "dt_gj_pt",
+      "type": "symbol",
+      "minzoom": 1,
+      "maxzoom": 3,
+      "layout": {
+        "text-field": "{qhmc}",
+        "text-font": [
+          "FZHei-B01S Regular"
+        ],
+        "text-size": 18,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-color": "#ffffff",
+        "icon-color": "#d633d6",
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      },
+      "source-layer": "dt_gj_pt",
+      "metadata": {
+        "mapbox:group": "b9f7ce9068f6a"
+      },
+      "filter": [
+        "==",
+        "nf",
+        "2021"
+      ]
+    }
+  ],
+  "transition": {},
+  "pitch": 0,
+  "bearing": 0,
+  "center": [
+    115.060052380686,
+    35.9539179201536
+  ],
+  "version": 8,
+  "tags": [],
+  "type": "normal",
+  "scope": "public",
+  "style_id": "rJg3x0CN_7"
+}

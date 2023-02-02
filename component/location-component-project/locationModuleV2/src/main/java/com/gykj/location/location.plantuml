@@ -1,0 +1,229 @@
+@startuml
+
+title __LOCATION's Class Diagram__\n
+
+  namespace com.gykj.location {
+    class com.gykj.location.CommonService {
+        ~ handler : Handler
+        - interval : int
+        - locationManager : LocationManager
+        - mLocation : Location
+        - minDistance : int
+        - minTime : int
+        + getServiceLocation()
+        + onBind()
+        + onDestroy()
+        + onGpsStatusChanged()
+        + onLocationChanged()
+        + onProviderDisabled()
+        + onProviderEnabled()
+        + onStatusChanged()
+        # doCommandInBackGrounding()
+        # doCommandInBackGroundingInitialize()
+        # doInBackGrounding()
+        # doInBackGroundingInitialize()
+        - getLocation()
+        - listenLoc()
+        - postValue()
+        - updateGpsStatus()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.Gps {
+        - wgLat : double
+        - wgLon : double
+        + Gps()
+        + getWgLat()
+        + getWgLon()
+        + setWgLat()
+        + setWgLon()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.GpsLocationService {
+        ~ handler : Handler
+        - locationManager : LocationManager
+        - mLocation : Location
+        - minDistance : float
+        - minTime : int
+        + getServiceLocation()
+        + onBind()
+        + onDestroy()
+        + onGpsStatusChanged()
+        + onLocationChanged()
+        + onProviderDisabled()
+        + onProviderEnabled()
+        + onStatusChanged()
+        # doCommandInBackGrounding()
+        # doCommandInBackGroundingInitialize()
+        # doInBackGrounding()
+        # doInBackGroundingInitialize()
+        - getLocation()
+        - listenLoc()
+        - makeGnssStatus()
+        - updateGpsStatus()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.GpsLocationService.LocaCallback {
+        + onSatelliteStatusChanged()
+        + onStarted()
+        + onStopped()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.LocationClient {
+        - conn : ServiceConnection
+        {static} - locationClient : LocationClient
+        - mLocationClient : LocationClient
+        - mLocationRegistMap : HashMap<LocationType, ArrayList<HashMap<Context, LocationCallBack>>>
+        {static} + getInstance()
+        + onMainThread()
+        + requestLocation()
+        + startLocation()
+        + stopLocation()
+        + stopTypeLocation()
+        - addLocation2Map()
+        - checkServiceAdd()
+        - hasPermission()
+        - initLocationClient()
+        - isLocationSwitchOpen()
+        - serviceIsAlive()
+        - showSettingSwitchOpenDialog()
+        - showWarnDialog()
+        - stopLocationType()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    enum LocationType {
+      BAIDU
+      COMMON
+      GPS
+      NETWORK
+      type
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.NetLocationService {
+        ~ handler : Handler
+        - interval : int
+        - locationManager : LocationManager
+        - mLocation : Location
+        - minDistance : int
+        - minTime : int
+        + onBind()
+        + onGpsStatusChanged()
+        + onLocationChanged()
+        + onProviderDisabled()
+        + onProviderEnabled()
+        + onStatusChanged()
+        # doCommandInBackGrounding()
+        # doCommandInBackGroundingInitialize()
+        # doInBackGrounding()
+        # doInBackGroundingInitialize()
+        - getLocation()
+        - listenLoc()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.PositionUtil {
+        {static} + a : double
+        {static} - ee : double
+        {static} - pi : double
+        {static} + bd09_To_Gcj02()
+        {static} + bd09_To_Gps84()
+        {static} + gcj02_To_Bd09()
+        {static} + gcj02_To_Gps84()
+        {static} + gps84_To_Dd09()
+        {static} + gps84_To_Gcj02()
+        {static} + outOfChina()
+        {static} + transform()
+        {static} + transformLat()
+        {static} + transformLon()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    class com.gykj.location.ServiceLocation {
+        - gpsSignal : int
+        - latitude : Double
+        - location : Location
+        - locationType : int
+        - longitude : Double
+        - satelliteCount : Integer
+        - satelliteInfo : String
+        - validSatelliteCount : Integer
+        + getGpsSignal()
+        + getLatitude()
+        + getLocation()
+        + getLocationType()
+        + getLongitude()
+        + getSatelliteCount()
+        + getSatelliteInfo()
+        + getValidSatelliteCount()
+        + geteSignal()
+        + setGpsSignal()
+        + setLatitude()
+        + setLocation()
+        + setLocationType()
+        + setLongitude()
+        + setSatelliteCount()
+        + setSatelliteInfo()
+        + setValidSatelliteCount()
+        + seteSignal()
+    }
+  }
+  
+
+  namespace com.gykj.location {
+    enum ESignal {
+      HIGH
+      LOW
+      MIDDLE
+    }
+  }
+  
+
+  com.gykj.location.CommonService .up.|> android.location.GpsStatus.Listener
+  com.gykj.location.CommonService .up.|> android.location.LocationListener
+  com.gykj.location.CommonService -up-|> com.gykj.location.base.BaseService
+  com.gykj.location.CommonService o-- com.gykj.location.ServiceLocation.ESignal : eSignal
+  com.gykj.location.CommonService o-- com.gykj.location.ServiceLocation : serviceLocation
+  com.gykj.location.GpsLocationService .up.|> android.location.GpsStatus.Listener
+  com.gykj.location.GpsLocationService .up.|> android.location.LocationListener
+  com.gykj.location.GpsLocationService -up-|> com.gykj.location.base.BaseService
+  com.gykj.location.GpsLocationService o-- com.gykj.location.GpsLocationService.LocaCallback : mLocaCallback
+  com.gykj.location.GpsLocationService o-- com.gykj.location.ServiceLocation : serviceLocation
+  com.gykj.location.GpsLocationService +-down- com.gykj.location.GpsLocationService.LocaCallback
+  com.gykj.location.GpsLocationService.LocaCallback -up-|> android.location.GnssStatus.Callback
+  com.gykj.location.NetLocationService .up.|> android.location.GpsStatus.Listener
+  com.gykj.location.NetLocationService .up.|> android.location.LocationListener
+  com.gykj.location.NetLocationService -up-|> com.gykj.location.base.BaseService
+  com.gykj.location.NetLocationService o-- com.gykj.location.ServiceLocation : serviceLocation
+  com.gykj.location.ServiceLocation o-- com.gykj.location.ServiceLocation.ESignal : eSignal
+  com.gykj.location.ServiceLocation +-down- com.gykj.location.ServiceLocation.ESignal
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

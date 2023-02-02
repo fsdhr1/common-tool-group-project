@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'com.grandtech.common.component-control'
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    def MAVEN_LOCAL_PATH = 'http://maven1.agribigdata.com.cn/nexus/content/repositories/releases/'
+    def ARTIFACT_ID = 'common_tool_common_dialog'
+    def VERSION_NAME = '0.0.0.8'
+    def GROUP_ID = 'com.grandtech.common'
+    def ACCOUNT = 'admin'
+    def PASSWORD = 'admin123'
+    //脚本：将Lib打成aar包上传至maven私有库
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url:MAVEN_LOCAL_PATH ){
+                    authentication(userName: ACCOUNT, password: PASSWORD)}
+                pom.project {
+                    groupId GROUP_ID
+                    artifactId ARTIFACT_ID
+                    version VERSION_NAME
+                    packaging 'aar'
+                }
+            }
+        }
+    }
+}

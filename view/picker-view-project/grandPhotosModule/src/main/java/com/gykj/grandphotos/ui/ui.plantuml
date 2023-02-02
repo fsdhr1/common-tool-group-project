@@ -1,0 +1,184 @@
+@startuml
+
+title __UI's Class Diagram__\n
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      class com.gykj.grandphotos.ui.GrandPhotosActivity {
+          {static} + startTime : long
+          ~ albumName : String
+          ~ folderPath : String
+          - albumItemList : ArrayList<Object>
+          - currAlbumItemIndex : int
+          - fileSize : int
+          - gridLayoutManager : GridLayoutManager
+          - isQ : boolean
+          - mBottomBar : View
+          - mSecondMenus : LinearLayout
+          - mTempImageFile : File
+          - permissionView : RelativeLayout
+          - photoList : ArrayList<Object>
+          - photoUri : Uri
+          - resultList : ArrayList<GrandPhotoBean>
+          - rootViewAlbumItems : RelativeLayout
+          - rvPhotos : RecyclerView
+          - tvOriginal : TextView
+          - tvPermission : TextView
+          - tvTitle : TextView
+          + cameraIsCanUse()
+          {static} + doubleClick()
+          + onAlbumItemClick()
+          + onBackPressed()
+          + onCameraClick()
+          + onClick()
+          + onPhotoClick()
+          + onRequestPermissionsResult()
+          + onSelectorChanged()
+          + onSelectorOutOfMax()
+          {static} + start()
+          {static} + start()
+          {static} + start()
+          # getNeedPermissions()
+          # onActivityResult()
+          # onCreate()
+          # onDestroy()
+          - adaptationStatusBar()
+          - addNewPhoto()
+          - createCameraTempImageFile()
+          - createImageUri()
+          - done()
+          - getPhoto()
+          - hasPermissions()
+          - hideActionBar()
+          - initAlbumItems()
+          - initSomeViews()
+          - initView()
+          - launchCamera()
+          - onAlbumWorkedDo()
+          - onCameraResult()
+          - onCameraResultForQ()
+          - processOriginalMenu()
+          - resultFast()
+          - setClick()
+          - setClick()
+          - shouldShowMenuDone()
+          - toAndroidCamera()
+          - updatePhotos()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      class com.gykj.grandphotos.ui.PreviewActivity {
+          ~ decorView : View
+          {static} - UI_ANIMATION_DELAY : int
+          - btRouteLeft : ImageView
+          - btRouteRight : ImageView
+          - clickDone : boolean
+          - flFragment : FrameLayout
+          - isSingle : boolean
+          - ivSelector : ImageView
+          - lastPosition : int
+          - lm : LinearLayoutManager
+          - mBottomBar : RelativeLayout
+          - mHideHandler : Handler
+          - mHidePart2Runnable : Runnable
+          - mShowPart2Runnable : Runnable
+          - mToolBar : FrameLayout
+          - mVisible : boolean
+          - photos : ArrayList<GrandPhotoBean>
+          - resultCode : int
+          - rvPhotos : RecyclerView
+          - snapHelper : PagerSnapHelper
+          - statusColor : int
+          - tvNumber : TextView
+          - tvOriginal : TextView
+          - unable : boolean
+          + onBackPressed()
+          + onClick()
+          + onPhotoClick()
+          + onPhotoScaleChanged()
+          + onPreviewPhotoClick()
+          {static} + start()
+          # onCreate()
+          # onStop()
+          - adaptationStatusBar()
+          - doBack()
+          - hide()
+          - hideActionBar()
+          - initData()
+          - initRecyclerView()
+          - initView()
+          - processOriginalMenu()
+          - setClick()
+          - setClick()
+          - shouldShowMenuDone()
+          - show()
+          - singleSelector()
+          - takeImgsRotate()
+          - toggle()
+          - toggleSelector()
+          - updateSelector()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      class com.gykj.grandphotos.ui.PreviewFragment {
+          - rvPhotos : RecyclerView
+          + notifyDataSetChanged()
+          + onAttach()
+          + onCreateView()
+          + onDetach()
+          + onPhotoClick()
+          + setSelectedPosition()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      interface com.gykj.grandphotos.ui.PreviewFragment.OnPreviewFragmentClickListener {
+          {abstract} + onPreviewPhotoClick()
+      }
+    }
+  }
+  
+
+  com.gykj.grandphotos.ui.GrandPhotosActivity .up.|> android.view.View.OnClickListener
+  com.gykj.grandphotos.ui.GrandPhotosActivity .up.|> com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.OnClickListener
+  com.gykj.grandphotos.ui.GrandPhotosActivity .up.|> com.gykj.grandphotos.ui.adapter.PhotosAdapter.OnClickListener
+  com.gykj.grandphotos.ui.GrandPhotosActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.gykj.grandphotos.ui.GrandPhotosActivity o-- com.gykj.grandphotos.ui.dialog.LoadingDialog : loadingDialog
+  com.gykj.grandphotos.ui.GrandPhotosActivity o-- com.gykj.grandphotos.models.album.AlbumModel : albumModel
+  com.gykj.grandphotos.ui.GrandPhotosActivity o-- com.gykj.grandphotos.ui.adapter.PhotosAdapter : photosAdapter
+  com.gykj.grandphotos.ui.GrandPhotosActivity o-- com.gykj.grandphotos.ui.widget.PressedTextView : tvDone
+  com.gykj.grandphotos.ui.GrandPhotosActivity o-- com.gykj.grandphotos.ui.widget.PressedTextView : tvPreview
+  com.gykj.grandphotos.ui.PreviewActivity .up.|> android.view.View.OnClickListener
+  com.gykj.grandphotos.ui.PreviewActivity .up.|> com.gykj.grandphotos.ui.PreviewFragment.OnPreviewFragmentClickListener
+  com.gykj.grandphotos.ui.PreviewActivity .up.|> com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.OnClickListener
+  com.gykj.grandphotos.ui.PreviewActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.gykj.grandphotos.ui.PreviewActivity o-- com.gykj.grandphotos.ui.dialog.LoadingDialog : loadingDialog
+  com.gykj.grandphotos.ui.PreviewActivity o-- com.gykj.grandphotos.ui.PreviewFragment : previewFragment
+  com.gykj.grandphotos.ui.PreviewActivity o-- com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter : topPhotoAdapter
+  com.gykj.grandphotos.ui.PreviewActivity o-- com.gykj.grandphotos.ui.widget.PressedTextView : tvDone
+  com.gykj.grandphotos.ui.PreviewFragment .up.|> com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.OnClickListener
+  com.gykj.grandphotos.ui.PreviewFragment -up-|> androidx.fragment.app.Fragment
+  com.gykj.grandphotos.ui.PreviewFragment o-- com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter : mBottomAdapter
+  com.gykj.grandphotos.ui.PreviewFragment o-- com.gykj.grandphotos.ui.PreviewFragment.OnPreviewFragmentClickListener : mListener
+  com.gykj.grandphotos.ui.PreviewFragment +-down- com.gykj.grandphotos.ui.PreviewFragment.OnPreviewFragmentClickListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

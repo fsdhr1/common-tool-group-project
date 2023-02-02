@@ -1,0 +1,482 @@
+@startuml
+
+title __DATA's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.AxisData {
+          {static} - serialVersionUID : long
+          - value : Object
+          + AxisData()
+          + AxisData()
+          + getTextStyle()
+          + getValue()
+          + setTextStyle()
+          + setValue()
+          + textStyle()
+          + textStyle()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      abstract class com.grandtech.echart.data.BasicData {
+          - name : String
+          {static} - serialVersionUID : long
+          - symbol : Object
+          - symbolSize : Object
+          - text : String
+          - value : Object
+          - x : Object
+          - xAxis : Integer
+          - y : Object
+          - yAxis : Integer
+          + BasicData()
+          + BasicData()
+          + BasicData()
+          + BasicData()
+          + BasicData()
+          + getItemStyle()
+          + getName()
+          + getSymbol()
+          + getSymbolSize()
+          + getText()
+          + getTextStyle()
+          + getType()
+          + getValue()
+          + getX()
+          + getXAxis()
+          + getY()
+          + getYAxis()
+          + itemStyle()
+          + itemStyle()
+          + name()
+          + name()
+          + setItemStyle()
+          + setName()
+          + setSymbol()
+          + setSymbolSize()
+          + setText()
+          + setTextStyle()
+          + setType()
+          + setValue()
+          + setX()
+          + setXAxis()
+          + setY()
+          + setYAxis()
+          + symbol()
+          + symbol()
+          + symbol()
+          + symbolSize()
+          + symbolSize()
+          + text()
+          + text()
+          + textStyle()
+          + textStyle()
+          + type()
+          + type()
+          + value()
+          + value()
+          + value()
+          + x()
+          + x()
+          + xAxis()
+          + xAxis()
+          + y()
+          + y()
+          + yAxis()
+          + yAxis()
+          # BasicData()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.Data {
+          - icon : String
+          - max : Object
+          - min : Object
+          - selected : Boolean
+          - smoothRadian : Double
+          - valueIndex : Integer
+          + Data()
+          + Data()
+          + Data()
+          + Data()
+          + Data()
+          + Data()
+          + getIcon()
+          + getMax()
+          + getMin()
+          + getSelected()
+          + getSmoothRadian()
+          + getTooltip()
+          + getValueIndex()
+          + icon()
+          + icon()
+          + max()
+          + max()
+          + min()
+          + min()
+          + selected()
+          + selected()
+          + setIcon()
+          + setMax()
+          + setMin()
+          + setSelected()
+          + setSmoothRadian()
+          + setTooltip()
+          + setValueIndex()
+          + smoothRadian()
+          + smoothRadian()
+          + tooltip()
+          + tooltip()
+          + valueIndex()
+          + valueIndex()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.GradientColor {
+          - color : Object
+          - offset : Double
+          + GradientColor()
+          + color()
+          + color()
+          + getColor()
+          + getOffset()
+          + offset()
+          + offset()
+          + setColor()
+          + setOffset()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.KData {
+          {static} - serialVersionUID : long
+          - value : Double[]
+          + KData()
+          + getValue()
+          + setValue()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.LegendData {
+          - icon : String
+          - name : String
+          {static} - serialVersionUID : long
+          + LegendData()
+          + LegendData()
+          + LegendData()
+          + getIcon()
+          + getName()
+          + getTextStyle()
+          + icon()
+          + icon()
+          + name()
+          + name()
+          + setIcon()
+          + setName()
+          + setTextStyle()
+          + textStyle()
+          + textStyle()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.LineData {
+          - valueIndex : Integer
+          + LineData()
+          + LineData()
+          + LineData()
+          + LineData()
+          + LineData()
+          + getValueIndex()
+          + setValueIndex()
+          + valueIndex()
+          + valueIndex()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.MapData {
+          - datas : Object
+          - img : Object
+          - name : String
+          - selected : Boolean
+          {static} - serialVersionUID : long
+          - value : Object
+          + MapData()
+          + MapData()
+          + MapData()
+          + MapData()
+          + datas()
+          + getDatas()
+          + getImg()
+          + getName()
+          + getSelected()
+          + getValue()
+          + img()
+          + name()
+          + name()
+          + selected()
+          + selected()
+          + setDatas()
+          + setImg()
+          + setName()
+          + setSelected()
+          + setValue()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.PieData {
+          - name : String
+          {static} - serialVersionUID : long
+          - value : Object
+          + PieData()
+          + getName()
+          + getValue()
+          + setName()
+          + setValue()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.PointData {
+          + PointData()
+          + PointData()
+          + PointData()
+          + PointData()
+          + PointData()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.RadarData {
+          - name : String
+          {static} - serialVersionUID : long
+          - value : Object
+          + RadarData()
+          + getName()
+          + getValue()
+          + setName()
+          + setValue()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.RangeData {
+          - color : Object
+          - end : Integer
+          - label : String
+          {static} - serialVersionUID : long
+          - start : Integer
+          + RangeData()
+          + RangeData()
+          + color()
+          + color()
+          + end()
+          + end()
+          + getColor()
+          + getEnd()
+          + getLabel()
+          + getStart()
+          + label()
+          + label()
+          + setColor()
+          + setEnd()
+          + setLabel()
+          + setStart()
+          + start()
+          + start()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.ScatterData {
+          {static} - serialVersionUID : long
+          - value : List<Object>
+          + ScatterData()
+          + ScatterData()
+          + getValue()
+          + setValue()
+          + value()
+          - value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.SeriesData {
+          {static} - serialVersionUID : long
+          - value : Object
+          + SeriesData()
+          + SeriesData()
+          + SeriesData()
+          + SeriesData()
+          + getItemStyle()
+          + getTooltip()
+          + getValue()
+          + itemStyle()
+          + itemStyle()
+          + setItemStyle()
+          + setTooltip()
+          + setValue()
+          + tooltip()
+          + tooltip()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.TreeData {
+          - children : List<TreeData>
+          - name : String
+          {static} - serialVersionUID : long
+          - symbol : Object
+          - symbolSize : Object
+          - value : Double
+          + TreeData()
+          + TreeData()
+          + TreeData()
+          + children()
+          + children()
+          + getChildren()
+          + getItemStyle()
+          + getName()
+          + getSymbol()
+          + getSymbolSize()
+          + getValue()
+          + itemStyle()
+          + itemStyle()
+          + name()
+          + name()
+          + setChildren()
+          + setItemStyle()
+          + setName()
+          + setSymbol()
+          + setSymbolSize()
+          + setValue()
+          + symbol()
+          + symbol()
+          + symbolSize()
+          + symbolSize()
+          + value()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace data {
+      class com.grandtech.echart.data.WordCloudData {
+          - name : String
+          {static} - serialVersionUID : long
+          - value : Integer
+          + WordCloudData()
+          + WordCloudData()
+          + getItemStyle()
+          + getName()
+          + getValue()
+          + itemStyle()
+          + itemStyle()
+          + name()
+          + name()
+          + setItemStyle()
+          + setName()
+          + setValue()
+          + value()
+          + value()
+      }
+    }
+  }
+  
+
+  com.grandtech.echart.data.AxisData .up.|> java.io.Serializable
+  com.grandtech.echart.data.AxisData o-- com.grandtech.echart.style.TextStyle : textStyle
+  com.grandtech.echart.data.BasicData .up.|> java.io.Serializable
+  com.grandtech.echart.data.BasicData o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.data.BasicData o-- com.grandtech.echart.style.TextStyle : textStyle
+  com.grandtech.echart.data.BasicData o-- com.grandtech.echart.code.MarkType : type
+  com.grandtech.echart.data.Data -up-|> com.grandtech.echart.data.BasicData
+  com.grandtech.echart.data.Data o-- com.grandtech.echart.Tooltip : tooltip
+  com.grandtech.echart.data.KData .up.|> java.io.Serializable
+  com.grandtech.echart.data.LegendData .up.|> java.io.Serializable
+  com.grandtech.echart.data.LegendData o-- com.grandtech.echart.style.TextStyle : textStyle
+  com.grandtech.echart.data.LineData -up-|> com.grandtech.echart.data.BasicData
+  com.grandtech.echart.data.MapData .up.|> java.io.Serializable
+  com.grandtech.echart.data.PieData .up.|> java.io.Serializable
+  com.grandtech.echart.data.PointData -up-|> com.grandtech.echart.data.BasicData
+  com.grandtech.echart.data.RadarData .up.|> java.io.Serializable
+  com.grandtech.echart.data.RangeData .up.|> java.io.Serializable
+  com.grandtech.echart.data.ScatterData .up.|> java.io.Serializable
+  com.grandtech.echart.data.SeriesData .up.|> java.io.Serializable
+  com.grandtech.echart.data.SeriesData o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.data.SeriesData o-- com.grandtech.echart.Tooltip : tooltip
+  com.grandtech.echart.data.TreeData .up.|> java.io.Serializable
+  com.grandtech.echart.data.TreeData o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.data.WordCloudData .up.|> java.io.Serializable
+  com.grandtech.echart.data.WordCloudData o-- com.grandtech.echart.style.ItemStyle : itemStyle
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

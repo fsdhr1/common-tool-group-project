@@ -1,0 +1,579 @@
+@startuml
+
+title __CODE's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Align {
+        auto
+        bottom
+        left
+        right
+        top
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum AxisType {
+        category
+        log
+        time
+        value
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Baseline {
+        bottom
+        middle
+        top
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum BrushType {
+        both
+        fill
+        stroke
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Calculation {
+        average
+        sum
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum ColorMappingBy {
+        id
+        index
+        value
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum ControlPosition {
+        left
+        none
+        right
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum CoordinateSystem {
+        cartesian2d
+        geo
+        polar
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum DataFilter {
+        average
+        max
+        min
+        nearest
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum DataZoomType {
+        inside
+        slider
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Direction {
+        inverse
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Easing {
+        backIn
+        backInOut
+        backOut
+        bounceIn
+        bounceInOut
+        bounceOut
+        circularIn
+        circularInOut
+        circularOut
+        cubicIn
+        cubicInOut
+        cubicOut
+        elasticIn
+        elasticInOut
+        elasticOut
+        exponentialIn
+        exponentialInOut
+        exponentialOut
+        linear
+        quadraticIn
+        quadraticInOut
+        quadraticOut
+        quarticIn
+        quarticInOut
+        quarticOut
+        quinticIn
+        quinticInOut
+        quinticOut
+        sinusoidalIn
+        sinusoidalInOut
+        sinusoidalOut
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum EffectType {
+        ripple
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum FilterMode {
+        empty
+        filter
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum FontStyle {
+        italic
+        normal
+        oblique
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum FontWeight {
+        bold
+        bolder
+        lighter
+        normal
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum GraphicType {
+        arc
+        bezierCurve
+        circle
+        group
+        image
+        line
+        polygon
+        polyline
+        rect
+        ring
+        sector
+        text
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Layout {
+        circular
+        force
+        none
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum LegendType {
+        plain
+        scroll
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum LineType {
+        broken
+        curve
+        dashed
+        dotted
+        solid
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum LinkType {
+        curve
+        line
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum LoadingEffect {
+        bar
+        bubble
+        dynamicLine
+        ring
+        spin
+        whirling
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Magic {
+        bar
+        chord
+        force
+        funnel
+        line
+        pie
+        stack
+        tiled
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum MarkType {
+        average
+        max
+        min
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum NameLocation {
+        end
+        middle
+        start
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum NodeClick {
+        link
+        zoomToNode
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Orient {
+        horizontal
+        vertical
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum PointerType {
+        cross
+        line
+        none
+        shadow
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum PolarType {
+        circle
+        polygon
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Position {
+        bottom
+        center
+        inside
+        left
+        outer
+        outside
+        right
+        top
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Roam {
+        move
+        pan
+        scale
+        zoom
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum RoseType {
+        area
+        radius
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum SelectedMode {
+        multiple
+        single
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum SeriesType {
+        bar
+        boxplot
+        candlestick
+        effectScatter
+        funnel
+        gauge
+        graph
+        heatmap
+        line
+        lines
+        map
+        parallel
+        pie
+        radar
+        sankey
+        scatter
+        treemap
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum ShowEffectOn {
+        emphasis
+        render
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Sort {
+        ascending
+        descending
+        none
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Symbol {
+        arrow
+        auto
+        circle
+        diamond
+        droplet
+        emptyCircle
+        emptyDiamond
+        emptyRectangle
+        emptyTriangle
+        emptyarrow
+        emptydroplet
+        emptyheart
+        emptypin
+        emptystar
+        heart
+        none
+        pin
+        rect
+        rectangle
+        roundRect
+        star
+        triangle
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum TimeLineType {
+        number
+        time
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Tool {
+        dataView
+        dataZoom
+        magicType
+        mark
+        restore
+        saveAsImage
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Trigger {
+        axis
+        item
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum TriggerOn {
+        click
+        mousemove
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum VisualMapType {
+        color
+        colorAlpha
+        colorHue
+        colorLightness
+        colorSaturation
+        symbol
+        symbolSize
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum X {
+        center
+        left
+        right
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace code {
+      enum Y {
+        bottom
+        center
+        top
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    //
+    implementation "com.blankj:utilcodex:1.23.7"
+    implementation ("com.github.bumptech.glide:glide:4.11.0") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    def MAVEN_LOCAL_PATH = 'http://maven1.agribigdata.com.cn/nexus/content/repositories/releases/'
+    def ARTIFACT_ID = 'common_grand_photo_pick'
+    def VERSION_NAME = '0.0.0.4.1'
+    def GROUP_ID = 'com.grandtech.common'
+    def ACCOUNT = 'admin'
+    def PASSWORD = 'admin123'
+
+    //脚本：将Lib打成aar包上传至maven私有库
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url:MAVEN_LOCAL_PATH ){
+                    authentication(userName: ACCOUNT, password: PASSWORD)}
+                pom.project {
+                    groupId GROUP_ID
+                    artifactId ARTIFACT_ID
+                    version VERSION_NAME
+                    packaging 'aar'
+                }
+            }
+        }
+    }
+}
+
+

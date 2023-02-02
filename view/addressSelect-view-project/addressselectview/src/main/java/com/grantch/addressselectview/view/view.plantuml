@@ -1,0 +1,241 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView {
+          - indicator : View
+          - layout_tab : LinearLayout
+          - mCitieList : List<AddressBean>
+          - mContentTextSize : float
+          - mContext : Context
+          - mCountyList : List<AddressBean>
+          - mProvinceList : List<AddressBean>
+          - mStar : String
+          - mTitleTextSize : float
+          - mTownList : List<AddressBean>
+          - mVillageList : List<AddressBean>
+          - pgLoading : ProgressBar
+          - recyclerView : RecyclerView
+          - selectedColor : int
+          - showSlideBar : boolean
+          - textViewCity : TextView
+          - textViewCounty : TextView
+          - textViewProvince : TextView
+          - textViewTown : TextView
+          - textViewVillage : TextView
+          - unSelectedColor : int
+          - view : View
+          + AddressSelectView()
+          + AddressSelectView()
+          + AddressSelectView()
+          + clearLevelSelected()
+          + closeLoading()
+          + dataChanged()
+          + delfultSelectedItem()
+          + onClick()
+          + saveSelectedItem()
+          + setAdapter()
+          + setContentSplitString()
+          + setSelectedColor()
+          + setShowSlideBar()
+          + setUnSelectedColor()
+          + setmContentTextSize()
+          + setmTitleTextSize()
+          + showLoading()
+          - buildIndicatorAnimatorTowards()
+          - changeDataSelect()
+          - getDataByCode()
+          - getHistoryData()
+          - initData()
+          - refreshData()
+          - refreshUi()
+          - setmCurrentLevelByCode()
+          - updateIndicator()
+          - updateTabTextColor()
+          - updateTabTextSize()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView.OnCityTabClickListener {
+          + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView.OnProvinceTabClickListener {
+          + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView.OnTownTabClickListener {
+          + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView.OnVillageTabClickListener {
+          + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.AddressSelectView.onCountyTabClickListener {
+          + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      interface com.grantch.addressselectview.view.AddressView {
+          {abstract} + clearLevelSelected()
+          {abstract} + closeLoading()
+          {abstract} + dataChanged()
+          {abstract} + delfultSelectedItem()
+          {abstract} + saveSelectedItem()
+          {abstract} + showLoading()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.DLSideBar {
+          - mChoose : int
+          - mContext : Context
+          - mDialogTextBackground : Drawable
+          - mDialogTextBackgroundHeight : int
+          - mDialogTextBackgroundWidth : int
+          - mDialogTextColor : int
+          - mDialogTextSize : float
+          - mSideBackground : Drawable
+          - mSideSelectTextPaint : Paint
+          - mSideTextColor : int
+          - mSideTextPaint : Paint
+          - mSideTextSelectColor : int
+          - mSideTextSize : float
+          - mStringArray : CharSequence[]
+          + DLSideBar()
+          + DLSideBar()
+          + DLSideBar()
+          + dispatchTouchEvent()
+          + setOnTouchingLetterChangedListener()
+          + setStringArray()
+          # onDraw()
+          # onMeasure()
+          - initData()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      interface com.grantch.addressselectview.view.DLSideBar.OnTouchingLetterChangedListener {
+          {abstract} + onTouchingLetterChanged()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.DLTextDialog {
+          - RL : RelativeLayout
+          - TXT : TextView
+          - select_dialog : Dialog
+          + DLTextDialog()
+          + dismissD()
+          + showD()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      interface com.grantch.addressselectview.view.rvDecoration {
+          {abstract} + getHeaderPosition()
+          {abstract} + getHeaderRect()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace view {
+      class com.grantch.addressselectview.view.rvItemDecoration {
+          - mHeaderPosition : int
+          - mHeaderRect : Rect
+          + getHeaderPosition()
+          + getHeaderRect()
+          + getItemOffsets()
+          + onDrawOver()
+          - ensurePinnedHeaderViewLayout()
+          - getPinnedHeaderViewPosition()
+      }
+    }
+  }
+  
+
+  com.grantch.addressselectview.view.AddressSelectView .up.|> com.grantch.addressselectview.base.BaseRecycleAdapter.IViewClickListener
+  com.grantch.addressselectview.view.AddressSelectView .up.|> com.grantch.addressselectview.view.AddressView
+  com.grantch.addressselectview.view.AddressSelectView -up-|> android.widget.RelativeLayout
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.adapter.AddreassSelectorAdapter : addreassSelectorAdapter
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.adapter.AddressViewAdapter : mAdapter
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.AddressBean : mCity
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.AddressBean : mCounty
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.LevelType : mCurrentLevel
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.LevelType : mMaxLevel
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.LevelType : mMinLevel
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.AddressBean : mProvince
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.view.DLSideBar : mSideBarView
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.AddressBean : mTown
+  com.grantch.addressselectview.view.AddressSelectView o-- com.grantch.addressselectview.data.AddressBean : mVillage
+  com.grantch.addressselectview.view.AddressSelectView +-down- com.grantch.addressselectview.view.AddressSelectView.OnCityTabClickListener
+  com.grantch.addressselectview.view.AddressSelectView +-down- com.grantch.addressselectview.view.AddressSelectView.OnProvinceTabClickListener
+  com.grantch.addressselectview.view.AddressSelectView +-down- com.grantch.addressselectview.view.AddressSelectView.OnTownTabClickListener
+  com.grantch.addressselectview.view.AddressSelectView +-down- com.grantch.addressselectview.view.AddressSelectView.OnVillageTabClickListener
+  com.grantch.addressselectview.view.AddressSelectView +-down- com.grantch.addressselectview.view.AddressSelectView.onCountyTabClickListener
+  com.grantch.addressselectview.view.AddressSelectView.OnCityTabClickListener .up.|> android.view.View.OnClickListener
+  com.grantch.addressselectview.view.AddressSelectView.OnProvinceTabClickListener .up.|> android.view.View.OnClickListener
+  com.grantch.addressselectview.view.AddressSelectView.OnTownTabClickListener .up.|> android.view.View.OnClickListener
+  com.grantch.addressselectview.view.AddressSelectView.OnVillageTabClickListener .up.|> android.view.View.OnClickListener
+  com.grantch.addressselectview.view.AddressSelectView.onCountyTabClickListener .up.|> android.view.View.OnClickListener
+  com.grantch.addressselectview.view.DLSideBar -up-|> android.view.View
+  com.grantch.addressselectview.view.DLSideBar o-- com.grantch.addressselectview.view.DLTextDialog : mTextDialog
+  com.grantch.addressselectview.view.DLSideBar o-- com.grantch.addressselectview.view.DLSideBar.OnTouchingLetterChangedListener : onTouchingLetterChangedListener
+  com.grantch.addressselectview.view.DLSideBar +-down- com.grantch.addressselectview.view.DLSideBar.OnTouchingLetterChangedListener
+  com.grantch.addressselectview.view.rvItemDecoration .up.|> com.grantch.addressselectview.view.rvDecoration
+  com.grantch.addressselectview.view.rvItemDecoration -up-|> androidx.recyclerview.widget.RecyclerView.ItemDecoration
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

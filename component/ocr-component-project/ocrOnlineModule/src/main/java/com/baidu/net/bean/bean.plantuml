@@ -1,0 +1,935 @@
+@startuml
+
+title __BEAN's Class Diagram__\n
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BankCardResultBean {
+          + log_id : long
+          + getLog_id()
+          + getResult()
+          + setLog_id()
+          + setResult()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BankCardResultBean.Result {
+          + bank_card_number : String
+          + bank_card_type : int
+          + bank_name : String
+          + valid_date : String
+          + getBank_card_number()
+          + getBank_card_type()
+          + getBank_name()
+          + getValid_date()
+          + setBank_card_number()
+          + setBank_card_type()
+          + setBank_name()
+          + setValid_date()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean {
+          + log_id : long
+          + words_result_num : int
+          + getLog_id()
+          + getWords_result_num()
+          + setLog_id()
+          + setWords_result_num()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH {
+          + words : String
+          + getWords()
+          + setWords()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+          + getHeight()
+          + getLeft()
+          + getTop()
+          + getWidth()
+          + setHeight()
+          + setLeft()
+          + setTop()
+          + setWidth()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.DataResponse {
+          - code : int
+          - datas : List<T>
+          - message : String
+          - msg : String
+          + addData()
+          {static} + convert()
+          + getCode()
+          + getData()
+          + getDatas()
+          + getMessage()
+          + getMsg()
+          + isFail()
+          + isSuccess()
+          + setCode()
+          + setData()
+          + setMessage()
+          + setMsg()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean {
+          + direction : int
+          + image_status : String
+          + log_id : long
+          + words_result_num : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean {
+          + contentType : String
+          + direction : int
+          + image_status : String
+          + log_id : long
+          + words_result_num : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.Address {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.Address.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.MZ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.MZ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.QFJG {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.QFJG.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.SFZH {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.SFZH.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.XB {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.XB.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.XM {
+          + words : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.IDCardResultBean.Words_result.XM.Location {
+          + height : int
+          + left : int
+          + top : int
+          + width : int
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.OCRError {
+          + contentType : String
+          # errorCode : int
+          # errorMessage : String
+          + getErrorCode()
+          + getErrorMessage()
+          + setErrorCode()
+          + setErrorMessage()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.ResultBean {
+          + log_id : long
+          + result : List<Result>
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.ResultBean.Baike_info {
+          + baike_url : String
+          + description : String
+          + image_url : String
+      }
+    }
+  }
+  
+
+  namespace com.baidu.net {
+    namespace bean {
+      class com.baidu.net.bean.ResultBean.Result {
+          + bank_card_type : int
+          + name : String
+          + score : Double
+      }
+    }
+  }
+  
+
+  com.baidu.net.bean.BankCardResultBean .up.|> java.io.Serializable
+  com.baidu.net.bean.BankCardResultBean o-- com.baidu.net.bean.BankCardResultBean.Result : result
+  com.baidu.net.bean.BankCardResultBean +-down- com.baidu.net.bean.BankCardResultBean.Result
+  com.baidu.net.bean.BankCardResultBean.Result .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result : words_result
+  com.baidu.net.bean.BusinessLicenseResultBean +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC : 单位名称
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ : 地址
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ : 成立日期
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ : 有效期
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR : 法人
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB : 注册资本
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum : 社会信用代码
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX : 类型
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS : 组成形式
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW : 经营范围
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH : 证件编号
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CLRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.CerNum.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DWMC.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.DZ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.FR.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.JYFW.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.LX.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.YXQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCXS.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZCZB.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH .up.|> java.io.Serializable
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH o-- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH.Location : location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH +-down- com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH.Location
+  com.baidu.net.bean.BusinessLicenseResultBean.Words_result.ZJBH.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.DataResponse o-- T : data
+  com.baidu.net.bean.IDCardBackResultBean .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean o-- com.baidu.net.bean.IDCardBackResultBean.Words_result : words_result
+  com.baidu.net.bean.IDCardBackResultBean +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result
+  com.baidu.net.bean.IDCardBackResultBean.Words_result .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ : 失效日期
+  com.baidu.net.bean.IDCardBackResultBean.Words_result o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ : 签发日期
+  com.baidu.net.bean.IDCardBackResultBean.Words_result o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG : 签发机关
+  com.baidu.net.bean.IDCardBackResultBean.Words_result +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG
+  com.baidu.net.bean.IDCardBackResultBean.Words_result +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ
+  com.baidu.net.bean.IDCardBackResultBean.Words_result +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG.Location : location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG.Location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFJG.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ.Location : location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ.Location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.QFRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ o-- com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ.Location : location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ +-down- com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ.Location
+  com.baidu.net.bean.IDCardBackResultBean.Words_result.SXRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean o-- com.baidu.net.bean.IDCardResultBean.Words_result : words_result
+  com.baidu.net.bean.IDCardResultBean +-down- com.baidu.net.bean.IDCardResultBean.Words_result
+  com.baidu.net.bean.IDCardResultBean.Words_result .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.Address : 住址
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.SFZH : 公民身份号码
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ : 出生
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ : 失效日期
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.XM : 姓名
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.XB : 性别
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.MZ : 民族
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ : 签发日期
+  com.baidu.net.bean.IDCardResultBean.Words_result o-- com.baidu.net.bean.IDCardResultBean.Words_result.QFJG : 签发机关
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.Address
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.MZ
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.QFJG
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.SFZH
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.XB
+  com.baidu.net.bean.IDCardResultBean.Words_result +-down- com.baidu.net.bean.IDCardResultBean.Words_result.XM
+  com.baidu.net.bean.IDCardResultBean.Words_result.Address .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.Address o-- com.baidu.net.bean.IDCardResultBean.Words_result.Address.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.Address +-down- com.baidu.net.bean.IDCardResultBean.Words_result.Address.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.Address.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ o-- com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ +-down- com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.CSRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.MZ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.MZ o-- com.baidu.net.bean.IDCardResultBean.Words_result.MZ.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.MZ +-down- com.baidu.net.bean.IDCardResultBean.Words_result.MZ.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.MZ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFJG .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFJG o-- com.baidu.net.bean.IDCardResultBean.Words_result.QFJG.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFJG +-down- com.baidu.net.bean.IDCardResultBean.Words_result.QFJG.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFJG.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ o-- com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ +-down- com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.QFRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.SFZH .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.SFZH o-- com.baidu.net.bean.IDCardResultBean.Words_result.SFZH.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.SFZH +-down- com.baidu.net.bean.IDCardResultBean.Words_result.SFZH.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.SFZH.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ o-- com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ +-down- com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.SXRQ.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.XB .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.XB o-- com.baidu.net.bean.IDCardResultBean.Words_result.XB.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.XB +-down- com.baidu.net.bean.IDCardResultBean.Words_result.XB.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.XB.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.XM .up.|> java.io.Serializable
+  com.baidu.net.bean.IDCardResultBean.Words_result.XM o-- com.baidu.net.bean.IDCardResultBean.Words_result.XM.Location : location
+  com.baidu.net.bean.IDCardResultBean.Words_result.XM +-down- com.baidu.net.bean.IDCardResultBean.Words_result.XM.Location
+  com.baidu.net.bean.IDCardResultBean.Words_result.XM.Location .up.|> java.io.Serializable
+  com.baidu.net.bean.ResultBean .up.|> java.io.Serializable
+  com.baidu.net.bean.ResultBean +-down- com.baidu.net.bean.ResultBean.Baike_info
+  com.baidu.net.bean.ResultBean +-down- com.baidu.net.bean.ResultBean.Result
+  com.baidu.net.bean.ResultBean.Baike_info .up.|> java.io.Serializable
+  com.baidu.net.bean.ResultBean.Result .up.|> java.io.Serializable
+  com.baidu.net.bean.ResultBean.Result o-- com.baidu.net.bean.ResultBean.Baike_info : baike_info
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

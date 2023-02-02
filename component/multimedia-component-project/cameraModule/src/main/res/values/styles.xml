@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="camera_module_PopupAnimBottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/camera_module_anim_enter_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/camera_module_anim_exit_from_bottom</item>
+    </style>
+
+</resources>

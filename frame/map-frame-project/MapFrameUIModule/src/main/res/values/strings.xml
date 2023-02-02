@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MapFrameUI</string>
+
+    <string name="tool_add">添加</string>
+    <string name="tool_draw">绘制</string>
+    <string name="tool_merge">合并</string>
+    <string name="tool_cut">分割</string>
+    <string name="tool_dig">扣除</string>
+    <string name="tool_sketch_cancel">绘制结束</string>
+    <string name="tool_sketch_cando">绘制后退</string>
+    <string name="tool_sketch_undo">绘制前退</string>
+    <string name="tool_sketch_save">绘制保存</string>
+    <string name="tool_sketch_add">绘制加点</string>
+    <string name="tool_isearch">i查询</string>
+    <string name="tool_imageswitching">影像切换</string>
+    <string name="tool_in">放大</string>
+    <string name="tool_out">缩小</string>
+    <string name="tool_loc">定位</string>
+    <string name="tool_nav">工具栏收缩</string>
+
+</resources>

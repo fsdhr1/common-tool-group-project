@@ -1,0 +1,172 @@
+@startuml
+
+title __UTILS's Class Diagram__\n
+
+  namespace com.gykj.arcgistool {
+    namespace utils {
+      class com.gykj.arcgistool.utils.ArcGisMeasure {
+          - context : Context
+          - lengthList : List<Double>
+          - lineLength : double
+          - mapView : MapView
+          - tmpLengthList : List<Double>
+          + ArcGisMeasure()
+          + clearMeasure()
+          + endMeasure()
+          + nextDraw()
+          + prevDraw()
+          + setAreaType()
+          + setLengthType()
+          + setSpatialReference()
+          + startMeasuredArea()
+          + startMeasuredArea()
+          + startMeasuredLength()
+          + startMeasuredLength()
+          - drawScreenPoint()
+          - drawScreenPoint()
+          - showArea()
+          - showLength()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.arcgistool {
+    namespace utils {
+      class com.gykj.arcgistool.utils.Draw {
+          {static} - MAX_POINT_COUNT : int
+          - context : Context
+          - drawLineGraphicOverlay : GraphicsOverlay
+          - drawPointGraphicOverlay : GraphicsOverlay
+          - drawPolygonGraphicOverlay : GraphicsOverlay
+          - drawTextGraphicOverlay : GraphicsOverlay
+          - isNext : boolean
+          - isPrev : boolean
+          - lineGraphic : List<GraphicsOverlay>
+          - lineSymbol : SimpleLineSymbol
+          - mapView : MapView
+          - pointGraphic : List<GraphicsOverlay>
+          - pointGroup : List<List<Point>>
+          - pointList : List<Point>
+          - pointSymbol : SimpleMarkerSymbol
+          - polygonGraphic : List<GraphicsOverlay>
+          - polygonSymbol : SimpleFillSymbol
+          - spatialReference : SpatialReference
+          - textGraphic : List<GraphicsOverlay>
+          - textList : List<TextSymbol>
+          - textPointList : List<Graphic>
+          - textSymbol : TextSymbol
+          - tmpPointList : List<Point>
+          - tmpTextList : List<TextSymbol>
+          - tmpTextPointList : List<Graphic>
+          + Draw()
+          + getEndPoint()
+          # clear()
+          # drawByGisPoint()
+          # drawByScreenPoint()
+          # drawByScreenPoint()
+          # drawPointByGisPoint()
+          # drawText()
+          # endDraw()
+          # nextDraw()
+          # prevDraw()
+          # screenToPoint()
+          # setSpatialReference()
+          # startLine()
+          # startPoint()
+          # startPolygon()
+          - allDraw()
+          - drawLine()
+          - drawLineByGisPoint()
+          - drawLineByGisPoint()
+          - drawLineByGisPoint()
+          - drawLineByScreenPoint()
+          - drawLineByScreenPoint()
+          - drawPoint()
+          - drawPointByGisPoint()
+          - drawPointByGisPoint()
+          - drawPointByScreenPoint()
+          - drawPointByScreenPoint()
+          - drawPolygon()
+          - drawPolygonByGisPoint()
+          - drawPolygonByGisPoint()
+          - drawPolygonByScreenPoint()
+          - drawPolygonByScreenPoint()
+          - drawText()
+          - getFristPoint()
+          - getLastPoint()
+          - getPointSize()
+          - getSpatialReference()
+          - getTextSymbol()
+          - init()
+          - removeAllGraphics()
+          - removePrevGraphics()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.arcgistool {
+    namespace utils {
+      class com.gykj.arcgistool.utils.GraphicDraw {
+          - context : Context
+          - drawGraphicOverlay : GraphicsOverlay
+          - lineSymbol : SimpleLineSymbol
+          - mapView : MapView
+          - pointGraphicOverlay : GraphicsOverlay
+          - pointList : List<Point>
+          - pointSymbol : SimpleMarkerSymbol
+          - simpleFillSymbol : SimpleFillSymbol
+          + GraphicDraw()
+          + clearGraphics()
+          + drawBox()
+          + drawing()
+          + endDraw()
+          + getDrawListener()
+          + getGraphType()
+          + hasEnd()
+          + init()
+          + setDrawListener()
+          + setGraphType()
+          + startDraw()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.arcgistool {
+    namespace utils {
+      class com.gykj.arcgistool.utils.Util {
+          {static} + areaChange()
+          {static} + areaFormat()
+          {static} + forMatDouble()
+          {static} + lengthChange()
+          {static} + lengthEnameToCname()
+          {static} + lengthFormat()
+          {static} + m2ToA2()
+          {static} + m2ToHm2()
+          {static} + m2ToKm2()
+          {static} + mToKm()
+          {static} + valueToSp()
+      }
+    }
+  }
+  
+
+  com.gykj.arcgistool.utils.ArcGisMeasure -up-|> com.gykj.arcgistool.utils.Draw
+  com.gykj.arcgistool.utils.ArcGisMeasure o-- com.gykj.arcgistool.common.DrawType : drawType
+  com.gykj.arcgistool.utils.ArcGisMeasure o-- com.gykj.arcgistool.common.Measure : measureAreaType
+  com.gykj.arcgistool.utils.ArcGisMeasure o-- com.gykj.arcgistool.common.Measure : measureLengthType
+  com.gykj.arcgistool.utils.Draw o-- com.gykj.arcgistool.common.DrawType : drawType
+  com.gykj.arcgistool.utils.GraphicDraw o-- com.gykj.arcgistool.listener.IDrawListener : drawListener
+  com.gykj.arcgistool.utils.GraphicDraw o-- com.gykj.arcgistool.common.GraphType : graphType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

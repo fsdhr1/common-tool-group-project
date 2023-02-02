@@ -1,0 +1,205 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      class com.grandtech.mapframe.ui.view.DragLayout {
+          {static} - TAG : String
+          - context : Context
+          - index : int
+          - viewMoveHolders : List<ViewMoveHolder>
+          - views : List<View>
+          + DragLayout()
+          + DragLayout()
+          + DragLayout()
+          + addView()
+          + addView()
+          + dispatchTouchEvent()
+          + onInterceptTouchEvent()
+          + onTouchEvent()
+          # onFinishInflate()
+          - childNeedTouchEvent()
+          - getMoveViewReady()
+          - getView()
+          - init()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      interface com.grandtech.mapframe.ui.view.DragLayout.INeedTouchEventView {
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      class com.grandtech.mapframe.ui.view.DragLayout.ViewDragCallBack {
+          ~ id : int
+          ~ layoutParams : LayoutParams
+          ~ left : int
+          ~ top : int
+          ~ view : View
+          + ViewDragCallBack()
+          + clampViewPositionHorizontal()
+          + clampViewPositionVertical()
+          + getViewHorizontalDragRange()
+          + getViewVerticalDragRange()
+          + onViewDragStateChanged()
+          + tryCaptureView()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      interface com.grandtech.mapframe.ui.view.IToolView {
+          {abstract} + canPutNavigate()
+          {abstract} + getExclusionToolNames()
+          {abstract} + getToolViewRoot()
+          {abstract} + getmToolName()
+          {abstract} + isChecked()
+          {abstract} + isExclusion()
+          {abstract} + isMapSketchTool()
+          {abstract} + setChecked()
+          {abstract} + setIClick()
+          {abstract} + setILongClick()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      interface com.grandtech.mapframe.ui.view.IToolView.IClick {
+          {abstract} + toolViewClick()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      interface com.grandtech.mapframe.ui.view.IToolView.ILongClick {
+          {abstract} + toolViewLongClick()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      class com.grandtech.mapframe.ui.view.ToolGroupLayout {
+          - childEventIntercept : boolean
+          - mToolGroupName : String
+          + ToolGroupLayout()
+          + ToolGroupLayout()
+          + ToolGroupLayout()
+          + ToolGroupLayout()
+          + getToolGroupName()
+          + getToolViewByName()
+          + getToolViews()
+          + isChildEventIntercept()
+          + onInterceptTouchEvent()
+          + setChildEventIntercept()
+          + setToolGroupName()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      class com.grandtech.mapframe.ui.view.ToolView {
+          ~ mCanPutNavigate : boolean
+          ~ mIsMapSketchTool : boolean
+          ~ mIsNormalBnt : boolean
+          {static} - CHECKED_STATE_SET : int[]
+          - _dix : double
+          - _x : float
+          - _y : float
+          - imageView : ImageView
+          - interval : long
+          - isCheck : boolean
+          - mExclusionToolNames : List<String>
+          - mInitOk : boolean
+          - mIsExclusion : Boolean
+          - mNormalRes : int
+          - mPressedRes : int
+          - mToolName : String
+          - pressedTint : int
+          - startTime : long
+          - textView : TextView
+          + ToolView()
+          + ToolView()
+          + ToolView()
+          + ToolView()
+          + ToolView()
+          + addExclusionToolName()
+          + canPutNavigate()
+          + getExclusionToolNames()
+          + getImageView()
+          + getTextView()
+          + getToolViewRoot()
+          + getmToolName()
+          + isChecked()
+          + isExclusion()
+          + isMapSketchTool()
+          + onCreateDrawableState()
+          + onTouch()
+          + setChecked()
+          + setIClick()
+          + setILongClick()
+          + setIcon()
+          + setIsExclusion()
+          + setNormalBnt()
+          + setToolName()
+          # init()
+          - postCheckForLongTouch()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      class com.grandtech.mapframe.ui.view.ToolView.LongPressRunnable {
+          - x : int
+          - y : int
+          + run()
+          + setPressLocation()
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.ui.view.DragLayout -up-|> android.widget.RelativeLayout
+  com.grandtech.mapframe.ui.view.DragLayout +-down- com.grandtech.mapframe.ui.view.DragLayout.INeedTouchEventView
+  com.grandtech.mapframe.ui.view.DragLayout +-down- com.grandtech.mapframe.ui.view.DragLayout.ViewDragCallBack
+  com.grandtech.mapframe.ui.view.DragLayout.ViewDragCallBack -up-|> androidx.customview.widget.ViewDragHelper.Callback
+  com.grandtech.mapframe.ui.view.IToolView +-down- com.grandtech.mapframe.ui.view.IToolView.IClick
+  com.grandtech.mapframe.ui.view.IToolView +-down- com.grandtech.mapframe.ui.view.IToolView.ILongClick
+  com.grandtech.mapframe.ui.view.ToolGroupLayout -up-|> android.widget.LinearLayout
+  com.grandtech.mapframe.ui.view.ToolView .up.|> android.view.View.OnTouchListener
+  com.grandtech.mapframe.ui.view.ToolView .up.|> com.grandtech.mapframe.ui.view.IToolView
+  com.grandtech.mapframe.ui.view.ToolView -up-|> android.widget.LinearLayout
+  com.grandtech.mapframe.ui.view.ToolView o-- com.grandtech.mapframe.ui.view.IToolView.IClick : iClick
+  com.grandtech.mapframe.ui.view.ToolView o-- com.grandtech.mapframe.ui.view.IToolView.ILongClick : iLongClick
+  com.grandtech.mapframe.ui.view.ToolView o-- com.grandtech.mapframe.ui.view.ToolView.LongPressRunnable : longPressRunnable
+  com.grandtech.mapframe.ui.view.ToolView +-down- com.grandtech.mapframe.ui.view.ToolView.LongPressRunnable
+  com.grandtech.mapframe.ui.view.ToolView.LongPressRunnable .up.|> java.lang.Runnable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,224 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        class com.gykj.cameramodule.activity.camera.view.CameraSurfaceView {
+            {static} + BACK : int
+            {static} + FRONT : int
+            {static} - TAG : String
+            - currentCameraType : int
+            - holder : SurfaceHolder
+            - jpeg : PictureCallback
+            - mCamera : Camera
+            - mContext : Context
+            - mScreenHeight : int
+            - mScreenWidth : int
+            - raw : PictureCallback
+            - shutter : ShutterCallback
+            - zoom : int
+            + CameraSurfaceView()
+            + CameraSurfaceView()
+            + CameraSurfaceView()
+            {static} + LCM()
+            + changeCamera()
+            + getCamera()
+            + getCurrentCameraType()
+            + getMaxZoom()
+            + getZoom()
+            + onAutoFocus()
+            + releaseCamera()
+            + setAutoFocus()
+            + setIPhotoCallBack()
+            + setZoom()
+            + surfaceChanged()
+            + surfaceCreated()
+            + surfaceDestroyed()
+            + switchCamera()
+            + switchFlashMode()
+            + takePhoto()
+            + takePicture()
+            - equalRate()
+            - getPicturSize()
+            - getProperBestSize()
+            - getProperSize()
+            - getScreenMetrix()
+            - initView()
+            - openCamera()
+            - setCameraParams()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        interface com.gykj.cameramodule.activity.camera.view.CameraSurfaceView.IPhotoCallBack {
+            {abstract} + getPhotoResult()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        interface com.gykj.cameramodule.activity.camera.view.ICameraOperation {
+            {abstract} + getMaxZoom()
+            {abstract} + getZoom()
+            {abstract} + releaseCamera()
+            {abstract} + setZoom()
+            {abstract} + switchCamera()
+            {abstract} + switchFlashMode()
+            {abstract} + takePhoto()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        class com.gykj.cameramodule.activity.camera.view.RectOnCamera {
+            {static} + BACK : int
+            {static} + FRONT : int
+            ~ azimuth : double
+            ~ dateStr : String
+            ~ handler : Handler
+            ~ listenDirection : boolean
+            ~ panelHigh : int
+            ~ pitch : double
+            ~ roll : double
+            ~ rotate : int
+            ~ textArray : String[]
+            ~ textX : int
+            ~ textY : int
+            ~ waterMarks : Object[]
+            {static} - MODE_INIT : int
+            {static} - MODE_ZOOM : int
+            {static} - TAG : String
+            - accelerometer : Sensor
+            - accelerometerValues : float[]
+            - bottomPadding : int
+            - cameraOrientation : String
+            - centerPoint : Point
+            - context : Context
+            {static} - currentCameraType : int
+            - delay : int
+            - interval : int
+            - isOrdinary : boolean
+            - lastOrientation : int
+            - mPaint : Paint
+            - mPaintText : Paint
+            - mRectF : RectF
+            - mSensorManager : SensorManager
+            - magnetic : Sensor
+            - magneticFieldValues : float[]
+            - mode : int
+            - orientation : int
+            - orientationEvent : OrientationEventListener
+            - radio : int
+            - screenHeight : int
+            - screenWidth : int
+            - startDis : double
+            - str : String
+            - task : TimerTask
+            - timer : Timer
+            + RectOnCamera()
+            + RectOnCamera()
+            + RectOnCamera()
+            + getJustRotate()
+            + getOrientation()
+            + getRotate()
+            + getWaterMark()
+            + listenDirection()
+            + onAccuracyChanged()
+            + onCreate()
+            + onPause()
+            + onResume()
+            + onSensorChanged()
+            + onTouchEvent()
+            + setCameraSurfaceView()
+            {static} + setCurrentCameraType()
+            + setIAutoFocus()
+            + setIsOrdinary()
+            + setOrientation()
+            + setWaterMark()
+            # onDetachedFromWindow()
+            # onDraw()
+            - calculateCameraOrientation()
+            - computePhoneGesture()
+            - countTime()
+            - getScreenMetrix()
+            - initView()
+            - spacing()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        interface com.gykj.cameramodule.activity.camera.view.RectOnCamera.IAutoFocus {
+            {abstract} + autoFocus()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        class com.gykj.cameramodule.activity.camera.view.RectOnCamera.OrientationListener {
+            + OrientationListener()
+            + onOrientationChanged()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.camera {
+      namespace view {
+        interface com.gykj.cameramodule.activity.camera.view.Rotatable {
+            {abstract} + setOrientation()
+        }
+      }
+    }
+  }
+  
+
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView .up.|> android.hardware.Camera.AutoFocusCallback
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView .up.|> android.view.SurfaceHolder.Callback
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView .up.|> com.gykj.cameramodule.activity.camera.view.ICameraOperation
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView -up-|> android.view.SurfaceView
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView o-- com.gykj.cameramodule.activity.camera.view.CameraSurfaceView.IPhotoCallBack : iPhotoCallBack
+  com.gykj.cameramodule.activity.camera.view.CameraSurfaceView +-down- com.gykj.cameramodule.activity.camera.view.CameraSurfaceView.IPhotoCallBack
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera .up.|> android.hardware.SensorEventListener
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera .up.|> com.gykj.cameramodule.activity.camera.view.Rotatable
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera -up-|> android.view.View
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera o-- com.gykj.cameramodule.activity.camera.view.CameraSurfaceView : cameraSurfaceView
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera o-- com.gykj.cameramodule.activity.camera.view.RectOnCamera.IAutoFocus : mIAutoFocus
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera +-down- com.gykj.cameramodule.activity.camera.view.RectOnCamera.IAutoFocus
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera +-down- com.gykj.cameramodule.activity.camera.view.RectOnCamera.OrientationListener
+  com.gykj.cameramodule.activity.camera.view.RectOnCamera.OrientationListener -up-|> android.view.OrientationEventListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="map_ui">
+        <attr name="map_ui_tool_name" format="string" />
+        <attr name="map_ui_tool_group_name" format="string" />
+        <attr name="map_ui_normal" format="reference" />
+        <attr name="map_ui_pressed" format="reference" />
+        <attr name="map_ui_isNormalBnt" format="boolean" />
+        <attr name="map_ui_isExclusion" format="boolean"/>
+        <attr name="map_ui_isMapSketchTool" format="boolean" />
+        <attr name="map_ui_canPutNavigate" format="boolean" />
+        <attr name="map_ui_pressed_tint" format="color"/>
+    </declare-styleable>
+    <!--底部弹出布局-->
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr name="umanoPanelHeight" format="dimension" />
+        <attr name="umanoShadowHeight" format="dimension" />
+        <attr name="umanoParallaxOffset" format="dimension" />
+        <attr name="umanoFadeColor" format="color" />
+        <attr name="umanoFlingVelocity" format="integer" />
+        <attr name="umanoDragView" format="reference" />
+        <attr name="umanoScrollableView" format="reference" />
+        <attr name="umanoOverlay" format="boolean" />
+        <attr name="umanoClipPanel" format="boolean" />
+        <attr name="umanoAnchorPoint" format="float" />
+        <attr name="umanoInitialState" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+        <attr name="umanoScrollInterpolator" format="reference" />
+    </declare-styleable>
+</resources>

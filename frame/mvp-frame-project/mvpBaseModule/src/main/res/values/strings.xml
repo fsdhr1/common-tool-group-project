@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">mvp_module</string>
+    <string name="no_network_connection">没有网络连接</string>
+</resources>

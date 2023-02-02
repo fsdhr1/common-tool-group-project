@@ -1,0 +1,87 @@
+{
+  "updatedAt": "2018-10-25T07:31:08.240Z",
+  "createdAt": "2018-10-22T08:43:43.949Z",
+  "owner": "gykj",
+  "name": "坐落图底图",
+  "zoom": 16,
+  "sources": {
+    "satellite": {
+      "type": "raster",
+      "tiles": ["http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=583e63953a6ed6bf304e68120db4c512"],
+      "minzoom": 5,
+      "maxzoom": 16,
+      "tileSize": 256
+    },
+
+    "starsource": {
+      "type": "geojson",
+      "data": {}
+    }
+  },
+  "glyphs": "https://api.grandtechmap.com/grandtech-middleground-vectile-wgs/fonts/gykj/FZHei-B01S%20Regular/0-255.pbf",
+  "layers": [{
+    "id": "背景",
+    "type": "background",
+    "paint": {
+      "background-color": "#0a0a0a"
+    }
+  }, {
+    "id": "卫星影像",
+    "type": "raster",
+    "source": "satellite",
+    "layout": {
+      "visibility": "visible"
+    }
+  }, {
+    "id": "地块",
+    "source": "dksource",
+    "type": "line",
+    "layout": {
+      "visibility": "visible"
+    },
+    "paint": {
+      "line-color": "red",
+      "line-opacity": 1,
+      "line-width": 2
+    }
+  }, {
+    "id": "标注",
+    "source": "symsource",
+    "type": "symbol",
+    "layout": {
+      "text-field": "{label}",
+      "text-font": ["FZHei-B01S Regular"],
+      "text-size": 14,
+      "text-anchor": ["get", "anchor"],
+      "visibility": "visible"
+    },
+    "paint": {
+      "text-color": "#ffffff"
+    }
+  }, {
+    "id": "星标",
+    "source": "starsource",
+    "type": "symbol",
+    "layout": {
+      "text-field": "{label}",
+      "text-font": ["FZHei-B01S Regular"],
+      "text-size": 14,
+      "text-anchor": ["get", "anchor"],
+      "visibility": "visible"
+    },
+    "paint": {
+      "text-color": "#FF0000"
+    }
+  }],
+  "transition": {
+    "delay": 0,
+    "duration": 50
+  },
+  "pitch": 0,
+  "bearing": 0,
+  "center": [130.0448710055212, 38.26746694145149],
+  "version": 8,
+  "type": "normal",
+  "scope": "private",
+  "style_id": "BkdpaZoi7"
+}

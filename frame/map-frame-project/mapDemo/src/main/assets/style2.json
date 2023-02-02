@@ -1,0 +1,199 @@
+{
+  "updatedAt": "2018-10-25T07:31:08.240Z",
+  "createdAt": "2018-10-22T08:43:43.949Z",
+  "owner": "gykj",
+  "name": "坐落图底图",
+  "zoom": 16,
+  "sources": {
+    "satellite": {
+      "type": "raster",
+      "tiles": ["http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=583e63953a6ed6bf304e68120db4c512"],
+      "minzoom": 5,
+      "maxzoom": 16,
+      "tileSize": 256
+    },
+    "dksource": {
+      "type": "geojson",
+      "data": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [113.7198687, 32.9625819],
+              [113.7205607, 32.9625234],
+              [113.7212741, 32.9624874],
+              [113.721258, 32.9624604],
+              [113.7211776, 32.9613937],
+              [113.7211561, 32.9613757],
+              [113.7205178, 32.9613577],
+              [113.7204695, 32.9613892],
+              [113.7204695, 32.9614882],
+              [113.7195843, 32.9616458],
+              [113.7195951, 32.9616908],
+              [113.7198687, 32.9625819]
+            ]
+          ]
+        },
+        "properties": {
+          "objectid": 94645536,
+          "qhdm": "411702201204",
+          "qhmc": "老河乡八里许村",
+          "dkbm": "4117022012040176",
+          "provincecode": "41",
+          "citycode": "4117",
+          "mj": 25,
+          "towncode": "411702201",
+          "countycode": "411702"
+        }
+      }
+    },
+    "symsource": {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7205178, 32.9613577]
+          },
+          "properties": {
+            "label": "113.720518\n32.961358",
+            "anchor": "top-left"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7195843, 32.9616458]
+          },
+          "properties": {
+            "label": "113.719584\n32.961646",
+            "anchor": "top-right"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7195951, 32.9616908]
+          },
+          "properties": {
+            "label": "113.719595\n32.961691",
+            "anchor": "top-right"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7198687, 32.9625819]
+          },
+          "properties": {
+            "label": "113.719869\n32.962582",
+            "anchor": "bottom-right"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7212741, 32.9624874]
+          },
+          "properties": {
+            "label": "113.721274\n32.962487",
+            "anchor": "bottom-left"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7211776, 32.9613937]
+          },
+          "properties": {
+            "label": "113.721178\n32.961394",
+            "anchor": "top-left"
+          }
+        }, {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.7211561, 32.9613757]
+          },
+          "properties": {
+            "label": "113.721156\n32.961376",
+            "anchor": "top-left"
+          }
+        }]
+      }
+    },
+    "starsource": {
+      "type": "geojson",
+      "data": {}
+    }
+  },
+  "glyphs": "https://api.grandtechmap.com/grandtech-middleground-vectile-wgs/fonts/gykj/FZHei-B01S%20Regular/0-255.pbf",
+  "layers": [{
+    "id": "背景",
+    "type": "background",
+    "paint": {
+      "background-color": "#0a0a0a"
+    }
+  }, {
+    "id": "卫星影像",
+    "type": "raster",
+    "source": "satellite",
+    "layout": {
+      "visibility": "visible"
+    }
+  }, {
+    "id": "地块",
+    "source": "dksource",
+    "type": "line",
+    "layout": {
+      "visibility": "visible"
+    },
+    "paint": {
+      "line-color": "red",
+      "line-opacity": 1,
+      "line-width": 2
+    }
+  }, {
+    "id": "标注",
+    "source": "symsource",
+    "type": "symbol",
+    "layout": {
+      "text-field": "{label}",
+      "text-font": ["FZHei-B01S Regular"],
+      "text-size": 14,
+      "text-anchor": ["get", "anchor"],
+      "visibility": "visible"
+    },
+    "paint": {
+      "text-color": "#ffffff"
+    }
+  }, {
+    "id": "星标",
+    "source": "starsource",
+    "type": "symbol",
+    "layout": {
+      "text-field": "{label}",
+      "text-font": ["FZHei-B01S Regular"],
+      "text-size": 14,
+      "text-anchor": ["get", "anchor"],
+      "visibility": "visible"
+    },
+    "paint": {
+      "text-color": "#FF0000"
+    }
+  }],
+  "transition": {
+    "delay": 0,
+    "duration": 50
+  },
+  "pitch": 0,
+  "bearing": 0,
+  "center": [130.0448710055212, 38.26746694145149],
+  "version": 8,
+  "type": "normal",
+  "scope": "private",
+  "style_id": "BkdpaZoi7"
+}

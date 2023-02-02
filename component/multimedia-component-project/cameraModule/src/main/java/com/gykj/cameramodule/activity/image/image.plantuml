@@ -1,0 +1,149 @@
+@startuml
+
+title __IMAGE's Class Diagram__\n
+
+  namespace com.gykj.cameramodule {
+    namespace activity.image {
+      class com.gykj.cameramodule.activity.image.ImageViewPager {
+          {static} + IMAGES_LIST_EXTRA : String
+          {static} + IMAGES_LIST_POSITION_EXTRA : String
+          - mCurImageUrl : String
+          - mCurPosition : int
+          - mImages : ArrayList<ImagePagerBean>
+          - mToolbar : Toolbar
+          - mTvDesc : TextView
+          - mViewPager : ViewPager
+          - savePath : String
+          {static} + start()
+          {static} + start()
+          # onCreate()
+          - saveBitmap()
+          - setNumTitle()
+          - showListDialog()
+          - showOrHideText()
+          - showOrHideToolbar()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.image {
+      class com.gykj.cameramodule.activity.image.ImgDirPopWindow {
+          ~ _imgFolderBeans : List<ImgFolderBean>
+          ~ _rvImgDir : RecyclerView
+          ~ _tvClose : TextView
+          ~ iViewClickListener : IViewClickListener<ImgFolderBean>
+          + ImgDirPopWindow()
+          + initialize()
+          + onClick()
+          + registerEvent()
+          + setContentView()
+          + setImgFolderBeans()
+          + setiViewClickListener()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.cameramodule {
+    namespace activity.image {
+      class com.gykj.cameramodule.activity.image.ImgPickActivity {
+          # MANIFEST_PERMISSION : String[]
+          ~ _contentResolver : ContentResolver
+          ~ _cursor : Cursor
+          ~ _dirPaths : HashSet<String>
+          ~ _imgDir : File
+          ~ _imgNames : List<String>
+          ~ _imgUri : Uri
+          ~ _listImgFolders : List<ImgFolderBean>
+          ~ _picsSize : int
+          ~ _serviceLocation : ServiceLocation
+          ~ azimuth : double
+          ~ pitch : double
+          ~ roll : double
+          - _rvImgPicker : RecyclerView
+          - _tvChooseDir : TextView
+          - _tvPreview : TextView
+          - accelerometer : Sensor
+          - accelerometerValues : float[]
+          - areaName : String
+          - areaNameUrl : String
+          - backgroundColorTitle : String
+          - bw : String
+          - cameraOrientation : String
+          - dateStr : String
+          - dj : String
+          - isAddMark : boolean
+          - isHideTitle : boolean
+          - iv_back : ImageView
+          - ll_title : LinearLayout
+          - mAreaCode : String
+          - mAreaName : String
+          - mBasePath : String
+          - mExtendName : String
+          - mFirstPath : String
+          - mIsOrdinary : boolean
+          - mSensorManager : SensorManager
+          - magnetic : Sensor
+          - magneticFieldValues : float[]
+          - waterMark : String
+          - waterMarkerText : String
+          + finish()
+          + onAccuracyChanged()
+          + onBackPressed()
+          + onClick()
+          + onClick()
+          + onDismiss()
+          + onEventMainThread()
+          + onLongViewClick()
+          + onPermissionsAllGranted()
+          + onPermissionsDenied()
+          + onPermissionsGranted()
+          + onRequestPermissionsResult()
+          + onSensorChanged()
+          # initClass()
+          # initialize()
+          # onActivityResult()
+          # onCreate()
+          # onDestroy()
+          # registerEvent()
+          - addMarkerAndfinish()
+          - calculateCameraOrientation()
+          - computePhoneGesture()
+          - confirm()
+          - getImgFromFolder()
+          - initSensor()
+          - openImageViewPager()
+          - scanImgDir()
+          - scanSystemImg()
+      }
+    }
+  }
+  
+
+  com.gykj.cameramodule.activity.image.ImageViewPager -up-|> androidx.appcompat.app.AppCompatActivity
+  com.gykj.cameramodule.activity.image.ImageViewPager o-- com.gykj.cameramodule.adapter.ViewPagerAdapter : mPagerAdapter
+  com.gykj.cameramodule.activity.image.ImgDirPopWindow .up.|> android.view.View.OnClickListener
+  com.gykj.cameramodule.activity.image.ImgDirPopWindow -up-|> com.gykj.base.popwindow.BasePopWin
+  com.gykj.cameramodule.activity.image.ImgDirPopWindow o-- com.gykj.cameramodule.adapter.ImgFolderAdapter : _imgFolderAdapter
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> android.hardware.SensorEventListener
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> android.view.View.OnClickListener
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> android.widget.PopupWindow.OnDismissListener
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> com.gykj.base.adapter.BaseRecycleAdapter.ILongViewClickListener
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> com.gykj.base.adapter.BaseRecycleAdapter.IViewClickListener
+  com.gykj.cameramodule.activity.image.ImgPickActivity .up.|> com.gykj.utils.EasyPermissions.PermissionCallbacks
+  com.gykj.cameramodule.activity.image.ImgPickActivity -up-|> com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+  com.gykj.cameramodule.activity.image.ImgPickActivity o-- com.gykj.cameramodule.bean.ImgFolderBean : _imgFolderBean
+  com.gykj.cameramodule.activity.image.ImgPickActivity o-- com.gykj.cameramodule.adapter.ImgPickAdapter : _imgPickAdapter
+  com.gykj.cameramodule.activity.image.ImgPickActivity o-- com.gykj.cameramodule.activity.image.ImgDirPopWindow : imgDirPopWindow
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

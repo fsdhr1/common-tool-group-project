@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 100%"></div>
+<script type="text/javascript" src="./echarts.js"></script>
+<script type="text/javascript">
+            var dom =document.getElementById("container");
+            var myChart =echarts.init(dom);
+            var app ={};
+            echarts.registerMap("db",);
+            function loadEcharts(echartJson,mapGeojson){
+             var geojson = JSON.parse(mapGeojson);
+             echarts.registerMap("db",geojson);
+                debugger
+              var option = JSON.parse(echartJson);
+              option.series[2].symbol = function (value, params) {
+                        return params.data.img;
+                    };
+                    option.series[3].label.normal.formatter = function (params) {
+                                var name = params.name;
+                                var value = params.data.datas;
+                                var text = `{fline|${value}}\n{tline|${name}}`;
+                                return text;
+                            };
+                option.series[1].itemStyle.normal.color = function (params) {
+                    var colorList = [
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#64fbc5',
+                            },
+                            {
+                                offset: 1,
+                                color: '#018ace',
+                            },
+                        ]),
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#64fbc5',
+                            },
+                            {
+                                offset: 1,
+                                color: '#018ace',
+                            },
+                        ]),
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#168e6d',
+                            },
+                            {
+                                offset: 1,
+                                color: '#c78d7b',
+                            },
+                        ]),
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#61c0f1',
+                            },
+                            {
+                                offset: 1,
+                                color: '#6f2eb6',
+                            },
+                        ]),
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#168e6d',
+                            },
+                            {
+                                offset: 1,
+                                color: '#c78d7b',
+                            },
+                        ]),
+                        new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            {
+                                offset: 0,
+                                color: '#61c0f1',
+                            },
+                            {
+                                offset: 1,
+                                color: '#6f2eb6',
+                            },
+                        ]),
+                    ];
+                    return colorList[params.dataIndex];
+                };
+                if (option &&typeof option ==="object") {
+                    myChart.setOption(option,true);
+                }
+            }
+
+</script>
+</body>
+</html>

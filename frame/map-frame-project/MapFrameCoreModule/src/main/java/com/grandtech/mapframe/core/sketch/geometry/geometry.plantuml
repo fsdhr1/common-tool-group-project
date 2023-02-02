@@ -1,0 +1,299 @@
+@startuml
+
+title __GEOMETRY's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.LineSegment {
+            + pt1 : PointF
+            + pt2 : PointF
+            + LineSegment()
+            + LineSegment()
+            + getMidPoint()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SPointF {
+            - geoIp : StringBuilder
+            + SPointF()
+            + SPointF()
+            + SPointF()
+            + SPointF()
+            + SPointF()
+            + SPointF()
+            + addIp()
+            + getGeoIp()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchGeometry {
+            ~ alpha : float
+            ~ fillColor : int
+            ~ mapboxMap : MapboxMap
+            ~ strokeColor : int
+            ~ width : float
+            - geoIp : String
+            - geoIpSb : StringBuilder
+            - sketchGeometry : Geometry
+            + addGeometry()
+            + appendPoint2Geometry()
+            + checkGeoTouchMode()
+            + clearFromMap()
+            + computeDefaultGeoId()
+            {static} + create()
+            {static} + create()
+            {static} + create()
+            + drawToMap()
+            + editGeometry()
+            + getGeometry()
+            + getRubberAnchor()
+            + getRubberAnchorGeometry()
+            + getSketchGeometry()
+            + getSketchType()
+            + smartCreateGeometry()
+            - SketchGeometry()
+            - SketchGeometry()
+            - SketchGeometry()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchLineString {
+            ~ alpha : float
+            ~ isRing : boolean
+            ~ mSketchPoints : List<SketchPoint>
+            ~ pointFS : List<PointF>
+            ~ points : List<Point>
+            ~ polylineOptions : PolylineOptions
+            ~ strokeColor : int
+            ~ vSketchPoints : List<SketchPoint>
+            ~ width : float
+            + SketchLineString()
+            + bbox()
+            + clearFromMap()
+            + coordinates()
+            + drawToMap()
+            {static} + fromGeometry()
+            {static} + fromGeometry()
+            {static} + fromLngLats()
+            {static} + fromLngLats()
+            + getAlpha()
+            + getMSketchPoints()
+            + getPolylineOptions()
+            + getStrokeColor()
+            + getVSketchPoints()
+            + getWidth()
+            + isRing()
+            + setAlpha()
+            + setMSketchPoints()
+            + setRing()
+            + setStrokeColor()
+            + setVSketchPoints()
+            + setWidth()
+            + toJson()
+            + type()
+            - setPolylineOptions()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchMultiLineString {
+            ~ alpha : float
+            ~ pointFS : List<List<PointF>>
+            ~ points : List<List<Point>>
+            ~ sketchLineStrings : List<SketchLineString>
+            ~ strokeColor : int
+            ~ width : float
+            + SketchMultiLineString()
+            + bbox()
+            + coordinates()
+            {static} + fromGeometry()
+            {static} + fromLngLats()
+            + getAlpha()
+            + getSketchLineStrings()
+            + getStrokeColor()
+            + getWidth()
+            + setAlpha()
+            + setSketchLineStrings()
+            + setStrokeColor()
+            + setWidth()
+            + toJson()
+            + type()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchMultiPoint {
+            ~ points : List<Point>
+            - sketchPoints : List<SketchPoint>
+            + SketchMultiPoint()
+            + bbox()
+            + coordinates()
+            {static} + fromGeometry()
+            {static} + fromLngLats()
+            + getSketchPoints()
+            + toJson()
+            + type()
+            - setSketchPoints()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchMultiPolygon {
+            ~ alpha : float
+            ~ fillColor : int
+            ~ points : List<List<List<Point>>>
+            ~ strokeColor : int
+            ~ width : float
+            - sketchPolygons : List<SketchPolygon>
+            + SketchMultiPolygon()
+            + bbox()
+            + clearFromMap()
+            + coordinates()
+            + drawToMap()
+            {static} + fromGeometry()
+            {static} + fromLngLats()
+            + getAlpha()
+            + getFillColor()
+            + getSketchPolygons()
+            + getStrokeColor()
+            + getWidth()
+            + setAlpha()
+            + setFillColor()
+            + setStrokeColor()
+            + setWidth()
+            + toJson()
+            + type()
+            {static} - open2DimensionRing()
+            {static} - open3DimensionRing()
+            - setSketchPolygons()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchPoint {
+            {static} + C_POINT : int
+            {static} + M_POINT : int
+            {static} + V_POINT : int
+            ~ point : Point
+            ~ pointType : int
+            - symbolType : MarkerOptions
+            + SketchPoint()
+            + bbox()
+            + coordinates()
+            {static} + fromGeometry()
+            {static} + fromLngLat()
+            + getPointType()
+            + getSymbolType()
+            + setPointType()
+            + toJson()
+            + type()
+            - setSymbolType()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      namespace geometry {
+        class com.grandtech.mapframe.core.sketch.geometry.SketchPolygon {
+            ~ alpha : float
+            ~ fillColor : int
+            ~ points : List<List<Point>>
+            ~ polygonOptions : PolygonOptions
+            ~ sketchLineStrings : List<SketchLineString>
+            ~ strokeColor : int
+            ~ width : float
+            + bbox()
+            + clearFromMap()
+            + coordinates()
+            + drawToMap()
+            {static} + fromGeometry()
+            {static} + fromLngLats()
+            + getAlpha()
+            + getFillColor()
+            + getPolygonOptions()
+            + getSketchLineStrings()
+            + getStrokeColor()
+            + getWidth()
+            + setAlpha()
+            + setFillColor()
+            + setPolygonOptions()
+            + setStrokeColor()
+            + setWidth()
+            + toJson()
+            + type()
+            - SketchPolygon()
+            {static} - open2DimensionRing()
+            - setSketchLineStrings()
+        }
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.core.sketch.geometry.SPointF -up-|> android.graphics.PointF
+  com.grandtech.mapframe.core.sketch.geometry.SketchGeometry .up.|> java.lang.Cloneable
+  com.grandtech.mapframe.core.sketch.geometry.SketchGeometry o-- com.grandtech.mapframe.core.enumeration.GeometryType : sketchType
+  com.grandtech.mapframe.core.sketch.geometry.SketchLineString .up.|> com.mapbox.geojson.Geometry
+  com.grandtech.mapframe.core.sketch.geometry.SketchLineString .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiLineString .up.|> com.mapbox.geojson.Geometry
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiLineString .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiPoint .up.|> com.mapbox.geojson.Geometry
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiPoint .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiPolygon .up.|> com.mapbox.geojson.Geometry
+  com.grandtech.mapframe.core.sketch.geometry.SketchMultiPolygon .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.geometry.SketchPoint .up.|> com.mapbox.geojson.CoordinateContainer
+  com.grandtech.mapframe.core.sketch.geometry.SketchPoint .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.geometry.SketchPolygon .up.|> com.mapbox.geojson.Geometry
+  com.grandtech.mapframe.core.sketch.geometry.SketchPolygon .up.|> java.io.Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,190 @@
+@startuml
+
+title __NETWORKMODULE's Class Diagram__\n
+
+  namespace com.gykj.networkmodule {
+    interface com.gykj.networkmodule.IBaseApi {
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.NetworkHelper {
+        {static} - applicationSoftReference : SoftReference<Application>
+        {static} - handlerMap : Map<Object, RequestHandler>
+        {static} - mDefaultSuccessCode : Set<Integer>
+        {static} - mManagerHashMap : ConcurrentHashMap<Object, RetrofitManager>
+        {static} - mNetworkHelper : NetworkHelper
+        - networkMap : ConcurrentHashMap<Observable, Disposable>
+        {static} + addDefaultSuccessCode()
+        {static} + addGlobalHeader()
+        {static} + addNetInterceptor()
+        {static} + addNetInterceptor()
+        + cancelAllRequest()
+        {static} + create()
+        {static} + getInstance()
+        + getNetworkMap()
+        + getRequestHandler()
+        + getRequestHandler()
+        {static} + init()
+        {static} + init()
+        + request()
+        + request()
+        {static} + setToken()
+        # isHaveNetworkRequest()
+        - NetworkHelper()
+        - getRequestUrl()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.NetworkHelper.InvokeRequestHandler {
+        - mNetWorkResult : NetWorkResult<R>
+        - obj : Object
+        + InvokeRequestHandler()
+        + invoke()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    interface com.gykj.networkmodule.NetworkHelper.NetWorkResult {
+        + onError()
+        {abstract} + onRequestEnd()
+        {abstract} + onRequestInvoke()
+        + onStart()
+        {abstract} + onSuccess()
+        + onSuccess()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.OkHttpEvent {
+        + apiSuccess : boolean
+        + dnsEndTime : long
+        + dnsStartTime : long
+        + errReson : String
+        + responseBodySize : long
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.OkHttpEventListener {
+        {static} + FACTORY : Factory
+        + OkHttpEventListener()
+        + callEnd()
+        + callFailed()
+        + callStart()
+        + connectEnd()
+        + connectFailed()
+        + connectStart()
+        + connectionAcquired()
+        + connectionReleased()
+        + dnsEnd()
+        + dnsStart()
+        + requestBodyEnd()
+        + requestBodyStart()
+        + requestHeadersEnd()
+        + requestHeadersStart()
+        + responseBodyEnd()
+        + responseBodyStart()
+        + responseHeadersEnd()
+        + responseHeadersStart()
+        + secureConnectEnd()
+        + secureConnectStart()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.OrderedRequests {
+        - mRequestBuilders : RequestBuilder[]
+        + request()
+        ~ OrderedRequests()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    interface com.gykj.networkmodule.RealApi {
+        {abstract} + value()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.RequestBuilder {
+        - clazz : Class
+        - hashObj : Object
+        - mMethod : Method
+        - params : List<Object>
+        + RequestBuilder()
+        + callBack()
+        + postRequest()
+        + preRequest()
+        + request()
+        ~ postChainRequest()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.RequestHandler {
+        - hashObj : Object
+        + RequestHandler()
+        + buildOrderedRequest()
+        + buildRequest()
+        ~ RequestHandler()
+        - genRequestBuilder()
+        {static} - getArgsType()
+    }
+  }
+  
+
+  namespace com.gykj.networkmodule {
+    class com.gykj.networkmodule.RetrofitManager {
+        + CONNECT_TIMEOUT : long
+        + READ_TIMEOUT : long
+        + WRITE_TIMEOUT : long
+        {static} - AVOID_HTTP403_FORBIDDEN : String
+        {static} - CACHE_STALE_SEC : long
+        - baseUrl : String
+        - customerInterceptors : Set<Interceptor>
+        {static} - globalHeaders : Map<String, String>
+        {static} - gson : Gson
+        {static} - mLoggingInterceptor : HttpLoggingInterceptor
+        - mOkHttpClient : OkHttpClient
+        - mRewriteCacheControlInterceptor : Interceptor
+        - token : String
+        ~ RetrofitManager()
+        ~ addGlobalHeader()
+        ~ addNetInterceptor()
+        ~ create()
+        ~ getBaseUrl()
+        ~ getToken()
+        ~ setBaseUrl()
+        ~ setToken()
+        - getOkHttpClient()
+    }
+  }
+  
+
+  com.gykj.networkmodule.NetworkHelper +-down- com.gykj.networkmodule.NetworkHelper.InvokeRequestHandler
+  com.gykj.networkmodule.NetworkHelper +-down- com.gykj.networkmodule.NetworkHelper.NetWorkResult
+  com.gykj.networkmodule.NetworkHelper.InvokeRequestHandler .up.|> java.lang.reflect.InvocationHandler
+  com.gykj.networkmodule.OkHttpEventListener -up-|> okhttp3.EventListener
+  com.gykj.networkmodule.OkHttpEventListener o-- com.gykj.networkmodule.OkHttpEvent : mOkHttpEvent
+  com.gykj.networkmodule.RequestBuilder o-- com.gykj.networkmodule.NetworkHelper.NetWorkResult : mNetWorkResult
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,765 @@
+@startuml
+
+title __DATABASE's Class Diagram__\n
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.DatabaseObjectNotClosedException {
+            {static} - s : String
+            + DatabaseObjectNotClosedException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteAbortException {
+            + SQLiteAbortException()
+            + SQLiteAbortException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        abstract class org.spatialite.database.SQLiteClosable {
+            - mLock : Object
+            - mReferenceCount : int
+            + acquireReference()
+            + releaseReference()
+            + releaseReferenceFromContainer()
+            {abstract} # onAllReferencesReleased()
+            # onAllReferencesReleasedFromContainer()
+            - getObjInfo()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCompiledSql {
+            ~ mDatabase : SQLiteDatabase
+            ~ nHandle : int
+            ~ nStatement : int
+            {static} - TAG : String
+            - mInUse : boolean
+            - mSqlStmt : String
+            - mStackTrace : Throwable
+            # finalize()
+            ~ SQLiteCompiledSql()
+            ~ acquire()
+            ~ release()
+            ~ releaseSqlStatement()
+            - compile()
+            - native_compile()
+            - native_finalize()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteConstraintException {
+            + SQLiteConstraintException()
+            + SQLiteConstraintException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteContentHelper {
+            {static} + getBlobColumnAsAssetFile()
+            {static} - simpleQueryForBlobMemoryFile()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursor {
+            {static} ~ NO_COUNT : int
+            {static} ~ TAG : String
+            - mColumnNameMap : Map<String, Integer>
+            - mColumns : String[]
+            - mCount : int
+            - mCursorState : int
+            - mDatabase : SQLiteDatabase
+            - mDriver : SQLiteCursorDriver
+            - mEditTable : String
+            - mInitialRead : int
+            - mLock : ReentrantLock
+            - mMaxRead : int
+            - mPendingData : boolean
+            - mQuery : SQLiteQuery
+            - mStackTrace : Throwable
+            + SQLiteCursor()
+            + close()
+            + commitUpdates()
+            + deactivate()
+            + deleteRow()
+            + fillWindow()
+            + getColumnIndex()
+            + getColumnNames()
+            + getCount()
+            + getDatabase()
+            + onMove()
+            + registerDataSetObserver()
+            + requery()
+            + setLoadStyle()
+            + setSelectionArguments()
+            + setWindow()
+            + supportsUpdates()
+            # finalize()
+            - deactivateCommon()
+            - fillWindow()
+            - queryThreadLock()
+            - queryThreadUnlock()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursor.MainThreadNotificationHandler {
+            + handleMessage()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursor.QueryThread {
+            - mThreadState : int
+            + run()
+            ~ QueryThread()
+            - sendMessage()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        interface org.spatialite.database.SQLiteCursorDriver {
+            {abstract} + cursorClosed()
+            {abstract} + cursorDeactivated()
+            {abstract} + cursorRequeried()
+            {abstract} + query()
+            {abstract} + setBindArguments()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabase {
+            {static} + CONFLICT_ABORT : int
+            {static} + CONFLICT_FAIL : int
+            {static} + CONFLICT_IGNORE : int
+            {static} + CONFLICT_NONE : int
+            {static} + CONFLICT_REPLACE : int
+            {static} + CONFLICT_ROLLBACK : int
+            {static} + CREATE_IF_NECESSARY : int
+            {static} + MAX_SQL_CACHE_SIZE : int
+            {static} + NO_LOCALIZED_COLLATORS : int
+            {static} + OPEN_READONLY : int
+            {static} + OPEN_READWRITE : int
+            {static} + SPATIALITE_ANDROID_VERSION : String
+            {static} + SQLITE_MAX_LIKE_PATTERN_LENGTH : int
+            {static} ~ GET_LOCK_LOG_PREFIX : String
+            ~ mCompiledQueries : Map<String, SQLiteCompiledSql>
+            ~ mNativeHandle : int
+            ~ mTempTableSequence : int
+            {static} - COMMIT_SQL : String
+            {static} - CONFLICT_VALUES : String[]
+            {static} - EMAIL_IN_DB_PATTERN : Pattern
+            {static} - EVENT_DB_CORRUPT : int
+            {static} - EVENT_DB_OPERATION : int
+            {static} - KEY_ENCODING : String
+            {static} - LOCK_ACQUIRED_WARNING_THREAD_TIME_IN_MS : int
+            {static} - LOCK_ACQUIRED_WARNING_TIME_IN_MS : int
+            {static} - LOCK_ACQUIRED_WARNING_TIME_IN_MS_ALWAYS_PRINT : int
+            {static} - LOCK_WARNING_WINDOW_IN_MS : int
+            {static} - LOG_SLOW_QUERIES_PROPERTY : String
+            {static} - MAX_WARNINGS_ON_CACHESIZE_CONDITION : int
+            {static} - OPEN_READ_MASK : int
+            {static} - QUERY_LOG_SQL_LENGTH : int
+            {static} - SLEEP_AFTER_YIELD_QUANTUM : int
+            {static} - TAG : String
+            - mCacheFullWarnings : int
+            - mErrorHandler : DatabaseErrorHandler
+            - mFlags : int
+            - mInnerTransactionIsSuccessful : boolean
+            - mLastLockMessageTime : long
+            - mLastSqlStatement : String
+            - mLock : ReentrantLock
+            - mLockAcquiredThreadTime : long
+            - mLockAcquiredWallTime : long
+            - mLockingEnabled : boolean
+            - mMaxSqlCacheSize : int
+            - mNumCacheHits : int
+            - mNumCacheMisses : int
+            - mPath : String
+            - mPathForLogs : String
+            - mPrograms : WeakHashMap<SQLiteClosable, Object>
+            - mRandom : Random
+            - mSlowQueryThreshold : int
+            - mStackTrace : Throwable
+            - mSyncUpdateInfo : Map<String, SyncUpdateInfo>
+            - mTimeClosed : String
+            - mTimeOpened : String
+            - mTransactionIsSuccessful : boolean
+            - mTransactionListener : SQLiteTransactionListener
+            {static} - sActiveDatabases : WeakHashMap<SQLiteDatabase, Object>
+            {static} - sQueryLogTimeInMillis : int
+            + SQLiteDatabase()
+            + SQLiteDatabase()
+            + beginTransaction()
+            + beginTransactionWithListener()
+            + changePassword()
+            + changePassword()
+            + close()
+            + compileStatement()
+            {static} + create()
+            {static} + create()
+            + delete()
+            + endTransaction()
+            + execSQL()
+            + execSQL()
+            {static} + findEditTable()
+            + getMaxSqlCacheSize()
+            + getMaximumSize()
+            + getPageSize()
+            + getPath()
+            + getSyncedTables()
+            + getVersion()
+            + inTransaction()
+            + insert()
+            + insertOrThrow()
+            + insertWithOnConflict()
+            + isDbLockedByCurrentThread()
+            + isDbLockedByOtherThreads()
+            + isInCompiledSqlCache()
+            + isOpen()
+            + isReadOnly()
+            {static} + loadLibs()
+            {static} + loadLibs()
+            + markTableSyncable()
+            + markTableSyncable()
+            + needUpgrade()
+            {static} + openDatabase()
+            {static} + openDatabase()
+            {static} + openDatabase()
+            {static} + openDatabase()
+            {static} + openDatabase()
+            {static} + openDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            {static} + openOrCreateDatabase()
+            + purgeFromCompiledSqlCache()
+            + query()
+            + query()
+            + query()
+            + queryWithFactory()
+            + rawExecSQL()
+            + rawQuery()
+            + rawQuery()
+            + rawQueryWithFactory()
+            {static} + releaseMemory()
+            + replace()
+            + replaceOrThrow()
+            + resetCompiledSqlCache()
+            {static} + setICURoot()
+            + setLocale()
+            + setLockingEnabled()
+            + setMaxSqlCacheSize()
+            + setMaximumSize()
+            + setPageSize()
+            + setTransactionSuccessful()
+            + setVersion()
+            + status()
+            + update()
+            + updateWithOnConflict()
+            + yieldIfContended()
+            + yieldIfContendedSafely()
+            + yieldIfContendedSafely()
+            # finalize()
+            # onAllReferencesReleased()
+            ~ addSQLiteClosable()
+            ~ addToCompiledQueries()
+            ~ getCompiledStatementForSql()
+            {static} ~ getDbStats()
+            ~ lastChangeCount()
+            ~ lastInsertRow()
+            ~ lock()
+            ~ logTimeStat()
+            ~ logTimeStat()
+            ~ native_execSQL()
+            ~ native_setLocale()
+            ~ onCorruption()
+            ~ removeSQLiteClosable()
+            ~ rowUpdated()
+            ~ unlock()
+            - SQLiteDatabase()
+            - checkLockHoldTime()
+            - closeClosable()
+            - dbclose()
+            - dbopen()
+            - deallocCachedSqlStatements()
+            - enableSqlProfiling()
+            - enableSqlTracing()
+            {static} - getActiveDatabases()
+            {static} - getAttachedDbs()
+            - getBytes()
+            - getPathForLogs()
+            {static} - getPragmaVal()
+            - getTime()
+            {static} - loadICUData()
+            - lockForced()
+            - markTableSyncable()
+            - native_getDbLookaside()
+            - native_key()
+            - native_rawExecSQL()
+            - native_rekey()
+            - native_status()
+            - openDatabaseInternal()
+            {static} - safeCharArray()
+            - unlockForced()
+            - yieldIfContendedHelper()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        interface org.spatialite.database.SQLiteDatabase.CursorFactory {
+            {abstract} + newCursor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabase.SyncUpdateInfo {
+            ~ deletedTable : String
+            ~ foreignKey : String
+            ~ masterTable : String
+            ~ SyncUpdateInfo()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseCorruptException {
+            + SQLiteDatabaseCorruptException()
+            + SQLiteDatabaseCorruptException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        interface org.spatialite.database.SQLiteDatabaseHook {
+            {abstract} + postKey()
+            {abstract} + preKey()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDebug {
+            {static} + DEBUG_ACTIVE_CURSOR_FINALIZATION : boolean
+            {static} + DEBUG_LOCK_TIME_TRACKING : boolean
+            {static} + DEBUG_LOCK_TIME_TRACKING_STACK_TRACE : boolean
+            {static} + DEBUG_SQL_CACHE : boolean
+            {static} + DEBUG_SQL_STATEMENTS : boolean
+            {static} + DEBUG_SQL_TIME : boolean
+            {static} - sNumActiveCursorsFinalized : int
+            {static} + getDatabaseInfo()
+            {static} + getHeapAllocatedSize()
+            {static} + getHeapDirtyPages()
+            {static} + getHeapFreeSize()
+            {static} + getHeapSize()
+            {static} + getNumActiveCursorsFinalized()
+            {static} + getPagerStats()
+            {static} ~ notifyActiveCursorFinalized()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDebug.DbStats {
+            + dbName : String
+            + dbSize : long
+            + lookaside : int
+            + pageSize : long
+            + DbStats()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDebug.PagerStats {
+            + databaseBytes : long
+            + dbStats : ArrayList<DbStats>
+            + largestMemAlloc : int
+            + memoryUsed : int
+            + numPagers : int
+            + pageCacheOverflo : int
+            + referencedBytes : long
+            + totalBytes : long
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDirectCursorDriver {
+            - mCursor : Cursor
+            - mDatabase : SQLiteDatabase
+            - mEditTable : String
+            - mQuery : SQLiteQuery
+            - mSql : String
+            + SQLiteDirectCursorDriver()
+            + cursorClosed()
+            + cursorDeactivated()
+            + cursorRequeried()
+            + query()
+            + setBindArguments()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDiskIOException {
+            + SQLiteDiskIOException()
+            + SQLiteDiskIOException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDoneException {
+            + SQLiteDoneException()
+            + SQLiteDoneException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteException {
+            + SQLiteException()
+            + SQLiteException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteFullException {
+            + SQLiteFullException()
+            + SQLiteFullException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteMisuseException {
+            + SQLiteMisuseException()
+            + SQLiteMisuseException()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        abstract class org.spatialite.database.SQLiteOpenHelper {
+            # mNewVersion : int
+            {static} - TAG : String
+            - mContext : Context
+            - mDatabase : SQLiteDatabase
+            - mErrorHandler : DatabaseErrorHandler
+            - mFactory : CursorFactory
+            - mHook : SQLiteDatabaseHook
+            - mIsInitializing : boolean
+            - mName : String
+            + SQLiteOpenHelper()
+            + SQLiteOpenHelper()
+            + SQLiteOpenHelper()
+            + close()
+            + getReadableDatabase()
+            + getReadableDatabase()
+            + getWritableDatabase()
+            + getWritableDatabase()
+            {abstract} + onCreate()
+            + onOpen()
+            {abstract} + onUpgrade()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        abstract class org.spatialite.database.SQLiteProgram {
+            # mDatabase : SQLiteDatabase
+            # nHandle : int
+            # nStatement : int
+            ~ mSql : String
+            {static} - TAG : String
+            - mCompiledSql : SQLiteCompiledSql
+            + bindBlob()
+            + bindDouble()
+            + bindLong()
+            + bindNull()
+            + bindString()
+            + clearBindings()
+            + close()
+            + getUniqueId()
+            # compile()
+            # native_bind_blob()
+            # native_bind_double()
+            # native_bind_long()
+            # native_bind_null()
+            # native_bind_string()
+            # native_compile()
+            # native_finalize()
+            # onAllReferencesReleased()
+            # onAllReferencesReleasedFromContainer()
+            ~ SQLiteProgram()
+            ~ getSqlString()
+            - native_clear_bindings()
+            - releaseCompiledSqlIfNotInCache()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteQuery {
+            {static} - TAG : String
+            - mBindArgs : String[]
+            - mClosed : boolean
+            - mOffsetIndex : int
+            + bindDouble()
+            + bindLong()
+            + bindNull()
+            + bindString()
+            + close()
+            + toString()
+            ~ SQLiteQuery()
+            ~ columnCountLocked()
+            ~ columnNameLocked()
+            ~ fillWindow()
+            ~ requery()
+            - native_column_count()
+            - native_column_name()
+            - native_fill_window()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteQueryBuilder {
+            {static} - TAG : String
+            - mDistinct : boolean
+            - mFactory : CursorFactory
+            - mProjectionMap : Map<String, String>
+            - mStrictProjectionMap : boolean
+            - mTables : String
+            - mWhereClause : StringBuilder
+            {static} - sLimitPattern : Pattern
+            + SQLiteQueryBuilder()
+            {static} + appendColumns()
+            + appendWhere()
+            + appendWhereEscapeString()
+            + buildQuery()
+            {static} + buildQueryString()
+            + buildUnionQuery()
+            + buildUnionSubQuery()
+            + getTables()
+            + query()
+            + query()
+            + setCursorFactory()
+            + setDistinct()
+            + setProjectionMap()
+            + setStrictProjectionMap()
+            + setTables()
+            {static} - appendClause()
+            {static} - appendClauseEscapeClause()
+            - computeProjection()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteStatement {
+            + execute()
+            + executeInsert()
+            + executeUpdateDelete()
+            + simpleQueryForLong()
+            + simpleQueryForString()
+            ~ SQLiteStatement()
+            - native_1x1_long()
+            - native_1x1_string()
+            - native_execute()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        interface org.spatialite.database.SQLiteTransactionListener {
+            {abstract} + onBegin()
+            {abstract} + onCommit()
+            {abstract} + onRollback()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SqliteWrapper {
+            {static} - SQLITE_EXCEPTION_DETAIL_MESSAGE : String
+            {static} - TAG : String
+            {static} + checkSQLiteException()
+            {static} + delete()
+            {static} + insert()
+            {static} + query()
+            {static} + requery()
+            {static} + update()
+            - SqliteWrapper()
+            {static} - isLowMemory()
+        }
+      }
+    }
+  }
+  
+
+  org.spatialite.database.SQLiteCursor o-- org.spatialite.database.SQLiteCursor.MainThreadNotificationHandler : mNotificationHandler
+  org.spatialite.database.SQLiteCursor +-down- org.spatialite.database.SQLiteCursor.MainThreadNotificationHandler
+  org.spatialite.database.SQLiteCursor +-down- org.spatialite.database.SQLiteCursor.QueryThread
+  org.spatialite.database.SQLiteCursor.QueryThread .up.|> Runnable
+  org.spatialite.database.SQLiteDatabase o-- org.spatialite.database.SQLiteDatabase.CursorFactory : mFactory
+  org.spatialite.database.SQLiteDatabase +-down- org.spatialite.database.SQLiteDatabase.CursorFactory
+  org.spatialite.database.SQLiteDatabase +-down- org.spatialite.database.SQLiteDatabase.SyncUpdateInfo
+  org.spatialite.database.SQLiteDebug +-down- org.spatialite.database.SQLiteDebug.DbStats
+  org.spatialite.database.SQLiteDebug +-down- org.spatialite.database.SQLiteDebug.PagerStats
+  org.spatialite.database.SQLiteDirectCursorDriver .up.|> SQLiteCursorDriver
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

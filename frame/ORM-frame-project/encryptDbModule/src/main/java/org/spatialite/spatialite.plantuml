@@ -1,0 +1,563 @@
+@startuml
+
+title __SPATIALITE's Class Diagram__\n
+
+  namespace org {
+    namespace spatialite {
+      abstract class org.spatialite.AbstractCursor {
+          # mClosed : boolean
+          # mContentResolver : ContentResolver
+          # mCurrentRowID : Long
+          # mPos : int
+          # mRowIdColumnIndex : int
+          # mUpdatedRows : HashMap<Long, Map<String, Object>>
+          ~ mContentObservable : ContentObservable
+          ~ mDataSetObservable : DataSetObservable
+          {static} - TAG : String
+          - mExtras : Bundle
+          - mNotifyUri : Uri
+          - mSelfObserver : ContentObserver
+          - mSelfObserverLock : Object
+          - mSelfObserverRegistered : boolean
+          + AbstractCursor()
+          + abortUpdates()
+          + close()
+          + commitUpdates()
+          + commitUpdates()
+          + copyStringToBuffer()
+          + deactivate()
+          + deactivateInternal()
+          + deleteRow()
+          + fillWindow()
+          + getBlob()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnIndexOrThrow()
+          + getColumnName()
+          {abstract} + getColumnNames()
+          {abstract} + getCount()
+          {abstract} + getDouble()
+          + getExtras()
+          {abstract} + getFloat()
+          {abstract} + getInt()
+          {abstract} + getLong()
+          + getNotificationUri()
+          + getPosition()
+          {abstract} + getShort()
+          {abstract} + getString()
+          {abstract} + getType()
+          + getWantsAllOnMoveCalls()
+          + getWindow()
+          + hasUpdates()
+          + isAfterLast()
+          + isBeforeFirst()
+          + isClosed()
+          + isFirst()
+          + isLast()
+          {abstract} + isNull()
+          + move()
+          + moveToFirst()
+          + moveToLast()
+          + moveToNext()
+          + moveToPosition()
+          + moveToPrevious()
+          + onMove()
+          + registerContentObserver()
+          + registerDataSetObserver()
+          + requery()
+          + respond()
+          + setExtras()
+          + setNotificationUri()
+          + supportsUpdates()
+          + unregisterContentObserver()
+          + unregisterDataSetObserver()
+          + update()
+          + updateBlob()
+          + updateDouble()
+          + updateFloat()
+          + updateInt()
+          + updateLong()
+          + updateShort()
+          + updateString()
+          + updateToNull()
+          # checkPosition()
+          # finalize()
+          # getDataSetObservable()
+          # getUpdatedField()
+          # isFieldUpdated()
+          # notifyDataSetChange()
+          # onChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursor.SelfContentObserver {
+          ~ mCursor : WeakReference<AbstractCursor>
+          + SelfContentObserver()
+          + deliverSelfNotifications()
+          + onChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      abstract class org.spatialite.AbstractWindowedCursor {
+          # mWindow : CursorWindow
+          + copyStringToBuffer()
+          + getBlob()
+          + getDouble()
+          + getFloat()
+          + getInt()
+          + getLong()
+          + getShort()
+          + getString()
+          + getType()
+          + getWindow()
+          + hasWindow()
+          + isBlob()
+          + isFloat()
+          + isLong()
+          + isNull()
+          + isString()
+          + setWindow()
+          # checkPosition()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      abstract class org.spatialite.BulkCursorNative {
+          + BulkCursorNative()
+          + asBinder()
+          {static} + asInterface()
+          + onTransact()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.BulkCursorProxy {
+          - mExtras : Bundle
+          - mRemote : IBinder
+          + BulkCursorProxy()
+          + asBinder()
+          + close()
+          + count()
+          + deactivate()
+          + deleteRow()
+          + getColumnNames()
+          + getExtras()
+          + getWantsAllOnMoveCalls()
+          + getWindow()
+          + onMove()
+          + requery()
+          + respond()
+          + updateRows()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.BulkCursorToCursorAdaptor {
+          {static} - TAG : String
+          - mBulkCursor : IBulkCursor
+          - mColumns : String[]
+          - mCount : int
+          - mObserverBridge : SelfContentObserver
+          - mWantsAllOnMoveCalls : boolean
+          + close()
+          + commitUpdates()
+          + copyStringToBuffer()
+          + deactivate()
+          + deleteRow()
+          {static} + findRowIdColumnIndex()
+          + getColumnNames()
+          + getCount()
+          + getExtras()
+          + getObserver()
+          + onMove()
+          + registerContentObserver()
+          + registerDataSetObserver()
+          + requery()
+          + respond()
+          + set()
+          + set()
+          + unregisterContentObserver()
+          + unregisterDataSetObserver()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CrossProcessCursorWrapper {
+          + CrossProcessCursorWrapper()
+          + fillWindow()
+          + getWindow()
+          + onMove()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      interface org.spatialite.Cursor {
+          {static} + FIELD_TYPE_BLOB : int
+          {static} + FIELD_TYPE_FLOAT : int
+          {static} + FIELD_TYPE_INTEGER : int
+          {static} + FIELD_TYPE_NULL : int
+          {static} + FIELD_TYPE_STRING : int
+          {abstract} + getType()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorIndexOutOfBoundsException {
+          + CursorIndexOutOfBoundsException()
+          + CursorIndexOutOfBoundsException()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWindow {
+          {static} + CREATOR : Creator<CursorWindow>
+          - mStartPos : int
+          - nWindow : int
+          + CursorWindow()
+          + CursorWindow()
+          + allocRow()
+          + clear()
+          + close()
+          + copyStringToBuffer()
+          + describeContents()
+          + freeLastRow()
+          + getBlob()
+          + getDouble()
+          + getFloat()
+          + getInt()
+          + getLong()
+          + getNumRows()
+          + getShort()
+          + getStartPosition()
+          + getString()
+          + getType()
+          + isBlob()
+          + isFloat()
+          + isLong()
+          + isNull()
+          + isString()
+          {static} + newFromParcel()
+          + putBlob()
+          + putDouble()
+          + putLong()
+          + putNull()
+          + putString()
+          + setNumColumns()
+          + setStartPosition()
+          + writeToParcel()
+          # finalize()
+          # onAllReferencesReleased()
+          - allocRow_native()
+          - close_native()
+          - copyStringToBuffer_native()
+          - freeLastRow_native()
+          - getBlob_native()
+          - getDouble_native()
+          - getLong_native()
+          - getNumRows_native()
+          - getString_native()
+          - getType_native()
+          - isBlob_native()
+          - isFloat_native()
+          - isInteger_native()
+          - isNull_native()
+          - isString_native()
+          - native_clear()
+          - native_getBinder()
+          - native_init()
+          - native_init()
+          - putBlob_native()
+          - putDouble_native()
+          - putLong_native()
+          - putNull_native()
+          - putString_native()
+          - setNumColumns_native()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWrapper {
+          - mCursor : Cursor
+          + CursorWrapper()
+          + getType()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      interface org.spatialite.DatabaseErrorHandler {
+          {abstract} + onCorruption()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseUtils {
+          {static} - DEBUG : boolean
+          {static} - LOCAL_LOGV : boolean
+          {static} - TAG : String
+          {static} - countProjection : String[]
+          {static} - mColl : Collator
+          {static} + appendEscapedSQLString()
+          {static} + appendValueToSql()
+          {static} + bindObjectToProgram()
+          {static} + concatenateWhere()
+          {static} + cursorDoubleToContentValues()
+          {static} + cursorDoubleToContentValuesIfPresent()
+          {static} + cursorDoubleToCursorValues()
+          {static} + cursorFillWindow()
+          {static} + cursorFloatToContentValuesIfPresent()
+          {static} + cursorIntToContentValues()
+          {static} + cursorIntToContentValues()
+          {static} + cursorIntToContentValuesIfPresent()
+          {static} + cursorLongToContentValues()
+          {static} + cursorLongToContentValues()
+          {static} + cursorLongToContentValuesIfPresent()
+          {static} + cursorRowToContentValues()
+          {static} + cursorShortToContentValuesIfPresent()
+          {static} + cursorStringToContentValues()
+          {static} + cursorStringToContentValues()
+          {static} + cursorStringToContentValuesIfPresent()
+          {static} + cursorStringToInsertHelper()
+          {static} + dumpCurrentRow()
+          {static} + dumpCurrentRow()
+          {static} + dumpCurrentRow()
+          {static} + dumpCurrentRowToString()
+          {static} + dumpCursor()
+          {static} + dumpCursor()
+          {static} + dumpCursor()
+          {static} + dumpCursorToString()
+          {static} + getCollationKey()
+          {static} + getHexCollationKey()
+          {static} + getTypeOfObject()
+          {static} + longForQuery()
+          {static} + longForQuery()
+          {static} + queryNumEntries()
+          {static} + readExceptionFromParcel()
+          {static} + readExceptionWithFileNotFoundExceptionFromParcel()
+          {static} + readExceptionWithOperationApplicationExceptionFromParcel()
+          {static} + sqlEscapeString()
+          {static} + stringForQuery()
+          {static} + stringForQuery()
+          {static} + writeExceptionToParcel()
+          {static} - getCollationKeyInBytes()
+          {static} - getKeyLen()
+          {static} - readExceptionFromParcel()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseUtils.Hex {
+          {static} - DIGITS_LOWER : char[]
+          {static} - DIGITS_UPPER : char[]
+          {static} + encodeHex()
+          {static} + encodeHex()
+          {static} # encodeHex()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseUtils.InsertHelper {
+          {static} + TABLE_INFO_PRAGMA_COLUMNNAME_INDEX : int
+          {static} + TABLE_INFO_PRAGMA_DEFAULT_INDEX : int
+          - mColumns : HashMap<String, Integer>
+          - mDb : SQLiteDatabase
+          - mInsertSQL : String
+          - mInsertStatement : SQLiteStatement
+          - mPreparedStatement : SQLiteStatement
+          - mReplaceStatement : SQLiteStatement
+          - mTableName : String
+          + InsertHelper()
+          + bind()
+          + bind()
+          + bind()
+          + bind()
+          + bind()
+          + bind()
+          + bind()
+          + bindNull()
+          + close()
+          + execute()
+          + getColumnIndex()
+          + insert()
+          + prepareForInsert()
+          + prepareForReplace()
+          + replace()
+          - buildSQL()
+          - getStatement()
+          - insertInternal()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DefaultDatabaseErrorHandler {
+          {static} - TAG : String
+          + onCorruption()
+          - deleteDatabaseFile()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      interface org.spatialite.IBulkCursor {
+          {static} + CLOSE_TRANSACTION : int
+          {static} + COUNT_TRANSACTION : int
+          {static} + DEACTIVATE_TRANSACTION : int
+          {static} + DELETE_ROW_TRANSACTION : int
+          {static} + GET_COLUMN_NAMES_TRANSACTION : int
+          {static} + GET_CURSOR_WINDOW_TRANSACTION : int
+          {static} + GET_EXTRAS_TRANSACTION : int
+          {static} + ON_MOVE_TRANSACTION : int
+          {static} + REQUERY_TRANSACTION : int
+          {static} + RESPOND_TRANSACTION : int
+          {static} + UPDATE_ROWS_TRANSACTION : int
+          {static} + WANTS_ON_MOVE_TRANSACTION : int
+          {static} + descriptor : String
+          {abstract} + close()
+          {abstract} + count()
+          {abstract} + deactivate()
+          {abstract} + deleteRow()
+          {abstract} + getColumnNames()
+          {abstract} + getExtras()
+          {abstract} + getWantsAllOnMoveCalls()
+          {abstract} + getWindow()
+          {abstract} + onMove()
+          {abstract} + requery()
+          {abstract} + respond()
+          {abstract} + updateRows()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MatrixCursor {
+          - columnCount : int
+          - columnNames : String[]
+          - data : Object[]
+          - rowCount : int
+          + MatrixCursor()
+          + MatrixCursor()
+          + addRow()
+          + addRow()
+          + getColumnNames()
+          + getCount()
+          + getDouble()
+          + getFloat()
+          + getInt()
+          + getLong()
+          + getShort()
+          + getString()
+          + getType()
+          + isNull()
+          + newRow()
+          - addRow()
+          - ensureCapacity()
+          - get()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MatrixCursor.RowBuilder {
+          - endIndex : int
+          - index : int
+          + add()
+          ~ RowBuilder()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.SQLException {
+          + SQLException()
+          + SQLException()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.StaleDataException {
+          + StaleDataException()
+          + StaleDataException()
+      }
+    }
+  }
+  
+
+  org.spatialite.AbstractCursor .up.|> android.database.CrossProcessCursor
+  org.spatialite.AbstractCursor .up.|> org.spatialite.Cursor
+  org.spatialite.AbstractCursor +-down- org.spatialite.AbstractCursor.SelfContentObserver
+  org.spatialite.BulkCursorNative .up.|> IBulkCursor
+  org.spatialite.BulkCursorProxy .up.|> IBulkCursor
+  org.spatialite.CrossProcessCursorWrapper .up.|> CrossProcessCursor
+  org.spatialite.CursorWindow .up.|> Parcelable
+  org.spatialite.CursorWrapper .up.|> Cursor
+  org.spatialite.DatabaseUtils +-down- org.spatialite.DatabaseUtils.Hex
+  org.spatialite.DatabaseUtils +-down- org.spatialite.DatabaseUtils.InsertHelper
+  org.spatialite.DefaultDatabaseErrorHandler .up.|> DatabaseErrorHandler
+  org.spatialite.MatrixCursor +-down- org.spatialite.MatrixCursor.RowBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

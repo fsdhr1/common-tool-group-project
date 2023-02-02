@@ -1,0 +1,661 @@
+@startuml
+
+title __STYLE's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.AreaColor {
+          - color : Object
+          - image : Object
+          - repeat : Object
+          {static} - serialVersionUID : long
+          - type : Object
+          + color()
+          + color()
+          + getColor()
+          + getImage()
+          + getRepeat()
+          + getType()
+          + image()
+          + image()
+          + repeat()
+          + repeat()
+          + setColor()
+          + setImage()
+          + setRepeat()
+          + setType()
+          + type()
+          + type()
+          + typeDefault()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.AreaSelectStyle {
+          - borderColor : String
+          - borderWidth : Integer
+          - color : String
+          - opacity : Double
+          - width : Integer
+          + borderColor()
+          + borderColor()
+          + borderWidth()
+          + borderWidth()
+          + color()
+          + color()
+          + getBorderColor()
+          + getBorderWidth()
+          + getColor()
+          + getOpacity()
+          + getWidth()
+          + opacity()
+          + opacity()
+          + setBorderColor()
+          + setBorderWidth()
+          + setColor()
+          + setOpacity()
+          + setWidth()
+          + width()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.AreaStyle {
+          - color : Object
+          - image : Object
+          - repeat : Object
+          {static} - serialVersionUID : long
+          - type : Object
+          + color()
+          + color()
+          + getColor()
+          + getImage()
+          + getRepeat()
+          + getType()
+          + image()
+          + image()
+          + repeat()
+          + repeat()
+          + setColor()
+          + setImage()
+          + setRepeat()
+          + setType()
+          + type()
+          + type()
+          + typeDefault()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.Breadcrumb {
+          - bottom : Object
+          - height : Object
+          - left : Object
+          - right : Object
+          {static} - serialVersionUID : long
+          - show : Boolean
+          - top : Object
+          - width : Object
+          + Breadcrumb()
+          + Breadcrumb()
+          + Breadcrumb()
+          + bottom()
+          + bottom()
+          + bottom()
+          + getBottom()
+          + getHeight()
+          + getItemStyle()
+          + getLeft()
+          + getRight()
+          + getShow()
+          + getTextStyle()
+          + getTop()
+          + getWidth()
+          + height()
+          + height()
+          + height()
+          + itemStyle()
+          + itemStyle()
+          + left()
+          + left()
+          + left()
+          + left()
+          + right()
+          + right()
+          + right()
+          + setBottom()
+          + setHeight()
+          + setItemStyle()
+          + setLeft()
+          + setRight()
+          + setShow()
+          + setTextStyle()
+          + setTop()
+          + setWidth()
+          + show()
+          + show()
+          + textStyle()
+          + textStyle()
+          + top()
+          + top()
+          + top()
+          + top()
+          + width()
+          + width()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.CheckpointStyle {
+          - borderColor : String
+          - borderWidth : Object
+          - color : String
+          {static} - serialVersionUID : long
+          - symbol : Object
+          - symbolSize : Object
+          + borderColor()
+          + borderColor()
+          + borderWidth()
+          + borderWidth()
+          + color()
+          + color()
+          + getBorderColor()
+          + getBorderWidth()
+          + getColor()
+          + getLabel()
+          + getSymbol()
+          + getSymbolSize()
+          + label()
+          + label()
+          + setBorderColor()
+          + setBorderWidth()
+          + setColor()
+          + setLabel()
+          + setSymbol()
+          + setSymbolSize()
+          + symbol()
+          + symbol()
+          + symbolSize()
+          + symbolSize()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.ChordStyle {
+          - borderColor : String
+          - borderWidth : Integer
+          - color : String
+          - opacity : Double
+          {static} - serialVersionUID : long
+          - width : Integer
+          + borderColor()
+          + borderColor()
+          + borderWidth()
+          + borderWidth()
+          + color()
+          + color()
+          + getBorderColor()
+          + getBorderWidth()
+          + getColor()
+          + getOpacity()
+          + getWidth()
+          + opacity()
+          + opacity()
+          + setBorderColor()
+          + setBorderWidth()
+          + setColor()
+          + setOpacity()
+          + setWidth()
+          + width()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.ControlStyle {
+          - itemGap : Integer
+          - itemSize : Integer
+          {static} - serialVersionUID : long
+          + ControlStyle()
+          + emphasis()
+          + emphasis()
+          + getEmphasis()
+          + getItemGap()
+          + getItemSize()
+          + getNormal()
+          + itemGap()
+          + itemGap()
+          + itemSize()
+          + itemSize()
+          + normal()
+          + normal()
+          + setEmphasis()
+          + setItemGap()
+          + setItemSize()
+          + setNormal()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.ControlStyle.Color {
+          - color : String
+          + color()
+          + color()
+          + getColor()
+          + setColor()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.CrossStyle {
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.GraphicStyle {
+          - fill : String
+          - height : Object
+          - text : String
+          - width : Object
+          + fill()
+          + getFill()
+          + getHeight()
+          + getText()
+          + getTextAlign()
+          + getWidth()
+          + height()
+          + setFill()
+          + setHeight()
+          + setText()
+          + setTextAlign()
+          + setWidth()
+          + text()
+          + textAlign()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.ItemStyle {
+          - borderRadius : Double
+          - childBorderColor : Object
+          - childBorderWidth : Integer
+          - color : Object
+          - color0 : Object
+          {static} - serialVersionUID : long
+          + borderRadius()
+          + borderRadius()
+          + breadcrumb()
+          + breadcrumb()
+          + childBorderColor()
+          + childBorderColor()
+          + childBorderWidth()
+          + childBorderWidth()
+          + color()
+          + color()
+          + color0()
+          + color0()
+          + emphasis()
+          + emphasis()
+          + getBreadcrumb()
+          + getChildBorderColor()
+          + getChildBorderWidth()
+          + getColor()
+          + getColor0()
+          + getEmphasis()
+          + getNormal()
+          + normal()
+          + normal()
+          + setBreadcrumb()
+          + setChildBorderColor()
+          + setChildBorderWidth()
+          + setColor()
+          + setColor0()
+          + setEmphasis()
+          + setNormal()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.Line {
+          - color : Object
+          - fontSize : Integer
+          - fontWeight : Integer
+          - padding : Object
+          - textShadowBlur : Object
+          - textShadowColor : Object
+          - textShadowOffsetX : Integer
+          - textShadowOffsetY : Integer
+          + color()
+          + color()
+          + fontSize()
+          + fontSize()
+          + fontWeight()
+          + fontWeight()
+          + padding()
+          + padding()
+          + textShadowBlur()
+          + textShadowBlur()
+          + textShadowColor()
+          + textShadowColor()
+          + textShadowOffsetX()
+          + textShadowOffsetX()
+          + textShadowOffsetY()
+          + textShadowOffsetY()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.LineStyle {
+          - color : Object
+          - color0 : Object
+          - opacity : Double
+          {static} - serialVersionUID : long
+          - shadowBlur : Integer
+          - shadowColor : String
+          - shadowOffsetX : Integer
+          - shadowOffsetY : Integer
+          - width : Integer
+          + color()
+          + color()
+          + color0()
+          + color0()
+          + emphasis()
+          + emphasis()
+          + getColor()
+          + getColor0()
+          + getEmphasis()
+          + getNormal()
+          + getShadowBlur()
+          + getShadowColor()
+          + getShadowOffsetX()
+          + getShadowOffsetY()
+          + getType()
+          + getWidth()
+          + normal()
+          + normal()
+          + opacity()
+          + opacity()
+          + setColor()
+          + setColor0()
+          + setEmphasis()
+          + setNormal()
+          + setShadowBlur()
+          + setShadowColor()
+          + setShadowOffsetX()
+          + setShadowOffsetY()
+          + setType()
+          + setWidth()
+          + shadowBlur()
+          + shadowBlur()
+          + shadowColor()
+          + shadowColor()
+          + shadowOffsetX()
+          + shadowOffsetX()
+          + shadowOffsetY()
+          + shadowOffsetY()
+          + type()
+          + type()
+          + width()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.LinkStyle {
+          - borderColor : String
+          - borderWidth : Integer
+          {static} - serialVersionUID : long
+          + borderColor()
+          + borderColor()
+          + borderWidth()
+          + borderWidth()
+          + getBorderColor()
+          + getBorderWidth()
+          + getType()
+          + setBorderColor()
+          + setBorderWidth()
+          + setType()
+          + type()
+          + type()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.NameTextStyle {
+          - color : String
+          - fontFamily : String
+          - fontSize : Double
+          {static} - serialVersionUID : long
+          + color()
+          + color()
+          + fontFamily()
+          + fontFamily()
+          + fontSize()
+          + fontSize()
+          + fontStyle()
+          + fontStyle()
+          + fontWeight()
+          + fontWeight()
+          + getColor()
+          + getFontFamily()
+          + getFontSize()
+          + getFontStyle()
+          + getFontWeight()
+          + setColor()
+          + setFontFamily()
+          + setFontSize()
+          + setFontStyle()
+          + setFontWeight()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.NodeStyle {
+          - color : String
+          + brushType()
+          + brushType()
+          + color()
+          + color()
+          + getBrushType()
+          + getColor()
+          + setBrushType()
+          + setColor()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.Rich {
+          + fline()
+          + fline()
+          + getFline()
+          + getTline()
+          + setFline()
+          + setTline()
+          + tline()
+          + tline()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.ShadowStyle {
+          - color : String
+          {static} - serialVersionUID : long
+          - type : String
+          - width : Object
+          + color()
+          + color()
+          + getColor()
+          + getType()
+          + getWidth()
+          + setColor()
+          + setType()
+          + setWidth()
+          + type()
+          + type()
+          + typeDefault()
+          + width()
+          + width()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      class com.grandtech.echart.style.TextStyle {
+          - backgroundColor : String
+          - borderRadius : Object
+          - color : String
+          - decoration : String
+          - fontFamily : String
+          - fontFamily2 : String
+          - fontSize : Integer
+          - fontWeight : Object
+          - padding : Object
+          {static} - serialVersionUID : long
+          + align()
+          + align()
+          + backgroundColor()
+          + baseline()
+          + baseline()
+          + borderRadius()
+          + color()
+          + color()
+          + decoration()
+          + decoration()
+          + fontFamily()
+          + fontFamily()
+          + fontFamily2()
+          + fontFamily2()
+          + fontSize()
+          + fontSize()
+          + fontStyle()
+          + fontStyle()
+          + fontWeight()
+          + fontWeight()
+          + getAlign()
+          + getBaseline()
+          + getColor()
+          + getDecoration()
+          + getFontFamily()
+          + getFontFamily2()
+          + getFontSize()
+          + getFontStyle()
+          + getFontWeight()
+          + padding()
+          + setAlign()
+          + setBaseline()
+          + setColor()
+          + setDecoration()
+          + setFontFamily()
+          + setFontFamily2()
+          + setFontSize()
+          + setFontStyle()
+          + setFontWeight()
+      }
+    }
+  }
+  
+
+  com.grandtech.echart.style.AreaColor .up.|> java.io.Serializable
+  com.grandtech.echart.style.AreaStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.Breadcrumb .up.|> java.io.Serializable
+  com.grandtech.echart.style.Breadcrumb o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.style.Breadcrumb o-- com.grandtech.echart.style.TextStyle : textStyle
+  com.grandtech.echart.style.CheckpointStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.CheckpointStyle o-- com.grandtech.echart.Label : label
+  com.grandtech.echart.style.ChordStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.ControlStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.ControlStyle o-- com.grandtech.echart.style.ControlStyle.Color : emphasis
+  com.grandtech.echart.style.ControlStyle o-- com.grandtech.echart.style.ControlStyle.Color : normal
+  com.grandtech.echart.style.ControlStyle +-down- com.grandtech.echart.style.ControlStyle.Color
+  com.grandtech.echart.style.CrossStyle -up-|> com.grandtech.echart.style.LineStyle
+  com.grandtech.echart.style.GraphicStyle o-- com.grandtech.echart.code.X : textAlign
+  com.grandtech.echart.style.ItemStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.ItemStyle o-- com.grandtech.echart.style.Breadcrumb : breadcrumb
+  com.grandtech.echart.style.ItemStyle o-- com.grandtech.echart.style.itemstyle.Emphasis : emphasis
+  com.grandtech.echart.style.ItemStyle o-- com.grandtech.echart.style.itemstyle.Normal : normal
+  com.grandtech.echart.style.Line .up.|> java.io.Serializable
+  com.grandtech.echart.style.LineStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.LineStyle o-- com.grandtech.echart.style.itemstyle.Emphasis : emphasis
+  com.grandtech.echart.style.LineStyle o-- com.grandtech.echart.style.itemstyle.Normal : normal
+  com.grandtech.echart.style.LineStyle o-- com.grandtech.echart.code.LineType : type
+  com.grandtech.echart.style.LinkStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.LinkStyle o-- com.grandtech.echart.code.LinkType : type
+  com.grandtech.echart.style.NameTextStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.NameTextStyle o-- com.grandtech.echart.code.FontStyle : fontStyle
+  com.grandtech.echart.style.NameTextStyle o-- com.grandtech.echart.code.FontWeight : fontWeight
+  com.grandtech.echart.style.NodeStyle -up-|> com.grandtech.echart.style.LinkStyle
+  com.grandtech.echart.style.NodeStyle o-- com.grandtech.echart.code.BrushType : brushType
+  com.grandtech.echart.style.Rich .up.|> java.io.Serializable
+  com.grandtech.echart.style.Rich o-- com.grandtech.echart.style.Line : fline
+  com.grandtech.echart.style.Rich o-- com.grandtech.echart.style.Line : tline
+  com.grandtech.echart.style.ShadowStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.TextStyle .up.|> java.io.Serializable
+  com.grandtech.echart.style.TextStyle o-- com.grandtech.echart.code.X : align
+  com.grandtech.echart.style.TextStyle o-- com.grandtech.echart.code.Baseline : baseline
+  com.grandtech.echart.style.TextStyle o-- com.grandtech.echart.code.FontStyle : fontStyle
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

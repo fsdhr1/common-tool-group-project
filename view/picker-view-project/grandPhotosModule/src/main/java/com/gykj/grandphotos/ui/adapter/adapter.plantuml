@@ -1,0 +1,242 @@
+@startuml
+
+title __ADAPTER's Class Diagram__\n
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter {
+            {static} - TYPE_ALBUM_ITEMS : int
+            - adPosition : int
+            - clearAd : boolean
+            - dataList : ArrayList<Object>
+            - mInflater : LayoutInflater
+            - padding : int
+            - selectedPosition : int
+            + AlbumItemsAdapter()
+            + clearAd()
+            + getItemCount()
+            + getItemViewType()
+            + onBindViewHolder()
+            + onCreateViewHolder()
+            + setSelectedPosition()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.AlbumItemsViewHolder {
+            ~ ivAlbumCover : ImageView
+            ~ ivSelected : ImageView
+            ~ mRoot : ConstraintLayout
+            ~ tvAlbumName : TextView
+            ~ tvAlbumPhotosCount : TextView
+            ~ AlbumItemsViewHolder()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        interface com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.OnClickListener {
+            {abstract} + onAlbumItemClick()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PhotosAdapter {
+            {static} - TYPE_ALBUM_ITEMS : int
+            {static} - TYPE_CAMERA : int
+            - clearAd : boolean
+            - dataList : ArrayList<Object>
+            - isSingle : boolean
+            - mInflater : LayoutInflater
+            - singlePosition : int
+            - unable : boolean
+            + PhotosAdapter()
+            + change()
+            + clearAd()
+            + getItemCount()
+            + getItemViewType()
+            + onBindViewHolder()
+            + onCreateViewHolder()
+            - singleSelector()
+            - updateSelector()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PhotosAdapter.CameraViewHolder {
+            ~ flCamera : FrameLayout
+            ~ CameraViewHolder()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        interface com.gykj.grandphotos.ui.adapter.PhotosAdapter.OnClickListener {
+            {abstract} + onCameraClick()
+            {abstract} + onPhotoClick()
+            {abstract} + onSelectorChanged()
+            {abstract} + onSelectorOutOfMax()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PhotosAdapter.PhotoViewHolder {
+            ~ tvSelector : TextView
+            ~ vSelector : View
+            ~ PhotoViewHolder()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter {
+            - inflater : LayoutInflater
+            - photoDatas : ArrayList<GrandPhotoBean>
+            + PreviewPhotosAdapter()
+            + getItemCount()
+            + onBindViewHolder()
+            + onCreateViewHolder()
+            + setRoateOnce()
+            - getUri()
+            - rotateImgDegree()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        interface com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.OnClickListener {
+            {abstract} + onPhotoClick()
+            {abstract} + onPhotoScaleChanged()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.PreviewPhotosViewHolder {
+            ~ mImageView : ImageView
+            ~ position : int
+            ~ PreviewPhotosViewHolder()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter {
+            - inflater : LayoutInflater
+            - mPhotoList : List<GrandPhotoBean>
+            + PreviewPhotosFragmentAdapter()
+            + getItemCount()
+            + onBindViewHolder()
+            + onCreateViewHolder()
+            + setChecked()
+            - setThumbImgRotate()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        interface com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.OnClickListener {
+            {abstract} + onPhotoClick()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.gykj.grandphotos {
+    namespace ui {
+      namespace adapter {
+        class com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.PreviewPhotoVH {
+            ~ frame : View
+            ~ tvType : TextView
+            + PreviewPhotoVH()
+        }
+      }
+    }
+  }
+  
+
+  com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter o-- com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.OnClickListener : listener
+  com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter +-down- com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.AlbumItemsViewHolder
+  com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter +-down- com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.OnClickListener
+  com.gykj.grandphotos.ui.adapter.AlbumItemsAdapter.AlbumItemsViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter o-- com.gykj.grandphotos.ui.adapter.PhotosAdapter.OnClickListener : listener
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter +-down- com.gykj.grandphotos.ui.adapter.PhotosAdapter.CameraViewHolder
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter +-down- com.gykj.grandphotos.ui.adapter.PhotosAdapter.OnClickListener
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter +-down- com.gykj.grandphotos.ui.adapter.PhotosAdapter.PhotoViewHolder
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter.CameraViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter.PhotoViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.grandphotos.ui.adapter.PhotosAdapter.PhotoViewHolder o-- com.gykj.grandphotos.ui.widget.PressedImageView : ivPhoto
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter o-- com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.OnClickListener : listener
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter +-down- com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.OnClickListener
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter +-down- com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.PreviewPhotosViewHolder
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.PreviewPhotosViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosAdapter.PreviewPhotosViewHolder o-- com.gykj.grandphotos.models.album.entity.GrandPhotoBean : mPhoto
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter o-- com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.OnClickListener : listener
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter +-down- com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.OnClickListener
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter +-down- com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.PreviewPhotoVH
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.PreviewPhotoVH -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.grandphotos.ui.adapter.PreviewPhotosFragmentAdapter.PreviewPhotoVH o-- com.gykj.grandphotos.ui.widget.PressedImageView : ivPhoto
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

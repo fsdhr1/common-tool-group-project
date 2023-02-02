@@ -1,0 +1,360 @@
+@startuml
+
+title __SKETCH's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.GeoTouchAction {
+          {static} + aTolerance : float
+          {static} + lM : String
+          {static} + lTolerance : float
+          {static} + lV : String
+          {static} + mLM : String
+          {static} + mLV : String
+          {static} + mPM : String
+          {static} + mPV : String
+          {static} + pM : String
+          {static} + pTolerance : float
+          {static} + pV : String
+          ~ geoIp : String
+          ~ pointFS1 : List<SPointF>
+          ~ pointFS2 : List<List<SPointF>>
+          ~ pointFS3 : List<List<List<SPointF>>>
+          ~ touchPoint : PointF
+          {static} + createEvent()
+          {static} + createEvent0()
+          {static} + createEvent1()
+          {static} + createEvent2()
+          {static} + createEvent3()
+          + getAPointF()
+          + getBPointF()
+          + getCPointF()
+          + getGeoIp()
+          + getGeoTouchMode()
+          + getPointFS1()
+          + getPointFS2()
+          + getPointFS3()
+          + getPointFs0()
+          - GeoTouchAction()
+          - GeoTouchAction()
+          - compute1DimensionPointIp()
+          - compute2DimensionPointIp()
+          - compute3DimensionPointIp()
+          - computePolygon()
+          - computeTouch()
+          - setPointFS1()
+          - setPointFS2()
+          - setPointFS3()
+          - setPointFs0()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      enum GeoTouchMode {
+        TouchOnLine
+        TouchOnMidPoint
+        TouchOnNull
+        TouchOnPoint
+        TouchOnPolygon
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      interface com.grandtech.mapframe.core.sketch.ISketch {
+          {abstract} + addSketchGeometry()
+          {abstract} + getSketchGeometry()
+          {abstract} + isStartSketch()
+          {abstract} + setSketchType()
+          {abstract} + startSketch()
+          {abstract} + stopSketch()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchAnnotations {
+          ~ alpha : float
+          ~ backStack : List<SketchGeometry>
+          ~ cacheStack : List<SketchGeometry>
+          ~ drawDis : double
+          ~ drawPointF : PointF
+          ~ drawRubberLine : boolean
+          ~ fillColor : int
+          ~ interceptMapScrollEvent : boolean
+          ~ newLatLng : LatLng
+          ~ strokeColor : int
+          ~ vXY : float[]
+          - _context : Context
+          - _mapBoxMap : MapboxMap
+          - isStartSketch : boolean
+          - longStartP : PointF
+          + SketchAnnotations()
+          + SketchAnnotations()
+          + activate()
+          + addGeometry()
+          + addPoint()
+          + addScreenCenterPoint()
+          + addSketchGeometry()
+          + afterDragPoint()
+          + beforeDragPoint()
+          + checkSketchGeometry()
+          + clearLastSketch()
+          + clearSketch()
+          + deactivate()
+          + drawRubberLine()
+          + editPoint()
+          + geoTouchCheck()
+          + getGeometry()
+          + getSketchGeometry()
+          + getSketchSetting()
+          + isStartSketch()
+          + nullSketch()
+          + onDestroy()
+          + onMapClick()
+          + onMapLongClick()
+          + onTouchCancel()
+          + onTouchMoving()
+          + onTouchStart()
+          + refresh()
+          + removePoint()
+          + setSketchType()
+          + startSketch()
+          + stopSketch()
+          + tryReDo()
+          + tryUnDo()
+          + underDragPoint()
+          - computeSplitArea()
+          - computerAreaAndLen()
+          - editNodePoint()
+          - handleGeometry()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchHelpView {
+          {static} + DRAG_NORMAL : int
+          {static} + DRAG_NOTHING : int
+          {static} + DRAG_POINT : int
+          {static} + DRAG_POLYGON_POLYLINE : int
+          {static} + DRAW_TARGET : int
+          ~ blue : int
+          ~ info : String
+          ~ yellow : int
+          - _aPoint : PointF
+          - _alpha : int
+          - _bPoint : PointF
+          - _cPoint : PointF
+          - _context : Context
+          - _crossHair : Bitmap
+          - _flag : int
+          - _info : Map<PointF, Double>
+          - _isClose : boolean
+          - _isRelease : boolean
+          - _mPointFS : List<PointF>
+          - _mbPoint : PointF
+          - _oPointFS : List<PointF>
+          - _paint : Paint
+          - _path : Path
+          - _radius : int
+          - _screenCenterPoint : PointF
+          - _screenPoint1 : PointF
+          - _screenPoint2 : PointF
+          - _targetBitmap : Bitmap
+          - _text : String[]
+          - _textSize : int
+          - _vx : float
+          - _vy : float
+          - mLineInfo : Map<Path, Double>
+          + SketchHelpView()
+          + SketchHelpView()
+          + SketchHelpView()
+          + clear()
+          + dragNodeDraw()
+          + dragNodeDraw()
+          + drawTargetView()
+          + getEditPoint()
+          + getFlag()
+          + getScreenCenterPoint()
+          + setClose()
+          + setLineInfo()
+          + setPointFS()
+          + setPoints()
+          + setTargetPoint()
+          + setText()
+          + setVT()
+          + splitInfo()
+          + startPolygonDraw()
+          # onDetachedFromWindow()
+          # onDraw()
+          - dragHelpLine()
+          - dragNodeDraw()
+          - dragPolygonDraw()
+          - drawTarget()
+          - init()
+          - initPolygonDraw()
+          - initTargetDraw()
+          - releaseDraw()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchMapEvnet {
+          + onCameraIdle()
+          + onCameraMove()
+          + onCameraMoveCanceled()
+          + onCameraMoveStarted()
+          + onCompassAnimation()
+          + onCompassAnimationFinished()
+          + onFling()
+          + onFpsChanged()
+          + onMapClick()
+          + onMapLongClick()
+          + onMarkerClick()
+          + onPolygonClick()
+          + onPolylineClick()
+          + onScroll()
+          + onTouchCancel()
+          + onTouchMoving()
+          + onTouchStart()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchSetting {
+          - inFlag : String
+          + SketchSetting()
+          + getInFlag()
+          + getSketchType()
+          + setSketchType()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchSlideAnnotations {
+          - geoJson : GeoJson
+          - geoJsonSource : GeoJsonSource
+          - isStartSketch : boolean
+          - points : List<Point>
+          + SketchSlideAnnotations()
+          + addSketchGeometry()
+          + clearSketch()
+          + getGeometryType()
+          + getSketchGeometry()
+          + isStartSketch()
+          + onTouchCancel()
+          + onTouchMoving()
+          + setIOnAfterSlideListener()
+          + setSketchType()
+          + startSketch()
+          + stopSketch()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      interface com.grandtech.mapframe.core.sketch.SketchSlideAnnotations.IOnAfterSlideListener {
+          {abstract} + onAfterSlideListener()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace sketch {
+      class com.grandtech.mapframe.core.sketch.SketchUtil {
+          {static} + close2DimensionList()
+          {static} + close3DimensionList()
+          {static} + closeListLine()
+          {static} + closeSketchMultiPolygon()
+          {static} + closeSketchPolygon()
+          {static} + computeRubberAnchor()
+          {static} + deepCopy1DimensionList()
+          {static} + deepCopy2DimensionList()
+          {static} + deepCopy3DimensionList()
+          {static} + dis2Point()
+          {static} + geo0DimensionPoint()
+          {static} + geo1DimensionList()
+          {static} + geo2DimensionList()
+          {static} + geo3DimensionList()
+          {static} + get2Point2MidPoint()
+          {static} + get2Point2MidPoint()
+          {static} + getEditGeometry()
+          {static} + getListNearestIndex()
+          {static} + getPoint2MidPoint()
+          {static} + getPoint2MidPoint()
+          {static} + getPoint2MidPoint()
+          {static} + getRubberAnchorGeometry()
+          {static} + isNearPoint()
+          {static} + line2Ring()
+          {static} + line2Ring()
+          {static} + lineStringMidPoints()
+          {static} + lineStringMidPoints()
+          {static} + listPoint2ListLatLng()
+          {static} + multiLineStringMidPoints()
+          {static} + multiLineStringMidPoints()
+          {static} + multiPolygonMidPoints()
+          {static} + nearPoint()
+          {static} + polygonMidPoints()
+          {static} + polygonMidPoints()
+          {static} + ringMidPoints()
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.sketch.geometry.SPointF : pointFs0
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.enumeration.GeometryType : sketchType
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.sketch.geometry.SPointF : aPointF
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.sketch.geometry.SPointF : bPointF
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.sketch.geometry.SPointF : cPointF
+  com.grandtech.mapframe.core.sketch.GeoTouchAction o-- com.grandtech.mapframe.core.sketch.GeoTouchAction.GeoTouchMode : geoTouchMode
+  com.grandtech.mapframe.core.sketch.GeoTouchAction +-down- com.grandtech.mapframe.core.sketch.GeoTouchAction.GeoTouchMode
+  com.grandtech.mapframe.core.sketch.SketchAnnotations .up.|> com.grandtech.mapframe.core.sketch.ISketch
+  com.grandtech.mapframe.core.sketch.SketchAnnotations -up-|> com.grandtech.mapframe.core.sketch.SketchMapEvnet
+  com.grandtech.mapframe.core.sketch.SketchAnnotations o-- com.grandtech.mapframe.core.sketch.GeoTouchAction : geoTouchAction
+  com.grandtech.mapframe.core.sketch.SketchAnnotations o-- com.grandtech.mapframe.core.sketch.SketchHelpView : sketchHelpView
+  com.grandtech.mapframe.core.sketch.SketchAnnotations o-- com.grandtech.mapframe.core.sketch.SketchSetting : sketchSetting
+  com.grandtech.mapframe.core.sketch.SketchAnnotations o-- com.grandtech.mapframe.core.maps.GMapView : _gMapView
+  com.grandtech.mapframe.core.sketch.SketchHelpView -up-|> android.widget.FrameLayout
+  com.grandtech.mapframe.core.sketch.SketchMapEvnet .up.|> com.grandtech.mapframe.core.event.IMapEvent
+  com.grandtech.mapframe.core.sketch.SketchSetting .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.sketch.SketchSetting .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.sketch.SketchSetting o-- com.grandtech.mapframe.core.enumeration.GeometryType : sketchType
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations .up.|> com.grandtech.mapframe.core.sketch.ISketch
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations -up-|> com.grandtech.mapframe.core.sketch.SketchMapEvnet
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations o-- com.grandtech.mapframe.core.sketch.SketchSlideAnnotations.IOnAfterSlideListener : iOnAfterSlideListener
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations o-- com.grandtech.mapframe.core.maps.GMapView : mGMapView
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations o-- com.grandtech.mapframe.core.enumeration.GeometryType : mGeometryType
+  com.grandtech.mapframe.core.sketch.SketchSlideAnnotations +-down- com.grandtech.mapframe.core.sketch.SketchSlideAnnotations.IOnAfterSlideListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

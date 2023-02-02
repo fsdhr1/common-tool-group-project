@@ -1,0 +1,433 @@
+@startuml
+
+title __UTIL's Class Diagram__\n
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.CollectUtil {
+          {static} + ListT2ListObj()
+          {static} + array2List()
+          {static} + list2TArray()
+          {static} + list2TArray()
+          {static} + removeNullFromArray()
+          {static} + tArray2List()
+          - CollectUtil()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.CustomPointSerializer {
+          ~ precision : int
+          + CustomPointSerializer()
+          + CustomPointSerializer()
+          + serialize()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.FeatureSet {
+          - featureCollection : FeatureCollection
+          - geoJson : String
+          - keyWords : String[]
+          - layerId : String
+          - sourceId : String
+          + FeatureSet()
+          + append()
+          + append()
+          + append()
+          + append()
+          + bbox()
+          + clearAll()
+          + clone()
+          {static} + convert2FeatureSets()
+          {static} + convert2Features()
+          {static} + convert2Features()
+          {static} + convert2Geometries()
+          {static} + convert2MapFeatureSet()
+          {static} + convert2MapFeatureSet()
+          {static} + convert2MapFeatureSet()
+          + features()
+          {static} + fromFeature()
+          {static} + fromFeatures()
+          {static} + fromFeatures()
+          {static} + fromJson()
+          + getGeoJson()
+          + getKeyWords()
+          + getLayerId()
+          + getSourceId()
+          + jsonSerializable()
+          + replaceAll()
+          + replaceAll()
+          + replaceAll()
+          + replaceAll()
+          + setGeoJson()
+          + setKeyWords()
+          + setLayerId()
+          + setSourceId()
+          + toJson()
+          {static} + toJson()
+          + type()
+          - FeatureSet()
+          - FeatureSet()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.FeatureUtil {
+          {static} + firstId : String
+          {static} + secondId : String
+          {static} + thirdId : String
+          {static} - customIds : LinkedHashMap<String, String>
+          {static} + featureEqual()
+          {static} + featureEqual()
+          {static} + featureEqual()
+          {static} + features2Geometries()
+          {static} + findFeature()
+          {static} + findFeature()
+          {static} + getCustomId()
+          {static} + getFeatureArea()
+          {static} + getFeatureAttributeAsObj()
+          {static} + getFeatureAttributeAsT()
+          {static} + getFeatureId()
+          {static} + getIdField()
+          {static} + hasAttributes()
+          {static} + queryFeatureCollection()
+          {static} + queryFeatureCollectionLike()
+          {static} + queryFeatureFormCollection()
+          {static} + queryFeatureFormCollection()
+          {static} + setCustomId()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.GsonFactory {
+          - boxGson : Gson
+          - gson : Gson
+          {static} - singleton : GsonFactory
+          + getComGson()
+          + getComMapBoxGson()
+          {static} + getFactory()
+          - GsonFactory()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.LayerUtil {
+          {static} + circleRenderCircle()
+          {static} + fillRenderLine()
+          {static} + lineRenderLine()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.ListUtil {
+          {static} + listHasItem()
+          - ListUtil()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.MathUtil {
+          {static} + double2HALF_UP()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.MercatorProjection {
+          {static} + calculateGroundResolution()
+          {static} + deltaLat()
+          {static} + latitudeToMetersY()
+          {static} + latitudeToPixelY()
+          {static} + latitudeToTileY()
+          {static} + longitudeToMetersX()
+          {static} + longitudeToPixelX()
+          {static} + longitudeToTileX()
+          {static} + main()
+          {static} + metersXToLongitude()
+          {static} + metersYToLatitude()
+          {static} + pixelXToLongitude()
+          {static} + pixelXToTileX()
+          {static} + pixelYToLatitude()
+          {static} + pixelYToTileY()
+          {static} + tileXToLongitude()
+          {static} + tileXToPixelX()
+          {static} + tileYToLatitude()
+          {static} + tileYToPixelY()
+          - MercatorProjection()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.ObjectUtil {
+          {static} + baseTypeIsEqual()
+          {static} + baseTypeIsEqual()
+          {static} + baseTypeLike()
+          {static} + compareTo()
+          {static} + isEmpty()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.Pro4jUtil {
+          {static} + WKID : Map<Integer, String>
+          {static} + proParamCache : Map<String, String[]>
+          {static} + proRefCache : Map<String, CoordinateReferenceSystem>
+          {static} + proTrfCache : Map<String, CoordinateTransform>
+          {static} ~ _crsFactory : CRSFactory
+          {static} ~ _ctf : CoordinateTransformFactory
+          {static} ~ _proj4FileReader : Proj4FileReader
+          {static} ~ _wgs84 : CoordinateReferenceSystem
+          {static} - _wgs84_param : String
+          {static} + getsId()
+          {static} + pro84To2000()
+          {static} + pro84To2000()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.SimpleMap {
+          {static} + convert()
+          {static} + fromJson()
+          {static} + fromJson()
+          + obtainAllK()
+          + obtainAllV()
+          + obtainFirstKByV()
+          + obtainPositionK()
+          + obtainPositionV()
+          + obtainT()
+          + push()
+          + pushAll()
+          + put()
+          + toJson()
+          + toMap()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.StringEngine {
+          {static} + get32UUID()
+          {static} + getMinJsonArray()
+          {static} + getMinJsonStructure()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.TileInfo {
+          {static} + TILE_SIZE : short
+          {static} ~ TILE_BYTES_PER_PIXEL : byte
+          ~ pixelX : long
+          ~ pixelY : long
+          ~ renderPriority : int
+          ~ x : long
+          ~ y : long
+          ~ zoomLevel : byte
+          - hashCode : int
+          + compareTo()
+          + equals()
+          + hashCode()
+          + toString()
+          ~ TileInfo()
+          - calculateHashCode()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.Transformation {
+          {static} + GEOMETRY_ERROR_TYPE : String[]
+          {static} + m2jwd : float
+          {static} ~ buffer : double
+          {static} ~ geometryJSON : GeometryJSON
+          {static} ~ wkbReader : WKBReader
+          {static} ~ wktReader : WKTReader
+          {static} ~ wktWriter : WKTWriter
+          {static} + _2Feature()
+          {static} + analysisJsonArray()
+          {static} + analysisJsonElement()
+          {static} + analysisJsonObject()
+          {static} + analysisJsonPrimitive()
+          {static} + boxFeature2PointWkts()
+          {static} + boxFeature2Wkts()
+          {static} + boxGeometries2wKts()
+          {static} + boxGeometry2BoxLatLngBounds()
+          {static} + boxGeometry2PointFeatureCollection()
+          {static} + boxGeometry2Points()
+          {static} + boxGeometry2TwoPointLineString()
+          {static} + boxGeometry2Wkt()
+          {static} + boxGeometry2Wkts()
+          {static} + boxLineString2TwoPointLineString()
+          {static} + boxPolygon2Points()
+          {static} + boxPolygon2TwoPointLineString()
+          {static} + buffer()
+          {static} + calTextAnchor()
+          {static} + checkGeometrieIntersect()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea1()
+          {static} + checkGeometriesIntersect()
+          {static} + checkGeometry()
+          {static} + checkGeometry()
+          {static} + comWkt2BoxPoint()
+          {static} + compute84GeoJsonArea()
+          {static} + compute84GeoJsonLen()
+          {static} + compute84GeoJsonLenAndArea()
+          {static} + compute84GeoJsonRunTime()
+          {static} + diffFeature()
+          {static} + divFeatures()
+          {static} + divisionFeatures()
+          {static} + feature2BoxLatLngBounds()
+          {static} + features2BoxLatLngBounds()
+          {static} + geoJson2CenterJtsGeometry()
+          {static} + geoJson2CenterPoint()
+          {static} + geoJson2JstGeometry()
+          {static} + geoJson2NodeSymbol()
+          {static} + geoJson2NodeSymbolFeatureCollection()
+          {static} + geoJson2NodeSymbolLabel()
+          {static} + geoJsonStr2BoxGeometry()
+          {static} + geoJsonStr2GeoJson()
+          {static} + geoJsonStr2JstGeometry()
+          {static} + geom2PointArray()
+          {static} + geometry2BoxLatLngBounds()
+          {static} + geometryTry2MultiGeometry()
+          {static} + getBoxGeometryType()
+          {static} + getBoxRatio()
+          {static} + getBoxRatio()
+          {static} + getBoxRatios()
+          {static} + getCheckGeometrieIntersect()
+          {static} + getCovers()
+          {static} + getGeoJsonBox()
+          {static} + getGeometryLastSegment()
+          {static} + getLineStringLastSegment()
+          {static} + getVByFeature()
+          {static} + isGeoLegal()
+          {static} + isLineLeft2Right()
+          {static} + isWithinJTS()
+          {static} + isWithinJTS()
+          {static} + jstGeometry2GeoJson()
+          {static} + jstGeometry2Geometry()
+          {static} + jstGeometry2Wkt()
+          {static} + listPoint2SimplePolygon()
+          {static} + map2JsonObject()
+          {static} + mapBoxObj2Json()
+          {static} + mapBoxObj2Json()
+          {static} + mergeBoxFeatureBound()
+          {static} + mergeFeatures()
+          {static} + mergeGeometries()
+          {static} + polygonOrMultiPolygonToLineString()
+          {static} + rectifyGeometry()
+          {static} + simplePolygon2LinearRing()
+          {static} + simplePolygon2LinearRings()
+          {static} + unionGeoJson()
+          {static} + validate()
+          {static} + wkb2BoxJsonString()
+          {static} + wkb2BoxJsonString()
+          {static} + wkb2BoxMultiPolygon()
+          {static} + wkb2BoxMultiPolygon()
+          {static} + wkt2BoxGeometry()
+          {static} + wkt2BoxLatLngBounds()
+          {static} + wkt2BoxLineString()
+          {static} + wkt2BoxMultiLineString()
+          {static} + wkt2BoxMultiPoint()
+          {static} + wkt2BoxMultiPolygon()
+          {static} + wkt2BoxPoint()
+          {static} + wkt2BoxPolygon()
+          {static} + wkt2BoxPolygonCenter()
+          {static} + wkt2JtsGeometry()
+          {static} + wktTransfWidthHeightPx()
+          {static} + wkts2BoxGeometry()
+          {static} + wkts2BoxLatLngBounds()
+          {static} - addLineString()
+          {static} - addPolygon()
+          {static} - toMultiPolygonGeometry()
+          {static} - toPolygonGeometry()
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      enum BoxGeometryType {
+        LINESTRING
+        MULTILINESTRING
+        MULTIPOINT
+        MULTIPOLYGON
+        POINT
+        POLYGON
+      }
+    }
+  }
+  
+
+  namespace com.gradtech.mapframev10 {
+    namespace core.util {
+      class com.gradtech.mapframev10.core.util.WGS84 {
+          {static} + EQUATORIALRADIUS : double
+          {static} + INVERSEFLATTENING : double
+          {static} + POLARRADIUS : double
+      }
+    }
+  }
+  
+
+  com.gradtech.mapframev10.core.util.CustomPointSerializer .up.|> com.google.gson.JsonSerializer
+  com.gradtech.mapframev10.core.util.FeatureSet .up.|> com.gradtech.mapframev10.core.rules.Rules
+  com.gradtech.mapframev10.core.util.FeatureSet .up.|> com.mapbox.geojson.GeoJson
+  com.gradtech.mapframev10.core.util.FeatureSet .up.|> java.io.Serializable
+  com.gradtech.mapframev10.core.util.SimpleMap .up.|> java.io.Serializable
+  com.gradtech.mapframev10.core.util.SimpleMap -up-|> java.util.LinkedHashMap
+  com.gradtech.mapframev10.core.util.StringEngine .up.|> com.gradtech.mapframev10.core.rules.Rules
+  com.gradtech.mapframev10.core.util.TileInfo .up.|> java.lang.Comparable
+  com.gradtech.mapframev10.core.util.Transformation +-down- com.gradtech.mapframev10.core.util.Transformation.BoxGeometryType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

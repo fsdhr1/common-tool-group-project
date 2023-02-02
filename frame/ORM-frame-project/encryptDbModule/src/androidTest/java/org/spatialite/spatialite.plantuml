@@ -1,0 +1,600 @@
+@startuml
+
+title __SPATIALITE's Class Diagram__\n
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursorTest {
+          {static} - COLUMN_NAMES : String[]
+          {static} - COLUMN_NAMES1 : String[]
+          {static} - DATA_COUNT : int
+          {static} - POSITION0 : int
+          {static} - POSITION1 : int
+          {static} - ROW_MAX : int
+          - mDatabase : SQLiteDatabase
+          - mDatabaseCursor : AbstractCursor
+          - mDatabaseFile : File
+          - mLockObj : Object
+          + setUp()
+          + tearDown()
+          + testCheckPosition()
+          + testConstructor()
+          + testCopyStringToBuffer()
+          + testDeactivate()
+          + testGetBlob()
+          + testGetColumnCount()
+          + testGetColumnIndex()
+          + testGetColumnIndexOrThrow()
+          + testGetColumnName()
+          + testGetColumnNames()
+          + testGetCount()
+          + testGetExtras()
+          + testGetUpdatedField()
+          + testGetWantsAllOnMoveCalls()
+          + testGetWindow()
+          + testIsClosed()
+          + testIsFieldUpdated()
+          + testMoveToPrevious()
+          + testOnChange()
+          + testOnMove()
+          + testRegisterContentObserver()
+          + testRegisterDataSetObserver()
+          + testRequery()
+          + testRespond()
+          + testSetNotificationUri()
+          {static} - createTestList()
+          - generateData()
+          - setupDatabase()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursorTest.MockContentObserver {
+          + mHadCalledOnChange : boolean
+          + MockContentObserver()
+          + deliverSelfNotifications()
+          + hadCalledOnChange()
+          + onChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursorTest.MockDataSetObserver {
+          - mHadCalledOnChanged : boolean
+          - mHadCalledOnInvalid : boolean
+          + hadCalledOnChanged()
+          + hadCalledOnInvalid()
+          + onChanged()
+          + onInvalidated()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursorTest.TestAbstractCursor {
+          - mColumnNames : String[]
+          - mHadCalledOnChange : boolean
+          - mNewPosition : int
+          - mOldPosition : int
+          - mOnMoveReturnValue : boolean
+          - mRows : ArrayList<Object>[]
+          + TestAbstractCursor()
+          + TestAbstractCursor()
+          + getColumnNames()
+          + getCount()
+          + getDouble()
+          + getFloat()
+          + getInt()
+          + getLong()
+          + getNewPos()
+          + getOldPos()
+          + getOnMoveRet()
+          + getShort()
+          + getString()
+          + getType()
+          + hadCalledOnChange()
+          + isNull()
+          + onMove()
+          + resetOnMoveRet()
+          # checkPosition()
+          # getUpdatedField()
+          # isFieldUpdated()
+          # onChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursor_SelfContentObserverTest {
+          + testConstructor()
+          + testDeliverSelfNotifications()
+          + testOnChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor {
+          + getColumnNames()
+          + getCount()
+          + getDouble()
+          + getFloat()
+          + getInt()
+          + getLong()
+          + getMockSelfContentObserver()
+          + getShort()
+          + getString()
+          + getType()
+          + isNull()
+          + onChange()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor.MockSelfContentObserver {
+          + mIsOnChangeCalled : boolean
+          + mOnChangeResult : boolean
+          - mIsTrue : boolean
+          + MockSelfContentObserver()
+          + deliverSelfNotifications()
+          + onChange()
+          + setDeliverSelfNotificationsValue()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractWindowedCursorTest {
+          {static} - COLUMN_INDEX0 : int
+          {static} - COLUMN_INDEX1 : int
+          {static} - ROW_INDEX0 : int
+          {static} - TEST_COLUMN_COUNT : int
+          {static} - TEST_STRING : String
+          - mWindow : CursorWindow
+          + setUp()
+          + tearDown()
+          + testCheckPosition()
+          + testCopyStringToBuffer()
+          + testGetBlob()
+          + testGetDouble()
+          + testGetFloat()
+          + testGetInt()
+          + testGetLong()
+          + testGetShort()
+          + testGetString()
+          + testHasWindow()
+          + testIsBlob()
+          + testIsNull()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.AbstractWindowedCursorTest.MockAbstractWindowedCursor {
+          + MockAbstractWindowedCursor()
+          + getColumnNames()
+          + getCount()
+          # checkPosition()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.ApplicationTest {
+          + ApplicationTest()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorIndexOutOfBoundsExceptionTest {
+          + testConstructors()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorJoinerTest {
+          {static} - DEFAULT_TABLE1_VALUE_BEGINS : int
+          {static} - DEFAULT_TABLE2_VALUE_BEGINS : int
+          {static} - EQUAL_START : int
+          {static} - EQUAL_VALUE_COUNT : int
+          {static} - MAX_VALUE : int
+          {static} - TABLE1_COLUMNS : String
+          {static} - TABLE2_COLUMNS : String
+          {static} - TABLE_NAME_1 : String
+          {static} - TABLE_NAME_2 : String
+          {static} - TEST_ITEM_COUNT : int
+          {static} - UNIQUE_COUNT : int
+          - mDatabase : SQLiteDatabase
+          - mDatabaseFile : File
+          + setUp()
+          + tearDown()
+          + testCursorJoinerAndIterator()
+          + testNext()
+          - addValueIntoTable()
+          - addValuesIntoTable()
+          - closeCursor()
+          - createTable()
+          - deleteValueFromTable()
+          - getCursor()
+          - getOrderNumberString()
+          - initializeTables()
+          - setupDatabase()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWindowTest {
+          {static} - TEST_STRING : String
+          + setUp()
+          + testAccessDataValues()
+          + testAccessStartPosition()
+          + testClearAndOnAllReferencesReleased()
+          + testConstructors()
+          + testCopyStringToBuffer()
+          + testDataStructureOperations()
+          + testDescribeContents()
+          + testEmptyString()
+          + testNull()
+          + testWriteCursorToWindow()
+          {static} - createTestList()
+          - fillCursorTestContents()
+          - getOneByOneWindow()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWindowTest.MockCursorWindow {
+          - mHasReleasedAllReferences : boolean
+          + MockCursorWindow()
+          + hasReleasedAllReferences()
+          + resetStatus()
+          # onAllReferencesReleased()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWrapperTest {
+          {static} - CURRENT_DATABASE_VERSION : int
+          {static} - DEFAULT_COLUMN_COUNT : int
+          {static} - DEFAULT_RECORD_COUNT : int
+          {static} - FIRST_NUMBER : String
+          {static} - NUMBER_PROJECTION : String[]
+          {static} - SECOND_NUMBER : String
+          {static} - TESTVALUE1 : int
+          {static} - TESTVALUE2 : int
+          - mCursor : Cursor
+          - mDatabase : SQLiteDatabase
+          - mDatabaseFile : File
+          + setUp()
+          + tearDown()
+          + testConstrucotorAndClose()
+          + testContentObsererOperations()
+          + testCopyStringToBuffer()
+          + testDeactivate()
+          + testGetCount()
+          + testGetExtras()
+          + testGetWantsAllOnMoveCalls()
+          + testGettingColumnInfos()
+          + testGettingValues()
+          + testPositioning()
+          + testRespond()
+          - addWithValue()
+          - closeDatabase()
+          - deleteAllRecords()
+          - deleteWithValue()
+          - getCursor()
+          - rebuildDatabase()
+          - setupDatabase()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWrapperTest.MockContentObserver {
+          + MockContentObserver()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.CursorWrapperTest.MockObserver {
+          - mHasChanged : boolean
+          - mHasInvalidated : boolean
+          + onChanged()
+          + onInvalidated()
+          # hasChanged()
+          # hasInvalidated()
+          # resetStatus()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseCursorTest {
+          {static} # TYPE_CURSOR : int
+          {static} # TYPE_CURSORWRAPPER : int
+          {static} - CURRENT_DATABASE_VERSION : int
+          - mDatabase : SQLiteDatabase
+          - mDatabaseFile : File
+          - mTestType : int
+          {static} - sString1 : String
+          {static} - sString2 : String
+          {static} - sString3 : String
+          + isPerformanceOnly()
+          + setUp()
+          + setupTestType()
+          + startPerformance()
+          + tearDown()
+          + testBlob()
+          + testCursor1()
+          + testCursor2()
+          + testLargeField()
+          + testManyRowsLong()
+          + testManyRowsTxt()
+          + testManyRowsTxtLong()
+          + testRealColumns()
+          + testRequery()
+          + testRequeryWithAlteredSelectionArgs()
+          + testRequeryWithSelection()
+          + testRequeryWithSelectionArgs()
+          - getTestCursor()
+          - populateDefaultTable()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseCursorTest.TestObserver {
+          ~ c : SQLiteCursor
+          ~ quit : boolean
+          ~ total : int
+          + TestObserver()
+          + onChanged()
+          + onInvalidated()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseUtilsTest {
+          {static} - TABLE_NAME : String
+          {static} - TEST_PROJECTION : String[]
+          - mDatabase : SQLiteDatabase
+          - mDatabaseFile : File
+          + setUp()
+          + tearDown()
+          + testAppendEscapedSQLString()
+          + testAppendValueToSql()
+          + testBindObjectToProgram()
+          + testCollationKey()
+          + testCursorDoubleToContentValues()
+          + testCursorDoubleToCursorValues()
+          + testCursorIntToContentValues()
+          + testCursorRowToContentValues()
+          + testCursorStringToContentValues()
+          + testCursorStringToInsertHelper()
+          + testDumpCurrentRow()
+          + testDumpCursor()
+          + testExceptionFromParcel()
+          + testLongForQuery()
+          + testQueryNumEntries()
+          + testSqlEscapeString()
+          + testStringForQuery()
+          + testcursorLongToContentValues()
+          {static} - assertFileDescriptorContent()
+          {static} - assertInputStreamContent()
+          {static} - parseBlob()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.DatabaseUtils_InsertHelperTest {
+          {static} - DATABASE_NAME : String
+          {static} - TEST_TABLE_NAME : String
+          - mDatabase : SQLiteDatabase
+          - mInsertHelper : InsertHelper
+          + setUp()
+          + tearDown()
+          + testClose()
+          + testConstructor()
+          + testGetColumnIndex()
+          + testInsert()
+          + testReplace()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MatrixCursorTest {
+          {static} - COLUMN0_INDEX : int
+          {static} - COLUMN0_NAME : String
+          {static} - COLUMN1_INDEX : int
+          {static} - COLUMN1_NAME : String
+          {static} - COLUMN2_INDEX : int
+          {static} - COLUMN2_NAME : String
+          - mMatrixCursor : MatrixCursor
+          + setUp()
+          + testAddRow()
+          + testGetColumnNames()
+          + testGetters()
+          + testMatrixCursor()
+          + testNewRow()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MatrixCursor_RowBuilderTest {
+          {static} - COLUMN0_INDEX : int
+          {static} - COLUMN1_INDEX : int
+          {static} - COLUMN2_INDEX : int
+          + testAdd()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MergeCursorTest {
+          ~ mCursors : Cursor[]
+          {static} - COLUMN_FOR_NULL_TEST : String
+          {static} - DEFAULT_TABLE_VALUE_BEGINS : int
+          {static} - HALF_VALUE : int
+          {static} - MAX_VALUE : int
+          - NUMBER_1_COLUMN_INDEX : int
+          {static} - TABLE1_COLUMNS : String
+          {static} - TABLE1_NAME : String
+          {static} - TABLE2_COLUMNS : String
+          {static} - TABLE2_COLUMN_COUNT : int
+          {static} - TABLE2_COLUMN_NAMES : String
+          {static} - TABLE2_NAME : String
+          {static} - TABLE3_COLUMNS : String
+          {static} - TABLE3_COLUMN_COUNT : int
+          {static} - TABLE3_COLUMN_NAMES : String
+          {static} - TABLE3_NAME : String
+          {static} - TABLE4_NAME : String
+          {static} - TABLE5_NAME : String
+          {static} - TEXT_COLUMN_NAME : String
+          - mDatabase : SQLiteDatabase
+          - mDatabaseFile : File
+          + setUp()
+          + tearDown()
+          + testConstructor()
+          + testContentObsererOperations()
+          + testCursorSwiching()
+          + testDeactivate()
+          + testGetValues()
+          + testOnMove()
+          + testRequery()
+          - addValuesIntoTable()
+          - buildDatabaseWithTestValues()
+          - createCursors()
+          - createTable()
+          - getCursor()
+          - setupDatabase()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.MergeCursorTest.MockObserver {
+          - mHasChanged : boolean
+          - mHasInvalidated : boolean
+          + hasChanged()
+          + hasInvalidated()
+          + onChanged()
+          + onInvalidated()
+          + resetStatus()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.SQLExceptionTest {
+          + testConstructors()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.StaleDataExceptionTest {
+          + testConstructors()
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      class org.spatialite.TestConstants {
+          {static} + EPSILON : double
+      }
+    }
+  }
+  
+
+  org.spatialite.AbstractCursorTest o-- org.spatialite.AbstractCursorTest.TestAbstractCursor : mTestAbstractCursor
+  org.spatialite.AbstractCursorTest +-down- org.spatialite.AbstractCursorTest.MockContentObserver
+  org.spatialite.AbstractCursorTest +-down- org.spatialite.AbstractCursorTest.MockDataSetObserver
+  org.spatialite.AbstractCursorTest +-down- org.spatialite.AbstractCursorTest.TestAbstractCursor
+  org.spatialite.AbstractCursor_SelfContentObserverTest +-down- org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor
+  org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor +-down- org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor.MockSelfContentObserver
+  org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor.MockSelfContentObserver o-- org.spatialite.AbstractCursor_SelfContentObserverTest.MockAbstractCursor : mMockAbstractCursor
+  org.spatialite.AbstractWindowedCursorTest o-- org.spatialite.AbstractWindowedCursorTest.MockAbstractWindowedCursor : mCursor
+  org.spatialite.AbstractWindowedCursorTest +-down- org.spatialite.AbstractWindowedCursorTest.MockAbstractWindowedCursor
+  org.spatialite.CursorWindowTest +-down- org.spatialite.CursorWindowTest.MockCursorWindow
+  org.spatialite.CursorWrapperTest +-down- org.spatialite.CursorWrapperTest.MockContentObserver
+  org.spatialite.CursorWrapperTest +-down- org.spatialite.CursorWrapperTest.MockObserver
+  org.spatialite.DatabaseCursorTest .up.|> PerformanceTestCase
+  org.spatialite.DatabaseCursorTest +-down- org.spatialite.DatabaseCursorTest.TestObserver
+  org.spatialite.MergeCursorTest +-down- org.spatialite.MergeCursorTest.MockObserver
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

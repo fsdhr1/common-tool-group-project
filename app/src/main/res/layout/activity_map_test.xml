@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/btn_demo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mapcore基础功能测试" />
+
+    <Button
+        android:id="@+id/btn_demo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mapui+mapcore" />
+    <Button
+        android:id="@+id/btn_demo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地图快照" />
+    <Button
+        android:id="@+id/btn_demo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数据延时" />
+    <Button
+        android:id="@+id/btn_demo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MarkerView" />
+
+    <Button
+        android:id="@+id/btn_Editor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0.7.3及以上版本选择集、临时图层多类型数据操作demo" />
+
+    <Button
+        android:id="@+id/btn_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="离线缓存测试" />
+
+    <Button
+        android:id="@+id/btn_mapui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mapui测试用例" />
+</LinearLayout>

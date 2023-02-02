@@ -1,0 +1,181 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace com.gykj.timepickerview {
+    namespace view {
+      class com.gykj.timepickerview.view.BasePickerView {
+          + decorView : ViewGroup
+          # bgColor_default : int
+          # clickView : View
+          # contentContainer : ViewGroup
+          # pickerview_bg_topbar : int
+          # pickerview_timebtn_nor : int
+          # pickerview_timebtn_pre : int
+          # pickerview_topbar_title : int
+          - cancelable : boolean
+          - context : Context
+          - dialogView : ViewGroup
+          - dismissing : boolean
+          - gravity : int
+          - inAnim : Animation
+          - isAnim : boolean
+          - isShowing : boolean
+          - mDialog : Dialog
+          - onCancelableTouchListener : OnTouchListener
+          - onKeyBackListener : OnKeyListener
+          - outAnim : Animation
+          - params : LayoutParams
+          - rootView : ViewGroup
+          + BasePickerView()
+          + createDialog()
+          + dismiss()
+          + dismissDialog()
+          + dismissImmediately()
+          + findViewById()
+          + getInAnimation()
+          + getOutAnimation()
+          + isDialog()
+          + isShowing()
+          + setDialogOutSideCancelable()
+          + setKeyBackCancelable()
+          + setOnDismissListener()
+          + show()
+          + show()
+          + show()
+          + show()
+          + showDialog()
+          # init()
+          # initEvents()
+          # initViews()
+          # setOutSideCancelable()
+          - onAttached()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace view {
+      class com.gykj.timepickerview.view.WheelOptions {
+          ~ dividerColor : int
+          ~ lineSpacingMultiplier : float
+          ~ textColorCenter : int
+          ~ textColorOut : int
+          - N_mOptions2Items : List<T>
+          - N_mOptions3Items : List<T>
+          - linkage : boolean
+          - mOptions1Items : List<T>
+          - mOptions2Items : List<List<T>>
+          - mOptions3Items : List<List<List<T>>>
+          - view : View
+          + WheelOptions()
+          + getCurrentItems()
+          + getView()
+          + isCenterLabel()
+          + setCurrentItems()
+          + setCyclic()
+          + setCyclic()
+          + setDividerColor()
+          + setDividerType()
+          + setLabels()
+          + setLineSpacingMultiplier()
+          + setNPicker()
+          + setPicker()
+          + setTextColorCenter()
+          + setTextColorOut()
+          + setTextContentSize()
+          + setTypeface()
+          + setView()
+          - itemSelected()
+          - setDividerColor()
+          - setDividerType()
+          - setLineSpacingMultiplier()
+          - setTextColorCenter()
+          - setTextColorOut()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace view {
+      class com.gykj.timepickerview.view.WheelTime {
+          {static} + dateFormat : DateFormat
+          ~ dividerColor : int
+          ~ lineSpacingMultiplier : float
+          ~ textColorCenter : int
+          ~ textColorOut : int
+          {static} - DEFAULT_END_DAY : int
+          {static} - DEFAULT_END_MONTH : int
+          {static} - DEFAULT_END_YEAR : int
+          {static} - DEFAULT_START_DAY : int
+          {static} - DEFAULT_START_MONTH : int
+          {static} - DEFAULT_START_YEAR : int
+          - currentYear : int
+          - endDay : int
+          - endMonth : int
+          - endYear : int
+          - gravity : int
+          - startDay : int
+          - startMonth : int
+          - startYear : int
+          - textSize : int
+          - type : boolean[]
+          - view : View
+          + WheelTime()
+          + WheelTime()
+          + getEndYear()
+          + getStartYear()
+          + getTime()
+          + getView()
+          + isCenterLabel()
+          + setCyclic()
+          + setDividerColor()
+          + setDividerType()
+          + setEndYear()
+          + setLabels()
+          + setLineSpacingMultiplier()
+          + setPicker()
+          + setPicker()
+          + setRangDate()
+          + setStartYear()
+          + setTextColorCenter()
+          + setTextColorOut()
+          + setView()
+          - setContentTextSize()
+          - setDividerColor()
+          - setDividerType()
+          - setLineSpacingMultiplier()
+          - setReDay()
+          - setTextColorCenter()
+          - setTextColorOut()
+      }
+    }
+  }
+  
+
+  com.gykj.timepickerview.view.BasePickerView o-- com.gykj.timepickerview.listener.OnDismissListener : onDismissListener
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.listener.OnItemSelectedListener : wheelListener_option1
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.listener.OnItemSelectedListener : wheelListener_option2
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.lib.WheelView : wv_option1
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.lib.WheelView : wv_option2
+  com.gykj.timepickerview.view.WheelOptions o-- com.gykj.timepickerview.lib.WheelView : wv_option3
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_day
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_hours
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_mins
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_month
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_seconds
+  com.gykj.timepickerview.view.WheelTime o-- com.gykj.timepickerview.lib.WheelView : wv_year
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

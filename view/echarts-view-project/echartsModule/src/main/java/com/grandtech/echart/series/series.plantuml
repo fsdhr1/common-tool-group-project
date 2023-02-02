@@ -1,0 +1,1336 @@
+@startuml
+
+title __SERIES's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Bar {
+          - barCategoryGap : String
+          - barGap : String
+          - barMaxWidth : Integer
+          - barMinHeight : Integer
+          - barWidth : Object
+          + Bar()
+          + Bar()
+          + barCategoryGap()
+          + barCategoryGap()
+          + barGap()
+          + barGap()
+          + barMaxWidth()
+          + barMaxWidth()
+          + barMinHeight()
+          + barMinHeight()
+          + barWidth()
+          + barWidth()
+          + getBarCategoryGap()
+          + getBarGap()
+          + getBarMaxWidth()
+          + getBarMinHeight()
+          + getBarWidth()
+          + setBarCategoryGap()
+          + setBarGap()
+          + setBarMaxWidth()
+          + setBarMinHeight()
+          + setBarWidth()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Boxplot {
+          - boxWidth : Object[]
+          + Boxplot()
+          + Boxplot()
+          + boxWidth()
+          + boxWidth()
+          + boxWidth()
+          + getBoxWidth()
+          + getItemStyle()
+          + getLayout()
+          + itemStyle()
+          + itemStyle()
+          + layout()
+          + layout()
+          + setBoxWidth()
+          + setItemStyle()
+          + setLayout()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Candlestick {
+          - barMaxWidth : Integer
+          - barWidth : Integer
+          + Candlestick()
+          + Candlestick()
+          + barMaxWidth()
+          + barMaxWidth()
+          + barWidth()
+          + barWidth()
+          + data()
+          + getBarMaxWidth()
+          + getBarWidth()
+          + getLayout()
+          + layout()
+          + layout()
+          + setBarMaxWidth()
+          + setBarWidth()
+          + setLayout()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.EMap {
+          + EMap()
+          + EMap()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Effect {
+          - bounceDistance : Integer
+          - color : String
+          - loop : Boolean
+          - period : Integer
+          - scaleSize : Integer
+          {static} - serialVersionUID : long
+          - shadowBlur : Integer
+          - shadowColor : String
+          - show : Boolean
+          - symbol : Object
+          - symbolSize : Object
+          - trailLength : Double
+          + bounceDistance()
+          + bounceDistance()
+          + color()
+          + color()
+          + getBounceDistance()
+          + getColor()
+          + getLoop()
+          + getPeriod()
+          + getScaleSize()
+          + getShadowBlur()
+          + getShadowColor()
+          + getShow()
+          + getSymbol()
+          + getSymbolSize()
+          + getTrailLength()
+          + getType()
+          + loop()
+          + loop()
+          + period()
+          + period()
+          + scaleSize()
+          + scaleSize()
+          + setBounceDistance()
+          + setColor()
+          + setLoop()
+          + setPeriod()
+          + setScaleSize()
+          + setShadowBlur()
+          + setShadowColor()
+          + setShow()
+          + setSymbol()
+          + setSymbolSize()
+          + setTrailLength()
+          + setType()
+          + shadowBlur()
+          + shadowBlur()
+          + shadowColor()
+          + shadowColor()
+          + show()
+          + show()
+          + symbol()
+          + symbol()
+          + symbol()
+          + symbolSize()
+          + symbolSize()
+          + symbolSize()
+          + symbolSize()
+          + trailLength()
+          + trailLength()
+          + type()
+          + type()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      enum Type {
+        bounce
+        scale
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.EffectScatter {
+          - effectType : Object
+          - showEffectOn : Object
+          + EffectScatter()
+          + EffectScatter()
+          + effectType()
+          + effectType()
+          + effectType()
+          + getEffectType()
+          + getRippleEffect()
+          + getShowEffectOn()
+          + rippleEffect()
+          + rippleEffect()
+          + setEffectType()
+          + setRippleEffect()
+          + setShowEffectOn()
+          + showEffectOn()
+          + showEffectOn()
+          + showEffectOn()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Funnel {
+          - gap : Integer
+          - max : Integer
+          - maxSize : String
+          - min : Integer
+          - minSize : String
+          - x : Object
+          - x2 : Object
+          - y : Object
+          - y2 : Object
+          + Funnel()
+          + Funnel()
+          + funnelAlign()
+          + funnelAlign()
+          + gap()
+          + gap()
+          + getFunnelAlign()
+          + getGap()
+          + getLabelLine()
+          + getMax()
+          + getMaxSize()
+          + getMin()
+          + getMinSize()
+          + getSort()
+          + getX()
+          + getX2()
+          + getY()
+          + getY2()
+          + labelLine()
+          + labelLine()
+          + max()
+          + max()
+          + maxSize()
+          + maxSize()
+          + min()
+          + min()
+          + minSize()
+          + minSize()
+          + setFunnelAlign()
+          + setGap()
+          + setLabelLine()
+          + setMax()
+          + setMaxSize()
+          + setMin()
+          + setMinSize()
+          + setSort()
+          + setX()
+          + setX2()
+          + setY()
+          + setY2()
+          + sort()
+          + sort()
+          + x()
+          + x()
+          + x2()
+          + x2()
+          + y()
+          + y()
+          + y2()
+          + y2()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Gauge {
+          - center : Object[]
+          - endAngle : Integer
+          - max : Integer
+          - min : Integer
+          - radius : Object
+          - splitNumber : Integer
+          - startAngle : Integer
+          + Gauge()
+          + Gauge()
+          + axisLabel()
+          + axisLabel()
+          + axisLine()
+          + axisLine()
+          + axisTick()
+          + axisTick()
+          + center()
+          + center()
+          + center()
+          + detail()
+          + detail()
+          + endAngle()
+          + endAngle()
+          + getAxisLabel()
+          + getAxisLine()
+          + getAxisTick()
+          + getCenter()
+          + getDetail()
+          + getEndAngle()
+          + getMax()
+          + getMin()
+          + getPointer()
+          + getRadius()
+          + getSplitLine()
+          + getSplitNumber()
+          + getStartAngle()
+          + getTitle()
+          + max()
+          + max()
+          + min()
+          + min()
+          + pointer()
+          + pointer()
+          + radius()
+          + radius()
+          + radius()
+          + setAxisLabel()
+          + setAxisLine()
+          + setAxisTick()
+          + setCenter()
+          + setDetail()
+          + setEndAngle()
+          + setMax()
+          + setMin()
+          + setPointer()
+          + setRadius()
+          + setSplitLine()
+          + setSplitNumber()
+          + setStartAngle()
+          + setTitle()
+          + splitLine()
+          + splitLine()
+          + splitNumber()
+          + splitNumber()
+          + startAngle()
+          + startAngle()
+          + title()
+          + title()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.GeoCoord {
+          {static} - serialVersionUID : long
+          + put()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Graph {
+          - categories : List<Category>
+          - center : Object
+          - coolDown : Object
+          - draggable : Boolean
+          - edges : List<Link>
+          - gravity : Double
+          - large : Boolean
+          - linkSymbol : Object
+          - linkSymbolSize : Integer
+          - links : List<Link>
+          - maxRadius : Integer
+          - minRadius : Integer
+          - nodeScaleRatio : Double
+          - nodes : List
+          - preventOverlap : Boolean
+          - ratioScaling : Boolean
+          - roam : Object
+          - scaling : Double
+          - size : Object
+          - steps : Integer
+          - useWorker : Boolean
+          + Graph()
+          + Graph()
+          + Graph()
+          + categories()
+          + categories()
+          + categories()
+          + categories()
+          + categories()
+          + center()
+          + center()
+          + coolDown()
+          + coolDown()
+          + draggable()
+          + draggable()
+          + edges()
+          + edges()
+          + edges()
+          + force()
+          + force()
+          + getCategories()
+          + getCenter()
+          + getCoolDown()
+          + getDraggable()
+          + getEdges()
+          + getForce()
+          + getGravity()
+          + getLarge()
+          + getLayout()
+          + getLinkSymbol()
+          + getLinkSymbolSize()
+          + getLinks()
+          + getMaxRadius()
+          + getMinRadius()
+          + getNodeScaleRatio()
+          + getNodes()
+          + getPreventOverlap()
+          + getRatioScaling()
+          + getRoam()
+          + getScaling()
+          + getSize()
+          + getSteps()
+          + getUseWorker()
+          + gravity()
+          + gravity()
+          + large()
+          + large()
+          + layout()
+          + layout()
+          + linkSymbol()
+          + linkSymbol()
+          + linkSymbol()
+          + linkSymbolSize()
+          + linkSymbolSize()
+          + links()
+          + links()
+          + links()
+          + maxRadius()
+          + maxRadius()
+          + minRadius()
+          + minRadius()
+          + nodeScaleRatio()
+          + nodeScaleRatio()
+          + nodes()
+          + nodes()
+          + nodes()
+          + preventOverlap()
+          + preventOverlap()
+          + ratioScaling()
+          + ratioScaling()
+          + roam()
+          + roam()
+          + roam()
+          + scaling()
+          + scaling()
+          + setCategories()
+          + setCenter()
+          + setCoolDown()
+          + setDraggable()
+          + setEdges()
+          + setForce()
+          + setGravity()
+          + setLarge()
+          + setLayout()
+          + setLinkSymbol()
+          + setLinkSymbolSize()
+          + setLinks()
+          + setMaxRadius()
+          + setMinRadius()
+          + setNodeScaleRatio()
+          + setNodes()
+          + setPreventOverlap()
+          + setRatioScaling()
+          + setRoam()
+          + setScaling()
+          + setSize()
+          + setSteps()
+          + setUseWorker()
+          + size()
+          + size()
+          + steps()
+          + steps()
+          + useWorker()
+          + useWorker()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Heatmap {
+          - blurSize : Integer
+          - gradientColors : List<Object>
+          - minAlpha : Double
+          - opacity : Double
+          - valueScale : Double
+          + Heatmap()
+          + Heatmap()
+          + blurSize()
+          + blurSize()
+          + getBlurSize()
+          + getGradientColors()
+          + getMinAlpha()
+          + getOpacity()
+          + getValueScale()
+          + gradientColors()
+          + gradientColors()
+          + gradientColors()
+          + minAlpha()
+          + minAlpha()
+          + opacity()
+          + opacity()
+          + setBlurSize()
+          + setGradientColors()
+          + setMinAlpha()
+          + setOpacity()
+          + setValueScale()
+          + valueScale()
+          + valueScale()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.K {
+          + K()
+          + K()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Line {
+          - dataFilter : Object
+          - smooth : Boolean
+          + Line()
+          + Line()
+          + areaStyle()
+          + areaStyle()
+          + dataFilter()
+          + dataFilter()
+          + dataFilter()
+          + getAreaStyle()
+          + getDataFilter()
+          + getLineStyle()
+          + getSmooth()
+          + lineStyle()
+          + lineStyle()
+          + setAreaStyle()
+          + setDataFilter()
+          + setLineStyle()
+          + setSmooth()
+          + smooth()
+          + smooth()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Lines {
+          + Lines()
+          + Lines()
+          + effect()
+          + effect()
+          + getEffect()
+          + setEffect()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Map {
+          - dataRangeHoverLink : Boolean
+          - map : Object
+          - mapType : String
+          - mapValuePrecision : Integer
+          - nameMap : Object
+          - roam : Boolean
+          - selectedMode : Object
+          - showLegendSymbol : Boolean
+          - textFixed : Object
+          - zoom : Object
+          + Map()
+          + Map()
+          + dataRangeHoverLink()
+          + dataRangeHoverLink()
+          + geoCoord()
+          + geoCoord()
+          + getDataRangeHoverLink()
+          + getGeoCoord()
+          + getMap()
+          + getMapLocation()
+          + getMapType()
+          + getMapValueCalculation()
+          + getMapValuePrecision()
+          + getNameMap()
+          + getRoam()
+          + getScaleLimit()
+          + getSelectedMode()
+          + getShowLegendSymbol()
+          + getTextFixed()
+          + getZoom()
+          + map()
+          + mapLocation()
+          + mapLocation()
+          + mapType()
+          + mapType()
+          + mapValueCalculation()
+          + mapValueCalculation()
+          + mapValuePrecision()
+          + mapValuePrecision()
+          + nameMap()
+          + nameMap()
+          + roam()
+          + roam()
+          + scaleLimit()
+          + scaleLimit()
+          + selectedMode()
+          + selectedMode()
+          + selectedMode()
+          + setDataRangeHoverLink()
+          + setGeoCoord()
+          + setMap()
+          + setMapLocation()
+          + setMapType()
+          + setMapValueCalculation()
+          + setMapValuePrecision()
+          + setNameMap()
+          + setRoam()
+          + setScaleLimit()
+          + setSelectedMode()
+          + setShowLegendSymbol()
+          + setTextFixed()
+          + setZoom()
+          + showLegendSymbol()
+          + showLegendSymbol()
+          + textFixed()
+          + textFixed()
+          + zoom()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.MapLocation {
+          - height : Object
+          {static} - serialVersionUID : long
+          - width : Object
+          - x : Object
+          - y : Object
+          + MapLocation()
+          + MapLocation()
+          + MapLocation()
+          + MapLocation()
+          + MapLocation()
+          + MapLocation()
+          + MapLocation()
+          + getHeight()
+          + getWidth()
+          + getX()
+          + getY()
+          + height()
+          + height()
+          + setHeight()
+          + setWidth()
+          + setX()
+          + setY()
+          + width()
+          + width()
+          + x()
+          + x()
+          + x()
+          + y()
+          + y()
+          + y()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.MarkLine {
+          - precision : Integer
+          - smooth : Boolean
+          - smoothness : Double
+          - symbol : Object
+          - symbolRoate : Object
+          - symbolSize : Object
+          + bundling()
+          + bundling()
+          + effect()
+          + effect()
+          + geoCoord()
+          + geoCoord()
+          + getBundling()
+          + getEffect()
+          + getGeoCoord()
+          + getItemStyle()
+          + getPrecision()
+          + getSmooth()
+          + getSmoothness()
+          + getSymbol()
+          + getSymbolRoate()
+          + getSymbolSize()
+          + itemStyle()
+          + itemStyle()
+          + precision()
+          + precision()
+          + setBundling()
+          + setEffect()
+          + setGeoCoord()
+          + setItemStyle()
+          + setPrecision()
+          + setSmooth()
+          + setSmoothness()
+          + setSymbol()
+          + setSymbolRoate()
+          + setSymbolSize()
+          + smooth()
+          + smooth()
+          + smoothness()
+          + smoothness()
+          + symbol()
+          + symbol()
+          + symbolRoate()
+          + symbolRoate()
+          + symbolSize()
+          + symbolSize()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.MarkLine.Bundling {
+          - enable : Boolean
+          - maxTurningAngle : Integer
+          + enable()
+          + enable()
+          + getEnable()
+          + getMaxTurningAngle()
+          + maxTurningAngle()
+          + maxTurningAngle()
+          + setEnable()
+          + setMaxTurningAngle()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.MarkPoint {
+          - large : Boolean
+          - symbol : Object
+          - symbolRoate : Object
+          - symbolSize : Object
+          + effect()
+          + effect()
+          + geoCoord()
+          + geoCoord()
+          + getEffect()
+          + getGeoCoord()
+          + getItemStyle()
+          + getLarge()
+          + getSymbol()
+          + getSymbolRoate()
+          + getSymbolSize()
+          + itemStyle()
+          + itemStyle()
+          + large()
+          + large()
+          + setEffect()
+          + setGeoCoord()
+          + setItemStyle()
+          + setLarge()
+          + setSymbol()
+          + setSymbolRoate()
+          + setSymbolSize()
+          + symbol()
+          + symbol()
+          + symbolRoate()
+          + symbolRoate()
+          + symbolSize()
+          + symbolSize()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Parallel {
+          - activeOpacity : Double
+          - inactiveOpacity : Double
+          - parallelIndex : Integer
+          + Parallel()
+          + Parallel()
+          + activeOpacity()
+          + activeOpacity()
+          + getActiveOpacity()
+          + getInactiveOpacity()
+          + getParallelIndex()
+          + inactiveOpacity()
+          + inactiveOpacity()
+          + parallelIndex()
+          + parallelIndex()
+          + setActiveOpacity()
+          + setInactiveOpacity()
+          + setParallelIndex()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Pie {
+          - avoidLabelOverlap : Boolean
+          - center : Object[]
+          - clockWise : Boolean
+          - minAngle : Integer
+          - radius : Object
+          - selectedOffset : Integer
+          - startAngle : Integer
+          + Pie()
+          + Pie()
+          + avoidLabelOverlap()
+          + center()
+          + center()
+          + center()
+          + clockWise()
+          + clockWise()
+          + getAvoidLabelOverlap()
+          + getCenter()
+          + getClockWise()
+          + getMinAngle()
+          + getRadius()
+          + getRoseType()
+          + getSelectedMode()
+          + getSelectedOffset()
+          + getStartAngle()
+          + minAngle()
+          + minAngle()
+          + radius()
+          + radius()
+          + radius()
+          + roseType()
+          + roseType()
+          + setAvoidLabelOverlap()
+          + setCenter()
+          + setClockWise()
+          + setMinAngle()
+          + setRadius()
+          + setRoseType()
+          + setSelectedMode()
+          + setSelectedOffset()
+          + setStartAngle()
+          + startAngle()
+          + startAngle()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.RadarSeries {
+          + RadarSeries()
+          + RadarSeries()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Sankey {
+          - edges : List<Link>
+          - layoutIterations : Integer
+          - links : List<Link>
+          - nodeGap : Integer
+          - nodeWidth : Integer
+          - nodes : List
+          + Sankey()
+          + Sankey()
+          + edges()
+          + edges()
+          + edges()
+          + getEdges()
+          + getLayoutIterations()
+          + getLinks()
+          + getNodeGap()
+          + getNodeWidth()
+          + getNodes()
+          + layoutIterations()
+          + layoutIterations()
+          + links()
+          + links()
+          + links()
+          + nodeGap()
+          + nodeGap()
+          + nodeWidth()
+          + nodeWidth()
+          + nodes()
+          + nodes()
+          + nodes()
+          + setEdges()
+          + setLayoutIterations()
+          + setLinks()
+          + setNodeGap()
+          + setNodeWidth()
+          + setNodes()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.ScaleLimit {
+          - max : Double
+          - min : Double
+          {static} - serialVersionUID : long
+          + ScaleLimit()
+          + ScaleLimit()
+          + getMax()
+          + getMin()
+          + max()
+          + max()
+          + min()
+          + min()
+          + setMax()
+          + setMin()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Scatter {
+          - large : Boolean
+          - largeThreshold : Long
+          + Scatter()
+          + Scatter()
+          + getLarge()
+          + getLargeThreshold()
+          + large()
+          + large()
+          + largeThreshold()
+          + largeThreshold()
+          + setLarge()
+          + setLargeThreshold()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      abstract class com.grandtech.echart.series.Series {
+          - bottom : Object
+          - calculable : Boolean
+          - coordinateSystem : Object
+          - geoIndex : Integer
+          - height : Object
+          - left : Object
+          - legendHoverLink : Boolean
+          - name : String
+          - right : Object
+          - showAllSymbol : Boolean
+          - stack : String
+          - symbol : Object
+          - symbolOffset : Object[]
+          - symbolRoate : Object
+          - symbolSize : Object
+          - top : Object
+          - width : Object
+          - xAxisIndex : Integer
+          - yAxisIndex : Integer
+          - z : Integer
+          - zlevel : Integer
+          + bottom()
+          + bottom()
+          + bottom()
+          + calcuable()
+          + calculable()
+          + coordinateSystem()
+          + coordinateSystem()
+          + coordinateSystem()
+          + geoIndex()
+          + geoIndex()
+          + getBottom()
+          + getCalculable()
+          + getCoordinateSystem()
+          + getGeoIndex()
+          + getHeight()
+          + getItemStyle()
+          + getLabel()
+          + getLeft()
+          + getLegendHoverLink()
+          + getMarkLine()
+          + getMarkPoint()
+          + getName()
+          + getRight()
+          + getShowAllSymbol()
+          + getStack()
+          + getSymbol()
+          + getSymbolOffset()
+          + getSymbolRoate()
+          + getSymbolSize()
+          + getTooltip()
+          + getTop()
+          + getType()
+          + getWidth()
+          + getXAxisIndex()
+          + getYAxisIndex()
+          + getZ()
+          + getZlevel()
+          + height()
+          + height()
+          + height()
+          + itemStyle()
+          + itemStyle()
+          + label()
+          + label()
+          + left()
+          + left()
+          + left()
+          + left()
+          + legendHoverLink()
+          + legendHoverLink()
+          + markLine()
+          + markLine()
+          + markPoint()
+          + markPoint()
+          + name()
+          + name()
+          + right()
+          + right()
+          + right()
+          + setBottom()
+          + setCalculable()
+          + setCoordinateSystem()
+          + setGeoIndex()
+          + setHeight()
+          + setItemStyle()
+          + setLabel()
+          + setLeft()
+          + setLegendHoverLink()
+          + setMarkLine()
+          + setMarkPoint()
+          + setName()
+          + setRight()
+          + setShowAllSymbol()
+          + setStack()
+          + setSymbol()
+          + setSymbolOffset()
+          + setSymbolRoate()
+          + setSymbolSize()
+          + setTooltip()
+          + setTop()
+          + setType()
+          + setWidth()
+          + setXAxisIndex()
+          + setYAxisIndex()
+          + setZ()
+          + setZlevel()
+          + showAllSymbol()
+          + showAllSymbol()
+          + stack()
+          + stack()
+          + symbol()
+          + symbol()
+          + symbol()
+          + symbolOffset()
+          + symbolOffset()
+          + symbolOffset()
+          + symbolRoate()
+          + symbolRoate()
+          + symbolSize()
+          + symbolSize()
+          + tooltip()
+          + tooltip()
+          + top()
+          + top()
+          + top()
+          + top()
+          + type()
+          + type()
+          + width()
+          + width()
+          + width()
+          + xAxisIndex()
+          + xAxisIndex()
+          + yAxisIndex()
+          + yAxisIndex()
+          + z()
+          + z()
+          + zlevel()
+          + zlevel()
+          # Series()
+          # Series()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.SeriesFactory {
+          {static} + newBar()
+          {static} + newBar()
+          {static} + newBoxplot()
+          {static} + newBoxplot()
+          {static} + newCandlestick()
+          {static} + newCandlestick()
+          {static} + newEffectScatter()
+          {static} + newEffectScatter()
+          {static} + newFunnel()
+          {static} + newFunnel()
+          {static} + newGauge()
+          {static} + newGauge()
+          {static} + newGraph()
+          {static} + newGraph()
+          {static} + newHeatmap()
+          {static} + newHeatmap()
+          {static} + newK()
+          {static} + newK()
+          {static} + newLine()
+          {static} + newLine()
+          {static} + newLines()
+          {static} + newLines()
+          {static} + newMap()
+          {static} + newMap()
+          {static} + newParallel()
+          {static} + newParallel()
+          {static} + newPie()
+          {static} + newPie()
+          {static} + newSankey()
+          {static} + newSankey()
+          {static} + newScatter()
+          {static} + newScatter()
+          {static} + newTreemap()
+          {static} + newTreemap()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace series {
+      class com.grandtech.echart.series.Treemap {
+          - center : Object[]
+          - childrenVisibleMin : Double
+          - color : Object[]
+          - colorAlpha : Object[]
+          - colorMappingBy : Object
+          - colorSaturation : Double
+          - levels : Level[]
+          - nodeClick : Object
+          - roam : Object
+          - root : String
+          - size : Object[]
+          - squareRatio : Double
+          - visibleMin : Double
+          - visualDimension : Integer
+          - zoomToNodeRatio : Double
+          + Treemap()
+          + Treemap()
+          + breadcrumb()
+          + breadcrumb()
+          + center()
+          + center()
+          + childrenVisibleMin()
+          + childrenVisibleMin()
+          + color()
+          + color()
+          + colorAlpha()
+          + colorAlpha()
+          + colorMappingBy()
+          + colorMappingBy()
+          + colorMappingBy()
+          + colorSaturation()
+          + colorSaturation()
+          + getBreadcrumb()
+          + getCenter()
+          + getChildrenVisibleMin()
+          + getColor()
+          + getColorAlpha()
+          + getColorMappingBy()
+          + getColorSaturation()
+          + getLevels()
+          + getNodeClick()
+          + getRoam()
+          + getRoot()
+          + getSize()
+          + getSquareRatio()
+          + getVisibleMin()
+          + getVisualDimension()
+          + getZoomToNodeRatio()
+          + nodeClick()
+          + nodeClick()
+          + nodeClick()
+          + nodeClick()
+          + roam()
+          + roam()
+          + roam()
+          + roam()
+          + root()
+          + root()
+          + setBreadcrumb()
+          + setCenter()
+          + setChildrenVisibleMin()
+          + setColor()
+          + setColorAlpha()
+          + setColorMappingBy()
+          + setColorSaturation()
+          + setLevels()
+          + setNodeClick()
+          + setRoam()
+          + setRoot()
+          + setSize()
+          + setSquareRatio()
+          + setVisibleMin()
+          + setVisualDimension()
+          + setZoomToNodeRatio()
+          + size()
+          + size()
+          + squareRatio()
+          + squareRatio()
+          + visibleMin()
+          + visibleMin()
+          + visualDimension()
+          + visualDimension()
+          + zoomToNodeRatio()
+          + zoomToNodeRatio()
+      }
+    }
+  }
+  
+
+  com.grandtech.echart.series.Bar -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Boxplot -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Boxplot o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.series.Boxplot o-- com.grandtech.echart.code.Orient : layout
+  com.grandtech.echart.series.Candlestick -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Candlestick o-- com.grandtech.echart.code.Orient : layout
+  com.grandtech.echart.series.EMap -up-|> com.grandtech.echart.series.Map
+  com.grandtech.echart.series.Effect .up.|> java.io.Serializable
+  com.grandtech.echart.series.Effect o-- com.grandtech.echart.series.Effect.Type : type
+  com.grandtech.echart.series.Effect +-down- com.grandtech.echart.series.Effect.Type
+  com.grandtech.echart.series.EffectScatter -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.EffectScatter o-- com.grandtech.echart.series.other.RippleEffect : rippleEffect
+  com.grandtech.echart.series.Funnel -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Funnel o-- com.grandtech.echart.code.X : funnelAlign
+  com.grandtech.echart.series.Funnel o-- com.grandtech.echart.style.ItemStyle : labelLine
+  com.grandtech.echart.series.Funnel o-- com.grandtech.echart.code.Sort : sort
+  com.grandtech.echart.series.Gauge -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.Label : axisLabel
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.axis.AxisLine : axisLine
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.axis.AxisTick : axisTick
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.series.gauge.Detail : detail
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.series.gauge.Pointer : pointer
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.axis.SplitLine : splitLine
+  com.grandtech.echart.series.Gauge o-- com.grandtech.echart.Title : title
+  com.grandtech.echart.series.GeoCoord .up.|> java.io.Serializable
+  com.grandtech.echart.series.GeoCoord -up-|> java.util.HashMap
+  com.grandtech.echart.series.Graph -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Graph o-- com.grandtech.echart.series.other.Force : force
+  com.grandtech.echart.series.Graph o-- com.grandtech.echart.code.Layout : layout
+  com.grandtech.echart.series.Heatmap -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.K -up-|> com.grandtech.echart.series.Candlestick
+  com.grandtech.echart.series.Line -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Line o-- com.grandtech.echart.style.AreaStyle : areaStyle
+  com.grandtech.echart.series.Line o-- com.grandtech.echart.style.LineStyle : lineStyle
+  com.grandtech.echart.series.Lines -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Lines o-- com.grandtech.echart.series.Effect : effect
+  com.grandtech.echart.series.Map -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Map o-- com.grandtech.echart.series.GeoCoord : geoCoord
+  com.grandtech.echart.series.Map o-- com.grandtech.echart.series.MapLocation : mapLocation
+  com.grandtech.echart.series.Map o-- com.grandtech.echart.code.Calculation : mapValueCalculation
+  com.grandtech.echart.series.Map o-- com.grandtech.echart.series.ScaleLimit : scaleLimit
+  com.grandtech.echart.series.MapLocation .up.|> java.io.Serializable
+  com.grandtech.echart.series.MarkLine -up-|> com.grandtech.echart.AbstractData
+  com.grandtech.echart.series.MarkLine o-- com.grandtech.echart.series.MarkLine.Bundling : bundling
+  com.grandtech.echart.series.MarkLine o-- com.grandtech.echart.series.Effect : effect
+  com.grandtech.echart.series.MarkLine o-- com.grandtech.echart.series.GeoCoord : geoCoord
+  com.grandtech.echart.series.MarkLine o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.series.MarkLine +-down- com.grandtech.echart.series.MarkLine.Bundling
+  com.grandtech.echart.series.MarkPoint -up-|> com.grandtech.echart.AbstractData
+  com.grandtech.echart.series.MarkPoint o-- com.grandtech.echart.series.Effect : effect
+  com.grandtech.echart.series.MarkPoint o-- com.grandtech.echart.series.GeoCoord : geoCoord
+  com.grandtech.echart.series.MarkPoint o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.series.Parallel -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Pie -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Pie o-- com.grandtech.echart.code.RoseType : roseType
+  com.grandtech.echart.series.Pie o-- com.grandtech.echart.code.SelectedMode : selectedMode
+  com.grandtech.echart.series.RadarSeries -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Sankey -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.ScaleLimit .up.|> java.io.Serializable
+  com.grandtech.echart.series.Scatter -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Series .up.|> com.grandtech.echart.Chart
+  com.grandtech.echart.series.Series -up-|> com.grandtech.echart.AbstractData
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.style.ItemStyle : itemStyle
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.style.ItemStyle : label
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.series.MarkLine : markLine
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.series.MarkPoint : markPoint
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.Tooltip : tooltip
+  com.grandtech.echart.series.Series o-- com.grandtech.echart.code.SeriesType : type
+  com.grandtech.echart.series.Treemap -up-|> com.grandtech.echart.series.Series
+  com.grandtech.echart.series.Treemap o-- com.grandtech.echart.style.Breadcrumb : breadcrumb
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tc="http://schemas.android.com/apk/res-auto"
+    tools:context=".VideoActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextureView
+            android:id="@+id/camera_textureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/fl_result"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/video_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+            <ImageView
+                android:id="@+id/video_logo"
+                android:layout_gravity="center"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/play"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="bottom"
+                android:background="@color/transparent">
+
+                <ImageView
+                    android:id="@+id/ivImgSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="65dp"
+                    android:src="@mipmap/widget_camera_img_select" />
+
+                <ImageView
+                    android:id="@+id/ivImgCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/ivImgSelect"
+                    android:layout_marginStart="65dp"
+                    android:src="@mipmap/widget_camera_img_cancel" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <com.gykj.shortvideov2module.TasksCompletedView
+        android:id="@+id/tasks_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        tc:circleColor="@color/circle_color"
+        tc:radius="100dp"
+        tc:ringColor="@color/ring_color"
+        tc:strokeWidth="6dp" />
+</RelativeLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.grandtech.mapframe.ui.view.DragLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+  <!--  <com.grandtech.mapframe.ui.view.ToolGroupLayout
+        android:id="@+id/toolGroupBase1"
+        style="@style/move_tool_panel"
+        android:background="@drawable/map_frame_ui_round_corner"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="50dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_500" />
+
+
+    </com.grandtech.mapframe.ui.view.ToolGroupLayout>-->
+    <com.grandtech.mapframe.ui.view.ToolGroupLayout
+        android:id="@+id/toolGroupBase"
+        style="@style/move_tool_panel"
+        android:background="@drawable/map_frame_ui_round_corner"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        mapui:map_ui_tool_group_name="默认工具"
+        android:padding="1dp">
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            mapui:map_ui_normal="@mipmap/map_test"
+            mapui:map_ui_pressed="@mipmap/map_ui_ic_add_pressed"
+            android:gravity="center"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_add"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_ic_area_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_ic_area_pressed"
+            mapui:map_ui_isNormalBnt ="false"
+            mapui:map_ui_isMapSketchTool ="true"
+            mapui:map_ui_tool_name="@string/tool_draw"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_merge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_ic_geometry_merge_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_ic_geometry_merge_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_merge"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_cut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_ic_cut_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_ic_cut_pressed"
+            mapui:map_ui_isNormalBnt ="false"
+            mapui:map_ui_isMapSketchTool ="true"
+            mapui:map_ui_tool_name="@string/tool_cut"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_dig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_ic_within_delete_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_ic_within_delete_pressed"
+            mapui:map_ui_isNormalBnt ="false"
+            mapui:map_ui_isMapSketchTool ="true"
+            mapui:map_ui_tool_name="@string/tool_dig"
+            />
+    </com.grandtech.mapframe.ui.view.ToolGroupLayout>
+
+    <com.grandtech.mapframe.ui.view.ToolGroupLayout
+        android:id="@+id/toolGroupDraw"
+        style="@style/move_tool_panel"
+        android:background="@drawable/map_frame_ui_round_corner"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:padding="1dp">
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_sketch_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_sketch_cancel_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_sketch_cancel_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_sketch_cancel"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_sketch_redo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_sketch_cando_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_sketch_cando_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_sketch_cando"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_sketch_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_sketch_undo_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_sketch_undo_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_sketch_undo"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_sketch_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_sketch_save_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_sketch_save_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_sketch_save"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_sketch_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_sketch_add_point_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_sketch_add_point_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_sketch_add"
+            />
+    </com.grandtech.mapframe.ui.view.ToolGroupLayout>
+
+    <com.grandtech.mapframe.ui.view.ToolGroupLayout
+        android:id="@+id/toolGroupNav"
+        style="@style/move_tool_panel"
+        android:background="@drawable/map_frame_ui_round_corner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="1dp">
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_isearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_search_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_search_pressed"
+            mapui:map_ui_isNormalBnt ="false"
+            mapui:map_ui_tool_name="@string/tool_isearch"
+            mapui:map_ui_canPutNavigate = "true"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_imageswitching"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_zoom_imageswitching_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_zoom_imageswitching_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_imageswitching"
+            mapui:map_ui_canPutNavigate = "true"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_zoom_in_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_zoom_in_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_in"
+            mapui:map_ui_canPutNavigate = "true"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_zoom_out_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_zoom_out_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_out"
+            mapui:map_ui_canPutNavigate = "true"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_zoom_loc_normal"
+            mapui:map_ui_pressed="@mipmap/map_ui_loc_pressed"
+            mapui:map_ui_isNormalBnt ="true"
+            mapui:map_ui_tool_name="@string/tool_loc"
+            />
+        <com.grandtech.mapframe.ui.view.ToolView
+            android:id="@+id/tool_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mapui:map_ui_normal="@mipmap/map_ui_nav_packupv1"
+            mapui:map_ui_pressed="@mipmap/map_ui_nav_popupv1"
+            mapui:map_ui_isNormalBnt ="false"
+            mapui:map_ui_tool_name="@string/tool_nav"
+            />
+    </com.grandtech.mapframe.ui.view.ToolGroupLayout>
+</com.grandtech.mapframe.ui.view.DragLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.gykj.cameramodule.activity.camera.view.CameraSurfaceView
+        android:id="@+id/cameraSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"/>
+
+    <com.gykj.cameramodule.activity.camera.view.RectOnCamera
+        android:id="@+id/rectOnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rlCamera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:background="@color/camera_module_black"
+            android:layout_height="80dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@id/takePic">
+                <RelativeLayout
+                    android:id="@+id/rl_light_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:id="@+id/iv_open_or_close_linght"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        android:src="@mipmap/camera_module_icon_open_linght" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:id="@+id/reverseCamera"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        android:src="@mipmap/camera_module_icon_reverse3" />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/takePic"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:onClick="onTakePhotoClicked"
+                android:src="@mipmap/camera_module_icon_take_pic" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/takePic"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/ivThumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/camera_module_icon_thumbnail" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+<!--        <ImageButton
+            android:id="@+id/takePic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:onClick="onTakePhotoClicked"
+            android:src="@drawable/camera_module_selector_btn_shutter" />
+
+        <ImageButton
+            android:id="@+id/reverseCamera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/takePic"
+            android:background="@null"
+            android:src="@mipmap/camera_module_icon_reverse" />-->
+
+    </RelativeLayout>
+
+    <!--拍照按钮-->
+    <LinearLayout
+        android:id="@+id/rlRes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/camera_module_black"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.gykj.base.photoview.PhotoView
+                android:id="@+id/pvRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/camera_module_transparent"
+                android:scaleType="centerInside" />
+            <ImageView
+                android:id="@+id/ivImgCancel"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/camera_module_icon_pic_close" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:background="@color/camera_module_transparent">
+
+            <ImageView
+                android:id="@+id/ivImgSelect"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@mipmap/camera_module_icon_pic_select" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

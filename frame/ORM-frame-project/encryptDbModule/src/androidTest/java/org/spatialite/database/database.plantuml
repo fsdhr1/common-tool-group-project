@@ -1,0 +1,485 @@
+@startuml
+
+title __DATABASE's Class Diagram__\n
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.DatabaseStatementTest {
+            {static} - CURRENT_DATABASE_VERSION : int
+            {static} - DATABASE_NAME : String
+            - mDatabase : SQLiteDatabase
+            - mDatabaseFile : File
+            {static} - sString1 : String
+            {static} - sString2 : String
+            {static} - sString3 : String
+            + isPerformanceOnly()
+            + setUp()
+            + startPerformance()
+            + tearDown()
+            + testExecuteStatement()
+            + testSimpleQuery()
+            + testSimpleStringBinding()
+            + testStatementClearBindings()
+            + testStatementConstraint()
+            + testStatementLongBinding()
+            + testStatementMultiThreaded()
+            + testStatementMultipleBindings()
+            + testStatementStringBinding()
+            - populateDefaultTable()
+            - setupDatabase()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.DatabaseStatementTest.StatementTestThread {
+            - mDatabase : SQLiteDatabase
+            - mStatement : SQLiteStatement
+            + StatementTestThread()
+            + run()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteAbortExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteClosableTest {
+            + testAcquireReference()
+            + testReleaseReferenceFromContainer()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteClosableTest.MockSQLiteClosable {
+            - mOnAllReferencesReleasedCalled : boolean
+            - mOnAllReferencesReleasedFromContainerCalled : boolean
+            + isOnAllReferencesReleasedCalled()
+            + isOnAllReferencesReleasedFromContainerCalled()
+            # onAllReferencesReleased()
+            # onAllReferencesReleasedFromContainer()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteConstraintExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursorTest {
+            {static} - COLUMNS : String[]
+            {static} - DATABASE_FILE : String
+            {static} - DEFAULT_TABLE_VALUE_BEGINS : int
+            {static} - TABLE_COLUMNS : String
+            {static} - TABLE_NAME : String
+            {static} - TEST_COUNT : int
+            {static} - TEST_SQL : String
+            - mDatabase : SQLiteDatabase
+            + setUp()
+            + tearDown()
+            + testClose()
+            + testConstructor()
+            + testGetColumnIndex()
+            + testOnMove()
+            + testRegisterDataSetObserver()
+            + testRequery()
+            + testSetSelectionArguments()
+            - addValuesIntoTable()
+            - createTable()
+            - getCursor()
+            - setupDatabase()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursorTest.MockCursorWindow {
+            - mIsClosed : boolean
+            + MockCursorWindow()
+            + close()
+            + isClosed()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteCursorTest.MockObserver {
+            - mHasChanged : boolean
+            - mHasInvalidated : boolean
+            + onChanged()
+            + onInvalidated()
+            # hasChanged()
+            # hasInvalidated()
+            # resetStatus()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseCorruptExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseTest {
+            {static} - COLUMN_ADDR_INDEX : int
+            {static} - COLUMN_AGE_INDEX : int
+            {static} - COLUMN_ID_INDEX : int
+            {static} - COLUMN_NAME_INDEX : int
+            {static} - DATABASE_FILE_NAME : String
+            {static} - TABLE_NAME : String
+            {static} - TEST_PROJECTION : String[]
+            - mDatabase : SQLiteDatabase
+            - mDatabaseDir : String
+            - mDatabaseFile : File
+            - mDatabaseFilePath : String
+            - mTransactionListenerOnBeginCalled : boolean
+            - mTransactionListenerOnCommitCalled : boolean
+            - mTransactionListenerOnRollbackCalled : boolean
+            + setUp()
+            + tearDown()
+            + testAccessMaximumSize()
+            + testAccessPageSize()
+            + testAccessVersion()
+            + testCompileStatement()
+            + testDelete()
+            + testExecSQL()
+            + testFindEditTable()
+            + testGetPath()
+            + testGroupConcat()
+            + testInsert()
+            + testIsOpen()
+            + testIsReadOnly()
+            + testNeedUpgrade()
+            + testOnAllReferencesReleased()
+            + testOpenDatabase()
+            + testQuery()
+            + testReleaseMemory()
+            + testReplace()
+            + testRollbackTransactionWithSQLiteTransactionListener()
+            + testSchemaChanges()
+            + testSchemaChangesDropTable()
+            + testSchemaChangesNewTable()
+            + testSetLocale()
+            + testSetLockingEnabled()
+            + testTransaction()
+            + testTransactionWithSQLiteTransactionListener()
+            + testUpdate()
+            + testYieldIfContended()
+            - assertNum()
+            - assertThrowsIllegalState()
+            - setNum()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseTest.MockSQLiteCursor {
+            + MockSQLiteCursor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseTest.ReaderQueryingData {
+            - count : int
+            + ReaderQueryingData()
+            + run()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDatabaseTest.TestSQLiteTransactionListener {
+            + onBegin()
+            + onCommit()
+            + onRollback()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDiskIOExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteDoneExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteFullExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteMisuseExceptionTest {
+            + testConstructor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteOpenHelperTest {
+            {static} - TEST_DATABASE_NAME : String
+            {static} - TEST_ILLEGAL_VERSION : int
+            {static} - TEST_VERSION : int
+            - mFactory : CursorFactory
+            + setUp()
+            + testConstructor()
+            + testGetDatabase()
+            - getOpenHelper()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteOpenHelperTest.MockCursor {
+            + MockCursor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteOpenHelperTest.MockOpenHelper {
+            - mHasCalledOnOpen : boolean
+            + MockOpenHelper()
+            + hasCalledOnOpen()
+            + onCreate()
+            + onOpen()
+            + onUpgrade()
+            + resetStatus()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteProgramTest {
+            {static} - DATABASE_NAME : String
+            - mDatabase : SQLiteDatabase
+            + setUp()
+            + tearDown()
+            + testBind()
+            + testBindBlob()
+            + testBindNull()
+            - setupDatabase()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteQueryBuilderTest {
+            {static} - DATABASE_FILE : String
+            - EMPLOYEE_TABLE_NAME : String
+            - TEST_TABLE_NAME : String
+            - mDatabase : SQLiteDatabase
+            + setUp()
+            + tearDown()
+            + testAppendColumns()
+            + testBuildQuery()
+            + testBuildQueryString()
+            + testConstructor()
+            + testQuery()
+            + testSetCursorFactory()
+            + testSetDistinct()
+            + testSetProjectionMap()
+            + testUnionQuery()
+            - createEmployeeTable()
+            - setupDatabase()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteQueryBuilderTest.MockCursor {
+            + MockCursor()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteQueryTest {
+            + testMethods()
+        }
+      }
+    }
+  }
+  
+
+  namespace org {
+    namespace spatialite {
+      namespace database {
+        class org.spatialite.database.SQLiteStatementTest {
+            {static} - BLOBS : byte[][]
+            {static} - CURRENT_DATABASE_VERSION : int
+            {static} - DATABASE_NAME : String
+            {static} - STRING1 : String
+            {static} - STRING2 : String
+            - mDatabase : SQLiteDatabase
+            + setUp()
+            + tearDown()
+            + testExecuteInsert()
+            + testSimpleQueryForLong()
+            + testSimpleQueryForString()
+            {static} - assertFileDescriptorContent()
+            {static} - assertInputStreamContent()
+            {static} - parseBlob()
+            - populateBlobTable()
+            - populateDefaultTable()
+            - setupDatabase()
+        }
+      }
+    }
+  }
+  
+
+  org.spatialite.database.DatabaseStatementTest .up.|> PerformanceTestCase
+  org.spatialite.database.DatabaseStatementTest +-down- org.spatialite.database.DatabaseStatementTest.StatementTestThread
+  org.spatialite.database.SQLiteClosableTest +-down- org.spatialite.database.SQLiteClosableTest.MockSQLiteClosable
+  org.spatialite.database.SQLiteCursorTest +-down- org.spatialite.database.SQLiteCursorTest.MockCursorWindow
+  org.spatialite.database.SQLiteCursorTest +-down- org.spatialite.database.SQLiteCursorTest.MockObserver
+  org.spatialite.database.SQLiteDatabaseTest +-down- org.spatialite.database.SQLiteDatabaseTest.MockSQLiteCursor
+  org.spatialite.database.SQLiteDatabaseTest +-down- org.spatialite.database.SQLiteDatabaseTest.ReaderQueryingData
+  org.spatialite.database.SQLiteDatabaseTest +-down- org.spatialite.database.SQLiteDatabaseTest.TestSQLiteTransactionListener
+  org.spatialite.database.SQLiteDatabaseTest.TestSQLiteTransactionListener .up.|> SQLiteTransactionListener
+  org.spatialite.database.SQLiteOpenHelperTest o-- org.spatialite.database.SQLiteOpenHelperTest.MockOpenHelper : mOpenHelper
+  org.spatialite.database.SQLiteOpenHelperTest +-down- org.spatialite.database.SQLiteOpenHelperTest.MockCursor
+  org.spatialite.database.SQLiteOpenHelperTest +-down- org.spatialite.database.SQLiteOpenHelperTest.MockOpenHelper
+  org.spatialite.database.SQLiteQueryBuilderTest +-down- org.spatialite.database.SQLiteQueryBuilderTest.MockCursor
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

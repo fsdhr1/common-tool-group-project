@@ -1,0 +1,199 @@
+@startuml
+
+title __LIB's Class Diagram__\n
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.InertiaTimerTask {
+          ~ a : float
+          ~ velocityY : float
+          + run()
+          ~ InertiaTimerTask()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.LoopViewGestureListener {
+          + onFling()
+          ~ LoopViewGestureListener()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.MessageHandler {
+          {static} + WHAT_INVALIDATE_LOOP_VIEW : int
+          {static} + WHAT_ITEM_SELECTED : int
+          {static} + WHAT_SMOOTH_SCROLL : int
+          + handleMessage()
+          ~ MessageHandler()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.OnItemSelectedRunnable {
+          + run()
+          ~ OnItemSelectedRunnable()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.SmoothScrollTimerTask {
+          ~ offset : int
+          ~ realOffset : int
+          ~ realTotalOffset : int
+          + run()
+          ~ SmoothScrollTimerTask()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      class com.gykj.timepickerview.lib.WheelView {
+          ~ centerY : float
+          ~ change : int
+          ~ context : Context
+          ~ dividerColor : int
+          ~ firstLineY : float
+          ~ halfCircumference : int
+          ~ handler : Handler
+          ~ initPosition : int
+          ~ isLoop : boolean
+          ~ itemHeight : float
+          ~ itemsVisible : int
+          ~ lineSpacingMultiplier : float
+          ~ mExecutor : ScheduledExecutorService
+          ~ maxTextHeight : int
+          ~ maxTextWidth : int
+          ~ measuredHeight : int
+          ~ measuredWidth : int
+          ~ paintCenterText : Paint
+          ~ paintIndicator : Paint
+          ~ paintOuterText : Paint
+          ~ preCurrentIndex : int
+          ~ radius : int
+          ~ secondLineY : float
+          ~ startTime : long
+          ~ textColorCenter : int
+          ~ textColorOut : int
+          ~ textSize : int
+          ~ totalScrollY : float
+          ~ typeface : Typeface
+          ~ widthMeasureSpec : int
+          - CENTERCONTENTOFFSET : float
+          {static} - SCALECONTENT : float
+          {static} - VELOCITYFLING : int
+          - drawCenterContentStart : int
+          - drawOutContentStart : int
+          - gestureDetector : GestureDetector
+          - isCenterLabel : boolean
+          - isOptions : boolean
+          - label : String
+          - mFuture : ScheduledFuture<?>
+          - mGravity : int
+          - mOffset : int
+          - previousY : float
+          - selectedItem : int
+          + WheelView()
+          + WheelView()
+          + cancelFuture()
+          + getAdapter()
+          + getCurrentItem()
+          + getItemsCount()
+          + getTextWidth()
+          + isCenterLabel()
+          + onTouchEvent()
+          + setAdapter()
+          + setCurrentItem()
+          + setCyclic()
+          + setDividerColor()
+          + setDividerType()
+          + setGravity()
+          + setIsOptions()
+          + setLabel()
+          + setLineSpacingMultiplier()
+          + setOnItemSelectedListener()
+          + setTextColorCenter()
+          + setTextColorOut()
+          + setTextSize()
+          + setTypeface()
+          # onDraw()
+          # onItemSelected()
+          # onMeasure()
+          # scrollBy()
+          ~ smoothScroll()
+          - getContentText()
+          - getLoopMappingIndex()
+          - initLoopView()
+          - initPaints()
+          - judgeLineSpae()
+          - measureTextWidthHeight()
+          - measuredCenterContentStart()
+          - measuredOutContentStart()
+          - reMeasureTextSize()
+          - remeasure()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      enum ACTION {
+        CLICK
+        DAGGLE
+        FLING
+      }
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    namespace lib {
+      enum DividerType {
+        FILL
+        WRAP
+      }
+    }
+  }
+  
+
+  com.gykj.timepickerview.lib.InertiaTimerTask -up-|> java.util.TimerTask
+  com.gykj.timepickerview.lib.InertiaTimerTask o-- com.gykj.timepickerview.lib.WheelView : loopView
+  com.gykj.timepickerview.lib.LoopViewGestureListener -up-|> android.view.GestureDetector.SimpleOnGestureListener
+  com.gykj.timepickerview.lib.LoopViewGestureListener o-- com.gykj.timepickerview.lib.WheelView : loopView
+  com.gykj.timepickerview.lib.MessageHandler -up-|> android.os.Handler
+  com.gykj.timepickerview.lib.MessageHandler o-- com.gykj.timepickerview.lib.WheelView : loopview
+  com.gykj.timepickerview.lib.OnItemSelectedRunnable .up.|> java.lang.Runnable
+  com.gykj.timepickerview.lib.OnItemSelectedRunnable o-- com.gykj.timepickerview.lib.WheelView : loopView
+  com.gykj.timepickerview.lib.SmoothScrollTimerTask -up-|> java.util.TimerTask
+  com.gykj.timepickerview.lib.SmoothScrollTimerTask o-- com.gykj.timepickerview.lib.WheelView : loopView
+  com.gykj.timepickerview.lib.WheelView -up-|> android.view.View
+  com.gykj.timepickerview.lib.WheelView o-- com.gykj.timepickerview.adapter.WheelAdapter : adapter
+  com.gykj.timepickerview.lib.WheelView o-- com.gykj.timepickerview.listener.OnItemSelectedListener : onItemSelectedListener
+  com.gykj.timepickerview.lib.WheelView o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.lib.WheelView +-down- com.gykj.timepickerview.lib.WheelView.ACTION
+  com.gykj.timepickerview.lib.WheelView +-down- com.gykj.timepickerview.lib.WheelView.DividerType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

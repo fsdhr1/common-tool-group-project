@@ -1,0 +1,176 @@
+@startuml
+
+title __GC's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.core {
+    namespace editor {
+      namespace gc {
+        class com.grandtech.mapframe.core.editor.gc.BaseGeoSource {
+            - cachePath : String
+            - featureCollection : FeatureCollection
+            - keyWords : String[]
+            + BaseGeoSource()
+            + BaseGeoSource()
+            + delete()
+            + deleteAll()
+            + deleteCache()
+            + deleteFeatures()
+            + initDraw()
+            + insert()
+            + insertCache()
+            + inserts()
+            + insertsCacheSync()
+            + query()
+            + queryAllSourceFeatures()
+            + queryCache()
+            + queryFeature()
+            + queryFeatures()
+            + queryFeaturesLike()
+            + querySourceFeature()
+            + querySourceFeatures()
+            + setSourceUrl()
+            + update()
+            + updateCache()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace editor {
+      namespace gc {
+        class com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl {
+            - QUERY_LAYER : String
+            - TARG_LAYER : String
+            - TEMP_LAYER : String
+            - TEMP_SOURCEID : String
+            - mFillLayer : FillLayer
+            - mLineLayer : LineLayer
+            - mPointLayer : CircleLayer
+            - mQueryLayer : Layer
+            - mTargetLayer : Layer
+            - mTargetLayerId : String
+            - mTargetSourceId : String
+            - mTempLayer : Layer
+            + GraphicContainerImpl()
+            + delete()
+            + deleteAll()
+            + deleteFeatures()
+            + deletes()
+            + getQueryLayerId()
+            + getRenderLayerId()
+            + insert()
+            + inserts()
+            + queryFeature()
+            + queryFeatures()
+            + queryFeaturesLike()
+            + unBindMap()
+            + update()
+            + updates()
+            - assemble()
+            - bindMap()
+            - cloneTargetLayer()
+            - copyProperties()
+            - initSetting()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace editor {
+      namespace gc {
+        class com.grandtech.mapframe.core.editor.gc.GraphicSetting {
+            {static} + FROM_LAYER_ID_FIELD : String
+            {static} + FROM_UID_FIELD : String
+            {static} + LEN_FILED : String
+            {static} + MJ_FILED : String
+            {static} + SOURCE_FIELD : String
+            {static} + SOURCE_TAG : String
+            {static} + UID_FIELD : String
+            ~ cachePath : String
+            ~ targetLayerId : String
+            + GraphicSetting()
+            + equals()
+            + getCachePath()
+            + getGeometryType()
+            + getTargetLayerId()
+            + hashCode()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace editor {
+      namespace gc {
+        interface com.grandtech.mapframe.core.editor.gc.IBaseGeoSource {
+            {abstract} + delete()
+            {abstract} + deleteAll()
+            {abstract} + deleteCache()
+            {abstract} + deleteFeatures()
+            {abstract} + insert()
+            {abstract} + insertCache()
+            {abstract} + inserts()
+            {abstract} + insertsCacheSync()
+            {abstract} + query()
+            {abstract} + queryCache()
+            {abstract} + queryFeature()
+            {abstract} + queryFeatures()
+            {abstract} + queryFeaturesLike()
+            {abstract} + update()
+            {abstract} + updateCache()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace editor {
+      namespace gc {
+        interface com.grandtech.mapframe.core.editor.gc.IGraphicContainer {
+            {abstract} + delete()
+            {abstract} + deleteAll()
+            {abstract} + deleteFeatures()
+            {abstract} + deletes()
+            {abstract} + getQueryLayerId()
+            {abstract} + getRenderLayerId()
+            {abstract} + insert()
+            {abstract} + inserts()
+            {abstract} + queryFeature()
+            {abstract} + queryFeatures()
+            {abstract} + queryFeaturesLike()
+            {abstract} + update()
+            {abstract} + updates()
+        }
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.core.editor.gc.BaseGeoSource .up.|> com.grandtech.mapframe.core.editor.gc.IBaseGeoSource
+  com.grandtech.mapframe.core.editor.gc.BaseGeoSource -up-|> com.mapbox.mapboxsdk.style.sources.GeoJsonSource
+  com.grandtech.mapframe.core.editor.gc.BaseGeoSource o-- com.grandtech.mapframe.core.util.CacheBoxUtil : cacheBoxUtil
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl .up.|> com.grandtech.mapframe.core.editor.gc.IGraphicContainer
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.editor.gc.BaseGeoSource : mCurrentSource
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.editor.gc.BaseGeoSource : mFillSource
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.maps.GMapView : mGMapView
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.enumeration.GeometryType : mGeometryType
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.editor.gc.BaseGeoSource : mLineSource
+  com.grandtech.mapframe.core.editor.gc.GraphicContainerImpl o-- com.grandtech.mapframe.core.editor.gc.BaseGeoSource : mPointSource
+  com.grandtech.mapframe.core.editor.gc.GraphicSetting .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.editor.gc.GraphicSetting o-- com.grandtech.mapframe.core.enumeration.GeometryType : geometryType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

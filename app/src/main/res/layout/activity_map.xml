@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+
+
+    <FrameLayout
+        android:id="@+id/flMainFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:id="@+id/hz"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="绘制" />
+
+        <Button
+            android:id="@+id/jd"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="加点" />
+
+        <Button
+            android:id="@+id/undo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:text="回撤" />
+        <Button
+            android:id="@+id/redo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:text="前撤" />
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
+            android:text="添加" />
+        <Button
+            android:id="@+id/uni"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:text="合并" />
+
+        <Button
+            android:id="@+id/split"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="310dp"
+            android:text="分割" />
+
+        <Button
+            android:id="@+id/dig"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:text="扣除" />
+
+
+        <Button
+            android:id="@+id/deletes"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="410dp"
+            android:text="清除临时地块" />
+        <Button
+            android:id="@+id/gl"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="高亮" />
+        <Button
+            android:id="@+id/qxgl"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="50dp"
+            android:text="取消高亮" />
+
+        <Button
+            android:id="@+id/dtmvt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="100dp"
+            android:text="查看动态MVT" />
+        <Button
+            android:id="@+id/qxdtmvt"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="150dp"
+            android:text="取消查看动态MVT" />
+<!--        <com.grandtech.mapframe.core.maps.GMapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            mapbox:mapbox_prefetchesTiles="true"
+            mapbox:setcompassEnabled="true"
+            mapbox:rotateGesturesEnabled="false"
+            mapbox:tiltGesturesEnabled="false"
+            mapbox:logoEnabled="false"
+            mapbox:attributionEnabled="false"
+            mapbox:maxZoomPreference="16.99"
+            >
+
+        </com.grandtech.mapframe.core.maps.GMapView>-->
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

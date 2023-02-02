@@ -1,0 +1,81 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.grandtech.common.component-control'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release{
+           minifyEnabled true
+           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //rxjava
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    api "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxbinding"
+    //okhttp
+    api "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.logging_interceptor"
+    //gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+    //utils
+    implementation "com.blankj:utilcodex:$rootProject.utilcode"
+    //retrofit
+
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.converter_gson"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapter_rxjava"
+    api "com.squareup.retrofit2:converter-scalars:$rootProject.converter_scalars"
+    
+    
+}
+
+
+apply plugin: 'maven'
+def ARTIFACT_ID = 'common_tool_network'
+def VERSION_NAME = '0.0.2.6_okhttp4.9.0_patch'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url:"${maven_remote_path}" ){
+                authentication(userName: "${maven_account}", password:"${maven_pwd}")}
+            pom.project {
+                groupId "${tool_group_id}"
+                artifactId ARTIFACT_ID
+                version VERSION_NAME
+                packaging 'aar'
+            }
+        }
+    }
+}

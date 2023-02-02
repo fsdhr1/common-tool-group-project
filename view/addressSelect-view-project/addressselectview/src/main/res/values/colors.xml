@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="sidebar_default_side_text_color">#ff646464</color>
+    <color name="sidebar_default_side_text_select_color">#ffffffff</color>
+    <color name="sidebar_default_side_background">#ffcecece</color>
+    <color name="sidebar_default_dialog_text_color">#ffffffff</color>
+    <color name="sidebar_default_dialog_text_bg_color">#80000000</color>
+    <color name="color_4d4d4d">#4d4d4d</color>
+    <color name="color_2A70FF">#2A70FF</color>
+    <color name="color_f65347">#f65347</color>
+</resources>

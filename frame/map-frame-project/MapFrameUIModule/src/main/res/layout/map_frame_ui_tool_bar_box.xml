@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.grandtech.mapframe.ui.view.ToolGroupLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/move_tool_panel"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+</com.grandtech.mapframe.ui.view.ToolGroupLayout>

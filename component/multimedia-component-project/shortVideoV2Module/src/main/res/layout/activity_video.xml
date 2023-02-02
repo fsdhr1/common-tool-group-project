@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tc="http://schemas.android.com/apk/res-auto"
+    tools:context=".VideoActivity">
+    <SurfaceView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.gykj.shortvideov2module.TasksCompletedView
+        android:id="@+id/tasks_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        tc:circleColor="@color/circle_color"
+        tc:radius="100dp"
+        tc:ringColor="@color/ring_color"
+        tc:strokeWidth="6dp" />
+</RelativeLayout>

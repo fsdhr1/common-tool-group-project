@@ -1,0 +1,161 @@
+@startuml
+
+title __ADAPTER's Class Diagram__\n
+
+  namespace com.gykj.base.adapter {
+    abstract class com.gykj.base.adapter.BaseRecycleAdapter {
+        {static} + TYPE_HEADER : int
+        {static} + TYPE_NORMAL : int
+        # baseViewHolders : List<BaseViewHolder>
+        # context : Context
+        # dataList : List<M>
+        # firstItemPosition : int
+        # lastItemPosition : int
+        # listener : OnItemClickListener<H>
+        # mHeaderView : View
+        # parentView : RecyclerView
+        # visibleItemCount : int
+        + BaseRecycleAdapter()
+        + BaseRecycleAdapter()
+        + BaseRecycleAdapter()
+        + BaseRecycleAdapter()
+        + appendItem()
+        + appendList()
+        + appendList()
+        + changeItem()
+        + compareEqual()
+        + fillList()
+        + getDataList()
+        + getHeaderView()
+        + getItem()
+        + getItem()
+        + getItemCount()
+        + getItemViewType()
+        + getItems()
+        + getLastItemPosition()
+        + getRealPosition()
+        + getViewHolderByData()
+        + getViewHolderByPosition()
+        + insertItem()
+        {abstract} + isPosItemVisible()
+        + onBindViewHolder()
+        {abstract} + onCreateViewHolder()
+        + preposeItem()
+        + preposeList()
+        + reLoadItem()
+        + removeAll()
+        + removeItem()
+        + removeItem()
+        + removeItemByVar()
+        + removeItems()
+        + replaceAll()
+        {abstract} + scrollState()
+        + setHeaderView()
+        + setIClickListener()
+        + setILongClickListener()
+        + setILongViewClickListener()
+        + setIViewClickListener()
+        + setIpViewClickListener()
+        + setIpViewLongClickListener()
+        + simulationViewClick()
+        + simulationViewClick()
+        + simulationViewLongClick()
+        + upDateItem()
+        + updateItem()
+        # onCreateViewHolderHead()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.IClickListener {
+        {abstract} + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.ILongClickListener {
+        {abstract} + onLongClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.ILongViewClickListener {
+        {abstract} + onLongViewClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.IPViewClickListener {
+        {abstract} + iPViewClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.IPViewLongClickListener {
+        {abstract} + iPViewLongClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    interface com.gykj.base.adapter.BaseRecycleAdapter.IViewClickListener {
+        {abstract} + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    class com.gykj.base.adapter.BaseRecycleAdapter.ScrollListen {
+        + onScrollStateChanged()
+        + onScrolled()
+    }
+  }
+  
+
+  namespace com.gykj.base.adapter {
+    abstract class com.gykj.base.adapter.BaseViewHolder {
+        # position : int
+        + BaseViewHolder()
+        + BaseViewHolder()
+        + getData()
+        + getPos()
+        {abstract} + setData()
+        # $()
+        # getContext()
+        # getView()
+    }
+  }
+  
+
+  com.gykj.base.adapter.BaseRecycleAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.IClickListener : iClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.ILongClickListener : iLongClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.ILongViewClickListener : iLongViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.IViewClickListener : iViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.IPViewClickListener : ipViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter o-- com.gykj.base.adapter.BaseRecycleAdapter.IPViewLongClickListener : ipViewLongClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.IClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.ILongClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.ILongViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.IPViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.IPViewLongClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.IViewClickListener
+  com.gykj.base.adapter.BaseRecycleAdapter +-down- com.gykj.base.adapter.BaseRecycleAdapter.ScrollListen
+  com.gykj.base.adapter.BaseRecycleAdapter.ScrollListen -up-|> androidx.recyclerview.widget.RecyclerView.OnScrollListener
+  com.gykj.base.adapter.BaseViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.gykj.base.adapter.BaseViewHolder o-- M : data
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

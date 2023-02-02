@@ -1,0 +1,85 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'com.grandtech.common.component-control'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true// 是否进行代码混淆 true--开启代码混淆 fale--不开启
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'// 解决Cannot access androidx.activity.ComponentActivity
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    // 定位服务
+    implementation ('com.grandtech.common:common_tool_location:0.0.0.1:@aar') { transitive = true }// 定位服务
+    /*******************************以下为引用第三方*******************************/
+    // RxLifecycle
+    implementation "com.trello.rxlifecycle2:rxlifecycle:$rootProject.rxlifecycle"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.rxlifecycle"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview"
+    // 图片加载
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    // 消息总线
+    implementation "org.greenrobot:eventbus:$rootProject.eventbus"
+    // 甜美的对话框
+    implementation "com.github.cazaea:sweet-alert-dialog:$rootProject.sweetdialog"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    // gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.adapter_rxjava"
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    def MAVEN_LOCAL_PATH = 'http://maven1.agribigdata.com.cn/nexus/content/repositories/releases/'
+    def ARTIFACT_ID = 'common_tool_cameramodule'//组件id id命名规则"common_tool_"加上组件模块名称
+    def VERSION_NAME = '0.0.0.7'//组件版本名称，长度暂时统一为4位，从0.0.0.1开始
+    def GROUP_ID = 'com.grandtech.common'//组件组id，固定分组暂定为com.grandtech.common
+    def ACCOUNT = 'admin'//用户名
+    def PASSWORD = 'admin123'//密码
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url:MAVEN_LOCAL_PATH ){
+                    authentication(userName: ACCOUNT, password: PASSWORD)}
+                pom.project {
+                    groupId GROUP_ID
+                    artifactId ARTIFACT_ID
+                    version VERSION_NAME
+                    packaging 'aar'
+                }
+            }
+        }
+    }
+}

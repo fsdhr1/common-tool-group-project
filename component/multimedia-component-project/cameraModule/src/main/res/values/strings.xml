@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cameraModule</string>
+
+    <!--动态权限-->
+    <string name="perm_setting">设置</string>
+    <string name="perm_tip">当前应用缺少必要权限。\n请点击"设置"-"权限"-打开所需权限。\n最后点击两次后退按钮，即可返回。</string>
+    <string name="perm_ask_again">请给予应用必要权限，让程序可正常工作。</string>
+    <string name="perm_cancel">取消</string>
+</resources>

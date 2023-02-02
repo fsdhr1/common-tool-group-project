@@ -1,0 +1,148 @@
+@startuml
+
+title __DIALOGS's Class Diagram__\n
+
+  namespace com.gykj.smartdialogmoudle {
+    namespace dialogs {
+      class com.gykj.smartdialogmoudle.dialogs.SimpleDialog {
+          {static} + INPUT_TYPE : int
+          {static} + LOADING_TYPE : int
+          {static} + NORMAL_TYPE : int
+          {static} + PROGRESS_TYPE : int
+          {static} + SELECT_MORE_TYPE : int
+          {static} + SELECT_SINGE_TYPE : int
+          {static} + WARNNING_TYPE : int
+          - cancelTxt : TextView
+          - content : String
+          - contentTxt : TextView
+          - etContent : EditText
+          - hasSetBottonColor : boolean
+          - imgLoading : ImageView
+          - inputMessage : String
+          - ivTitle : ImageView
+          - llAlter : LinearLayout
+          - llContent : LinearLayout
+          - llInput : LinearLayout
+          - llList : LinearLayout
+          - llLoadIng : LinearLayout
+          - llNormal : LinearLayout
+          - lvSelect : ListView
+          - mAlertType : int
+          - mBootonBackColor : int
+          - mBootonFontColor : int
+          - mCancleBackgroudColor : int
+          - mCancleFontColor : int
+          - mCellName : String
+          - mContext : Context
+          - mCustomPic : int
+          - mDataList : List<SelectDialogListBean>
+          - mLoadingPic : int
+          - mLoadingText : String
+          - mMax : int
+          - mPbDrawable : int
+          - mProgress : int
+          - mSelectedList : List<SelectDialogListBean>
+          - mSureMessage : String
+          - mThemeBackgroudColor : int
+          - mThemeFontColor : int
+          - negativeName : String
+          - positiveName : String
+          - progressBar : ProgressBar
+          - rlPb : RelativeLayout
+          - rlTitle : RelativeLayout
+          - submitTxt : TextView
+          - title : String
+          - titleTxt : TextView
+          - tvCell : TextView
+          - tvLoading : TextView
+          - tvPs : TextView
+          - tvPsTotal : TextView
+          - tvSure : TextView
+          - vLine : View
+          + SimpleDialog()
+          + SimpleDialog()
+          + getmMax()
+          + getmProgress()
+          + onClick()
+          + onCreateView()
+          + setAnmiation()
+          + setCancelClickListener()
+          + setCancelOnOutside()
+          + setCellName()
+          + setConfirmClickListener()
+          + setContent()
+          + setDialogType()
+          + setLoadingPic()
+          + setLoadingText()
+          + setMakeSureMessage()
+          + setMoreSelectListener()
+          + setNegativeButton()
+          + setNegativeColor()
+          + setPositiveButton()
+          + setRightImage()
+          + setSelectListData()
+          + setSignSelectListener()
+          + setThemeColor()
+          + setTitle()
+          + setUiBeforShow()
+          + setWarnningBottomColor()
+          + setmMax()
+          + setmPbDrawable()
+          + setmProgress()
+          - changeAlertType()
+          - initView()
+          - refrash()
+          - restore()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.smartdialogmoudle {
+    namespace dialogs {
+      interface com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectListener {
+          {abstract} + onResultFormDialog()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.smartdialogmoudle {
+    namespace dialogs {
+      interface com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectMoreListener {
+          {abstract} + onResultFormDialog()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.smartdialogmoudle {
+    namespace dialogs {
+      interface com.gykj.smartdialogmoudle.dialogs.SimpleDialog.OnCloseListener {
+          {abstract} + onClick()
+      }
+    }
+  }
+  
+
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog .up.|> android.view.View.OnClickListener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog -up-|> com.gykj.smartdialogmoudle.base.BaseDialog
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.OnCloseListener : cancleListenner
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.OnCloseListener : comfirelistener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectListener : mSelectListener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectMoreListener : mSelectMoreListener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.adapter.SimpleSelectMoreAdapter : moreSelectAdapter
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog o-- com.gykj.smartdialogmoudle.adapter.SimpleAdapter : singleAdapter
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog +-down- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectListener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog +-down- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.ListSelectMoreListener
+  com.gykj.smartdialogmoudle.dialogs.SimpleDialog +-down- com.gykj.smartdialogmoudle.dialogs.SimpleDialog.OnCloseListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

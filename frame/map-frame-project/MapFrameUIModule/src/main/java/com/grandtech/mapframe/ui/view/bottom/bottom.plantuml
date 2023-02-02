@@ -1,0 +1,355 @@
+@startuml
+
+title __BOTTOM's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.ScrollableViewHelper {
+            + getScrollableViewScrollPosition()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout {
+            {static} + SLIDING_STATE : String
+            {static} - DEFAULT_ANCHOR_POINT : float
+            {static} - DEFAULT_ATTRS : int[]
+            {static} - DEFAULT_CLIP_PANEL_FLAG : boolean
+            {static} - DEFAULT_FADE_COLOR : int
+            {static} - DEFAULT_MIN_FLING_VELOCITY : int
+            {static} - DEFAULT_OVERLAY_FLAG : boolean
+            {static} - DEFAULT_PANEL_HEIGHT : int
+            {static} - DEFAULT_PARALLAX_OFFSET : int
+            {static} - DEFAULT_SHADOW_HEIGHT : int
+            {static} - DEFAULT_SLIDE_STATE : PanelState
+            {static} - TAG : String
+            - mAnchorPoint : float
+            - mClipPanel : boolean
+            - mCoveredFadeColor : int
+            - mCoveredFadePaint : Paint
+            - mDragView : View
+            - mDragViewResId : int
+            - mFadeOnClickListener : OnClickListener
+            - mFirstLayout : boolean
+            - mInitialMotionX : float
+            - mInitialMotionY : float
+            - mIsScrollableViewHandlingTouch : boolean
+            - mIsSlidingUp : boolean
+            - mIsTouchEnabled : boolean
+            - mIsUnableToDrag : boolean
+            - mMainView : View
+            - mMinFlingVelocity : int
+            - mOverlayContent : boolean
+            - mPanelHeight : int
+            - mPanelSlideListeners : List<PanelSlideListener>
+            - mParallaxOffset : int
+            - mPrevMotionX : float
+            - mPrevMotionY : float
+            - mScrollableView : View
+            - mScrollableViewResId : int
+            - mShadowDrawable : Drawable
+            - mShadowHeight : int
+            - mSlideOffset : float
+            - mSlideRange : int
+            - mSlideableView : View
+            - mTmpRect : Rect
+            + SlidingUpPanelLayout()
+            + SlidingUpPanelLayout()
+            + SlidingUpPanelLayout()
+            + addPanelSlideListener()
+            + computeScroll()
+            + dispatchTouchEvent()
+            + draw()
+            + generateLayoutParams()
+            + getAnchorPoint()
+            + getCoveredFadeColor()
+            + getCurrentParallaxOffset()
+            + getDragView()
+            + getMinFlingVelocity()
+            + getPanelHeight()
+            + getPanelState()
+            + getShadowHeight()
+            + isClipPanel()
+            + isOverlayed()
+            + isSuperTouchEvent()
+            + isTouchEnabled()
+            + onInterceptTouchEvent()
+            + onRestoreInstanceState()
+            + onSaveInstanceState()
+            + onTouchEvent()
+            + removePanelSlideListener()
+            + setAnchorPoint()
+            + setClipPanel()
+            + setCoveredFadeColor()
+            + setDragView()
+            + setDragView()
+            + setFadeOnClickListener()
+            + setGravity()
+            + setMinFlingVelocity()
+            + setOverlayed()
+            + setPanelHeight()
+            + setPanelState()
+            + setParallaxOffset()
+            + setScrollableView()
+            + setScrollableViewHelper()
+            + setShadowHeight()
+            + setTouchEnabled()
+            # canScroll()
+            # checkLayoutParams()
+            # drawChild()
+            # generateDefaultLayoutParams()
+            # generateLayoutParams()
+            # onAttachedToWindow()
+            # onDetachedFromWindow()
+            # onFinishInflate()
+            # onLayout()
+            # onMeasure()
+            # onSizeChanged()
+            # smoothToBottom()
+            ~ dispatchOnPanelSlide()
+            ~ dispatchOnPanelStateChanged()
+            ~ setAllChildrenVisible()
+            ~ smoothSlideTo()
+            ~ updateObscuredViewVisibility()
+            - applyParallaxForCurrentSlideOffset()
+            - computePanelTopPosition()
+            - computeSlideOffset()
+            {static} - hasOpaqueBackground()
+            - isViewUnder()
+            - onPanelDragged()
+            - setPanelStateInternal()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.DragHelperCallback {
+            + clampViewPositionVertical()
+            + getViewVerticalDragRange()
+            + onViewCaptured()
+            + onViewDragStateChanged()
+            + onViewPositionChanged()
+            + onViewReleased()
+            + tryCaptureView()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.LayoutParams {
+            + weight : float
+            {static} - ATTRS : int[]
+            + LayoutParams()
+            + LayoutParams()
+            + LayoutParams()
+            + LayoutParams()
+            + LayoutParams()
+            + LayoutParams()
+            + LayoutParams()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        interface com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelSlideListener {
+            {abstract} + onPanelSlide()
+            {abstract} + onPanelStateChanged()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        enum PanelState {
+          ANCHORED
+          COLLAPSED
+          DRAGGING
+          EXPANDED
+          HIDDEN
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.SimplePanelSlideListener {
+            + onPanelSlide()
+            + onPanelStateChanged()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        class com.grandtech.mapframe.ui.view.bottom.ViewDragHelper {
+            {static} + DIRECTION_ALL : int
+            {static} + DIRECTION_HORIZONTAL : int
+            {static} + DIRECTION_VERTICAL : int
+            {static} + EDGE_ALL : int
+            {static} + EDGE_BOTTOM : int
+            {static} + EDGE_LEFT : int
+            {static} + EDGE_RIGHT : int
+            {static} + EDGE_TOP : int
+            {static} + INVALID_POINTER : int
+            {static} + STATE_DRAGGING : int
+            {static} + STATE_IDLE : int
+            {static} + STATE_SETTLING : int
+            {static} - BASE_SETTLE_DURATION : int
+            {static} - EDGE_SIZE : int
+            {static} - MAX_SETTLE_DURATION : int
+            {static} - TAG : String
+            - mActivePointerId : int
+            - mCapturedView : View
+            - mDragState : int
+            - mEdgeDragsInProgress : int[]
+            - mEdgeDragsLocked : int[]
+            - mEdgeSize : int
+            - mInitialEdgesTouched : int[]
+            - mInitialMotionX : float[]
+            - mInitialMotionY : float[]
+            - mLastMotionX : float[]
+            - mLastMotionY : float[]
+            - mMaxVelocity : float
+            - mMinVelocity : float
+            - mParentView : ViewGroup
+            - mPointersDown : int
+            - mReleaseInProgress : boolean
+            - mScroller : ScrollerCompat
+            - mSetIdleRunnable : Runnable
+            - mTouchSlop : int
+            - mTrackingEdges : int
+            - mVelocityTracker : VelocityTracker
+            {static} - sInterpolator : Interpolator
+            + abort()
+            + cancel()
+            + captureChildView()
+            + checkTouchSlop()
+            + checkTouchSlop()
+            + continueSettling()
+            {static} + create()
+            {static} + create()
+            {static} + create()
+            {static} + create()
+            + findTopChildUnder()
+            + flingCapturedView()
+            + getActivePointerId()
+            + getCapturedView()
+            + getEdgeSize()
+            + getMinVelocity()
+            + getTouchSlop()
+            + getViewDragState()
+            + isCapturedViewUnder()
+            + isDragging()
+            + isEdgeTouched()
+            + isEdgeTouched()
+            + isPointerDown()
+            + isViewUnder()
+            + processTouchEvent()
+            + setEdgeTrackingEnabled()
+            + setMinVelocity()
+            + settleCapturedViewAt()
+            + shouldInterceptTouchEvent()
+            + smoothSlideViewTo()
+            # canScroll()
+            ~ setDragState()
+            ~ tryCaptureViewForDrag()
+            - ViewDragHelper()
+            - checkNewEdgeDrag()
+            - checkTouchSlop()
+            - clampMag()
+            - clampMag()
+            - clearMotionHistory()
+            - clearMotionHistory()
+            - computeAxisDuration()
+            - computeSettleDuration()
+            - dispatchViewReleased()
+            - distanceInfluenceForSnapDuration()
+            - dragTo()
+            - ensureMotionHistorySizeForId()
+            - forceSettleCapturedViewAt()
+            - getEdgesTouched()
+            - releaseViewForPointerUp()
+            - reportNewEdgeDrags()
+            - saveInitialMotion()
+            - saveLastMotion()
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.ui {
+    namespace view {
+      namespace bottom {
+        abstract class com.grandtech.mapframe.ui.view.bottom.ViewDragHelper.Callback {
+            + clampViewPositionHorizontal()
+            + clampViewPositionVertical()
+            + getOrderedChildIndex()
+            + getViewHorizontalDragRange()
+            + getViewVerticalDragRange()
+            + onEdgeDragStarted()
+            + onEdgeLock()
+            + onEdgeTouched()
+            + onViewCaptured()
+            + onViewDragStateChanged()
+            + onViewPositionChanged()
+            + onViewReleased()
+            {abstract} + tryCaptureView()
+        }
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout -up-|> android.view.ViewGroup
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout o-- com.grandtech.mapframe.ui.view.bottom.ViewDragHelper : mDragHelper
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout o-- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelState : mLastNotDraggingSlideState
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout o-- com.grandtech.mapframe.ui.view.bottom.ScrollableViewHelper : mScrollableViewHelper
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout o-- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelState : mSlideState
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout +-down- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.DragHelperCallback
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout +-down- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.LayoutParams
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout +-down- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelSlideListener
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout +-down- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelState
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout +-down- com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.SimplePanelSlideListener
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.DragHelperCallback -up-|> com.grandtech.mapframe.ui.view.bottom.ViewDragHelper.Callback
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.LayoutParams -up-|> android.view.ViewGroup.MarginLayoutParams
+  com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.SimplePanelSlideListener .up.|> com.grandtech.mapframe.ui.view.bottom.SlidingUpPanelLayout.PanelSlideListener
+  com.grandtech.mapframe.ui.view.bottom.ViewDragHelper o-- com.grandtech.mapframe.ui.view.bottom.ViewDragHelper.Callback : mCallback
+  com.grandtech.mapframe.ui.view.bottom.ViewDragHelper +-down- com.grandtech.mapframe.ui.view.bottom.ViewDragHelper.Callback
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

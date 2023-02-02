@@ -1,0 +1,178 @@
+@startuml
+
+title __ITEMSTYLE's Class Diagram__\n
+
+  namespace com.grandtech.echart {
+    namespace style {
+      namespace itemstyle {
+        class com.grandtech.echart.style.itemstyle.Emphasis {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      namespace itemstyle {
+        class com.grandtech.echart.style.itemstyle.Normal {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.echart {
+    namespace style {
+      namespace itemstyle {
+        abstract class com.grandtech.echart.style.itemstyle.Style {
+            - barBorderColor : String
+            - barBorderRadius : Integer
+            - barBorderWidth : Integer
+            - borderColor : String
+            - borderRadius : Integer
+            - borderWidth : Integer
+            - color : String
+            - color0 : String
+            - curveness : Double
+            - formatter : String
+            - opacity : Double
+            {static} - serialVersionUID : long
+            - shadowBlur : Integer
+            - shadowColor : String
+            - shadowOffsetX : Integer
+            - shadowOffsetY : Integer
+            - show : Boolean
+            + areaColor()
+            + areaColor()
+            + areaStyle()
+            + areaStyle()
+            + barBorderColor()
+            + barBorderColor()
+            + barBorderRadius()
+            + barBorderRadius()
+            + barBorderWidth()
+            + barBorderWidth()
+            + borderColor()
+            + borderColor()
+            + borderRadius()
+            + borderRadius()
+            + borderWidth()
+            + borderWidth()
+            + chordStyle()
+            + chordStyle()
+            + color()
+            + color()
+            + color0()
+            + color0()
+            + curveness()
+            + formatter()
+            + formatter()
+            + getAreaStyle()
+            + getBarBorderColor()
+            + getBarBorderRadius()
+            + getBarBorderWidth()
+            + getBorderColor()
+            + getBorderRadius()
+            + getBorderWidth()
+            + getChordStyle()
+            + getColor()
+            + getColor0()
+            + getCurveness()
+            + getFormatter()
+            + getLabel()
+            + getLabelLine()
+            + getLineStyle()
+            + getLinkStyle()
+            + getNodeStyle()
+            + getOpacity()
+            + getPosition()
+            + getShadowBlur()
+            + getShadowColor()
+            + getShadowOffsetX()
+            + getShadowOffsetY()
+            + getShow()
+            + getTextStyle()
+            + label()
+            + label()
+            + labelLine()
+            + labelLine()
+            + lineStyle()
+            + lineStyle()
+            + linkStyle()
+            + linkStyle()
+            + nodeStyle()
+            + nodeStyle()
+            + opacity()
+            + opacity()
+            + position()
+            + position()
+            + rich()
+            + rich()
+            + setAreaStyle()
+            + setBarBorderColor()
+            + setBarBorderRadius()
+            + setBarBorderWidth()
+            + setBorderColor()
+            + setBorderRadius()
+            + setBorderWidth()
+            + setChordStyle()
+            + setColor()
+            + setColor0()
+            + setCurveness()
+            + setFormatter()
+            + setLabel()
+            + setLabelLine()
+            + setLineStyle()
+            + setLinkStyle()
+            + setNodeStyle()
+            + setOpacity()
+            + setPosition()
+            + setShadowBlur()
+            + setShadowColor()
+            + setShadowOffsetX()
+            + setShadowOffsetY()
+            + setShow()
+            + setTextStyle()
+            + shadowBlur()
+            + shadowBlur()
+            + shadowColor()
+            + shadowColor()
+            + shadowOffsetX()
+            + shadowOffsetX()
+            + shadowOffsetY()
+            + shadowOffsetY()
+            + show()
+            + show()
+            + textStyle()
+            + textStyle()
+        }
+      }
+    }
+  }
+  
+
+  com.grandtech.echart.style.itemstyle.Emphasis -up-|> com.grandtech.echart.style.itemstyle.Style
+  com.grandtech.echart.style.itemstyle.Normal -up-|> com.grandtech.echart.style.itemstyle.Style
+  com.grandtech.echart.style.itemstyle.Style .up.|> java.io.Serializable
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.AreaColor : areaColor
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.AreaStyle : areaStyle
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.ChordStyle : chordStyle
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.Label : label
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.LabelLine : labelLine
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.LineStyle : lineStyle
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.LinkStyle : linkStyle
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.NodeStyle : nodeStyle
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.code.Position : position
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.Rich : rich
+  com.grandtech.echart.style.itemstyle.Style o-- com.grandtech.echart.style.TextStyle : textStyle
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

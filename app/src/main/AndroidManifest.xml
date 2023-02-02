@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gykj.commontool">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name=".imgCompressTest.ImgCompressActivity"
+            android:exported="false" />
+        <activity android:name=".commonUtils.CommonUtilsTestActivity" />
+        <activity android:name=".addressSelectView.StartoverActivity" />
+        <activity android:name=".addressSelectView.AddressSelectViewDemoActivity" />
+        <activity android:name=".grandPhotos.GrandPhotoActivity" />
+        <activity android:name=".addressselect.AddressSelectActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- ==================================自动更新=========================================== -->
+        <!-- 注册安装app页面，爱写不写 -->
+        <!--
+<activity
+            android:name="com.grandtech.appupdate.ui.ApplyActivity"
+            android:theme="@style/DialogActivity" />
+        -->
+        <!-- 适配7.0，爱写不写，不写的话会使用自动更新moudel中配置的默认authorities -->
+        <!-- 但如果多个应用都使用默认authorities，会造成安装冲突 -->
+        <!-- 如需自定义，在这个配置后，同时在UpdateAppUtil.getInstance()时传入 -->
+        <provider
+            android:name="com.gykj.autoupdate.weight.AutoUpdateFileProvider"
+            android:authorities="com.gykj.commontool.autoupdatefileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/autoupdate_file_paths" />
+        </provider> <!-- ==================================自动更新=========================================== -->
+        <activity android:name=".shortvideotest.ShortVideoV2ModuleTestActivity" />
+        <activity
+            android:name=".mvptest.testmodule.MvpTestActivity"
+            android:theme="@style/TranslucentTheme" />
+        <activity android:name=".signtest.SignModuleTestActivity" />
+        <activity android:name=".networktest.NetworkTestActivity" />
+        <activity android:name=".ocrModuletest.OcrModuleTestActivity" /> <!-- 下拉布局组件 -->
+        <activity android:name=".selectlinearlayouttest.SelectLinearLayoutTestActivity" /> <!-- 时间选择器控件 -->
+        <activity android:name=".timepickertest.TimePickerTestActivity" />
+        <activity android:name=".locationservicetest.LocationServiceTestActivity" />
+        <activity android:name=".locationTest.LocationServiceTestActivity2" />
+        <activity android:name=".locationTest.Location_Test1_Activity" />
+        <activity android:name=".locationTest.Location_Test2_Activity" />
+        <activity android:name=".sampledialogtest.SmartDialogModuleTestActivity" /> <!-- 自动更新 -->
+        <activity android:name=".autoupdatetest.AutoUpdateTestActivity" /> <!-- Oss -->
+        <activity android:name=".osstest.OssTestActivity" />
+        <activity android:name=".arcgistooltest.ArcgisToolTestActivity" />
+        <activity android:name=".maptest.MapActivityDemo2" />
+        <activity android:name=".maptest.MapActivityDome1" />
+        <activity android:name=".maptest.MapTestActivity" />
+        <activity android:name=".maptest.MapSnapshotTest" />
+        <activity android:name=".maptest.Tett" />
+        <activity android:name=".cameratest.CameraModuleTestActivity" />
+        <activity android:name=".ocrlocaltest.OcrTestActivity" />
+        <activity android:name=".maptest.AddRainFallStyleActivity" />
+        <activity android:name=".maptest.MarkerViewActivity" />
+        <activity android:name=".arcgistooltest.ArcgisGeoDatabaseTestActivity" />
+        <activity android:name=".logincomponent.CustomActivity" />
+        <activity android:name=".maptest.MapActivityEditorDemo" />
+        <activity android:name=".maptest.OffLineDemoActivity" />
+        <activity android:name=".echarttest.EchartDemoActivity" />
+        <activity android:name=".maptest.MapUIActivityDemo" />
+    </application>
+
+</manifest>

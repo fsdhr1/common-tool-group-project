@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gykj.cameramodule">
+
+    <!--允许程序写入外部存储,如SD卡上写文件-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--读权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--允许程序访问摄像头进行拍照-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--允许程序振动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application android:supportsRtl="true">
+
+        <activity android:name=".activity.image.ImgPickActivity" />
+        <activity android:name=".activity.image.ImageViewPager" />
+        <activity android:name=".activity.camera.CameraActivity" />
+    </application>
+</manifest>

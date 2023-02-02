@@ -1,0 +1,249 @@
+@startuml
+
+title __MVPBASEMODULE's Class Diagram__\n
+
+  namespace com.gykj.mvpbasemodule {
+    interface com.gykj.mvpbasemodule.BaseContract {
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    interface com.gykj.mvpbasemodule.BaseContract.BasePresenter {
+        {abstract} + attachView()
+        {abstract} + detachView()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    interface com.gykj.mvpbasemodule.BaseContract.BaseView {
+        {abstract} + bindToLife()
+        {abstract} + getActivity()
+        {abstract} + hideLoading()
+        {abstract} + onRetry()
+        {abstract} + showFaild()
+        {abstract} + showLoading()
+        {abstract} + showLoading()
+        {abstract} + showNoNet()
+        {abstract} + showSuccess()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    abstract class com.gykj.mvpbasemodule.BaseMvpActivity {
+        # TAG : String
+        # mContentView : View
+        # mToolbar : Toolbar
+        ~ et_search : EditText
+        ~ iv_right_icon : ImageView
+        ~ ll_base_back : LinearLayout
+        ~ ll_etParent : LinearLayout
+        ~ ll_right : LinearLayout
+        ~ mBtBaseBack : ImageView
+        ~ mFlContent : FrameLayout
+        ~ mRlTitle : RelativeLayout
+        ~ mTvBaseRightText : TextView
+        ~ mTvBaseTitle : TextView
+        + bindToLife()
+        + getActivity()
+        + getBaseActivityComponent()
+        + getPresenter()
+        {abstract} + getPrimaryColor()
+        + getRootView()
+        + hideLoading()
+        + hideTitle()
+        + onChildViewDestory()
+        + onOptionsItemSelected()
+        + onRetry()
+        + onViewClick()
+        + setContentView()
+        + setLoadingMsg()
+        + setViewClickListener()
+        + showFaild()
+        + showLoading()
+        + showLoading()
+        + showNoNet()
+        + showSuccess()
+        # afterSuperOnCreate()
+        # getCurrentTheme()
+        {abstract} # getLayoutId()
+        # hideBack()
+        # hideRight()
+        {abstract} # initActivityComponent()
+        # initData()
+        {abstract} # initInjector()
+        # initView()
+        # onBackButtonClick()
+        # onCreate()
+        # onDestroy()
+        # onRestart()
+        # onSearchClick()
+        # rightLayoutClick()
+        # setIv_right_icon()
+        # setStatusBarColor()
+        # setTitle()
+        # setTvBaseRightText()
+        # showRight()
+        # showSearchLayout()
+        # showTilte()
+        - attachView()
+        - detachView()
+        - initBaseView()
+        - setTranslucentStatus()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    abstract class com.gykj.mvpbasemodule.BaseMvpFragment {
+        {static} - STATE_SAVE_IS_HIDDEN : String
+        - mEmptyView : View
+        - mErrorView : View
+        - mRootView : View
+        + bindToLife()
+        + hideLoading()
+        + initData()
+        + onChildViewDestory()
+        + onCreate()
+        + onCreateView()
+        + onDestroy()
+        + onRetry()
+        + onSaveInstanceState()
+        + showFaild()
+        + showLoading()
+        + showLoading()
+        + showNoNet()
+        + showSuccess()
+        {abstract} # getLayoutId()
+        {abstract} # initFragmentComponent()
+        # initInjector()
+        # initView()
+        - attachView()
+        - detachView()
+        - inflaterView()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    class com.gykj.mvpbasemodule.BasePresenter {
+        + attachView()
+        + detachView()
+        + getView()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    class com.gykj.mvpbasemodule.MvpBaseModule {
+        {static} - applicationSoftReference : SoftReference<Application>
+        {static} - mMvpBaseModule : MvpBaseModule
+        {static} + getApplication()
+        + getBaseApplicationComponent()
+        {static} + getInstance()
+        {static} + init()
+        - initApplicationComponent()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    class com.gykj.mvpbasemodule.SystemBarTintManager {
+        {static} + DEFAULT_TINT_COLOR : int
+        - mNavBarAvailable : boolean
+        - mNavBarTintEnabled : boolean
+        - mNavBarTintView : View
+        - mStatusBarAvailable : boolean
+        - mStatusBarTintEnabled : boolean
+        - mStatusBarTintView : View
+        {static} - sNavBarOverride : String
+        + SystemBarTintManager()
+        + getConfig()
+        + isNavBarTintEnabled()
+        + isStatusBarTintEnabled()
+        + setNavigationBarAlpha()
+        + setNavigationBarTintColor()
+        + setNavigationBarTintDrawable()
+        + setNavigationBarTintEnabled()
+        + setNavigationBarTintResource()
+        + setStatusBarAlpha()
+        + setStatusBarTintColor()
+        + setStatusBarTintDrawable()
+        + setStatusBarTintEnabled()
+        + setStatusBarTintResource()
+        + setTintAlpha()
+        + setTintColor()
+        + setTintDrawable()
+        + setTintResource()
+        - setupNavBarView()
+        - setupStatusBarView()
+    }
+  }
+  
+
+  namespace com.gykj.mvpbasemodule {
+    class com.gykj.mvpbasemodule.SystemBarTintManager.SystemBarConfig {
+        {static} - NAV_BAR_HEIGHT_LANDSCAPE_RES_NAME : String
+        {static} - NAV_BAR_HEIGHT_RES_NAME : String
+        {static} - NAV_BAR_WIDTH_RES_NAME : String
+        {static} - SHOW_NAV_BAR_RES_NAME : String
+        {static} - STATUS_BAR_HEIGHT_RES_NAME : String
+        - mActionBarHeight : int
+        - mHasNavigationBar : boolean
+        - mInPortrait : boolean
+        - mNavigationBarHeight : int
+        - mNavigationBarWidth : int
+        - mSmallestWidthDp : float
+        - mStatusBarHeight : int
+        - mTranslucentNavBar : boolean
+        - mTranslucentStatusBar : boolean
+        + getActionBarHeight()
+        + getNavigationBarHeight()
+        + getNavigationBarWidth()
+        + getPixelInsetBottom()
+        + getPixelInsetRight()
+        + getPixelInsetTop()
+        + getStatusBarHeight()
+        + hasNavigtionBar()
+        + isNavigationAtBottom()
+        - SystemBarConfig()
+        - getActionBarHeight()
+        - getInternalDimensionSize()
+        - getNavigationBarHeight()
+        - getNavigationBarWidth()
+        - getSmallestWidthDp()
+        - hasNavBar()
+    }
+  }
+  
+
+  com.gykj.mvpbasemodule.BaseContract +-down- com.gykj.mvpbasemodule.BaseContract.BasePresenter
+  com.gykj.mvpbasemodule.BaseContract +-down- com.gykj.mvpbasemodule.BaseContract.BaseView
+  com.gykj.mvpbasemodule.BaseMvpActivity .up.|> com.gykj.mvpbasemodule.BaseContract.BaseView
+  com.gykj.mvpbasemodule.BaseMvpActivity -up-|> com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+  com.gykj.mvpbasemodule.BaseMvpActivity o-- C : mActivityComponent
+  com.gykj.mvpbasemodule.BaseMvpActivity o-- com.gykj.mvpbasemodule.databinding.BaseLayoutBinding : mBaseLayoutBinding
+  com.gykj.mvpbasemodule.BaseMvpActivity o-- T : mPresenter
+  com.gykj.mvpbasemodule.BaseMvpActivity o-- com.gykj.mvpbasemodule.dialog.LoadingDialog : mProgressDialog
+  com.gykj.mvpbasemodule.BaseMvpFragment .up.|> com.gykj.mvpbasemodule.BaseContract.BaseView
+  com.gykj.mvpbasemodule.BaseMvpFragment -up-|> com.trello.rxlifecycle2.components.support.RxFragment
+  com.gykj.mvpbasemodule.BaseMvpFragment o-- A : mActivity
+  com.gykj.mvpbasemodule.BaseMvpFragment o-- F : mFragmentComponent
+  com.gykj.mvpbasemodule.BaseMvpFragment o-- T : mPresenter
+  com.gykj.mvpbasemodule.BasePresenter .up.|> com.gykj.mvpbasemodule.BaseContract.BasePresenter
+  com.gykj.mvpbasemodule.BasePresenter o-- T : mView
+  com.gykj.mvpbasemodule.MvpBaseModule o-- com.gykj.mvpbasemodule.component.BaseApplicationComponent : mBaseApplicationComponent
+  com.gykj.mvpbasemodule.SystemBarTintManager o-- com.gykj.mvpbasemodule.SystemBarTintManager.SystemBarConfig : mConfig
+  com.gykj.mvpbasemodule.SystemBarTintManager +-down- com.gykj.mvpbasemodule.SystemBarTintManager.SystemBarConfig
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,114 @@
+rootProject.name = 'common-tool-group-project'
+def excludeModules = [""]
+includeModuleDir(excludeModules)
+
+def includeModuleDir(excludeModules) {
+    def rootDir = file("./")
+    def files = rootDir.listFiles()
+    files.toList().forEach { moduleGroupDir ->
+        if (moduleGroupDir.isDirectory() && !moduleGroupDir.name.startsWith(".")
+                && moduleGroupDir.name != "gradle") {
+            if(moduleGroupDir.name == "app"){
+                include(":" + moduleGroupDir.name)
+            }else {
+                moduleGroupDir.listFiles().toList().forEach() { moduleDir ->
+                    include(":" + moduleDir.name)
+                    project(":" + moduleDir.name).projectDir = moduleDir
+                    moduleDir.listFiles().toList().forEach() {
+                        if (it.isDirectory() && !excludeModules.contains(it.name)) {
+                            include(":" + it.name)
+                            project(":" + it.name).projectDir = it
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+//include ':echartModule'
+//include ':orm-demo'
+//include ':ORM-SpatiaRoomModule'
+//include ':MapFrameUIModule', ':encryptDbModule', ':OssModule', ':ocrLocalModule'
+//include ':MapFrameCoreModule'
+//include ':app', ':shortVideoV2Module', ':signature', ':SmartDialogMoudle', ':AutoUpdateModule',':arcgisToolModule'
+//include ':ocrModule'
+//include ':selectlinearlayout', ':timepickerview',':addressSelect'
+//include ':mvpBaseModule'
+//include ':networkModule'
+//include ':networkCompilerModule'
+//include ':cameraModule'
+//include ':grandPhotosModule'
+//include ':addressselectview'
+//include ':locationModule'
+//include ':CommonUtilModule'
+//include ':locationservice'
+
+
+//需要在子仓库创建module时打开对应子仓库的注释
+//include ':map-frame-project'
+//project(':map-frame-project').projectDir =file('./frame/map-frame-project')
+//include ':arcgisTools-frame-project'
+//project(':arcgisTools-frame-project').projectDir =file('./frame/arcgisTools-frame-project')
+//include ':NetWork-frame-project'
+//project(':NetWork-frame-project').projectDir =file('./frame/NetWork-frame-project')
+//include ':mvp-frame-project'
+//project(':mvp-frame-project').projectDir =file('./frame/mvp-frame-project')
+//include ':ORM-frame-project'
+//project(':ORM-frame-project').projectDir =file('./frame/ORM-frame-project')
+//include ':autoUpdate-frame-project'
+//project(':autoUpdate-frame-project').projectDir =file('./frame/autoUpdate-frame-project')
+//include ':ocr-component-project'
+//project(':ocr-component-project').projectDir =file('./component/ocr-component-project')
+//include ':commonUtil-component-project'
+//project(':commonUtil-component-project').projectDir =file('./component/commonUtil-component-project')
+//include ':multimedia-component-project'
+//project(':multimedia-component-project').projectDir =file('./component/multimedia-component-project')
+//include ':location-component-project'
+//project(':location-component-project').projectDir =file('./component/location-component-project')
+//include ':oss-component-project'
+//project(':oss-component-project').projectDir =file('./component/oss-component-project')
+//include ':echarts-view-project'
+//project(':echarts-view-project').projectDir =file('./view/echarts-view-project')
+//include ':signature-view-project'
+//project(':signature-view-project').projectDir =file('./view/signature-view-project')
+//include ':Dialog-view-project'
+//project(':Dialog-view-project').projectDir =file('./view/Dialog-view-project')
+//include ':addressSelect-view-project'
+//project(':addressSelect-view-project').projectDir =file('./view/addressSelect-view-project')
+//include ':select-view-project'
+//project(':select-view-project').projectDir =file('./view/select-view-project')
+//include ':picker-view-project'
+//project(':picker-view-project').projectDir =file('./view/picker-view-project')
+
+
+//project(':MapFrameCoreModule').projectDir =file('./frame/map-frame-project/MapFrameCoreModule')
+//project(':MapFrameUIModule').projectDir =file('./frame/map-frame-project/MapFrameUIModule')
+//project(':arcgisToolModule').projectDir =file('./frame/arcgisTools-frame-project/arcgisToolModule')
+//project(':networkModule').projectDir =file('./frame/NetWork-frame-project/networkModule')
+//project(':networkCompilerModule').projectDir =file('./frame/NetWork-frame-project/networkCompilerModule')
+//project(':mvpBaseModule').projectDir =file('./frame/mvp-frame-project/mvpBaseModule')
+//project(':ORM-SpatiaRoomModule').projectDir =file('./frame/ORM-frame-project/ORM-SpatiaRoomModule')
+//project(':orm-demo').projectDir =file('./frame/ORM-frame-project/orm-demo')
+//project(':encryptDbModule').projectDir =file('./frame/ORM-frame-project/encryptDbModule')
+//project(':AutoUpdateModule').projectDir =file('./frame/autoUpdate-frame-project/autoUpdateModule')
+//project(':ocrLocalModule').projectDir =file('./component/ocr-component-project/ocrLocalModule')
+//project(':ocrModule').projectDir =file('./component/ocr-component-project/ocrOnlineModule')
+//project(':CommonUtilModule').projectDir =file('./component/commonUtil-component-project/commonUtilModule')
+//project(':cameraModule').projectDir =file('./component/multimedia-component-project/cameraModule')
+//project(':shortVideoV2Module').projectDir =file('./component/multimedia-component-project/shortVideoV2Module')
+//project(':locationModule').projectDir =file('./component/location-component-project/locationModuleV2')
+//project(':locationservice').projectDir =file('./component/location-component-project/locationModuleV1')
+//project(':OssModule').projectDir =file('./component/oss-component-project/OssModule')
+//project(':echartModule').projectDir =file('./view/echarts-view-project/echartsModule')
+//project(':signature').projectDir =file('./view/signature-view-project/signatureModule')
+//project(':SmartDialogMoudle').projectDir =file('./view/Dialog-view-project/SmartDialogMoudle')
+//project(':addressSelect').projectDir =file('./view/addressSelect-view-project/addressSelect')
+//project(':addressselectview').projectDir =file('./view/addressSelect-view-project/addressselectview')
+//project(':selectlinearlayout').projectDir =file('./view/select-view-project/selectlinearlayout')
+//project(':timepickerview').projectDir =file('./view/picker-view-project/timepickerview')
+//project(':grandPhotosModule').projectDir =file('./view/picker-view-project/grandPhotosModule')
+
+
+

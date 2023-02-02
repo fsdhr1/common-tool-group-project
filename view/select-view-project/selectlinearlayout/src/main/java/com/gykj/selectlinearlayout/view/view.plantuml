@@ -1,0 +1,262 @@
+@startuml
+
+title __VIEW's Class Diagram__\n
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView {
+          {static} + DIVIDER_ALPHA : int
+          {static} + DIVIDER_COLOR : int
+          {static} + DIVIDER_THICK : float
+          {static} + ITEM_OFF_SET : int
+          {static} + LINE_SPACE_MULTIPLIER : float
+          {static} + TEXT_COLOR_FOCUS : int
+          {static} + TEXT_COLOR_NORMAL : int
+          {static} + TEXT_PADDING : int
+          {static} + TEXT_SIZE : int
+          {static} - ACTION_CLICK : int
+          {static} - ACTION_DRAG : int
+          {static} - ACTION_FLING : int
+          {static} - ITEM_PADDING : float
+          {static} - SCALE_CONTENT : float
+          {static} - VELOCITY_FLING : int
+          - centerContentOffset : float
+          - drawCenterContentStart : int
+          - drawOutContentStart : int
+          - firstLineY : float
+          - gestureDetector : GestureDetector
+          - gravity : int
+          - initPosition : int
+          - isLoop : boolean
+          - itemHeight : float
+          - items : List<WheelItem>
+          - label : String
+          - lineSpaceMultiplier : float
+          - mFuture : ScheduledFuture<?>
+          - maxTextHeight : int
+          - maxTextWidth : int
+          - measuredHeight : int
+          - measuredWidth : int
+          - offset : int
+          - onlyShowCenterLabel : boolean
+          - paintCenterText : Paint
+          - paintIndicator : Paint
+          - paintOuterText : Paint
+          - paintShadow : Paint
+          - preCurrentIndex : int
+          - previousY : float
+          - radius : int
+          - secondLineY : float
+          - selectedIndex : int
+          - startTime : long
+          - textColorCenter : int
+          - textColorOuter : int
+          - textPadding : int
+          - textSize : int
+          - textSizeAutoFit : boolean
+          - textSkewXOffset : int
+          - totalScrollY : float
+          - typeface : Typeface
+          - useWeight : boolean
+          - visibleItemCount : int
+          - widthMeasureSpec : int
+          + WheelView()
+          + WheelView()
+          + getSelectedIndex()
+          + onTouchEvent()
+          + setCycleDisable()
+          + setDividerColor()
+          + setDividerConfig()
+          + setGravity()
+          + setItems()
+          + setItems()
+          + setItems()
+          + setItems()
+          + setItems()
+          + setItems()
+          + setLabel()
+          + setLabel()
+          + setLineConfig()
+          + setLineSpaceMultiplier()
+          + setOffset()
+          + setOnItemSelectListener()
+          + setOnWheelListener()
+          + setPadding()
+          + setSelectedIndex()
+          + setTextColor()
+          + setTextColor()
+          + setTextPadding()
+          + setTextSize()
+          + setTextSizeAutoFit()
+          + setTextSkewXOffset()
+          + setTypeface()
+          + setUseWeight()
+          + setVisibleItemCount()
+          # getItemCount()
+          # onDraw()
+          # onMeasure()
+          - cancelFuture()
+          - getLoopMappingIndex()
+          - initDataForIDE()
+          - initPaints()
+          - initView()
+          - itemSelectedCallback()
+          - judgeLineSpace()
+          - measureTextWidthHeight()
+          - measuredCenterContentStart()
+          - measuredOutContentStart()
+          - obtainContentText()
+          - obtainTextWidth()
+          - remeasure()
+          - remeasureTextSize()
+          - scrollBy()
+          - smoothScroll()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.DividerConfig {
+          {static} + FILL : float
+          {static} + WRAP : float
+          # alpha : int
+          # color : int
+          # ratio : float
+          # shadowAlpha : int
+          # shadowColor : int
+          # shadowVisible : boolean
+          # thick : float
+          # visible : boolean
+          + DividerConfig()
+          + DividerConfig()
+          + setAlpha()
+          + setColor()
+          + setRatio()
+          + setShadowAlpha()
+          + setShadowColor()
+          + setShadowVisible()
+          + setThick()
+          + setVisible()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.InertiaTimerTask {
+          ~ a : float
+          ~ velocityY : float
+          + run()
+          ~ InertiaTimerTask()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.LineConfig {
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.MessageHandler {
+          {static} ~ WHAT_INVALIDATE : int
+          {static} ~ WHAT_ITEM_SELECTED : int
+          {static} ~ WHAT_SMOOTH_SCROLL : int
+          + handleMessage()
+          ~ MessageHandler()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      interface com.gykj.selectlinearlayout.view.WheelView.OnItemSelectListener {
+          {abstract} + onSelected()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      interface com.gykj.selectlinearlayout.view.WheelView.OnWheelListener {
+          {abstract} + onSelected()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      interface com.gykj.selectlinearlayout.view.WheelView.OnWheelViewListener {
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.SmoothScrollTimerTask {
+          ~ offset : int
+          ~ realOffset : int
+          ~ realTotalOffset : int
+          + run()
+          ~ SmoothScrollTimerTask()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.selectlinearlayout {
+    namespace view {
+      class com.gykj.selectlinearlayout.view.WheelView.StringItem {
+          - name : String
+          + getName()
+          - StringItem()
+      }
+    }
+  }
+  
+
+  com.gykj.selectlinearlayout.view.WheelView -up-|> android.view.View
+  com.gykj.selectlinearlayout.view.WheelView o-- com.gykj.selectlinearlayout.view.WheelView.DividerConfig : dividerConfig
+  com.gykj.selectlinearlayout.view.WheelView o-- com.gykj.selectlinearlayout.view.WheelView.MessageHandler : handler
+  com.gykj.selectlinearlayout.view.WheelView o-- com.gykj.selectlinearlayout.view.WheelView.OnItemSelectListener : onItemSelectListener
+  com.gykj.selectlinearlayout.view.WheelView o-- com.gykj.selectlinearlayout.view.WheelView.OnWheelListener : onWheelListener
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.DividerConfig
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.InertiaTimerTask
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.LineConfig
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.MessageHandler
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.OnItemSelectListener
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.OnWheelListener
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.OnWheelViewListener
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.SmoothScrollTimerTask
+  com.gykj.selectlinearlayout.view.WheelView +-down- com.gykj.selectlinearlayout.view.WheelView.StringItem
+  com.gykj.selectlinearlayout.view.WheelView.InertiaTimerTask -up-|> java.util.TimerTask
+  com.gykj.selectlinearlayout.view.WheelView.InertiaTimerTask o-- com.gykj.selectlinearlayout.view.WheelView : view
+  com.gykj.selectlinearlayout.view.WheelView.LineConfig -up-|> com.gykj.selectlinearlayout.view.WheelView.DividerConfig
+  com.gykj.selectlinearlayout.view.WheelView.MessageHandler -up-|> android.os.Handler
+  com.gykj.selectlinearlayout.view.WheelView.MessageHandler o-- com.gykj.selectlinearlayout.view.WheelView : view
+  com.gykj.selectlinearlayout.view.WheelView.SmoothScrollTimerTask -up-|> java.util.TimerTask
+  com.gykj.selectlinearlayout.view.WheelView.SmoothScrollTimerTask o-- com.gykj.selectlinearlayout.view.WheelView : view
+  com.gykj.selectlinearlayout.view.WheelView.StringItem .up.|> com.gykj.selectlinearlayout.bean.WheelItem
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

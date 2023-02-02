@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <FrameLayout
+        android:id="@+id/flMainFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <com.grandtech.mapframe.core.maps.GMapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+        </com.grandtech.mapframe.core.maps.GMapView>
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/auto"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="默认样式自动生成" />
+
+        <Button
+            android:id="@+id/custom"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:text="自定义自动生成" />
+
+        <Button
+            android:id="@+id/manual"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:text="手动生成" />
+        <Button
+            android:id="@+id/auto1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:text="默认样式自动生成不跳转" />
+
+        <Button
+            android:id="@+id/custom_auto"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:text="自研方式生成单坐落图" />
+
+        <Button
+            android:id="@+id/custom_auto_total"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:text="自研方式生成总坐落图" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,305 @@
+@startuml
+
+title __UTILS's Class Diagram__\n
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.BitmapUtil {
+        {static} + addMark2Bitmap()
+        {static} + addMark2Bitmap()
+        {static} + addMark2BitmapEx()
+        {static} + addMark2BitmapForStand()
+        {static} + addMark2BitmapForStand()
+        {static} + addMark2BitmapForSurvey()
+        {static} + addMark2BitmapForSurvey()
+        {static} + addWatermarkBitmap()
+        + bitmap2Array()
+        {static} + bitmap2File()
+        {static} + bitmap2File()
+        {static} + bitmap2File()
+        {static} + bitmapCropWithRect()
+        {static} + byte2File()
+        {static} + convertBitmap()
+        {static} + getBitMBitmap()
+        {static} + getImageThumbnail()
+        {static} + getRoundedCornerBitmap()
+        {static} + mergeBitmap()
+        + returnBitMap()
+        {static} + rotatingBitmap()
+        {static} + toRoundBitmap()
+        {static} + zoomImg()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.DateUtil {
+        {static} - ONE_DAY : long
+        {static} - weeks : int
+        {static} + LastMonth()
+        {static} + add()
+        {static} + add()
+        {static} + compareDate()
+        {static} + compareMonth()
+        {static} + dateTimeToAccessFormat()
+        {static} + dateTimeToStr()
+        {static} + dateToPathYear()
+        {static} + dateToPathYearMonth()
+        {static} + dateToPathYearMonthDay()
+        {static} + dateToPathYearMonthDaySplit()
+        {static} + dateToPathYearMonthSplit()
+        {static} + dateToStr()
+        {static} + dateToStr()
+        {static} + dateToStrCh()
+        {static} + dateToYearMonth()
+        {static} + dateToYearMonthDay()
+        {static} + getBeforeDate()
+        {static} + getCurrentDate()
+        {static} + getCurrentDateTime()
+        {static} + getCurrentDateWeek()
+        {static} + getCurrentDateWeekEn()
+        {static} + getCurrentHhMmSs()
+        {static} + getCurrentMonth()
+        {static} + getCurrentTime()
+        {static} + getCurrentYear()
+        {static} + getCurrentm()
+        {static} + getDAT()
+        {static} + getDAT()
+        {static} + getDate()
+        {static} + getDayInWeek()
+        {static} + getDayOfWeek()
+        {static} + getEndQueryTime()
+        {static} + getFileExtend()
+        {static} + getFirstDayOfMonth()
+        {static} + getLastDayOfMonth()
+        {static} + getLongDate()
+        {static} + getMonth()
+        {static} + getMonthDay()
+        {static} + getOriginal()
+        {static} + getPreviousWeekSunday()
+        {static} + getPreviousWeekday()
+        {static} + getStartQueryTime()
+        {static} + getUTCTimeStr()
+        {static} + getVersionExtend()
+        {static} + getYear()
+        {static} + getYearMonth()
+        {static} + getYearMonth()
+        {static} + getYearMonthDay()
+        {static} + lastWeek()
+        {static} + lastYear()
+        {static} + lately30Day()
+        {static} + lately7Day()
+        {static} + main()
+        {static} + strToDate()
+        {static} + strToDateTime()
+        {static} + sub()
+        {static} + thisWeek()
+        {static} + uTCTime2DataTime()
+        {static} + yesterday()
+        {static} - getMondayPlus()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.EasyPermissions {
+        {static} + SETTINGS_REQ_CODE : int
+        {static} - TAG : String
+        {static} + checkDeniedPermissionsNeverAskAgain()
+        {static} + checkDeniedPermissionsNeverAskAgain()
+        {static} + hasPermissions()
+        {static} + onRequestPermissionsResult()
+        {static} + requestPermissions()
+        {static} + requestPermissions()
+        {static} - checkCallingObjectSuitability()
+        {static} - executePermissionsRequest()
+        {static} - getActivity()
+        {static} - shouldShowRequestPermissionRationale()
+        {static} - startAppSettingsScreen()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    interface com.gykj.utils.EasyPermissions.PermissionCallbacks {
+        {abstract} + onPermissionsAllGranted()
+        {abstract} + onPermissionsDenied()
+        {abstract} + onPermissionsGranted()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.FileUtil {
+        {static} + convertCodeAndGetText()
+        {static} + copyAssets()
+        {static} + copyDir()
+        {static} + copyFile()
+        {static} + copyFileAnyhow()
+        {static} + copyFileUsingFileStreams()
+        {static} + createAllFile()
+        {static} + createFile()
+        {static} + createFileParentPath()
+        {static} + deleteDir()
+        {static} + deleteFile()
+        {static} + deleteSameNameFile()
+        {static} + fileTree()
+        {static} + getDirMD5()
+        {static} + getFileAttr()
+        {static} + getFileExtendNameByPath()
+        {static} + getFileFullNameByPath()
+        {static} + getFileMD5()
+        {static} + getFileNameByPath()
+        {static} + getFileNameInFolder()
+        {static} + getFileNameInFolider()
+        {static} + getFilePathInFolder()
+        {static} + getFilePathInFolder()
+        {static} + getFilePathInFolder2Map()
+        {static} + getFilePathWithOutExtendName()
+        {static} + getFileSize()
+        {static} + getFileSize()
+        {static} + getFileSizeByPath()
+        {static} + getParentFileByPath()
+        {static} + getParentPathByPath()
+        {static} + getPathInFolder()
+        {static} + getSaveFile()
+        {static} + isExist()
+        {static} + moveFile2OtherPlace()
+        {static} + reNameFileExtend()
+        {static} + reNameFolder()
+        {static} + readRemoteFile()
+        {static} + readStream()
+        {static} + scanFile()
+        {static} + traverseFolder()
+        {static} + traverseFolder_Breadth()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.GsonFactory {
+        - gson : Gson
+        {static} - singleton : GsonFactory
+        + getComGson()
+        {static} + getFactory()
+        - GsonFactory()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.NetUtil {
+        {static} + getBasUrl()
+        {static} + hasInternet()
+        {static} + isWifiConnected()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.ObjectUtil {
+        {static} + baseTypeIsEqual()
+        {static} + baseTypeIsEqual()
+        {static} + baseTypeLike()
+        {static} + compareTo()
+        {static} + isEmpty()
+        {static} + objFieldsIsEqual()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.OrientationUtil {
+        {static} - mOrientation : int
+        {static} + getOrientation()
+        {static} + setOrientation()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.ReflectUtil {
+        {static} + getFieldByName()
+        {static} + getValByNumberVar()
+        - ReflectUtil()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.RoundUtil {
+        {static} + ORIENTATION_HYSTERESIS : int
+        {static} + getDisplayRotation()
+        {static} + roundOrientation()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.SystemBarHelper {
+        {static} - DEFAULT_ALPHA : float
+        {static} + forceFitsSystemWindows()
+        {static} + forceFitsSystemWindows()
+        {static} + forceFitsSystemWindows()
+        {static} + getStatusBarHeight()
+        {static} + immersiveStatusBar()
+        {static} + immersiveStatusBar()
+        {static} + immersiveStatusBar()
+        {static} + immersiveStatusBar()
+        {static} + isFlyme4Later()
+        {static} + isMIUI6Later()
+        {static} + setHeightAndPadding()
+        {static} + setPadding()
+        {static} + setStatusBarDarkMode()
+        {static} + setStatusBarDarkMode()
+        {static} + setStatusBarDarkModeForFlyme4()
+        {static} + setStatusBarDarkModeForM()
+        {static} + setStatusBarDarkModeForMIUI6()
+        {static} + tintStatusBar()
+        {static} + tintStatusBar()
+        {static} + tintStatusBar()
+        {static} + tintStatusBar()
+        {static} + tintStatusBarForDrawer()
+        {static} + tintStatusBarForDrawer()
+        {static} - setStatusBar()
+        {static} - setStatusBar()
+        {static} - setTranslucentView()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.TPoolUtil {
+        {static} - CORE_POOL_SIZE : int
+        {static} - KEEP_ALIVE_TIME : int
+        {static} - MAX_POOL_SIZE : int
+        {static} - threadFactory : ThreadFactory
+        {static} - threadPool : ThreadPoolExecutor
+        {static} - workQueue : BlockingQueue
+        {static} + cancel()
+        {static} + execute()
+        {static} + execute()
+        {static} + submit()
+        - TPoolUtil()
+    }
+  }
+  
+
+  namespace com.gykj.utils {
+    class com.gykj.utils.VibratorUtil {
+        {static} + Vibrate()
+        {static} + Vibrate()
+    }
+  }
+  
+
+  com.gykj.utils.EasyPermissions +-down- com.gykj.utils.EasyPermissions.PermissionCallbacks
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

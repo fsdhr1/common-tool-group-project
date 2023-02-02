@@ -1,0 +1,507 @@
+@startuml
+
+title __CAMERA's Class Diagram__\n
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.Camera1Control {
+          ~ previewCallback : PreviewCallback
+          - MODEL_NOSCAN : int
+          - MODEL_SCAN : int
+          - abortingScan : AtomicBoolean
+          - buffer : byte[]
+          - camera : Camera
+          - cameraId : int
+          - context : Context
+          - detectType : int
+          - displayOrientation : int
+          - displayView : View
+          - flashMode : int
+          - mIsFindAdjustSize : boolean
+          - mIsFindOptSize : boolean
+          - optSize : Size
+          - parameters : Parameters
+          - previewFrame : Rect
+          - previewFrameCount : int
+          - rotation : int
+          - sizeComparator : Comparator<Size>
+          - surfaceCache : SurfaceTexture
+          - surfaceTextureListener : SurfaceTextureListener
+          - takingPicture : AtomicBoolean
+          + Camera1Control()
+          + getAbortingScan()
+          + getCameraRotation()
+          + getDisplayView()
+          + getFlashMode()
+          + getPreviewFrame()
+          + pause()
+          + refreshPermission()
+          + resume()
+          + setDetectCallback()
+          + setDisplayOrientation()
+          + setFlashMode()
+          + setPermissionCallback()
+          + start()
+          + stop()
+          + takePicture()
+          - cancelAutoFocus()
+          - clearPreviewCallback()
+          - getOptimalSize()
+          - getSurfaceOrientation()
+          - initCamera()
+          - onRequestDetect()
+          - opPreviewSize()
+          - openCamera()
+          - setPreviewCallbackImpl()
+          - setupDisplayView()
+          - startAutoFocus()
+          - startPreview()
+          - stopPreview()
+          - updateFlashMode()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.Camera1Control.PreviewView {
+          - ratio : float
+          - textureView : TextureView
+          + PreviewView()
+          # onLayout()
+          # onSizeChanged()
+          ~ setRatio()
+          ~ setTextureView()
+          - relayout()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.Camera2Control {
+          {static} - MAX_PREVIEW_HEIGHT : int
+          {static} - MAX_PREVIEW_SIZE : int
+          {static} - MAX_PREVIEW_WIDTH : int
+          {static} - ORIENTATIONS : SparseIntArray
+          {static} - STATE_CAPTURING : int
+          {static} - STATE_PICTURE_TAKEN : int
+          {static} - STATE_PREVIEW : int
+          {static} - STATE_WAITING_FOR_CAPTURE : int
+          {static} - STATE_WAITING_FOR_LOCK : int
+          - backgroundHandler : Handler
+          - backgroundThread : HandlerThread
+          - cameraDevice : CameraDevice
+          - cameraId : String
+          - cameraLock : Semaphore
+          - captureCallback : CaptureCallback
+          - captureSession : CameraCaptureSession
+          - context : Context
+          - deviceStateCallback : StateCallback
+          - flashMode : int
+          - imageReader : ImageReader
+          - onImageAvailableListener : OnImageAvailableListener
+          - orientation : int
+          - previewFrame : Rect
+          - previewRequest : CaptureRequest
+          - previewRequestBuilder : Builder
+          - previewSize : Size
+          - sensorOrientation : int
+          - sizeComparator : Comparator<Size>
+          - state : int
+          - surfaceTextureListener : SurfaceTextureListener
+          - textureView : TextureView
+          + Camera2Control()
+          + getAbortingScan()
+          + getDisplayView()
+          + getFlashMode()
+          + getPreviewFrame()
+          + pause()
+          + refreshPermission()
+          + resume()
+          + setDetectCallback()
+          + setDisplayOrientation()
+          + setFlashMode()
+          + setPermissionCallback()
+          + start()
+          + stop()
+          + takePicture()
+          - captureStillPicture()
+          - closeCamera()
+          - configureTransform()
+          - createCameraPreviewSession()
+          - getOptimalSize()
+          - getOrientation()
+          - lockFocus()
+          - openCamera()
+          - requestCameraPermission()
+          - runPreCaptureSequence()
+          - setUpCameraOutputs()
+          - startBackgroundThread()
+          - stopBackgroundThread()
+          - unlockFocus()
+          - updateFlashMode()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.CameraActivity {
+          {static} + CONTENT_TYPE_BANK_CARD : String
+          {static} + CONTENT_TYPE_GENERAL : String
+          {static} + CONTENT_TYPE_ID_CARD_BACK : String
+          {static} + CONTENT_TYPE_ID_CARD_FRONT : String
+          {static} + CONTENT_TYPE_PASSPORT : String
+          {static} + KEY_CONTENT_TYPE : String
+          {static} + KEY_NATIVE_ENABLE : String
+          {static} + KEY_NATIVE_MANUAL : String
+          {static} + KEY_NATIVE_TOKEN : String
+          {static} + KEY_OUTPUT_FILE_PATH : String
+          {static} - PERMISSIONS_EXTERNAL_STORAGE : int
+          {static} - PERMISSIONS_REQUEST_CAMERA : int
+          {static} - REQUEST_CODE_PICK_IMAGE : int
+          - albumButtonOnClickListener : OnClickListener
+          - confirmButtonOnClickListener : OnClickListener
+          - confirmCancelButtonOnClickListener : OnClickListener
+          - contentType : String
+          - cropCancelButtonListener : OnClickListener
+          - cropConfirmButtonListener : OnClickListener
+          - displayImageView : ImageView
+          - handler : Handler
+          - isNativeEnable : boolean
+          - isNativeManual : boolean
+          - lightButton : ImageView
+          - lightButtonOnClickListener : OnClickListener
+          - outputFile : File
+          - rotateButtonOnClickListener : OnClickListener
+          - takeButtonOnClickListener : OnClickListener
+          - takePhotoBtn : ImageView
+          + onConfigurationChanged()
+          + onRequestPermissionsResult()
+          # onActivityResult()
+          # onCreate()
+          # onDestroy()
+          # onPause()
+          # onResume()
+          # onStart()
+          # onStop()
+          - cropAndConfirm()
+          - doClear()
+          - doConfirmResult()
+          - getRealPathFromURI()
+          - initNative()
+          - initParams()
+          - setOrientation()
+          - showCrop()
+          - showResultConfirm()
+          - showTakePicture()
+          - updateFlashMode()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.CameraNativeHelper {
+          {static} + init()
+          {static} + release()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.CameraNativeHelper.CameraNativeInitCallback {
+          {abstract} + onError()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.CameraThreadPool {
+          {static} ~ cameraScanInterval : long
+          {static} ~ timerFocus : Timer
+          {static} - fixedThreadPool : ExecutorService
+          {static} - poolCount : int
+          {static} + cancelAutoFocusTimer()
+          {static} + createAutoFocusTimerTask()
+          {static} + execute()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.CameraView {
+          {static} + NATIVE_AUTH_FAIL : int
+          {static} + NATIVE_AUTH_INIT_SUCCESS : int
+          {static} + NATIVE_INIT_FAIL : int
+          {static} + NATIVE_SOLOAD_FAIL : int
+          {static} + ORIENTATION_HORIZONTAL : int
+          {static} + ORIENTATION_INVERT : int
+          {static} + ORIENTATION_PORTRAIT : int
+          ~ uiHandler : Handler
+          - SCAN_SUCCESS : int
+          - displayView : View
+          - hintView : ImageView
+          - hintViewText : TextView
+          - hintViewTextWrapper : LinearLayout
+          - initNativeStatus : int
+          - isEnableScan : boolean
+          - maskType : int
+          + CameraView()
+          + CameraView()
+          + CameraView()
+          + getCameraControl()
+          + release()
+          + setAutoPictureCallback()
+          + setEnableScan()
+          + setInitNativeStatus()
+          + setMaskType()
+          + setOrientation()
+          + start()
+          + stop()
+          + takePicture()
+          # onLayout()
+          - crop()
+          - detect()
+          - getScanMessage()
+          - init()
+          - showTipMessage()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.CameraView.CameraViewTakePictureCallback {
+          - file : File
+          + onPictureTaken()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback {
+          {abstract} + onPictureTaken()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.CameraView.Orientation {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.ICameraControl {
+          {static} + FLASH_MODE_AUTO : int
+          {static} + FLASH_MODE_OFF : int
+          {static} + FLASH_MODE_TORCH : int
+          {abstract} + getAbortingScan()
+          {abstract} + getDisplayView()
+          {abstract} + getFlashMode()
+          {abstract} + getPreviewFrame()
+          {abstract} + pause()
+          {abstract} + refreshPermission()
+          {abstract} + resume()
+          {abstract} + setDetectCallback()
+          {abstract} + setDisplayOrientation()
+          {abstract} + setFlashMode()
+          {abstract} + setPermissionCallback()
+          {abstract} + start()
+          {abstract} + stop()
+          {abstract} + takePicture()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.ICameraControl.FlashMode {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.ICameraControl.OnDetectPictureCallback {
+          {abstract} + onDetect()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.ICameraControl.OnTakePictureCallback {
+          {abstract} + onPictureTaken()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.MaskView {
+          {static} + MASK_TYPE_BANK_CARD : int
+          {static} + MASK_TYPE_ID_CARD_BACK : int
+          {static} + MASK_TYPE_ID_CARD_FRONT : int
+          {static} + MASK_TYPE_NONE : int
+          {static} + MASK_TYPE_PASSPORT : int
+          - eraser : Paint
+          - frame : Rect
+          - framePassport : Rect
+          - lineColor : int
+          - locatorDrawable : Drawable
+          - maskColor : int
+          - maskType : int
+          - path : Path
+          - pen : Paint
+          + MaskView()
+          + MaskView()
+          + MaskView()
+          + getFrameRect()
+          + getFrameRectExtend()
+          + getMaskType()
+          + setLineColor()
+          + setMaskColor()
+          + setMaskType()
+          + setOrientation()
+          # onDraw()
+          # onSizeChanged()
+          - capture()
+          - fillRectRound()
+          - init()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.MaskView.MaskType {
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.OCRCameraLayout {
+          {static} + ORIENTATION_HORIZONTAL : int
+          {static} + ORIENTATION_PORTRAIT : int
+          - backgroundRect : Rect
+          - centerView : View
+          - centerViewId : int
+          - contentView : View
+          - contentViewId : int
+          - leftDownView : View
+          - leftDownViewId : int
+          - orientation : int
+          - paint : Paint
+          - rightUpView : View
+          - rightUpViewId : int
+          + OCRCameraLayout()
+          + OCRCameraLayout()
+          + OCRCameraLayout()
+          + setOrientation()
+          # onAttachedToWindow()
+          # onDraw()
+          # onLayout()
+          - parseAttrs()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      class com.baidu.ocr.ui.camera.OCRFrameLayout {
+          + OCRFrameLayout()
+          + OCRFrameLayout()
+          + OCRFrameLayout()
+          # onLayout()
+          # onMeasure()
+          - parseAttrs()
+      }
+    }
+  }
+  
+
+  namespace com.baidu.ocr.ui {
+    namespace camera {
+      interface com.baidu.ocr.ui.camera.PermissionCallback {
+          {abstract} + onRequestPermission()
+      }
+    }
+  }
+  
+
+  com.baidu.ocr.ui.camera.Camera1Control .up.|> com.baidu.ocr.ui.camera.ICameraControl
+  com.baidu.ocr.ui.camera.Camera1Control o-- com.baidu.ocr.ui.camera.ICameraControl.OnDetectPictureCallback : detectCallback
+  com.baidu.ocr.ui.camera.Camera1Control o-- com.baidu.ocr.ui.camera.PermissionCallback : permissionCallback
+  com.baidu.ocr.ui.camera.Camera1Control o-- com.baidu.ocr.ui.camera.Camera1Control.PreviewView : previewView
+  com.baidu.ocr.ui.camera.Camera1Control +-down- com.baidu.ocr.ui.camera.Camera1Control.PreviewView
+  com.baidu.ocr.ui.camera.Camera1Control.PreviewView -up-|> android.widget.FrameLayout
+  com.baidu.ocr.ui.camera.Camera2Control .up.|> com.baidu.ocr.ui.camera.ICameraControl
+  com.baidu.ocr.ui.camera.Camera2Control o-- com.baidu.ocr.ui.camera.ICameraControl.OnTakePictureCallback : onTakePictureCallback
+  com.baidu.ocr.ui.camera.Camera2Control o-- com.baidu.ocr.ui.camera.PermissionCallback : permissionCallback
+  com.baidu.ocr.ui.camera.CameraActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback : autoTakePictureCallback
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.CameraView : cameraView
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.OCRCameraLayout : confirmResultContainer
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.OCRCameraLayout : cropContainer
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.MaskView : cropMaskView
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.crop.CropView : cropView
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.crop.FrameOverlayView : overlayView
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.PermissionCallback : permissionCallback
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback : takePictureCallback
+  com.baidu.ocr.ui.camera.CameraActivity o-- com.baidu.ocr.ui.camera.OCRCameraLayout : takePictureContainer
+  com.baidu.ocr.ui.camera.CameraNativeHelper +-down- com.baidu.ocr.ui.camera.CameraNativeHelper.CameraNativeInitCallback
+  com.baidu.ocr.ui.camera.CameraView -up-|> android.widget.FrameLayout
+  com.baidu.ocr.ui.camera.CameraView o-- com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback : autoPictureCallback
+  com.baidu.ocr.ui.camera.CameraView o-- com.baidu.ocr.ui.camera.ICameraControl : cameraControl
+  com.baidu.ocr.ui.camera.CameraView o-- com.baidu.ocr.ui.camera.CameraView.CameraViewTakePictureCallback : cameraViewTakePictureCallback
+  com.baidu.ocr.ui.camera.CameraView o-- com.baidu.ocr.ui.camera.MaskView : maskView
+  com.baidu.ocr.ui.camera.CameraView +-down- com.baidu.ocr.ui.camera.CameraView.CameraViewTakePictureCallback
+  com.baidu.ocr.ui.camera.CameraView +-down- com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback
+  com.baidu.ocr.ui.camera.CameraView +-down- com.baidu.ocr.ui.camera.CameraView.Orientation
+  com.baidu.ocr.ui.camera.CameraView.CameraViewTakePictureCallback .up.|> com.baidu.ocr.ui.camera.ICameraControl.OnTakePictureCallback
+  com.baidu.ocr.ui.camera.CameraView.CameraViewTakePictureCallback o-- com.baidu.ocr.ui.camera.CameraView.OnTakePictureCallback : callback
+  com.baidu.ocr.ui.camera.ICameraControl +-down- com.baidu.ocr.ui.camera.ICameraControl.FlashMode
+  com.baidu.ocr.ui.camera.ICameraControl +-down- com.baidu.ocr.ui.camera.ICameraControl.OnDetectPictureCallback
+  com.baidu.ocr.ui.camera.ICameraControl +-down- com.baidu.ocr.ui.camera.ICameraControl.OnTakePictureCallback
+  com.baidu.ocr.ui.camera.MaskView -up-|> android.view.View
+  com.baidu.ocr.ui.camera.MaskView +-down- com.baidu.ocr.ui.camera.MaskView.MaskType
+  com.baidu.ocr.ui.camera.OCRCameraLayout -up-|> android.widget.FrameLayout
+  com.baidu.ocr.ui.camera.OCRFrameLayout -up-|> android.view.ViewGroup
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

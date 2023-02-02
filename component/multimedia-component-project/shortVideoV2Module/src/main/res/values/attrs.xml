@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageViewByXfermode">
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+        <attr name="borderRadius" format="reference|dimension" />
+        <attr name="driverRadius" format="reference|dimension" />
+        <attr name="driverColor" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="RoundImageViewWithTextByXfermode">
+        <attr name="bottominfo" format="reference|string"></attr>
+    </declare-styleable>
+    <declare-styleable name="OrderLinearLayout" >
+        <attr name="textWidth" format="dimension"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsIndicatorFillParent" format="boolean" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="tabTextColor" format="color" />
+        <attr name="selectedTabTextColor" format="color" />
+        <attr name="pstsIsChangeColor" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="TasksCompletedView">
+        <attr name="radius" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="ringColor" format="color"/>
+    </declare-styleable>
+</resources>

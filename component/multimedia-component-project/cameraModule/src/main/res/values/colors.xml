@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="camera_module_waterRed">#990000</color>
+
+    <!--图片查看-->
+    <color name="camera_module_image_pager_title_color">#FF3A3B40</color>
+    <color name="camera_module_image_pager_bg_color">#020202</color>
+
+    <color name="camera_module_milky_white">#ffefebe7</color>
+
+    <color name="camera_module_colorPrimary">#13c287</color>
+    <color name="camera_module_white">#FFFFFF</color>
+
+    <color name="camera_module_black">#000000</color>
+    <color name="camera_module_transparent">#0000</color>
+</resources>

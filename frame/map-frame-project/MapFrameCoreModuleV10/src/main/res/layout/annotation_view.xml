@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gmmfc_v10_corner_5dp"
+    android:layout_centerHorizontal="true">
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:background="@drawable/gmmfc_v10_corner_5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13.5dp"
+            android:text="dwewq"
+            android:textColor="#333333"
+            android:layout_gravity="center_horizontal"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="none"
+            android:maxLines="100"
+            android:scrollHorizontally="false"
+            android:text="ffsfsfdafaf"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

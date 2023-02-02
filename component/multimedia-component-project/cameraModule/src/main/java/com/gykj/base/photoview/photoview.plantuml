@@ -1,0 +1,203 @@
+@startuml
+
+title __PHOTOVIEW's Class Diagram__\n
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.Info {
+        ~ mDegrees : float
+        ~ mImgRect : RectF
+        ~ mLocalRect : RectF
+        ~ mRect : RectF
+        ~ mScale : float
+        ~ mScaleType : ScaleType
+        ~ mWidgetRect : RectF
+        + Info()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.PhotoView {
+        {static} - ANIMA_DURING : int
+        - MAX_ANIM_FROM_WAITE : int
+        - MAX_FLING_OVER_SCROLL : int
+        - MAX_OVER_RESISTANCE : int
+        - MAX_OVER_SCROLL : int
+        {static} - MAX_SCALE : float
+        {static} - MIN_ROTATE : int
+        - canRotate : boolean
+        - hasDrawable : boolean
+        - hasMultiTouch : boolean
+        - hasOverTranslate : boolean
+        - imgLargeHeight : boolean
+        - imgLargeWidth : boolean
+        - isEnable : boolean
+        - isInit : boolean
+        - isKnowSize : boolean
+        - isZoonUp : boolean
+        - mAdjustViewBounds : boolean
+        - mAnimaMatrix : Matrix
+        - mBaseMatrix : Matrix
+        - mBaseRect : RectF
+        - mClickListener : OnClickListener
+        - mClickRunnable : Runnable
+        - mClip : RectF
+        - mCommonRect : RectF
+        - mCompleteCallBack : Runnable
+        - mDegrees : float
+        - mDetector : GestureDetector
+        - mGestureListener : OnGestureListener
+        - mHalfBaseRectHeight : float
+        - mHalfBaseRectWidth : float
+        - mImgRect : RectF
+        - mInfoTime : long
+        - mLongClickRunnable : Runnable
+        - mOnLongClickListener : OnLongClickListener
+        - mRotateCenter : PointF
+        - mRotateFlag : float
+        - mScale : float
+        - mScaleCenter : PointF
+        - mScaleDetector : ScaleGestureDetector
+        - mScaleListener : OnScaleGestureListener
+        - mScaleType : ScaleType
+        - mScreenCenter : PointF
+        - mSynthesisMatrix : Matrix
+        - mTmpMatrix : Matrix
+        - mTmpRect : RectF
+        - mTranslateX : int
+        - mTranslateY : int
+        - mValues : float[]
+        - mWidgetRect : RectF
+        + PhotoView()
+        + PhotoView()
+        + PhotoView()
+        + animaFrom()
+        + animaTo()
+        + canScrollHorizontally()
+        + canScrollHorizontallySelf()
+        + canScrollVertically()
+        + canScrollVerticallySelf()
+        + disenable()
+        + dispatchTouchEvent()
+        + draw()
+        + enable()
+        {static} + getDefaultAnimaDuring()
+        + getInfo()
+        + setAdjustViewBounds()
+        + setImageDrawable()
+        + setImageResource()
+        + setMaxAnimFromWaiteTime()
+        + setOnClickListener()
+        + setOnLongClickListener()
+        + setScaleType()
+        # onMeasure()
+        # onSizeChanged()
+        - checkRect()
+        - doTranslateReset()
+        - executeTranslate()
+        - getDrawableHeight()
+        - getDrawableWidth()
+        - getLocation()
+        - hasSize()
+        - init()
+        - initBase()
+        - initCenter()
+        - initCenterCrop()
+        - initCenterInside()
+        - initFitCenter()
+        - initFitEnd()
+        - initFitStart()
+        - initFitXY()
+        - isImageCenterHeight()
+        - isImageCenterWidth()
+        - mapRect()
+        - onUp()
+        - reset()
+        - resetBase()
+        - resistanceScrollByX()
+        - resistanceScrollByY()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    interface com.gykj.base.photoview.PhotoView.ClipCalculate {
+        {abstract} + calculateTop()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.PhotoView.END {
+        + calculateTop()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.PhotoView.OTHER {
+        + calculateTop()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.PhotoView.START {
+        + calculateTop()
+    }
+  }
+  
+
+  namespace com.gykj.base.photoview {
+    class com.gykj.base.photoview.PhotoView.Transform {
+        ~ isRuning : boolean
+        ~ mClipRect : RectF
+        ~ mClipScroller : Scroller
+        ~ mFlingScroller : OverScroller
+        ~ mLastFlingX : int
+        ~ mLastFlingY : int
+        ~ mLastTranslateX : int
+        ~ mLastTranslateY : int
+        ~ mRotateScroller : Scroller
+        ~ mScaleScroller : Scroller
+        ~ mTranslateScroller : OverScroller
+        + run()
+        ~ Transform()
+        ~ start()
+        ~ stop()
+        ~ withClip()
+        ~ withFling()
+        ~ withRotate()
+        ~ withRotate()
+        ~ withScale()
+        ~ withTranslate()
+        - postExecute()
+    }
+  }
+  
+
+  com.gykj.base.photoview.PhotoView -up-|> androidx.appcompat.widget.AppCompatImageView
+  com.gykj.base.photoview.PhotoView o-- com.gykj.base.photoview.Info : mInfo
+  com.gykj.base.photoview.PhotoView o-- com.gykj.base.photoview.RotateGestureDetector.RotateGestureDetector : mRotateDetector
+  com.gykj.base.photoview.PhotoView o-- com.gykj.base.photoview.RotateGestureDetector.OnRotateListener : mRotateListener
+  com.gykj.base.photoview.PhotoView o-- com.gykj.base.photoview.PhotoView.Transform : mTranslate
+  com.gykj.base.photoview.PhotoView +-down- com.gykj.base.photoview.PhotoView.ClipCalculate
+  com.gykj.base.photoview.PhotoView +-down- com.gykj.base.photoview.PhotoView.END
+  com.gykj.base.photoview.PhotoView +-down- com.gykj.base.photoview.PhotoView.OTHER
+  com.gykj.base.photoview.PhotoView +-down- com.gykj.base.photoview.PhotoView.START
+  com.gykj.base.photoview.PhotoView +-down- com.gykj.base.photoview.PhotoView.Transform
+  com.gykj.base.photoview.PhotoView.END .up.|> com.gykj.base.photoview.PhotoView.ClipCalculate
+  com.gykj.base.photoview.PhotoView.OTHER .up.|> com.gykj.base.photoview.PhotoView.ClipCalculate
+  com.gykj.base.photoview.PhotoView.START .up.|> com.gykj.base.photoview.PhotoView.ClipCalculate
+  com.gykj.base.photoview.PhotoView.Transform .up.|> java.lang.Runnable
+  com.gykj.base.photoview.PhotoView.Transform o-- com.gykj.base.photoview.PhotoView.ClipCalculate : C
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

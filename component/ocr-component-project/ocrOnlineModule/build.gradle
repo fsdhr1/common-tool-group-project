@@ -1,0 +1,86 @@
+/*
+ * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+ */
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'com.grandtech.common.component-control'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false// 是否混淆，true混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    implementation files('libs/license.jar')
+    api files('libs/ocr-sdk.jar')
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxbinding"
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.logging_interceptor"
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.converter_gson"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.adapter_rxjava"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.converter_scalars"
+    // Bank card recognition fullSDK.
+    implementation "com.huawei.hms:ml-computer-card-bcr:$rootProject.hwbankcard"
+
+    // ID card recognition fullSDK.
+    implementation "com.huawei.hms:ml-computer-card-icr-cn:$rootProject.hwidcard"
+    //utils
+    implementation "com.blankj:utilcodex:$rootProject.utilcode"
+    //gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
+    def MAVEN_LOCAL_PATH = 'http://maven1.agribigdata.com.cn/nexus/content/repositories/releases/'
+    def ARTIFACT_ID = 'common_tool_ocr'
+    def VERSION_NAME = '0.0.0.1'
+    def GROUP_ID = 'com.grandtech.common'
+    def ACCOUNT = 'admin'
+    def PASSWORD = 'admin123'
+
+    //脚本：将Lib打成aar包上传至maven私有库
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url:MAVEN_LOCAL_PATH ){
+                    authentication(userName: ACCOUNT, password: PASSWORD)}
+                pom.project {
+                    groupId GROUP_ID
+                    artifactId ARTIFACT_ID
+                    version VERSION_NAME
+                    packaging 'aar'
+                }
+            }
+        }
+    }
+}

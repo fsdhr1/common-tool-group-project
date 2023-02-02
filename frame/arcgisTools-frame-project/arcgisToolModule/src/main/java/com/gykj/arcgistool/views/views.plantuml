@@ -1,0 +1,212 @@
+@startuml
+
+title __VIEWS's Class Diagram__\n
+
+  namespace com.gykj.arcgistool {
+    namespace views {
+      class com.gykj.arcgistool.views.ArcGisZoomView {
+          # mMapView : MapView
+          - bgColor : int
+          - fontColor : int
+          - fontSize : int
+          - isHorizontal : boolean
+          - linearLayoutView : LinearLayout
+          - listener : OnClickListener
+          - mapMainLayout : LinearLayout
+          - mapMainView : ImageView
+          - mapRotateImage : int
+          - mapRotateLayout : LinearLayout
+          - mapRotateNum : double
+          - mapRotateText : String
+          - mapRotateTextView : TextView
+          - mapRotateView : ImageView
+          - showText : boolean
+          - spiltLineView : TextView
+          - spiltLineView2 : TextView
+          - zoomBgView : LinearLayout
+          - zoomHeight : int
+          - zoomInImage : int
+          - zoomInLayout : LinearLayout
+          - zoomInNum : double
+          - zoomInText : String
+          - zoomInTextView : TextView
+          - zoomInView : ImageView
+          - zoomOutImage : int
+          - zoomOutNum : double
+          - zoomOutText : String
+          - zoomOutTextView : TextView
+          - zoomOutView : ImageView
+          - zoomWidth : int
+          - zoomoutLayout : LinearLayout
+          + ArcGisZoomView()
+          + ArcGisZoomView()
+          + init()
+          + setZoomClickListener()
+          - initAttr()
+          - initView()
+          - setShowText()
+          - setZoomDpHeight()
+          - setZoomDpWidth()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.arcgistool {
+    namespace views {
+      class com.gykj.arcgistool.views.DrawGraphView {
+          - bgColor : int
+          - buttonHeight : int
+          - buttonWidth : int
+          - clearDrawLayout : LinearLayout
+          - clearDrawStr : String
+          - clearDrawText : TextView
+          - context : Context
+          - defaultMapViewOnTouchListener : DefaultMapViewOnTouchListener
+          - drawingBgView : LinearLayout
+          - drawingCircleImage : int
+          - drawingCircleImageView : ImageView
+          - drawingCircleLayout : LinearLayout
+          - drawingCircleStr : String
+          - drawingCircleText : TextView
+          - drawingEllipseImage : int
+          - drawingEllipseImageView : ImageView
+          - drawingEllipseLayout : LinearLayout
+          - drawingEllipseStr : String
+          - drawingEllipseText : TextView
+          - drawingEndLayout : LinearLayout
+          - drawingEndTv : TextView
+          - drawingLineImage : int
+          - drawingLineImageView : ImageView
+          - drawingLineLayout : LinearLayout
+          - drawingLineStr : String
+          - drawingLineText : TextView
+          - drawingOrthogonImage : int
+          - drawingOrthogonImageView : ImageView
+          - drawingOrthogonLayout : LinearLayout
+          - drawingOrthogonStr : String
+          - drawingOrthogonText : TextView
+          - drawingPolygonImage : int
+          - drawingPolygonImageView : ImageView
+          - drawingPolygonLayout : LinearLayout
+          - drawingPolygonStr : String
+          - drawingPolygonText : TextView
+          - drawingRhombusImage : int
+          - drawingRhombusImageView : ImageView
+          - drawingRhombusLayout : LinearLayout
+          - drawingRhombusStr : String
+          - drawingRhombusText : TextView
+          - drawingTextLayout : LinearLayout
+          - drawingTextTv : TextView
+          - drawingTextView : ImageView
+          - enable : boolean
+          - fontColor : int
+          - fontSize : int
+          - isHorizontal : boolean
+          - listener : OnClickListener
+          - mMapView : MapView
+          - showText : boolean
+          + DrawGraphView()
+          + DrawGraphView()
+          + getDrawGraphListener()
+          + init()
+          + setDrawGraphListener()
+          - clearBgColor()
+          - initAttr()
+          - initView()
+          - registerMapEvent()
+          - setSohwText()
+      }
+    }
+  }
+  
+
+  namespace com.gykj.arcgistool {
+    namespace views {
+      class com.gykj.arcgistool.views.MeasureToolView {
+          - areaImageView : ImageView
+          - bgColor : int
+          - buttonHeight : int
+          - buttonWidth : int
+          - clearImageView : ImageView
+          - context : Context
+          - defaultMapViewOnTouchListener : DefaultMapViewOnTouchListener
+          - enable : boolean
+          - endImageView : ImageView
+          - fontColor : int
+          - fontSize : int
+          - isHorizontal : boolean
+          - lengthImageView : ImageView
+          - listener : OnClickListener
+          - mMapView : MapView
+          - measureAreaImage : int
+          - measureAreaLayout : LinearLayout
+          - measureAreaStr : String
+          - measureAreaText : TextView
+          - measureBgView : LinearLayout
+          - measureClearImage : int
+          - measureClearLayout : LinearLayout
+          - measureClearStr : String
+          - measureClearText : TextView
+          - measureEndImage : int
+          - measureEndLayout : LinearLayout
+          - measureEndStr : String
+          - measureEndText : TextView
+          - measureLengthImage : int
+          - measureLengthLayout : LinearLayout
+          - measureLengthStr : String
+          - measureLengthText : TextView
+          - measureNextImage : int
+          - measureNextStr : String
+          - measureNextText : TextView
+          - measureNextlayout : LinearLayout
+          - measurePrevImage : int
+          - measurePrevStr : String
+          - measurePrevText : TextView
+          - measurePrevlayout : LinearLayout
+          - nextImageView : ImageView
+          - prevImageView : ImageView
+          - showText : boolean
+          + MeasureToolView()
+          + MeasureToolView()
+          + init()
+          + setMapClickCallBack()
+          + setMeasureClickListener()
+          - initAttr()
+          - initView()
+          - onMapSingleTapUp()
+          - registerMapEvent()
+          - setDpButtonHeight()
+          - setDpButtonWidth()
+          - setSohwText()
+      }
+    }
+  }
+  
+
+  com.gykj.arcgistool.views.ArcGisZoomView .up.|> com.gykj.arcgistool.common.IToolBar
+  com.gykj.arcgistool.views.ArcGisZoomView -up-|> android.widget.LinearLayout
+  com.gykj.arcgistool.views.ArcGisZoomView o-- com.gykj.arcgistool.listener.IZoomClickListener : zoomClickListener
+  com.gykj.arcgistool.views.DrawGraphView .up.|> com.gykj.arcgistool.common.IToolBar
+  com.gykj.arcgistool.views.DrawGraphView -up-|> android.widget.LinearLayout
+  com.gykj.arcgistool.views.DrawGraphView o-- com.gykj.arcgistool.listener.IDrawGraphListener : drawGraphListener
+  com.gykj.arcgistool.views.DrawGraphView o-- com.gykj.arcgistool.common.GraphType : graphType
+  com.gykj.arcgistool.views.DrawGraphView o-- com.gykj.arcgistool.utils.GraphicDraw : graphicDraw
+  com.gykj.arcgistool.views.MeasureToolView .up.|> com.gykj.arcgistool.common.IToolBar
+  com.gykj.arcgistool.views.MeasureToolView -up-|> android.widget.LinearLayout
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.utils.ArcGisMeasure : arcgisMeasure
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.common.DrawType : drawType
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.common.MapViewOnTouchListener : mapListener
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.common.Measure : measureAreaType
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.listener.IMeasureClickListener : measureClickListener
+  com.gykj.arcgistool.views.MeasureToolView o-- com.gykj.arcgistool.common.Measure : measureLengthType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

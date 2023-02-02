@@ -1,0 +1,311 @@
+@startuml
+
+title __TIMEPICKERVIEW's Class Diagram__\n
+
+  namespace com.gykj.timepickerview {
+    class com.gykj.timepickerview.OptionsPickerView {
+        ~ wheelOptions : WheelOptions<T>
+        - Color_Background_Title : int
+        - Color_Background_Wheel : int
+        - Color_Cancel : int
+        - Color_Submit : int
+        - Color_Title : int
+        - Size_Content : int
+        - Size_Submit_Cancel : int
+        - Size_Title : int
+        - Str_Cancel : String
+        - Str_Submit : String
+        - Str_Title : String
+        {static} - TAG_CANCEL : String
+        {static} - TAG_SUBMIT : String
+        - backgroundId : int
+        - btnCancel : Button
+        - btnSubmit : Button
+        - cancelable : boolean
+        - cyclic1 : boolean
+        - cyclic2 : boolean
+        - cyclic3 : boolean
+        - dividerColor : int
+        - font : Typeface
+        - isCenterLabel : boolean
+        - isDialog : boolean
+        - label1 : String
+        - label2 : String
+        - label3 : String
+        - layoutRes : int
+        - lineSpacingMultiplier : float
+        - linkage : boolean
+        - option1 : int
+        - option2 : int
+        - option3 : int
+        - rv_top_bar : RelativeLayout
+        - textColorCenter : int
+        - textColorOut : int
+        - tvTitle : TextView
+        + OptionsPickerView()
+        + isDialog()
+        + onClick()
+        + returnData()
+        + setNPicker()
+        + setPicker()
+        + setPicker()
+        + setPicker()
+        + setSelectOptions()
+        + setSelectOptions()
+        + setSelectOptions()
+        - SetCurrentItems()
+        - initView()
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    class com.gykj.timepickerview.OptionsPickerView.Builder {
+        + decorView : ViewGroup
+        - Color_Background_Title : int
+        - Color_Background_Wheel : int
+        - Color_Cancel : int
+        - Color_Submit : int
+        - Color_Title : int
+        - Size_Content : int
+        - Size_Submit_Cancel : int
+        - Size_Title : int
+        - Str_Cancel : String
+        - Str_Submit : String
+        - Str_Title : String
+        - backgroundId : int
+        - cancelable : boolean
+        - context : Context
+        - cyclic1 : boolean
+        - cyclic2 : boolean
+        - cyclic3 : boolean
+        - dividerColor : int
+        - font : Typeface
+        - isCenterLabel : boolean
+        - isDialog : boolean
+        - label1 : String
+        - label2 : String
+        - label3 : String
+        - layoutRes : int
+        - lineSpacingMultiplier : float
+        - linkage : boolean
+        - option1 : int
+        - option2 : int
+        - option3 : int
+        - textColorCenter : int
+        - textColorOut : int
+        + Builder()
+        + build()
+        + isCenterLabel()
+        + isDialog()
+        + setBackgroundId()
+        + setBgColor()
+        + setCancelColor()
+        + setCancelText()
+        + setContentTextSize()
+        + setCyclic()
+        + setDecorView()
+        + setDividerColor()
+        + setDividerType()
+        + setLabels()
+        + setLayoutRes()
+        + setLineSpacingMultiplier()
+        + setLinkage()
+        + setOutSideCancelable()
+        + setSelectOptions()
+        + setSelectOptions()
+        + setSelectOptions()
+        + setSubCalSize()
+        + setSubmitColor()
+        + setSubmitText()
+        + setTextColorCenter()
+        + setTextColorOut()
+        + setTitleBgColor()
+        + setTitleColor()
+        + setTitleSize()
+        + setTitleText()
+        + setTypeface()
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    interface com.gykj.timepickerview.OptionsPickerView.OnOptionsSelectListener {
+        + onCancelClick()
+        {abstract} + onOptionsSelect()
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    class com.gykj.timepickerview.TimePickerView {
+        - Color_Background_Title : int
+        - Color_Background_Wheel : int
+        - Color_Cancel : int
+        - Color_Submit : int
+        - Color_Title : int
+        - Size_Content : int
+        - Size_Submit_Cancel : int
+        - Size_Title : int
+        - Str_Cancel : String
+        - Str_Submit : String
+        - Str_Title : String
+        {static} - TAG_CANCEL : String
+        {static} - TAG_SUBMIT : String
+        - Title_Height : int
+        - backgroundId : int
+        - btnCancel : Button
+        - btnSubmit : Button
+        - cancelable : boolean
+        - cyclic : boolean
+        - date : Calendar
+        - dividerColor : int
+        - endDate : Calendar
+        - endYear : int
+        - gravity : int
+        - isCenterLabel : boolean
+        - isDialog : boolean
+        - isShowTitleDivider : boolean
+        - label_day : String
+        - label_hours : String
+        - label_mins : String
+        - label_month : String
+        - label_seconds : String
+        - label_year : String
+        - layoutRes : int
+        - lineSpacingMultiplier : float
+        - startDate : Calendar
+        - startYear : int
+        - textColorCenter : int
+        - textColorOut : int
+        - tvTitle : TextView
+        - type : boolean[]
+        - viewTitleDivider : View
+        + TimePickerView()
+        + isDialog()
+        + onClick()
+        + returnData()
+        + setDate()
+        - initView()
+        - setRangDate()
+        - setRange()
+        - setTime()
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    class com.gykj.timepickerview.TimePickerView.Builder {
+        + decorView : ViewGroup
+        - Color_Background_Title : int
+        - Color_Background_Wheel : int
+        - Color_Cancel : int
+        - Color_Submit : int
+        - Color_Title : int
+        - Size_Content : int
+        - Size_Submit_Cancel : int
+        - Size_Title : int
+        - Str_Cancel : String
+        - Str_Submit : String
+        - Str_Title : String
+        - Title_Height : int
+        - backgroundId : int
+        - cancelable : boolean
+        - context : Context
+        - cyclic : boolean
+        - date : Calendar
+        - dividerColor : int
+        - endDate : Calendar
+        - endYear : int
+        - gravity : int
+        - isCenterLabel : boolean
+        - isDialog : boolean
+        - isShowTitleDivider : boolean
+        - label_day : String
+        - label_hours : String
+        - label_mins : String
+        - label_month : String
+        - label_seconds : String
+        - label_year : String
+        - layoutRes : int
+        - lineSpacingMultiplier : float
+        - startDate : Calendar
+        - startYear : int
+        - textColorCenter : int
+        - textColorOut : int
+        - type : boolean[]
+        + Builder()
+        + build()
+        + gravity()
+        + isCenterLabel()
+        + isCyclic()
+        + isDialog()
+        + setBackgroundId()
+        + setBgColor()
+        + setCancelColor()
+        + setCancelText()
+        + setContentSize()
+        + setDate()
+        + setDecorView()
+        + setDividerColor()
+        + setDividerType()
+        + setLabel()
+        + setLayoutRes()
+        + setLineSpacingMultiplier()
+        + setOutSideCancelable()
+        + setRangDate()
+        + setRange()
+        + setShowTitleDivider()
+        + setSubCalSize()
+        + setSubmitColor()
+        + setSubmitText()
+        + setTextColorCenter()
+        + setTextColorOut()
+        + setTitleBgColor()
+        + setTitleColor()
+        + setTitleHeight()
+        + setTitleSize()
+        + setTitleText()
+        + setType()
+    }
+  }
+  
+
+  namespace com.gykj.timepickerview {
+    interface com.gykj.timepickerview.TimePickerView.OnTimeSelectListener {
+        {abstract} + onTimeSelect()
+    }
+  }
+  
+
+  com.gykj.timepickerview.OptionsPickerView .up.|> android.view.View.OnClickListener
+  com.gykj.timepickerview.OptionsPickerView -up-|> com.gykj.timepickerview.view.BasePickerView
+  com.gykj.timepickerview.OptionsPickerView o-- com.gykj.timepickerview.listener.CustomListener : customListener
+  com.gykj.timepickerview.OptionsPickerView o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.OptionsPickerView o-- com.gykj.timepickerview.OptionsPickerView.OnOptionsSelectListener : optionsSelectListener
+  com.gykj.timepickerview.OptionsPickerView +-down- com.gykj.timepickerview.OptionsPickerView.Builder
+  com.gykj.timepickerview.OptionsPickerView +-down- com.gykj.timepickerview.OptionsPickerView.OnOptionsSelectListener
+  com.gykj.timepickerview.OptionsPickerView.Builder o-- com.gykj.timepickerview.listener.CustomListener : customListener
+  com.gykj.timepickerview.OptionsPickerView.Builder o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.OptionsPickerView.Builder o-- com.gykj.timepickerview.OptionsPickerView.OnOptionsSelectListener : optionsSelectListener
+  com.gykj.timepickerview.TimePickerView .up.|> android.view.View.OnClickListener
+  com.gykj.timepickerview.TimePickerView -up-|> com.gykj.timepickerview.view.BasePickerView
+  com.gykj.timepickerview.TimePickerView o-- com.gykj.timepickerview.view.WheelTime : wheelTime
+  com.gykj.timepickerview.TimePickerView o-- com.gykj.timepickerview.listener.CustomListener : customListener
+  com.gykj.timepickerview.TimePickerView o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.TimePickerView o-- com.gykj.timepickerview.TimePickerView.OnTimeSelectListener : timeSelectListener
+  com.gykj.timepickerview.TimePickerView +-down- com.gykj.timepickerview.TimePickerView.Builder
+  com.gykj.timepickerview.TimePickerView +-down- com.gykj.timepickerview.TimePickerView.OnTimeSelectListener
+  com.gykj.timepickerview.TimePickerView.Builder o-- com.gykj.timepickerview.listener.CustomListener : customListener
+  com.gykj.timepickerview.TimePickerView.Builder o-- com.gykj.timepickerview.lib.WheelView.DividerType : dividerType
+  com.gykj.timepickerview.TimePickerView.Builder o-- com.gykj.timepickerview.TimePickerView.OnTimeSelectListener : timeSelectListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,266 @@
+@startuml
+
+title __ADDRESSSELECT's Class Diagram__\n
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressAdapter {
+        - mBeanList : List<AddreBean>
+        + getCount()
+        + getItem()
+        + getItemId()
+        + getView()
+        + refreshData()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressAdapter.Holder {
+        ~ imageViewCheckMark : ImageView
+        ~ textView : TextView
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressConfigBuilder {
+        - canceledOnTouchOutside : Boolean
+        + getCanceledOnTouchOutside()
+        + setCanceledOnTouchOutside()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressDataManager {
+        - mContext : Context
+        + AddressDataManager()
+        + getAddressDataList()
+        + getVillageDataList()
+        + showToast()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    interface com.gykj.addressselect.AddressDataManager.AddressCallBack {
+        {abstract} + onAddressCallBack()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController {
+        {static} + INDEX_TAB_CITY : int
+        {static} + INDEX_TAB_COUNTY : int
+        {static} + INDEX_TAB_PROVINCE : int
+        {static} + INDEX_TAB_TOWN : int
+        {static} + INDEX_TAB_VILLAGE : int
+        + tabIndex : int
+        {static} - INDEX_INVALID : int
+        - cityIndex : int
+        - cityPosition : int
+        - context : Context
+        - countyIndex : int
+        - countyPosition : int
+        - indicator : View
+        - inflater : LayoutInflater
+        - iv_colse : ImageView
+        - layout_tab : LinearLayout
+        - listView : ListView
+        - mCitieList : List<AddreBean>
+        - mCountyList : List<AddreBean>
+        - mProvinceList : List<AddreBean>
+        - mTownList : List<AddreBean>
+        - mVillageList : List<AddreBean>
+        - progressBar : ProgressBar
+        - provinceIndex : int
+        - provincePostion : int
+        - selectedColor : int
+        - textViewCity : TextView
+        - textViewCounty : TextView
+        - textViewProvince : TextView
+        - textViewTown : TextView
+        - textViewVillage : TextView
+        - townIndex : int
+        - townPosition : int
+        - unSelectedColor : int
+        - view : View
+        - villageIndex : int
+        - villagePosition : int
+        + AddressViewsController()
+        + getBuilder()
+        + onItemClick()
+        + retrieveCitiesWith()
+        + retrieveCountiesWith()
+        + retrieveTownWith()
+        + retrieveVillage()
+        + setBuilder()
+        # getView()
+        # resetUnderCity()
+        # resetUnderCountry()
+        # resetUnderProvince()
+        # resetVillage()
+        # retrieveProvinces()
+        # setOnAddressSelectedListener()
+        - buildIndicatorAnimatorTowards()
+        - callbackInternal()
+        - initAdapters()
+        - initViews()
+        - setViewsGone()
+        - setViewsVisiable()
+        - showNoDataToast()
+        - updateIndicator()
+        - updateProgressVisibility()
+        - updateTabTextColor()
+        - updateTabsVisibility()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController.OnCityTabClickListener {
+        + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController.OnProvinceTabClickListener {
+        + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController.OnTownTabClickListener {
+        + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController.OnVillageTabClickListener {
+        + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressViewsController.onCountyTabClickListener {
+        + onClick()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressWidget {
+        - mFragmentActivity : FragmentActivity
+        - mSoftReference : SoftReference<BottomAddressDialog>
+        + getController()
+        {static} + getInstance()
+        + onDissWidget()
+        + onWidgetDestory()
+        + setOnAddressSelectedListener()
+        + showWidget()
+        + showWidget()
+        # createNewWidget()
+        # getWidgetCached()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressWidget.InnerClass {
+        {static} - mWidget : AddressWidget
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressWidgetUtils {
+        {static} + getInstance()
+        + getWidgetCache()
+        + getWidgetNew()
+        + onWidgetDestory()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.AddressWidgetUtils.CreateSingle {
+        {static} - mUtils : AddressWidgetUtils
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.BottomAddressDialog {
+        - mActivity : Activity
+        + BottomAddressDialog()
+        + BottomAddressDialog()
+        + BottomAddressDialog()
+        + dissmissDialog()
+        {static} + dp2px()
+        + setViewsController()
+        + showDialog()
+        - initViews()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.ListUtils {
+        + ListUtils()
+        {static} + getArrayList()
+        {static} + isEmpty()
+        {static} + notEmpty()
+    }
+  }
+  
+
+  namespace com.gykj.addressselect {
+    class com.gykj.addressselect.UninterceptableListView {
+        + UninterceptableListView()
+        + UninterceptableListView()
+        + UninterceptableListView()
+        + onTouchEvent()
+    }
+  }
+  
+
+  com.gykj.addressselect.AddressAdapter -up-|> android.widget.BaseAdapter
+  com.gykj.addressselect.AddressAdapter +-down- com.gykj.addressselect.AddressAdapter.Holder
+  com.gykj.addressselect.AddressDataManager +-down- com.gykj.addressselect.AddressDataManager.AddressCallBack
+  com.gykj.addressselect.AddressViewsController .up.|> android.widget.AdapterView.OnItemClickListener
+  com.gykj.addressselect.AddressViewsController o-- com.gykj.addressselect.interfaces.OnAddressSelectedListener : listener
+  com.gykj.addressselect.AddressViewsController o-- com.gykj.addressselect.AddressAdapter : mAddressAdapter
+  com.gykj.addressselect.AddressViewsController o-- com.gykj.addressselect.AddressDataManager : mAddressDataManager
+  com.gykj.addressselect.AddressViewsController o-- com.gykj.addressselect.AddressConfigBuilder : mBuilder
+  com.gykj.addressselect.AddressViewsController +-down- com.gykj.addressselect.AddressViewsController.OnCityTabClickListener
+  com.gykj.addressselect.AddressViewsController +-down- com.gykj.addressselect.AddressViewsController.OnProvinceTabClickListener
+  com.gykj.addressselect.AddressViewsController +-down- com.gykj.addressselect.AddressViewsController.OnTownTabClickListener
+  com.gykj.addressselect.AddressViewsController +-down- com.gykj.addressselect.AddressViewsController.OnVillageTabClickListener
+  com.gykj.addressselect.AddressViewsController +-down- com.gykj.addressselect.AddressViewsController.onCountyTabClickListener
+  com.gykj.addressselect.AddressViewsController.OnCityTabClickListener .up.|> android.view.View.OnClickListener
+  com.gykj.addressselect.AddressViewsController.OnProvinceTabClickListener .up.|> android.view.View.OnClickListener
+  com.gykj.addressselect.AddressViewsController.OnTownTabClickListener .up.|> android.view.View.OnClickListener
+  com.gykj.addressselect.AddressViewsController.OnVillageTabClickListener .up.|> android.view.View.OnClickListener
+  com.gykj.addressselect.AddressViewsController.onCountyTabClickListener .up.|> android.view.View.OnClickListener
+  com.gykj.addressselect.AddressWidget o-- com.gykj.addressselect.BottomAddressDialog : mAddressDialog
+  com.gykj.addressselect.AddressWidget o-- com.gykj.addressselect.AddressViewsController : mViewsController
+  com.gykj.addressselect.AddressWidget +-down- com.gykj.addressselect.AddressWidget.InnerClass
+  com.gykj.addressselect.AddressWidgetUtils +-down- com.gykj.addressselect.AddressWidgetUtils.CreateSingle
+  com.gykj.addressselect.BottomAddressDialog -up-|> android.app.Dialog
+  com.gykj.addressselect.BottomAddressDialog o-- com.gykj.addressselect.AddressViewsController : mViewsController
+  com.gykj.addressselect.UninterceptableListView -up-|> android.widget.ListView
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

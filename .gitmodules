@@ -1,0 +1,73 @@
+[submodule "map-frame-project"]
+    path = frame/map-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/map-frame-project.git
+
+[submodule "NetWork-frame-project"]
+    path = frame/NetWork-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/NetWork-frame-project.git
+
+[submodule "mvp-frame-project"]
+    path = frame/mvp-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/mvp-frame-project.git
+
+[submodule "ORM-frame-project"]
+    path = frame/ORM-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/ORM-frame-project.git
+
+
+[submodule "autoUpdate-frame-project"]
+    path = frame/autoUpdate-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/autoUpdate-frame-project.git
+
+[submodule "arcgisTools-frame-project"]
+    path = frame/arcgisTools-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/arcgisTools-frame-project.git
+
+
+[submodule "ocr-component-project"]
+    path = component/ocr-component-project
+    url =  http://192.168.1.64:8010/android-sdk/ocr-component-project.git
+
+[submodule "commonUtil-component-project"]
+    path = component/commonUtil-component-project
+    url =  http://192.168.1.64:8010/android-sdk/commonUtil-component-project.git
+
+[submodule "multimedia-component-project"]
+    path = component/multimedia-component-project
+    url =  http://192.168.1.64:8010/android-sdk/multimedia-component-project.git
+
+[submodule "location-component-project"]
+    path = component/location-component-project
+    url =  http://192.168.1.64:8010/android-sdk/location-component-project.git
+
+[submodule "oss-component-project"]
+    path = component/oss-component-project
+    url =  http://192.168.1.64:8010/android-sdk/oss-component-project.git
+
+[submodule "echarts-view-project"]
+    path = view/echarts-view-project 
+    url =  http://192.168.1.64:8010/android-sdk/echarts-view-project.git
+
+[submodule "signature-view-project"]
+    path = view/signature-view-project 
+    url =  http://192.168.1.64:8010/android-sdk/signature-view-project.git
+
+[submodule "Dialog-view-project"]
+    path = view/Dialog-view-project
+    url =  http://192.168.1.64:8010/android-sdk/Dialog-view-project.git
+
+[submodule "addressSelect-view-project"]
+    path = view/addressSelect-view-project
+    url =  http://192.168.1.64:8010/android-sdk/addressSelect-view-project.git
+
+[submodule "select-view-project"]
+    path = view/select-view-project
+    url =  http://192.168.1.64:8010/android-sdk/select-view-project.git
+
+[submodule "picker-view-project"]
+    path = view/picker-view-project
+    url =  http://192.168.1.64:8010/android-sdk/picker-view-project.git
+
+[submodule "jsBridge-frame-project"]
+    path = frame/jsBridge-frame-project
+    url =  http://192.168.1.64:8010/android-sdk/jsBridge-frame-project.git

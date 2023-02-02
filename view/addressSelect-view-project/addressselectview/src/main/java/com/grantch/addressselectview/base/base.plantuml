@@ -1,0 +1,227 @@
+@startuml
+
+title __BASE's Class Diagram__\n
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      class com.grantch.addressselectview.base.BaseOnScrollListener {
+          + BaseOnScrollListener()
+          + onScrollStateChanged()
+          + onScrolled()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseOnScrollListener.IScrollListen {
+          {abstract} + onScrollState()
+          {abstract} + onScrolledDown()
+          {abstract} + onScrolledToBottom()
+          {abstract} + onScrolledToTop()
+          {abstract} + onScrolledUp()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      abstract class com.grantch.addressselectview.base.BaseRecycleAdapter {
+          # baseViewHolders : List<BaseViewHolder>
+          # context : Context
+          # dataList : List<M>
+          # firstItemPosition : int
+          # lastItemPosition : int
+          # listener : OnItemClickListener<H>
+          # mHeaderView : View
+          # parentView : RecyclerView
+          # visibleItemCount : int
+          + BaseRecycleAdapter()
+          + BaseRecycleAdapter()
+          + BaseRecycleAdapter()
+          + BaseRecycleAdapter()
+          + appendItem()
+          + appendList()
+          + appendList()
+          + changeItem()
+          + compareEqual()
+          + fillList()
+          + getDataList()
+          + getHeaderView()
+          + getItem()
+          + getItem()
+          + getItemCount()
+          + getItems()
+          + getLastItemPosition()
+          + getRealPosition()
+          + getViewHolderByData()
+          + getViewHolderByPosition()
+          + insertItem()
+          {abstract} + isPinnedPosition()
+          {abstract} + isPosItemVisible()
+          + onBindViewHolder()
+          {abstract} + onCreateViewHolder()
+          + preposeItem()
+          + preposeList()
+          + reLoadItem()
+          + removeAll()
+          + removeItem()
+          + removeItem()
+          + removeItems()
+          + replaceAll()
+          {abstract} + scrollState()
+          + setHeaderView()
+          + setIClickListener()
+          + setILongClickListener()
+          + setILongViewClickListener()
+          + setIViewClickListener()
+          + setIpViewClickListener()
+          + setIpViewLongClickListener()
+          + simulationViewClick()
+          + simulationViewClick()
+          + simulationViewLongClick()
+          + upDateItem()
+          + updateItem()
+          # onCreateViewHolderHead()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.IClickListener {
+          {abstract} + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.ILongClickListener {
+          {abstract} + onLongClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.ILongViewClickListener {
+          {abstract} + onLongViewClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewClickListener {
+          {abstract} + iPViewClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewLongClickListener {
+          {abstract} + iPViewLongClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.BaseRecycleAdapter.IViewClickListener {
+          {abstract} + onClick()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      class com.grantch.addressselectview.base.BaseRecycleAdapter.ScrollListen {
+          + onScrollStateChanged()
+          + onScrolled()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      abstract class com.grantch.addressselectview.base.BaseViewHolder {
+          # position : int
+          + BaseViewHolder()
+          + BaseViewHolder()
+          + getData()
+          + getPos()
+          {abstract} + setData()
+          # $()
+          # getContext()
+          # getView()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      class com.grantch.addressselectview.base.ItemClickListener {
+          - gestureDetector : GestureDetectorCompat
+          + ItemClickListener()
+          + onInterceptTouchEvent()
+      }
+    }
+  }
+  
+
+  namespace com.grantch.addressselectview {
+    namespace base {
+      interface com.grantch.addressselectview.base.ItemClickListener.OnItemClickListener {
+          {abstract} + onItemClick()
+          {abstract} + onItemLongClick()
+      }
+    }
+  }
+  
+
+  com.grantch.addressselectview.base.BaseOnScrollListener -up-|> androidx.recyclerview.widget.RecyclerView.OnScrollListener
+  com.grantch.addressselectview.base.BaseOnScrollListener o-- com.grantch.addressselectview.base.BaseOnScrollListener.IScrollListen : iScrollListen
+  com.grantch.addressselectview.base.BaseOnScrollListener +-down- com.grantch.addressselectview.base.BaseOnScrollListener.IScrollListen
+  com.grantch.addressselectview.base.BaseRecycleAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.IClickListener : iClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.ILongClickListener : iLongClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.ILongViewClickListener : iLongViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.IViewClickListener : iViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewClickListener : ipViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter o-- com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewLongClickListener : ipViewLongClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.IClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.ILongClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.ILongViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.IPViewLongClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.IViewClickListener
+  com.grantch.addressselectview.base.BaseRecycleAdapter +-down- com.grantch.addressselectview.base.BaseRecycleAdapter.ScrollListen
+  com.grantch.addressselectview.base.BaseRecycleAdapter.ScrollListen -up-|> androidx.recyclerview.widget.RecyclerView.OnScrollListener
+  com.grantch.addressselectview.base.BaseViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.grantch.addressselectview.base.BaseViewHolder o-- M : data
+  com.grantch.addressselectview.base.ItemClickListener -up-|> androidx.recyclerview.widget.RecyclerView.SimpleOnItemTouchListener
+  com.grantch.addressselectview.base.ItemClickListener o-- com.grantch.addressselectview.base.ItemClickListener.OnItemClickListener : clickListener
+  com.grantch.addressselectview.base.ItemClickListener +-down- com.grantch.addressselectview.base.ItemClickListener.OnItemClickListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

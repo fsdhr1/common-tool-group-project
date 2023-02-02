@@ -1,0 +1,807 @@
+@startuml
+
+title __UTIL's Class Diagram__\n
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.BitmapUtil {
+          {static} + addMark2BitmapEx()
+          {static} + base64ToBitmap()
+          {static} + bitmap2File()
+          {static} + bitmapCropWithRect()
+          {static} + bitmapToBase64()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CacheBoxUtil {
+          {static} + TIME_DAY : int
+          {static} + TIME_HOUR : int
+          {static} - MAX_COUNT : int
+          {static} - MAX_SIZE : int
+          {static} - mInstanceMap : Map<String, CacheBoxUtil>
+          + clear()
+          + file()
+          {static} + get()
+          {static} + get()
+          {static} + get()
+          {static} + get()
+          {static} + get()
+          + get()
+          + getAsBinary()
+          + getAsBitmap()
+          + getAsDrawable()
+          + getAsJSONArray()
+          + getAsJSONObject()
+          + getAsObject()
+          + getAsString()
+          + getAsT()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + put()
+          + remove()
+          - CacheBoxUtil()
+          {static} - myPid()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CacheBoxUtil.ACacheManager {
+          # cacheDir : File
+          - cacheCount : AtomicInteger
+          - cacheSize : AtomicLong
+          - countLimit : int
+          - lastUsageDates : Map<File, Long>
+          - sizeLimit : long
+          - ACacheManager()
+          - calculateCacheSizeAndCacheCount()
+          - calculateSize()
+          - clear()
+          - get()
+          - newFile()
+          - put()
+          - remove()
+          - removeNext()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CacheBoxUtil.Utils {
+          {static} - mSeparator : char
+          {static} - Bitmap2Bytes()
+          {static} - Bytes2Bimap()
+          {static} - bitmap2Drawable()
+          {static} - clearDateInfo()
+          {static} - clearDateInfo()
+          {static} - copyOfRange()
+          {static} - createDateInfo()
+          {static} - drawable2Bitmap()
+          {static} - getDateInfoFromDate()
+          {static} - hasDateInfo()
+          {static} - indexOf()
+          {static} - isDue()
+          {static} - isDue()
+          {static} - newByteArrayWithDateInfo()
+          {static} - newStringWithDateInfo()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CacheBoxUtil.xFileOutputStream {
+          ~ file : File
+          + close()
+          + xFileOutputStream()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CollectUtil {
+          {static} + ListT2ListObj()
+          {static} + array2List()
+          {static} + list2TArray()
+          {static} + list2TArray()
+          {static} + removeNullFromArray()
+          {static} + tArray2List()
+          - CollectUtil()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CommonGeoUnion {
+          {static} + _2PointDis()
+          {static} + get2Point2MidPoint()
+          {static} + isNearPoint()
+          {static} + nearPoint()
+          {static} + polygonArea()
+          {static} + polygonLast2PointLength()
+          {static} + polygonLeftOrRight()
+          {static} + polygonLength()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.CustomPointSerializer {
+          ~ precision : int
+          + CustomPointSerializer()
+          + CustomPointSerializer()
+          + serialize()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Expression {
+          - arguments : Expression[]
+          - operator : String
+          + Expression()
+          {static} + convert()
+          {static} + convert()
+          {static} + replace()
+          + toArray()
+          + toString()
+          ~ Expression()
+          {static} - convert()
+          {static} - convert()
+          {static} - convertToValue()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Expression.ExpressionLiteral {
+          # literal : Object
+          + ExpressionLiteral()
+          + equals()
+          + hashCode()
+          + toArray()
+          + toString()
+          + toValue()
+          {static} - unwrapStringLiteral()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Expression.ExpressionLiteralArray {
+          + equals()
+          + toString()
+          ~ ExpressionLiteralArray()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Expression.ExpressionMap {
+          - map : Map<String, Expression>
+          + equals()
+          + hashCode()
+          + toString()
+          + toValue()
+          ~ ExpressionMap()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      interface com.grandtech.mapframe.core.util.Expression.ValueExpression {
+          {abstract} + toValue()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.FeatureSet {
+          - featureCollection : FeatureCollection
+          - geoJson : String
+          - keyWords : String[]
+          - layerId : String
+          - sourceId : String
+          + FeatureSet()
+          + append()
+          + append()
+          + append()
+          + append()
+          + bbox()
+          + clearAll()
+          + clone()
+          {static} + convert2FeatureSets()
+          {static} + convert2Features()
+          {static} + convert2Features()
+          {static} + convert2Geometries()
+          {static} + convert2MapFeatureSet()
+          {static} + convert2MapFeatureSet()
+          {static} + convert2MapFeatureSet()
+          + features()
+          {static} + fromFeature()
+          {static} + fromFeatures()
+          {static} + fromFeatures()
+          {static} + fromJson()
+          + getGeoJson()
+          + getKeyWords()
+          + getLayerId()
+          + getSourceId()
+          + jsonSerializable()
+          + replaceAll()
+          + replaceAll()
+          + replaceAll()
+          + replaceAll()
+          + setGeoJson()
+          + setKeyWords()
+          + setLayerId()
+          + setSourceId()
+          + toJson()
+          {static} + toJson()
+          + type()
+          - FeatureSet()
+          - FeatureSet()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.FeatureUtil {
+          {static} + firstId : String
+          {static} + secondId : String
+          {static} + thirdId : String
+          {static} - customIds : LinkedHashMap<String, String>
+          {static} + featureEqual()
+          {static} + featureEqual()
+          {static} + featureEqual()
+          {static} + features2Geometries()
+          {static} + findFeature()
+          {static} + findFeature()
+          {static} + getCustomId()
+          {static} + getFeatureArea()
+          {static} + getFeatureAttributeAsObj()
+          {static} + getFeatureAttributeAsT()
+          {static} + getFeatureId()
+          {static} + getIdField()
+          {static} + hasAttributes()
+          {static} + queryFeatureCollection()
+          {static} + queryFeatureCollectionLike()
+          {static} + queryFeatureFormCollection()
+          {static} + queryFeatureFormCollection()
+          {static} + setCustomId()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.FileUtil {
+          {static} + convertCodeAndGetText()
+          {static} + copyAssets()
+          {static} + copyDir()
+          {static} + copyFile()
+          {static} + copyFileAnyhow()
+          {static} + copyFileUsingFileStreams()
+          {static} + createAllFile()
+          {static} + createFile()
+          {static} + createFileParentPath()
+          {static} + deleteDir()
+          {static} + deleteFile()
+          {static} + deleteSameNameFile()
+          {static} + fileTree()
+          {static} + getDirMD5()
+          {static} + getFileAttr()
+          {static} + getFileExtendNameByPath()
+          {static} + getFileFullNameByPath()
+          {static} + getFileMD5()
+          {static} + getFileNameByPath()
+          {static} + getFileNameInFolder()
+          {static} + getFileNameInFolider()
+          {static} + getFilePathInFolder()
+          {static} + getFilePathInFolder()
+          {static} + getFilePathInFolder2Map()
+          {static} + getFilePathWithOutExtendName()
+          {static} + getFileSize()
+          {static} + getFileSize()
+          {static} + getFileSizeByPath()
+          {static} + getParentFileByPath()
+          {static} + getParentPathByPath()
+          {static} + getPathInFolder()
+          {static} + getSaveFile()
+          {static} + isExist()
+          {static} + reNameFileExtend()
+          {static} + reNameFolder()
+          {static} + readRemoteFile()
+          {static} + readStream()
+          {static} + scanFile()
+          {static} + traverseFolder()
+          {static} + traverseFolder_Breadth()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.GeoRelationShip {
+          {static} ~ ESP : double
+          {static} ~ INFINITY : double
+          {static} + dis2LineSegment()
+          {static} + dis2Point()
+          {static} + inPolygon()
+          {static} + intersect()
+          {static} + isOnline()
+          {static} + mid2Point()
+          {static} + multiply()
+          {static} - dis2LineSegment()
+          {static} - pointIsVerticalPro2LineSegment()
+          {static} - pointIsVerticalPro2LineSegment()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.GsonFactory {
+          - boxGson : Gson
+          - gson : Gson
+          {static} - singleton : GsonFactory
+          + getComGson()
+          + getComMapBoxGson()
+          {static} + getFactory()
+          - GsonFactory()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.LayerUtil {
+          {static} + circleRenderCircle()
+          {static} + fillRenderLine()
+          {static} + lineRenderLine()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.ListUtil {
+          {static} + listHasItem()
+          - ListUtil()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.MeasureScreen {
+          {static} + dip2px()
+          {static} + getAppDisplayHeight()
+          {static} + getScreenHeight()
+          {static} + getScreenHeightNew()
+          {static} + getScreenWidth()
+          {static} + getScreenWidthNew()
+          {static} + getStatusBarHeight()
+          {static} + px2dip()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.MeasureUtil {
+          {static} + dp2px()
+          {static} + px2dp()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.MercatorProjection {
+          {static} + calculateGroundResolution()
+          {static} + deltaLat()
+          {static} + latitudeToMetersY()
+          {static} + latitudeToPixelY()
+          {static} + latitudeToTileY()
+          {static} + longitudeToMetersX()
+          {static} + longitudeToPixelX()
+          {static} + longitudeToTileX()
+          {static} + main()
+          {static} + metersXToLongitude()
+          {static} + metersYToLatitude()
+          {static} + pixelXToLongitude()
+          {static} + pixelXToTileX()
+          {static} + pixelYToLatitude()
+          {static} + pixelYToTileY()
+          {static} + tileXToLongitude()
+          {static} + tileXToPixelX()
+          {static} + tileYToLatitude()
+          {static} + tileYToPixelY()
+          - MercatorProjection()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.ObjectUtil {
+          {static} + baseTypeIsEqual()
+          {static} + baseTypeIsEqual()
+          {static} + baseTypeLike()
+          {static} + compareTo()
+          {static} + isEmpty()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Pro4jUtil {
+          {static} + WKID : Map<Integer, String>
+          {static} + proParamCache : Map<String, String[]>
+          {static} + proRefCache : Map<String, CoordinateReferenceSystem>
+          {static} + proTrfCache : Map<String, CoordinateTransform>
+          {static} ~ _crsFactory : CRSFactory
+          {static} ~ _ctf : CoordinateTransformFactory
+          {static} ~ _proj4FileReader : Proj4FileReader
+          {static} ~ _wgs84 : CoordinateReferenceSystem
+          {static} - _wgs84_param : String
+          {static} + getsId()
+          {static} + pro84To2000()
+          {static} + pro84To2000()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.SimpleMap {
+          {static} + convert()
+          {static} + fromJson()
+          {static} + fromJson()
+          + obtainAllK()
+          + obtainAllV()
+          + obtainFirstKByV()
+          + obtainPositionK()
+          + obtainPositionV()
+          + obtainT()
+          + push()
+          + pushAll()
+          + put()
+          + toJson()
+          + toMap()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.StringEngine {
+          {static} + get32UUID()
+          {static} + getMinJsonArray()
+          {static} + getMinJsonStructure()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.StyleJsonBuilder {
+          {static} + DK_SOURCE : String
+          {static} + SYM_SOURCE : String
+          - styleJson : String
+          - styleJsonObject : JsonObject
+          + StyleJsonBuilder()
+          + StyleJsonBuilder()
+          + buildLayerJson()
+          + buildSourceJson()
+          + buildSourceJson()
+          + builder()
+          {static} + create()
+          {static} + create()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.ThreadPoolUtil {
+          {static} + BLOCKINGQUEUE_LENGTH : int
+          {static} + KEEPALIVETIME : int
+          {static} + PROCESSORS : int
+          {static} - threadFactory : ThreadFactory
+          {static} - threadPool : ThreadPoolExecutor
+          {static} + cancel()
+          {static} + execute()
+          {static} + execute()
+          - ThreadPoolUtil()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.TileInfo {
+          {static} + TILE_SIZE : short
+          {static} ~ TILE_BYTES_PER_PIXEL : byte
+          ~ pixelX : long
+          ~ pixelY : long
+          ~ renderPriority : int
+          ~ x : long
+          ~ y : long
+          ~ zoomLevel : byte
+          - hashCode : int
+          + compareTo()
+          + equals()
+          + hashCode()
+          + toString()
+          ~ TileInfo()
+          - calculateHashCode()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.TileUtil {
+          {static} + bound2PixelEnvelope()
+          {static} + computeAllZTileRegion()
+          {static} + computeRangeTileCount()
+          {static} + computeTileCount()
+          {static} + computeZTileRegion()
+          {static} + convert2Pixel()
+          {static} + convert2Pixel()
+          {static} + getBoundTile()
+          {static} + getBoundTile()
+          {static} + getBoundTileV2()
+          {static} + getTileEnvelope()
+          {static} + getTreeBoundTile()
+          {static} + getTreeBoundTileV1()
+          {static} + isInTileRegion()
+          {static} + parseXyz2Bound()
+          {static} + parseXyz2Bound()
+          {static} + xyz2Envelope()
+          {static} + xyz2Envelope2Pixel()
+          {static} + xyz2Envelope2Pixel()
+          {static} + xyzs2Envelope2Pixel()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.Transformation {
+          {static} + GEOMETRY_ERROR_TYPE : String[]
+          {static} + m2jwd : float
+          {static} ~ buffer : double
+          {static} ~ geometryJSON : GeometryJSON
+          {static} ~ wkbReader : WKBReader
+          {static} ~ wktReader : WKTReader
+          {static} ~ wktWriter : WKTWriter
+          {static} + _2Feature()
+          {static} + analysisJsonArray()
+          {static} + analysisJsonElement()
+          {static} + analysisJsonObject()
+          {static} + analysisJsonPrimitive()
+          {static} + boxAnnotation2Geometry()
+          {static} + boxFeature2PointWkts()
+          {static} + boxFeature2Wkts()
+          {static} + boxGeometries2wKts()
+          {static} + boxGeometry2BoxLatLngBounds()
+          {static} + boxGeometry2Wkt()
+          {static} + boxGeometry2Wkts()
+          {static} + boxPolygon2Points()
+          {static} + buffer()
+          {static} + calTextAnchor()
+          {static} + checkGeometrieIntersect()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea()
+          {static} + checkGeometrieIntersectArea1()
+          {static} + checkGeometriesIntersect()
+          {static} + checkGeometry()
+          {static} + checkGeometry()
+          {static} + comWkt2BoxPoint()
+          {static} + compute84GeoJsonArea()
+          {static} + compute84GeoJsonLen()
+          {static} + compute84GeoJsonLenAndArea()
+          {static} + compute84GeoJsonRunTime()
+          {static} + diffFeature()
+          {static} + divFeatures()
+          {static} + divisionFeatures()
+          {static} + feature2BoxLatLngBounds()
+          {static} + features2BoxLatLngBounds()
+          {static} + geoJson2CenterJtsGeometry()
+          {static} + geoJson2CenterPoint()
+          {static} + geoJson2JstGeometry()
+          {static} + geoJson2NodeSymbol()
+          {static} + geoJson2NodeSymbolFeatureCollection()
+          {static} + geoJson2NodeSymbolLabel()
+          {static} + geoJsonStr2GeoJson()
+          {static} + geoJsonStr2JstGeometry()
+          {static} + geom2PointArray()
+          {static} + geometry2BoxLatLngBounds()
+          {static} + geometryTry2MultiGeometry()
+          {static} + getBoxGeometryType()
+          {static} + getBoxRatio()
+          {static} + getBoxRatio()
+          {static} + getBoxRatios()
+          {static} + getCheckGeometrieIntersect()
+          {static} + getGeoJsonBox()
+          {static} + getGeometryLastSegment()
+          {static} + getLineStringLastSegment()
+          {static} + getVByFeature()
+          {static} + isGeoLegal()
+          {static} + isWithinJTS()
+          {static} + isWithinJTS()
+          {static} + jstGeometry2GeoJson()
+          {static} + jstGeometry2Geometry()
+          {static} + jstGeometry2Wkt()
+          {static} + listPoint2SimplePolygon()
+          {static} + map2JsonObject()
+          {static} + mapBoxObj2Json()
+          {static} + mapBoxObj2Json()
+          {static} + mergeBoxFeatureBound()
+          {static} + mergeFeatures()
+          {static} + mergeGeometries()
+          {static} + rectifyGeometry()
+          {static} + simplePolygon2LinearRing()
+          {static} + simplePolygon2LinearRings()
+          {static} + unionGeoJson()
+          {static} + validate()
+          {static} + wkb2BoxJsonString()
+          {static} + wkb2BoxJsonString()
+          {static} + wkb2BoxMultiPolygon()
+          {static} + wkb2BoxMultiPolygon()
+          {static} + wkt2BoxGeometry()
+          {static} + wkt2BoxLatLngBounds()
+          {static} + wkt2BoxLineString()
+          {static} + wkt2BoxMultiLineString()
+          {static} + wkt2BoxMultiPoint()
+          {static} + wkt2BoxMultiPolygon()
+          {static} + wkt2BoxPoint()
+          {static} + wkt2BoxPolygon()
+          {static} + wkt2BoxPolygonCenter()
+          {static} + wkt2JtsGeometry()
+          {static} + wktTransfWidthHeightPx()
+          {static} + wkts2BoxGeometry()
+          {static} + wkts2BoxLatLngBounds()
+          {static} - addLineString()
+          {static} - addPolygon()
+          {static} - toMultiPolygonGeometry()
+          {static} - toPolygonGeometry()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      enum BoxGeometryType {
+        LINESTRING
+        MULTILINESTRING
+        MULTIPOINT
+        MULTIPOLYGON
+        POINT
+        POLYGON
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.TransformationForTurf {
+          {static} + feature2LatLngBounds()
+          {static} + features2BoxLatLngBounds()
+      }
+    }
+  }
+  
+
+  namespace com.grandtech.mapframe.core {
+    namespace util {
+      class com.grandtech.mapframe.core.util.WGS84 {
+          {static} + EQUATORIALRADIUS : double
+          {static} + INVERSEFLATTENING : double
+          {static} + POLARRADIUS : double
+      }
+    }
+  }
+  
+
+  com.grandtech.mapframe.core.util.CacheBoxUtil o-- com.grandtech.mapframe.core.util.CacheBoxUtil.ACacheManager : mCache
+  com.grandtech.mapframe.core.util.CacheBoxUtil +-down- com.grandtech.mapframe.core.util.CacheBoxUtil.ACacheManager
+  com.grandtech.mapframe.core.util.CacheBoxUtil +-down- com.grandtech.mapframe.core.util.CacheBoxUtil.Utils
+  com.grandtech.mapframe.core.util.CacheBoxUtil +-down- com.grandtech.mapframe.core.util.CacheBoxUtil.xFileOutputStream
+  com.grandtech.mapframe.core.util.CacheBoxUtil.xFileOutputStream -up-|> java.io.FileOutputStream
+  com.grandtech.mapframe.core.util.CustomPointSerializer .up.|> com.google.gson.JsonSerializer
+  com.grandtech.mapframe.core.util.Expression .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.util.Expression +-down- com.grandtech.mapframe.core.util.Expression.ExpressionLiteral
+  com.grandtech.mapframe.core.util.Expression +-down- com.grandtech.mapframe.core.util.Expression.ExpressionLiteralArray
+  com.grandtech.mapframe.core.util.Expression +-down- com.grandtech.mapframe.core.util.Expression.ExpressionMap
+  com.grandtech.mapframe.core.util.Expression +-down- com.grandtech.mapframe.core.util.Expression.ValueExpression
+  com.grandtech.mapframe.core.util.Expression.ExpressionLiteral .up.|> com.grandtech.mapframe.core.util.Expression.ValueExpression
+  com.grandtech.mapframe.core.util.Expression.ExpressionLiteral -up-|> com.grandtech.mapframe.core.util.Expression
+  com.grandtech.mapframe.core.util.Expression.ExpressionLiteralArray -up-|> com.grandtech.mapframe.core.util.Expression.ExpressionLiteral
+  com.grandtech.mapframe.core.util.Expression.ExpressionMap .up.|> com.grandtech.mapframe.core.util.Expression.ValueExpression
+  com.grandtech.mapframe.core.util.Expression.ExpressionMap -up-|> com.grandtech.mapframe.core.util.Expression
+  com.grandtech.mapframe.core.util.FeatureSet .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.util.FeatureSet .up.|> com.mapbox.geojson.GeoJson
+  com.grandtech.mapframe.core.util.FeatureSet .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.util.SimpleMap .up.|> java.io.Serializable
+  com.grandtech.mapframe.core.util.SimpleMap -up-|> java.util.LinkedHashMap
+  com.grandtech.mapframe.core.util.StringEngine .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.util.StyleJsonBuilder .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.util.TileInfo .up.|> java.lang.Comparable
+  com.grandtech.mapframe.core.util.Transformation .up.|> com.grandtech.mapframe.core.rules.Rules
+  com.grandtech.mapframe.core.util.Transformation +-down- com.grandtech.mapframe.core.util.Transformation.BoxGeometryType
+  com.grandtech.mapframe.core.util.TransformationForTurf .up.|> com.grandtech.mapframe.core.rules.Rules
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

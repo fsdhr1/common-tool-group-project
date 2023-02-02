@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/flMainFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <com.gradtech.mapframev10.core.maps.GMapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.gradtech.mapframev10.core.maps.GMapView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/splzzdk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点选种植地块线层"></Button>
+            <Button
+                android:id="@+id/splzzdkfill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点选种植地块面层" />
+
+            <Button
+                android:id="@+id/sklzzdk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="框选种植地块线层" />
+            <Button
+                android:id="@+id/sklzzdkfill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="框选种植地块面层" />
+            <Button
+                android:id="@+id/hb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合并" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
